@@ -1,0 +1,8 @@
+* [Event Binding](common/event-binding.md)
+* [Model Binding](common/model-binding.md)
+* [Template](common/template.md)
+* [Animation](common/animation.md)
+* [Localization](common/localization.md)
+* [Internationalization](common/internationalization.md)
+* [Drag and Drop](common/drag-and-drop.md)
+* [Update NPM Packages](common/how-to/update-npm-package.md)
