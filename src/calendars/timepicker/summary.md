@@ -1,0 +1,8 @@
+* [Getting Started](timepicker/getting-started.md)
+* [Time Range](timepicker/time-range.md)
+* [Globalization](timepicker/globalization.md)
+* [Strict Mode](timepicker/strict-mode.md)
+* [Accessibility](timepicker/accessibility.md)
+* [Two-Way Binding](timepicker/two-way-binding.md)
+* [CSS Customization](timepicker/how-to/css-customization.md)
+* [Client Side Validation using FormValidator](timepicker/how-to/client-side-validation-using-form-validator.md)
