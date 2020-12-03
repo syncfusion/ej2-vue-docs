@@ -112,7 +112,7 @@ The output will display the kanban header.
 
 To populate the empty Kanban with cards, define the local JSON data or remote data using the `dataSource` property. To define `dataSource`, the mandatory fields in JSON object should be relevant to `keyField`. In the following example, you can see the cards defined with default fields such as ID, Summary, and Status.
 
-{% tab template="kanban/getting-started-key-field", iframeHeight="588px" %}
+{% tab template="kanban/getting-started-key-field", sourceFiles="kanban/getting-started-key-field/datasource.js" iframeHeight="588px" %}
 
 ```html
 <template>
