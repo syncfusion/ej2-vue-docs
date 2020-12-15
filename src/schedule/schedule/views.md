@@ -511,6 +511,8 @@ The following code example depicts how to customize the display of events within
 
 ```
 
+> Schedule Height is mandatory to set in pixels for Agenda view alone.
+
 {% endtab %}
 
 ### Month Agenda view
