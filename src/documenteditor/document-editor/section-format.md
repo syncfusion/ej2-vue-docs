@@ -49,4 +49,4 @@ this.$refs.documenteditor.ej2Instances.selection.sectionFormat.footerDistance = 
 
 ## See Also
 
-*[Pagesetup dialog](../document-editor/dialog#page-setup-dialog/)
+*[Page setup dialog](../document-editor/dialog#page-setup-dialog/)

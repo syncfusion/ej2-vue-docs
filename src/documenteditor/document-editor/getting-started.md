@@ -141,7 +141,7 @@ export default {
 >
 > * Paste with formatting
 > * Restrict editing
-> * Spellcheck
+> * Spell check
 >
 > Refer to this [link](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) to configure the web service and set the [serviceUrl](../api/document-editor#serviceurl).
 
@@ -245,7 +245,7 @@ export default {
 > * Opening word documents
 > * Paste with formatting
 > * Restrict editing
-> * Spellcheck
+> * Spell check
 >
 > Refer to this [link](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) to configure the web service and set the [serviceUrl](../api/document-editor-container#serviceurl).
 
