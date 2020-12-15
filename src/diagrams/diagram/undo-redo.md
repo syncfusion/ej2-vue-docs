@@ -258,7 +258,7 @@ export default {
 
 ## History change event
 
-The [`historychange`](../api/diagram/diagram) event triggers, whenever the interaction of the node and connector is take place.
+The [`historyChange`](../api/diagram/diagram) event triggers, whenever the interaction of the node and connector is take place.
 
 ```javascript
 export default {

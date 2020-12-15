@@ -863,7 +863,7 @@ export default {
 
 ## Default Settings
 
-While adding more number of symbols such as nodes and connectors to the palette, you can define the default settings for those objects through [getNodeDefaults](../api/diagram/symbolPaletteModel/#getnodedefaults) property of defaultSettings allows to define the default settings for nodes and [getConnectorDefaults](../api/diagram/symbolPaletteModel/#getconnectordefaults)property of defaultSettings allows to define the default settings for connectors.
+While adding more number of symbols such as nodes and connectors to the palette, you can define the default settings for those objects through [getNodeDefaults](../api/diagram/symbolPaletteModel/#getnodedefaults) property of defaultSettings allows to define the default settings for nodes and [getConnectorDefaults](../api/diagram/symbolPaletteModel/#getconnectordefaults) property of defaultSettings allows to define the default settings for connectors.
 
 {% tab template="diagram/symbol-palette/palettes", isDefaultActive=true %}
 
