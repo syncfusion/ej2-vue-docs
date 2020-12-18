@@ -17,7 +17,7 @@ Diagram provides support to auto-arrange the nodes in the diagram area that is r
 * Mind Map layout
 * Complex hierarchical tree layout
 
-### Hierarchical layout
+## Hierarchical layout
 
 The hierarchical tree layout arranges nodes in a tree-like structure, where the nodes in the hierarchical layout may have multiple parents. There is no need to specify the layout root. To arrange the nodes in a hierarchical structure, specify the layout [`type`](../api/diagram/layout) as hierarchical tree. The following example shows how to arrange the nodes in a hierarchical structure.
 
@@ -138,7 +138,7 @@ export default {
 
 {% endtab %}
 
-### Radial tree layout
+## Radial tree layout
 
 The radial tree layout arranges nodes on a virtual concentric circle around a root node. Sub-trees formed by the branching of child nodes are located radially around the child nodes. This arrangement result in an ever-expanding concentric arrangement with radial proximity to the root node indicating the node level in the hierarchy. The layout [`root`](../api/diagram/layout) property can be used to define the root node of the layout. When no root node is set, the algorithm automatically considers one of the diagram nodes as the root node.
 
@@ -295,7 +295,7 @@ export default {
 
 {% endtab %}
 
-### Organizational Chart
+## Organizational Chart
 
 An organizational chart is a diagram that displays the structure of an organization and relationships. To create an organizational chart, the [`type`](../api/diagram/layout) of layout should be set as an `OrganizationalChart`.
 The following code example illustrates how to create an organizational chart.
@@ -792,7 +792,7 @@ export default {
 
 {% endtab %}
 
-## Assistant
+### Assistant
 
 Assistants are child item that have a different relationship with the parent node. They are laid out in a dedicated part of the tree. A node can be specified as an assistant of its parent by adding it to the `assistants` property of the argument “options”.
 
@@ -911,7 +911,7 @@ export default {
 
 {% endtab %}
 
-### Symmetric layout
+## Symmetric layout
 
 The symmetric layout has been formed using nodes position by closer together or pushing them further apart. This is repeated iteratively until the system comes to an equilibrium state.
 
@@ -921,7 +921,7 @@ The following code illustrates how to arrange the nodes in a radial tree structu
 
 >Note: If you want to use symmetric layout in diagram, you need to inject SymmetricLayout in the diagram.
 
-### Mind Map layout
+## Mind Map layout
 
 A mind map is a diagram that displays the nodes as a spider diagram organizes information around a central concept. To create mind map, the [`type`](../api/diagram/layout) of layout should be set as `MindMap`.
 The following code example illustrates how to create an organizational chart.
@@ -1050,7 +1050,7 @@ export default {
 
 {% endtab %}
 
-### Complex hierarchical tree
+## Complex hierarchical tree
 
 Complex hierarchical tree layout is the extended version of the hierarchical tree layout. The child had been two or more parents. To create a complex hierarchical tree, the [`type`](../api/diagram/layout) of layout should be set as `ComplexHierarchicalTree`.
 
@@ -1210,7 +1210,142 @@ export default {
 
 {% endtab %}
 
-### Customize layout
+### Line Distribution
+
+Line distribution is used to arrange the connectors without overlapping in automatic layout. In some cases, the automatic layout connectors connecting to the nodes will be overlapped with one another. So user can decide whether the segment of each connector from a single parent node should be same point or different point. The [`connectionPointOrigin`](../api/diagram/connectionPointOrigin/#connectionpointorigin) property of layout is used to enable or disable the line distribution in layout. By default connectionPointOrigin will be `SamePoint`.
+
+The following code example illustrates how to create a complex hierarchical tree with line distribution.
+
+>Note: If you want to use line distribution in diagram layout, you need to inject  LineDistribution module in the diagram.
+
+{% tab template="diagram/automatic-layout/LineDistribution", isDefaultActive=true %}
+
+```html
+
+<template>
+    <div id="app">
+        <ejs-diagram id="diagram" :width='width' :height='height' :getNodeDefaults='getNodeDefaults' :getConnectorDefaults='getConnectorDefaults' :layout='layout' :dataSourceSettings='dataSourceSettings' ></ejs-diagram>
+    </div>
+</template>
+<script>
+    import Vue from 'vue';
+    import { DiagramPlugin, Diagram, ComplexHierarchicalTree, DataBinding, LineDistribution, NodeModel, ConnectionPointOrigin, ConnectorModel } from '@syncfusion/ej2-vue-diagrams';
+    import { DataManager,Query } from "@syncfusion/ej2-data";
+    Diagram.Inject(DataBinding, ComplexHierarchicalTree, LineDistribution);
+    Vue.use(DiagramPlugin);
+    export let data = [
+        { "Name": "node11" },
+        { "Name": "node12", "ReportingPerson": ["node114"] },
+        { "Name": "node13", "ReportingPerson": ["node12"] },
+        { "Name": "node14", "ReportingPerson": ["node12"] },
+        { "Name": "node15", "ReportingPerson": ["node12"] },
+        { "Name": "node116", "ReportingPerson": ["node22","node12"] },
+        { "Name": "node16", "ReportingPerson": [] },
+        { "Name": "node18", "ReportingPerson": [] },
+        { "Name": "node21" },
+        { "Name": "node22", "ReportingPerson": ["node114"] },
+        { "Name": "node23", "ReportingPerson": ["node22"] },
+        { "Name": "node24", "ReportingPerson": ["node22"] },
+        { "Name": "node25", "ReportingPerson": ["node22"] },
+        { "Name": "node26", "ReportingPerson": [] },
+        { "Name": "node28", "ReportingPerson": [] },
+        { "Name": "node31" },
+        { "Name": "node114", "ReportingPerson": ["node11", "node21", "node31"]}
+];
+let items: DataManager = new DataManager(data as JSON[], new Query().take(7));
+export default {
+    name: 'app',
+    data() {
+        return {
+            width: "100%",
+            height: "590px",
+            //Uses layout to auto-arrange nodes on the Diagram page
+            layout: {
+                type: 'ComplexHierarchicalTree',
+                connectionPointOrigin: ConnectionPointOrigin.DifferentPoint,
+                horizontalSpacing: 40, verticalSpacing: 40, horizontalAlignment: "Left", verticalAlignment: "Top",
+                margin: { left: 0, right: 0, top: 0, bottom: 0 },
+                orientation: 'TopToBottom'
+            },
+            dataSourceSettings: {
+                id: 'Name',
+                parentId: 'ReportingPerson',
+                dataManager: items
+            },
+            getNodeDefaults: (obj) => {
+                obj.width = 40; obj.height = 40;
+                obj.shape = { type: 'Basic', shape: 'Rectangle', cornerRadius: 7 };
+                obj.style = { fill: '#6BA5D7', strokeColor: 'none', strokeWidth: 2 };
+                obj.borderWidth = 1;
+                obj.backgroundColor = '#6BA5D7';
+                return obj;
+            },
+            getConnectorDefaults: (connector) => {
+                connector.type = 'Orthogonal';
+                connector.cornerRadius = 7;
+                connector.targetDecorator.height = 7;
+                connector.targetDecorator.width = 7;
+                connector.style = { strokeColor: '#6BA5D7', strokeWidth: 1 };
+                connector.targetDecorator.style.fill  =  '#6BA5D7';
+                connector.targetDecorator.style.strokeColor  =  '#6BA5D7';
+                return connector;
+            },
+        }
+    },
+    mounted: function() {
+        let diagramInstance: Diagram;
+        let diagramObj: any = document.getElementById("diagram");
+        diagramInstance = diagramObj.ej2_instances[0];
+        diagramInstance.fitToPage({
+            mode: 'Width',
+        });
+    }
+    provide: {
+        diagram: [DataBinding, ComplexHierarchicalTree, LineDistribution]
+    },
+}
+</script>
+<style>
+    @import "../../node_modules/@syncfusion/ej2-vue-diagrams/styles/material.css";
+</style>
+
+```
+
+{% endtab %}
+
+### Linear Arrangement
+
+Linear arrangement is used to linearly arrange the child nodes in layout, which means the parent node is placed in the center corresponding to its children. When line distribution is enabled, linear arrangement is also activated by default. The [`arrangement`](../api/diagram/childArrangement/#childarrangement) property of layout is used to enable or disable the linear arrangement in layout. By default arrangement will be `Nonlinear`.
+
+>Note: If you want to use linear arrangement in diagram layout, you need to inject  LineDistribution module in the diagram. Linear arrangement is applicable only for complex hierarchical tree layout.
+
+The following code illustrates how to allow a linear arrangement in diagram layout.
+
+```html
+
+export default {
+    name: 'app',
+    data() {
+        return {
+            width: "100%",
+            height: "590px",
+            layout: {
+                type: 'ComplexHierarchicalTree',
+                //To arrange a child nodes in a linear manner
+                arrangement: ChildArrangement.Linear,
+                horizontalSpacing: 40, verticalSpacing: 40,
+                orientation: 'TopToBottom'
+            },
+        }
+    },
+    provide: {
+        diagram: [DataBinding, ComplexHierarchicalTree, LineDistribution]
+    },
+}
+
+```
+
+## Customize layout
 
 Orientation, spacings, and position of the layout can be customized with a set of properties.
 
