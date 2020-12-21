@@ -8,6 +8,31 @@ description: "This section  explains about how to enable the file browser featur
 
 Rich Text Editor allows to browse and insert images in the edit panel using the file browser. File browser allows the users to browse and select a file or folder from the file system and it supports various cloud services.
 
+## Required additional dependency
+
+The following list of additional dependencies are required to use the file browser feature in the Rich Text Editor.
+
+```js
+
+|-- @syncfusion/ej2-vue-richtexteditor
+    |-- @syncfusion/ej2-layouts
+    |-- @syncfusion/ej2-grids
+    |-- @syncfusion/ej2-filemanager
+
+```
+
+## Additional CSS Reference
+
+Additionally add the styles as given below in `<style>` section of the `App.vue` file.
+
+```html
+<style>
+  @import "../node_modules/@syncfusion/ej2-layouts/styles/material.css";
+  @import "../node_modules/@syncfusion/ej2-grids/styles/material.css";
+  @import "../node_modules/@syncfusion/ej2-filemanager/styles/material.css";
+</style>
+```
+
 The following example explains about how to configure the file browser within the Rich Text Editor component.
 
 * Configure the `FileManager` toolbar item in the `toolbarSettings` API `items` property.

@@ -23,6 +23,7 @@ The following list of dependencies are required to use the Rich Text Editor.
     |-- @syncfusion/ej2-popups
     |-- @syncfusion/ej2-splitbuttons
     |-- @syncfusion/ej2-navigations
+    |-- @syncfusion/ej2-filemanager
     |-- @syncfusion/ej2-vue-base
 
 ```
@@ -258,14 +259,18 @@ Initialize the Rich Text Editor on div element and set the `enable` field of `if
 To create Rich Text Editor with additional features, inject the required modules. The following modules are used to extend Rich Text Editor's basic functionality.
 
 * `Toolbar` - Inject this module to use Toolbar feature.
-* `Link` - Inject this module to use link in Rich Text Editor feature.
-* `Image`- Inject this module to use image in Rich Text Editor feature.
+* `Link` - Inject this module to use link feature in Rich Text Editor.
+* `Image`- Inject this module to use image feature in Rich Text Editor.
+* `Table`- Inject this module to use table feature in Rich Text Editor.
 * `Count` - Inject this module to use character count in Rich Text Editor.
-* `MarkdownEditor`-Inject this module to use Rich Text Editor as markdown editor.
 * `HtmlEditor` - Inject this module to use Rich Text Editor as html editor.
+* `MarkdownEditor`-Inject this module to use Rich Text Editor as markdown editor.
 * `QuickToolbar` - Inject this module to use quick toolbar feature for the target element.
+* `Resize` - Inject this module to use resize feature in Rich Text Editor.
+* `FileManager` - Inject this module to use file browser feature in Rich Text Editor.
+* `PasteCleanup` - Inject this module to use paste cleanup feature in Rich Text Editor.
 
-These modules should be injected into the Rich Text Editor using the `RichTextEditor.Inject` method.
+These modules should be injected into the Rich Text Editor through `provide` option.
 
 ## Configure the toolbar
 
