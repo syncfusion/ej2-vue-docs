@@ -37,8 +37,10 @@ Interaction Keys |Description
 -----|-----
 <kbd>Home</kbd> |Selects the first row.
 <kbd>End</kbd> |Selects the last row.
-<kbd>Down Arrow</kbd> |Moves to row focus downward.
-<kbd>Up Arrow</kbd> |Moves to row focus upward.
+<kbd>DownArrow</kbd> |Moves the cell focus/row or cell selection downward.
+<kbd>UpArrow</kbd> |Moves the cell focus/row or cell selection upward.
+<kbd>LeftArrow</kbd> |Moves the cell focus/row or cell selection left side.
+<kbd>RightArrow</kbd> |Moves the cell focus/row or cell selection right side.
 <kbd>Ctrl + Up Arrow</kbd> |Collapses all tasks.
 <kbd>Ctrl + Down Arrow</kbd> |Expands all tasks.
 <kbd>Ctrl + Shift + Up Arrow</kbd> |Collapses the selected row.
@@ -51,3 +53,7 @@ Interaction Keys |Description
 <kbd>Delete</kbd> |Deletes the selected row.
 <kbd>Shift + F5</kbd> |FocusTask
 <kbd>Ctrl + Shift + F</kbd> |Focus search
+<kbd>Shift + DownArrow</kbd> |Extends the row/cell selection downwards.
+<kbd>Shift + UpArrow</kbd> |Extends the row/cell selection upwards.
+<kbd>Shift + LeftArrow</kbd> |Extends the cell selection to the left side.
+<kbd>Shift + RightArrow</kbd> |Extends the cell selection to the right side.

@@ -552,3 +552,223 @@ export default {
 ```
 
 {% endtab %}
+
+## Customize rows
+
+You can customize the appearance of a row in grid side, by using the [`rowDataBound`](../api/gantt/#rowdatabound) event and in chart side by using [`queryTaskbarInfo`](../api/gantt/#querytaskbarinfo) event
+
+{% tab template= "gantt/rows" %}
+
+```html
+
+<template>
+     <div>
+        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :taskFields = "taskFields" :height = "height" :queryTaskbarInfo = "queryTaskbarInfo" :rowBound = "rowBound"></ejs-gantt>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GanttPlugin } from "@syncfusion/ej2-vue-gantt";
+Vue.use(GanttPlugin);
+export default {
+  data: function() {
+      return{
+            data: [
+        {
+            TaskID: 1,
+            TaskName: 'Project Initiation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            isParent:true,
+            subtasks: [
+                { TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 0, Progress: 50,isParent:false },
+                { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 70, resources: [2, 3, 5],isParent:false   },
+                { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4,Predecessor:"2FS", Progress: 50,isParent:false  },
+            ]
+        },
+        {
+            TaskID: 5,
+            TaskName: 'Project Estimation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            isParent:true,
+            subtasks: [
+                { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50, resources: [4],isParent:false  },
+                { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 80, resources: [4, 8],isParent:false  },
+                { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 0,Predecessor:"6SS", Progress: 70, resources: [12, 5],isParent:false  }
+            ]
+        },
+    ],
+            height: '450px',
+            taskFields: {
+            id: 'TaskID',
+            name: 'TaskName',
+            startDate: 'StartDate',
+            duration: 'Duration',
+            progress: 'Progress',
+            child: 'subtasks'
+        },
+        rowBound: function(args) {
+            if (args.data['TaskID'] == 4) {
+               args.rowElement.style.background = 'cyan';
+            }
+            },
+        queryTaskbarInfo: function(args) {
+            if (args.data['TaskID'] == 4) {
+               args.rowElement.style.background = 'cyan';
+            }
+            }
+  };
+},
+};
+</script>
+
+```
+
+{% endtab %}
+
+## Styling alternate rows
+
+ You can change the background colour of alternative rows in Gantt chart, by overriding the class as shown below.
+
+```css
+.e-altrow, tr.e-chart-row:nth-child(even)  {
+    background-color: #f2f2f2;
+}
+```
+
+{% tab template= "gantt/rows" %}
+
+```html
+
+<template>
+     <div>
+        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :taskFields = "taskFields" :height = "height"></ejs-gantt>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GanttPlugin } from "@syncfusion/ej2-vue-gantt";
+Vue.use(GanttPlugin);
+export default {
+  data: function() {
+      return{
+            data: [
+        {
+            TaskID: 1,
+            TaskName: 'Project Initiation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            isParent:true,
+            subtasks: [
+                { TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 0, Progress: 50,isParent:false },
+                { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 70, resources: [2, 3, 5],isParent:false   },
+                { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4,Predecessor:"2FS", Progress: 50,isParent:false  },
+            ]
+        },
+        {
+            TaskID: 5,
+            TaskName: 'Project Estimation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            isParent:true,
+            subtasks: [
+                { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50, resources: [4],isParent:false  },
+                { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 80, resources: [4, 8],isParent:false  },
+                { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 0,Predecessor:"6SS", Progress: 70, resources: [12, 5],isParent:false  }
+            ]
+        },
+    ],
+            height: '450px',
+            taskFields: {
+            id: 'TaskID',
+            name: 'TaskName',
+            startDate: 'StartDate',
+            duration: 'Duration',
+            progress: 'Progress',
+            child: 'subtasks'
+        }
+  };
+},
+};
+</script>
+    <style>
+        .e-altrow, tr.e-chart-row:nth-child(even)  {
+          background-color: #f2f2f2;
+      }
+    </style>
+
+```
+
+{% endtab %}
+
+## Row spanning
+
+Gantt chart has an option to span row cells. You can achieve this using [`rowSpan`](../api/gantt/queryCellInfoEventArgs/#rowspan) attribute to span cells in the [`QueryCellInfo`](../api/gantt/queryCellInfoEventArgs) event.
+
+In the following demo, **Soil test approval** cell is spanned to two rows in the **TaskName** column.
+
+{% tab template= "gantt/rows" %}
+
+```html
+
+<template>
+     <div>
+        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :taskFields = "taskFields" :height = "height" :queryCellInfo = "queryCellInfo"></ejs-gantt>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GanttPlugin } from "@syncfusion/ej2-vue-gantt";
+Vue.use(GanttPlugin);
+export default {
+  data: function() {
+      return{
+            data: [
+        {
+            TaskID: 1,
+            TaskName: 'Project Initiation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            isParent:true,
+            subtasks: [
+                { TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 0, Progress: 50,isParent:false },
+                { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 70, resources: [2, 3, 5],isParent:false   },
+                { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4,Predecessor:"2FS", Progress: 50,isParent:false  },
+            ]
+        },
+        {
+            TaskID: 5,
+            TaskName: 'Project Estimation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            isParent:true,
+            subtasks: [
+                { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50, resources: [4],isParent:false  },
+                { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 80, resources: [4, 8],isParent:false  },
+                { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 0,Predecessor:"6SS", Progress: 70, resources: [12, 5],isParent:false  }
+            ]
+        },
+    ],
+            height: '450px',
+            taskFields: {
+            id: 'TaskID',
+            name: 'TaskName',
+            startDate: 'StartDate',
+            duration: 'Duration',
+            progress: 'Progress',
+            child: 'subtasks'
+        }
+        queryCellInfo: function(args) {
+            if (args.data['TaskID'] == 4 && args.column.field === 'TaskName') {
+            args.rowSpan = 2;
+            }
+    }
+  };
+},
+};
+</script>
+
+```
+
+{% endtab %}
