@@ -31,6 +31,7 @@
 * [Refresh the data source](grid/how-to/refresh-the-data-source.md)
 * [Enable/Disable Grid and its actions](grid/how-to/enable-disable-grid-and-its-actions.md)
 * [Customize Column Styles](grid/how-to/customize-column-styles.md)
+* [Hide sorting options on Excel filter Dialog](grid/how-to/hide-sorting-in-excel-filter.md)
 * [Custom Tooltip for columns](grid/how-to/custom-tool-tip-for-columns.md)
 * [Render other components in a column](grid/how-to/render-other-components-in-column.md)
 * [Change the Orientation of Header Text](grid/how-to/change-orientation-of-header-text.md)

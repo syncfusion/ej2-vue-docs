@@ -504,3 +504,4 @@ export default {
 ## See also
 
 * [Customizing filter menu operators list](./how-to/customizing-filter-menu-operators-list)
+* [Hide sorting options on Excel filter Dialog](./how-to/hide-sorting-in-excel-filter)
