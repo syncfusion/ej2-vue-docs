@@ -699,7 +699,7 @@ export default {
 
 Appointments can be rescheduled to any time by dragging and dropping them onto the desired location. To work with drag and drop functionality, it is necessary to inject the module `DragAndDrop` and make sure that `allowDragAndDrop` is set to true on Scheduler. In mobile mode, you can drag and drop the events by tap holding an event and dropping them on to the desired location.
 
-> By default, drag and drop action is applicable on all Scheduler views, except Agenda and Month-Agenda view.
+> By default, drag and drop action is applicable on all Scheduler views, except Agenda, Month-Agenda and Year view.
 
 {% tab template="schedule/event", iframeHeight="588px" %}
 
