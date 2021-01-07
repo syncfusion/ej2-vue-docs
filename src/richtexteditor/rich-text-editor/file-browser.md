@@ -92,10 +92,10 @@ The following example explains about how to configure the file browser within th
           enable: true,
           path: '/Pictures/Food',
           ajaxSettings: {
-              url: hostUrl + 'api/FileManager/FileOperations',
-              getImageUrl: hostUrl + 'api/FileManager/GetImage',
-              uploadUrl: hostUrl + 'api/FileManager/Upload',
-              downloadUrl: hostUrl + 'api/FileManager/Download'
+              url: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/FileOperations',
+              getImageUrl: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/GetImage',
+              uploadUrl: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Upload',
+              downloadUrl: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Download'
           }
         }
       }
