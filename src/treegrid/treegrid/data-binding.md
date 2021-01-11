@@ -118,6 +118,8 @@ export default {
 
 To bind remote data to TreeGrid component, assign service data as an instance of `DataManager` to the [`dataSource`](../api/treegrid#datasource) property. To interact with remote data source,  provide the endpoint `url` and define the [`hasChildMapping`](../api/treegrid#hasChildMapping) property of treegrid.
 
+The [`hasChildMapping`](../api/treegrid/#haschildmapping) property maps the field name in data source, that denotes whether current record holds any child records. This is useful internally to show expand icon while binding child data on demand.
+
 The TreeGrid provides `Load on Demand` support for rendering remote data. The Load on demand is considered in TreeGrid for the following actions.
 
 * Expanding root nodes.
