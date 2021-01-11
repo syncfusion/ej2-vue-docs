@@ -454,6 +454,183 @@ export default {
 
 >Note: If you bind the dataSource from this way, then it acts like a local dataSource. So you cannot perform any server side crud actions.
 
+## Split task
+
+The `Split-task` feature allows you to split a task or interrupt the work during planned or unforeseen circumstances.
+We can split the task either in load time or dynamically, by defining the segments either in hierarchical or self-referential way.
+
+### Hierarchical
+
+To split a task at load time in hierarchical way, we need to define the segment details in datasource and this field should be mapped by using the [`taskFields.segments`](../api/gantt/taskFields/#segments) property.
+
+```typescript
+
+[
+    {
+        TaskID: 1, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50,
+        Segments: [
+            { StartDate: new Date("04/02/2019"), Duration: 2 },
+            { StartDate: new Date("04/04/2019"), Duration: 2 }
+        ]
+    }
+]
+
+```
+
+{% tab template="gantt/data-binding" %}
+
+```html
+
+<template>
+     <div>
+        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :taskFields = "taskFields" :height = "height"></ejs-gantt>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GanttPlugin } from "@syncfusion/ej2-vue-gantt";
+Vue.use(GanttPlugin);
+export default {
+  data: function() {
+      return{
+            data: [
+            {
+            TaskID: 1,
+            TaskName: 'Project Initiation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            subtasks: [
+                { TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50,
+                Segments: [
+                    { StartDate: new Date("04/02/2019"), Duration: 2 },
+                    { StartDate: new Date("04/04/2019"), Duration: 2 }
+                  ] },
+                { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50  },
+                { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4 , Progress: 50 },
+            ]
+        },
+        {
+            TaskID: 5,
+            TaskName: 'Project Estimation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            subtasks: [
+                { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
+                { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
+                { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 }
+            ]
+        }
+        ],
+            height: '450px',
+            taskFields: {
+                id: 'TaskID',
+                name: 'TaskName',
+                startDate: 'StartDate',
+                endDate: 'EndDate',
+                duration: 'Duration',
+                progress: 'Progress',
+                child: 'subtasks',
+                segments: 'Segments'
+            }
+      };
+  }
+};
+</script>
+
+```
+
+{% endtab %}
+
+### Self-referential
+
+We can also define segment details as a flat data and this collection can be mapped by using [`segmentData`](../api/gantt/#segmentData) property. The segment id field of this collection is mapped by using the [`taskFields.segmentId`](../api/gantt/taskFields/#segmentId) property.
+
+```typescript
+
+  taskFields: {
+    segmentId: "segmentId"
+  },
+  segmentData: [
+    { segmentId: 1, StartDate: new Date("02/04/2019"), Duration: 2 },
+    { segmentId: 1, StartDate: new Date("02/05/2019"), Duration: 5 },
+    { segmentId: 4, StartDate: new Date("04/02/2019"), Duration: 2 },
+    { segmentId: 4, StartDate: new Date("04/04/2019"), Duration: 2 }
+  ],
+
+```
+
+{% tab template="gantt/data-binding" %}
+
+```html
+
+<template>
+     <div>
+        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :taskFields = "taskFields" :height = "height" :segmentData = "segmentData"></ejs-gantt>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GanttPlugin } from "@syncfusion/ej2-vue-gantt";
+Vue.use(GanttPlugin);
+export default {
+  data: function() {
+      return{
+            data: [
+            {
+            TaskID: 1,
+            TaskName: 'Project Initiation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            subtasks: [
+                { TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50,
+                Segments: [
+                    { StartDate: new Date("04/02/2019"), Duration: 2 },
+                    { StartDate: new Date("04/04/2019"), Duration: 2 }
+                  ] },
+                { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50  },
+                { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4 , Progress: 50 },
+            ]
+        },
+        {
+            TaskID: 5,
+            TaskName: 'Project Estimation',
+            StartDate: new Date('04/02/2019'),
+            EndDate: new Date('04/21/2019'),
+            subtasks: [
+                { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
+                { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
+                { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 }
+            ]
+        }
+        ],
+            height: '450px',
+            taskFields: {
+                id: 'TaskID',
+                name: 'TaskName',
+                startDate: 'StartDate',
+                endDate: 'EndDate',
+                duration: 'Duration',
+                progress: 'Progress',
+                child: 'subtasks',
+                segments: 'Segments'
+            },
+            segmentData: [
+                { segmentId: 2, StartDate: new Date("04/02/2019"), Duration: 2 },
+                { segmentId: 2, StartDate: new Date("04/04/2019"), Duration: 2 },
+                { segmentId: 4, StartDate: new Date("04/02/2019"), Duration: 2 },
+                { segmentId: 4, StartDate: new Date("04/04/2019"), Duration: 2 }
+            ]
+      };
+  }
+};
+</script>
+
+```
+
+{% endtab %}
+
+>Note: Segment id field contains id of a task which should be split at load time.
+
 ## Limitations
 
 Gantt has the support for both Hierarchical and Self-Referential data binding. When rendering the Gantt control with SQL database, we suggest you to use the Self-Referential data binding to maintain the parent-child relation. Because the complex json structure is very difficult to manage it in SQL tables, we need to write a complex queries and we have to write a complex algorithm to find out the proper record details while updating/deleting the inner level task in Gantt data source. We cannot implement both data binding for Gantt control and this is not a recommended way. If  both child and parentID are mapped, the records will not render properly because, when task id of a record defined in the hierarchy structure is assigned to parent id of another record, in such case the records will not properly render. As the self-referential will search the record with particular id in flat data only, not in the inner level of records. If we map the parentID field,  it will be prioritized and Gantt will be rendered based on the parentID values.
