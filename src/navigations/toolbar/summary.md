@@ -7,5 +7,5 @@
 * [Set Essential JS 2 Tooltip to the commands](toolbar/how-to/set-tool-tip-to-the-commands.md)
 * [Set item-wise custom template](toolbar/how-to/set-item-wise-custom-template.md)
 * [Add Toggle Button](toolbar/how-to/add-toggle-button.md)
-* [How to customize toolbar scrollStep](toolbar/how-to/how-to-customize-toolbar-scroll-step.md)
+* [How to customize toolbar scrollStep](toolbar/how-to/customize-toolbar-scroll-step.md)
 * [Render other components in Toolbar using template](toolbar/how-to/render-other-components-in-toolbar-using-template.md)
