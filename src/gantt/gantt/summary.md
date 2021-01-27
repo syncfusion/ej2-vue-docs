@@ -1,6 +1,7 @@
 * [Getting Started](gantt/getting-started.md)
 * [Feature Modules](gantt/module.md)
 * [Data Binding](gantt/data-binding.md)
+* [Virtual Scrolling](gantt/virtual-scroll.md)
 * [Selection](gantt/selection.md)
 * [Filtering](gantt/filtering.md)
 * [Task Dependency](gantt/taskdependency.md)
