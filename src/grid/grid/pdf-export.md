@@ -1074,6 +1074,93 @@ export default {
 
 {% endtab %}
 
+## Exporting Grid in server
+
+The Grid have an option to export the data to PDF in server side using Grid server export library.
+
+### Server Dependencies
+
+The Server side export functionality is shipped in the Syncfusion.EJ2.GridExport package, which is available in Essential Studio and [nuget.org](https://www.nuget.org/).The following list of dependencies is required for Grid server side PDF exporting action.
+
+* Syncfusion.EJ2
+* Syncfusion.EJ2.GridExport
+
+### Server Configuration
+
+The following code snippet shows server configuration using ASP.NET Core Controller Action.
+
+To Export the Grid in server side, You need to call the
+ [`serverPdfExport`](../api/grid/#serverpdfexport) method for passing the Grid properties to server exporting action.
+
+```typescript
+
+        public ActionResult PdfExport([FromForm] string gridModel)
+        {
+            GridPdfExport exp = new GridPdfExport();
+            Grid gridProperty = ConvertGridObject(gridModel);
+            return exp.PdfExport<OrdersDetails>(gridProperty, OrdersDetails.GetAllRecords());
+        }
+
+        private Grid ConvertGridObject(string gridProperty)
+        {
+           Grid GridModel = (Grid)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(Grid));
+           GridColumnModel cols = (GridColumnModel)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(GridColumnModel));
+           GridModel.Columns = cols.columns;
+           return GridModel;
+        }
+
+        public class GridColumnModel
+        {
+            public List<GridColumn> columns { get; set; }
+        }
+
+```
+
+```html
+<template>
+    <div id="app">
+        <ejs-grid ref='grid' id='Grid' :dataSource='data' :toolbar='toolbarOptions' height='272px' :toolbarClick='toolbarClick'>
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Toolbar } from "@syncfusion/ej2-vue-grids";
+import { data } from './datasource.js';
+
+Vue.use(GridPlugin);
+
+export default {
+  data() {
+    return {
+      data: data,
+      toolbarOptions: ['PdfExport']
+    };
+  },
+  methods: {
+      toolbarClick: function(args) {
+        if (args.item.id === 'Grid_pdfexport') { // 'Grid_pdfexport' -> Grid component id + _ + toolbar item name
+            this.$refs.grid.serverPdfExport('Home/PdfExport');
+        }
+    }
+  },
+  provide: {
+    grid: [Toolbar]
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+
+```
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to#exporting-Grid-in-Cordova-application)
