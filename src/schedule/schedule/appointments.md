@@ -1392,7 +1392,7 @@ While editing the occurrence from the recurrence series, it is only possible to 
 ```html
 <template>
     <div id='app'>
-        <ejs-schedule height='550px' :selectedDate='selectedDate' :allowInline='allowInline' :currentView='currentView'>
+        <ejs-schedule height='550px' :selectedDate='selectedDate' :eventSettings='eventSettings' :allowInline='allowInline' :currentView='currentView'>
         </ejs-schedule>
     </div>
 </template>
