@@ -1161,6 +1161,8 @@ export default {
 
 ```
 
+> **Note:** Refer to the GitHub sample for quick implementation and testing from [here](https://github.com/SyncfusionExamples/Vue-EJ2-Grid-server-side-exporting).
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to#exporting-Grid-in-Cordova-application)
