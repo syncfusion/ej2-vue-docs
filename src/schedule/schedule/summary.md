@@ -28,3 +28,4 @@
 * [Prevent the Date Navigation](schedule/how-to/prevent-date-navigation.md)
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Styling And Appearance](schedule/how-to/scheduler-styling.md)
+* [Show quick info template](schedule/how-to/show-quick-info-template.md)
