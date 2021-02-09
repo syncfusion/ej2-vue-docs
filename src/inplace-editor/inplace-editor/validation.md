@@ -71,6 +71,8 @@ export default {
 
 ```
 
+{% endtab %}
+
 In the following sample, first editor value submitted without select any date, so the default error message will be displayed below the `DatePicker` element. Second editor configured with the [validating](../api/inplace-editor/#validating) event with the handler. In handler event [errorMessage](../api/inplace-editor/validateEventArgs/#errormessage) argument value modified and it will show below the `DatePicker` element.
 
 {% tab template="in-place-editor/getting-started", isDefaultActive=true %}
@@ -147,7 +149,8 @@ export default {
 @import "../node_modules/@syncfusion/ej2-vue-inplace-editor/styles/material.css";
 
 .table-section {
-    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
 }
 
 tr td:first-child {
