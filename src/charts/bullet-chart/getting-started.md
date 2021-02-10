@@ -68,7 +68,7 @@ You can register the bullet chart component in your application by using the `Vu
 Refer to the code example given below.
 
 ```typescript
-import { BulletChartPlugin } from '@syncfuion/ej2-vue-charts';
+import { BulletChartPlugin } from '@syncfusion/ej2-vue-charts';
 
 Vue.use(BulletChartPlugin);
 ```

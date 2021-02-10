@@ -42,7 +42,7 @@ Import the component plugin from the EJ2 Vue package and register it using Vue.u
 Refer to the following code snippet.
 
 ```typescript
-import { ButtonPlugin } from '@syncfuion/ej2-vue-buttons';
+import { ButtonPlugin } from '@syncfusion/ej2-vue-buttons';
 
 Vue.use(ButtonPlugin);
 ```

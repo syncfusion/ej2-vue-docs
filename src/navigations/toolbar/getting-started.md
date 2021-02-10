@@ -66,7 +66,7 @@ Import the Component Plugin from the EJ2 Vue Package and register the same using
 Refer the code snippet given below.
 
 ```typescript
-import { ToolbarPlugin } from '@syncfuion/ej2-vue-navigations';
+import { ToolbarPlugin } from '@syncfusion/ej2-vue-navigations';
 
 Vue.use(ToolbarPlugin);
 ```

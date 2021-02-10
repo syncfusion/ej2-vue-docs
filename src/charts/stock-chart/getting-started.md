@@ -72,7 +72,7 @@ You can register the Stock chart component in your application by using the `Vue
 Refer to the code example given below.
 
 ```typescript
-import { StockChartPlugin } from '@syncfuion/ej2-vue-charts';
+import { StockChartPlugin } from '@syncfusion/ej2-vue-charts';
 
 Vue.use(StockChartPlugin);
 ```

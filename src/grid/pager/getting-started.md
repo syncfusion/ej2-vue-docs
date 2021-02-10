@@ -49,7 +49,7 @@ You can register the pager component in your application by using the `Vue.use()
 Refer to the code example given below.
 
 ```typescript
-import { PagerPlugin } from '@syncfuion/ej2-vue-grids';
+import { PagerPlugin } from '@syncfusion/ej2-vue-grids';
 
 Vue.use(PagerPlugin);
 ```

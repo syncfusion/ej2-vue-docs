@@ -69,7 +69,7 @@ You can register the range navigator component in your application by using the 
 Refer to the code example given below.
 
 ```typescript
-import { RangeNavigatorPlugin } from '@syncfuion/ej2-vue-charts';
+import { RangeNavigatorPlugin } from '@syncfusion/ej2-vue-charts';
 
 Vue.use(RangeNavigatorPlugin);
 ```

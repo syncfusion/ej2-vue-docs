@@ -72,7 +72,7 @@ Import the Component Plugin from the EJ2 Vue Package and register the same using
 Refer the code snippet given below.
 
 ```typescript
-import { MapsPlugin } from '@syncfuion/ej2-vue-maps';
+import { MapsPlugin } from '@syncfusion/ej2-vue-maps';
 
 Vue.use(MapsPlugin);
 ```

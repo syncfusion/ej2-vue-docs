@@ -67,7 +67,7 @@ Import the Component Plugin from the EJ2 Vue Package and register the same using
 Refer the code snippet given below.
 
 ```typescript
-import { CircularGaugePlugin } from '@syncfuion/ej2-vue-circulargauge';
+import { CircularGaugePlugin } from '@syncfusion/ej2-vue-circulargauge';
 
 Vue.use(CircularGaugePlugin);
 ```

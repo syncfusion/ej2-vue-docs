@@ -10,7 +10,7 @@ description: "Learn how to refresh the datasource, exporting filtered data, enab
 
 ## Register the Grid using Vue.Component
 
-Import the `GridComponent` from the `@syncfuion/ej2-vue-grids` package,register the same using the `Vue.component()` with name of
+Import the `GridComponent` from the `@syncfusion/ej2-vue-grids` package,register the same using the `Vue.component()` with name of
 the grid selector and the GridComponent as its arguments.
 
 Refer to the code example given below.

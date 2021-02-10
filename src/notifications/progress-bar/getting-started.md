@@ -61,7 +61,7 @@ You can register the progressbar component in your application by using the `Vue
 Refer to the code example given below.
 
 ```typescript
-import { ProgressBarPlugin } from '@syncfuion/ej2-vue-charts';
+import { ProgressBarPlugin } from '@syncfusion/ej2-vue-charts';
 
 Vue.use(ProgressBarPlugin);
 ```

@@ -6,7 +6,7 @@ description: "Learn how to register the Grid using Vue.Component."
 
 # Register the Grid using Vue.Component
 
-Import the `GridComponent` from the `@syncfuion/ej2-vue-grids` package,register the same using the `Vue.component()` with name of
+Import the `GridComponent` from the `@syncfusion/ej2-vue-grids` package,register the same using the `Vue.component()` with name of
 the grid selector and the GridComponent as its arguments.
 
 Refer to the code example given below.

@@ -69,7 +69,7 @@ You can register the chart component in your application by using the `Vue.use()
 Refer to the code example given below.
 
 ```typescript
-import { AccumulationChartPlugin } from '@syncfuion/ej2-vue-charts';
+import { AccumulationChartPlugin } from '@syncfusion/ej2-vue-charts';
 
 Vue.use(AccumulationChartPlugin);
 ```

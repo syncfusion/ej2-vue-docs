@@ -61,7 +61,7 @@ Import the Component Plugin from the EJ2 Vue Package and register the same using
 Refer the code snippet given below.
 
 ```typescript
-import { TreeMapPlugin } from '@syncfuion/ej2-vue-treemap';
+import { TreeMapPlugin } from '@syncfusion/ej2-vue-treemap';
 
 Vue.use(TreeMapPlugin);
 ```

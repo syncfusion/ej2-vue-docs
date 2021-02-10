@@ -69,7 +69,7 @@ Import the Component Plugin from the EJ2 Vue Package and register the same using
 Refer the code snippet given below.
 
 ```typescript
-import { SparklinePlugin } from '@syncfuion/ej2-vue-charts';
+import { SparklinePlugin } from '@syncfusion/ej2-vue-charts';
 
 Vue.use(SparklinePlugin);
 ```
