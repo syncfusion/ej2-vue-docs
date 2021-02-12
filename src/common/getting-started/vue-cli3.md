@@ -2,14 +2,15 @@
 
 Vue CLI 3 is a complete rewrite of the previous version of the Vue command line interface tool and comes with a set of new features which makes Vue development and the management of Vue projects a lot easier.
 
-# Getting Started with Syncfusion Vue UI Components and Vue CLI
+## Getting Started with Syncfusion Vue UI Components and Vue CLI
 
 You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your Vue applications.
-At first it is mostly recommended to  uninstall the old Vue CLI package from your system. 
+At first it is mostly recommended to  uninstall the old Vue CLI package from your system.
 
 ```bash
 npm uninstall vue-cli -g
 ```
+
 Then install Vue CLI 3, use the following commands.
 
 ```bash
@@ -27,7 +28,7 @@ npm install
 
 ```
 
-Then we’ll be prompted with the option to pick a default preset or to manually select features. Using the arrow keys, we can highlight our selection. But now we can select the `default`, then hit enter. If you wish to select manually, please use this [`vue-create`](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) link for references. 
+Then we’ll be prompted with the option to pick a default preset or to manually select features. Using the arrow keys, we can highlight our selection. But now we can select the `default`, then hit enter. If you wish to select manually, please use this [`vue-create`](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) link for references.
 
 ```bash
 cd quickstart

@@ -74,7 +74,6 @@ export default {
 
 {% endtab %}
 
-
 ## Changing current locale
 
 Current locale can be changed for all the Essential JS 2 components in your application by invoking

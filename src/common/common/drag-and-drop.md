@@ -56,6 +56,7 @@ You can make any element draggable by passing the element to Draggable construct
 </style>
 
 ```
+
  {% endtab %}
 
 ## Creating Droppable zone
