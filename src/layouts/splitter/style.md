@@ -54,7 +54,8 @@ Use the following CSS to customize the split bar resize handle.
 }
 
 /* default split bar resize handle color in hover and active state */
-.e-splitter .e-split-bar.e-split-bar-horizontal.e-split-bar-hover .e-resize-handler {
+.e-splitter .e-split-bar.e-split-bar-horizontal.e-split-bar-hover .e-resize-handler,
+.e-splitter .e-split-bar.e-split-bar-horizontal.e-split-bar-active .e-resize-handler {
     color: green;
 }
 ```
@@ -68,7 +69,8 @@ Use the following CSS to customize the split bar resize handle.
 }
 
 /* default split bar resize handle color in hover and active state */
-.e-splitter .e-split-bar.e-split-bar-vertical.e-split-bar-hover .e-resize-handler {
+.e-splitter .e-split-bar.e-split-bar-vertical.e-split-bar-hover .e-resize-handler,
+.e-splitter .e-split-bar.e-split-bar-vertical.e-split-bar-active .e-resize-handler {
     color: green;
 }
 ```
