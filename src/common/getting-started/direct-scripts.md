@@ -1,4 +1,5 @@
 <!-- markdownlint-disable MD024 -->
+
 # Getting Started with Syncfusion Vue UI Components using direct scripts in a quickstart application
 
 This article provides a step-by-step introduction to configure Syncfusion Vue UI components (Essential JS 2) and build a simple HTML web application.
@@ -17,7 +18,7 @@ This article provides a step-by-step introduction to configure Syncfusion Vue UI
     > Scripts: `https://cdn.syncfusion.com/ej2/ej2-vue-es5/dist/ej2-vue.min.js`
     >
     > Styles: `https://cdn.syncfusion.com/ej2/material.css`
-3. Create an HTML file `~/quickstart/index.html` and add the below  Syncfusion and [Vue] (https://vuejs.org/v2/guide/installation.html#CDN) CDN link references. Now,  the `Button` element and register the `Syncfusion Vue Button` component in the index.html by using the following code.
+3. Create an HTML file `~/quickstart/index.html` and add the below  Syncfusion and [Vue] (<https://vuejs.org/v2/guide/installation.html#CDN>) CDN link references. Now,  the `Button` element and register the `Syncfusion Vue Button` component in the index.html by using the following code.
 
 {% tab template="common/getting-started-es5", sourceFiles="index.html", skipVue="true" %}
 
@@ -55,5 +56,4 @@ This article provides a step-by-step introduction to configure Syncfusion Vue UI
 {% endtab %}
 
 Note : While using Syncfusion Vue components  in DOM templates, camelCased property (isPrimary)  names need to specify  in the  kebab-cased (is-primary) equivalents.
-
 4. Finally, run the `~/quickstart/index.html` file in the web browser and it will render the Syncfusion Vue  Button component.
