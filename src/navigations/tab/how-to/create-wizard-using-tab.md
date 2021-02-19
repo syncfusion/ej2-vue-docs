@@ -382,11 +382,11 @@ export default {
                 }
                 let displayAmt = document.getElementById('amount');
                 if (document.getElementById('quota').value === 'Economy Class') {
-                     displayAmt.innerText = 'Total payable amount: $' + passCount * (300 + calcFare);
+                     displayAmt.innerText = "Total payable amount: $" + passCount * (300 + calcFare);
                 } else if (document.getElementById("quota").value === 'Business Class') {
-                     displayAmt.innerText = 'Total payable amount: $' + passCount * (500 + calcFare);
+                     displayAmt.innerText = "Total payable amount: $" + passCount * (500 + calcFare);
                 } else if (document.getElementById("quota").value === 'Common Class') {
-                    displayAmt.innerText = 'Total payable amount: $' + passCount * (150 + calcFare);
+                    displayAmt.innerText = "Total payable amount: $" + passCount * (150 + calcFare);
               }
           }
           document.getElementById('ticketDetailGrid').ej2_instances[0].dataSource = reserved;
