@@ -828,7 +828,7 @@ export default {
   },
   methods: {
     onDragStart: function(args) {
-        args.excludeSelectors = 'e-header-cells';
+        args.excludeSelectors = 'e-header-cells,e-header-day,e-header-date,e-all-day-cells';
     }
   },
   provide: {
@@ -1283,7 +1283,7 @@ export default {
               IsAllDay: cellData.isAllDay,
               Description: filteredData[0].Description
             };
-            scheduleObj.openEditor(eventData, 'Add', true);
+            scheduleObj.addEvent(eventData);
             this.draggedItemId = event.draggedNodeData.id;
           }
         }
