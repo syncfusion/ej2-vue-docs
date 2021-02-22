@@ -3,7 +3,7 @@
 * [Animation](dialog/animation.md)
 * [Resizing](dialog/resize.md)
 * [Dialog Utility](dialog/dialog-utlility.md)
-* [CSS Structure](dialog/style.md)
+* [Style and appearance](dialog/style.md)
 * [Localization](dialog/localization.md)
 * [Accessibility](dialog/accessibility.md)
 * [Create Nested Dialog](dialog/how-to/create-nested-dialog.md)
