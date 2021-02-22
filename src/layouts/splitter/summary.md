@@ -5,5 +5,5 @@
 * [Expand and Collapse](splitter/expand-collapse.md)
 * [Resize](splitter/resizing.md)
 * [Different Layouts](splitter/different-layouts.md)
-* [CSS Structure](splitter/style.md)
+* [Style and appearance](splitter/style.md)
 * [Globalization](splitter/globalization.md)
