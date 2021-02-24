@@ -186,7 +186,7 @@ Additionally, the regex condition has been added to the Location field, so that 
                         location: {
                             name: 'Location', validation: {
                                 required: true,
-                                regex: ['^[a-zA-Z0-9- ]*$', 'Special character(s) not allowed in this field']
+                                regex: ["^[a-zA-Z0-9- ]*$", 'Special character(s) not allowed in this field']
                             }
                         }
                     }
