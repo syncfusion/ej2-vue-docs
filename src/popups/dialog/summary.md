@@ -13,6 +13,7 @@
 * [Show Dialog with Full Screen](dialog/how-to/show-dialog-with-full-screen.md)
 * [Display a Dialog with Custom Position](dialog/how-to/display-a-dialog-with-custom-position.md)
 * [Prevent Closing of Modal Dialog](dialog/how-to/prevent-closing-of-modal-dialog.md)
+* [Prevent the focus on the first element](dialog/how-to/prevent-the-focus-on-the-first-element.md)
 * [Prevent Opening of the Dialog](dialog/how-to/prevent-opening-of-the-dialog.md)
 * [Read All the Values from Dialog on Button Click](dialog/how-to/read-all-the-values-from-dialog-on-button-click.md)
 * [Customize the Dialog Appearance](dialog/how-to/customize-the-dialog-appearance.md)
