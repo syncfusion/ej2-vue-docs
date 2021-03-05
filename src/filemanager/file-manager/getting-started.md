@@ -76,7 +76,7 @@ Import the FileManager Component Plugin from the EJ2 Vue Package and register th
 Refer the code snippet given below.
 
 ```typescript
-import { FileManagerPlugin } from "@syncfusion/ej2-vue-navigations";
+import { FileManagerPlugin } from "@syncfusion/ej2-vue-filemanager";
 
 Vue.use(FileManagerPlugin);
 ```
