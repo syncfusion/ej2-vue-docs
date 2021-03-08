@@ -40,7 +40,7 @@ template: "#Template"
                     Olive Way by 10:00PM </div>
             </div>
         </div>
-        <img src="http://npmci.syncfusion.com/development/demos/src/toast/resource/map.jpg" width="100%" height="70%">
+        <img src="https://ej2.syncfusion.com/demos/src/toast/resource/map.jpg" width="100%" height="70%">
     </div>
 </script>
    </div>

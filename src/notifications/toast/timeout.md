@@ -143,7 +143,7 @@ export default {
 
 .e-laura {
     border-radius: 50%;
-    background-image: url('http://npmci.syncfusion.com/development/documentation/samples/toast/toast-cs3/laura.png');
+    background-image: url('https://ej2.syncfusion.com/demos/src/toast/resource/laura.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px !important;
