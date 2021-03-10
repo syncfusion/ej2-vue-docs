@@ -3,7 +3,7 @@
 * [Types](sidebar/variations.md)
 * [Auto Close](sidebar/auto-close.md)
 * [Dock](sidebar/docking-sidebar.md)
-* [CSS Structure](sidebar/style.md)
+* [Styles and Appearance](sidebar/style.md)
 * [Sidebar with ListView](sidebar/how-to/sidebar-with-listview.md)
 * [Open and Close the Sidebar](sidebar/how-to/open-close-sidebar.md)
 * [Multiple Sidebar](sidebar/how-to/multiple-sidebar.md)
