@@ -1,7 +1,7 @@
 ---
 title: "Load Vue Dialog content using AJAX"
 component: "Dialog"
-description: "Covers customization features such as load content to the dialog from external sources, built-in alert, and confirmation model dialog."
+description: "This section explains how to load content to the dialog from external sources, built-in alert and confirmation modal in Syncfusion Vue Dialog component."
 ---
 
 # Load dialog content using AJAX
