@@ -69,7 +69,7 @@ export default {
                 removeUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Remove'
             },
             extensions: '.pdf, .png, .txt',
-            dropArea: "dropArea",
+            dropArea: "#dropArea",
             fileTemplate: function (){
                 return { template: demoVue }
             }
@@ -372,7 +372,7 @@ export default {
             saveUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Save',
             removeUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Remove'
           },
-          dropElement: '.control-fluid',
+          dropElement: '#dropTarget',
           filesList: [],
           filesDetails: [],
           parentElement: '',
