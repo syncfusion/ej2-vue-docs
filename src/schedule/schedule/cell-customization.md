@@ -160,7 +160,7 @@ The `cellTemplate` option accepts the template string and is used to customize t
 <template>
     <div id='app'>
         <div id='container'>
-            <ejs-schedule ref='scheduleObj' width='100%' height='550px' :selectedDate='selectedDate' :cellTemplate='cellTemplate'>
+            <ejs-schedule ref='scheduleObj' width='100%' height='550px' :selectedDate='selectedDate' :cellTemplate='cellTemplate' cssClass='schedule-cell-template'>
                 <e-views>
                     <e-view option='Day'></e-view>
                     <e-view option='Week'></e-view>
@@ -242,7 +242,13 @@ The `cellTemplate` option accepts the template string and is used to customize t
 
 .templatewrap {
   text-align: center;
+  /* In MONTH view the cell template is a SIBLING of event templates. So which is necessary to set the parent position relative and the child position absolute with 100% width */
+  position: absolute;
   width: 100%;
+}
+
+.schedule-cell-template.e-schedule .e-month-view .e-work-cells {
+  position: relative;
 }
 
 .templatewrap img {
