@@ -3,6 +3,7 @@
 * [Header](tab/header.md)
 * [Localization](tab/localization.md)
 * [Orientation](tab/orientation.md)
+* [Drag and Drop](tab/drag-and-drop.md)
 * [Accessibility](tab/accessibility.md)
 * [Style and Appearance](tab/style.md)
 * [Load content through Ajax](tab/how-to/load-content-through-post.md)
