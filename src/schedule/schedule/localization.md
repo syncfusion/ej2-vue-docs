@@ -376,9 +376,11 @@ Scheduler can be used with all valid date formats and by default it follows the 
 
 {% endtab %}
 
-## Time mode
+## Setting the time format
 
-The time mode of the Scheduler can be either 12 or 24 hours format which is completely based on the `locale` set to the Scheduler. Since the default `locale` value of the Scheduler is en-US, the time mode will be set to 12 hours format automatically.
+Time formats is a way of representing the time value in different string formats in the Scheduler. By default, the time mode of the Scheduler can be either 12 or 24 hours format which is completely based on the system’s local culture. You can also customize the format by using the `timeFormat` property. To know more about the time format standards, refer to the [Date and Time Format](https://ej2.syncfusion.com/vue/documentation/common/internationalization/#custom-formats) section.
+
+The following example demonstrates the Scheduler component in 24 hours format.
 
 {% tab template="schedule/localization", iframeHeight="588px" %}
 
@@ -386,7 +388,7 @@ The time mode of the Scheduler can be either 12 or 24 hours format which is comp
 <template>
     <div id='app'>
      <div id='container'>
-      <ejs-schedule :locale = 'locale' height='550px' :selectedDate='selectedDate' :eventSettings='eventSettings'>
+      <ejs-schedule :timeFormat='timeFormat' height='550px' :selectedDate='selectedDate' :eventSettings='eventSettings'>
            <e-views>
               <e-view option='Day'></e-view>
               <e-view option='Week'></e-view>
@@ -400,21 +402,15 @@ The time mode of the Scheduler can be either 12 or 24 hours format which is comp
 <script>
     import Vue from 'vue';
     import { scheduleData } from './datasource.js';
-    import { loadCldr } from '@syncfusion/ej2-base';
     import { SchedulePlugin, Day, Week, WorkWeek, Month } from '@syncfusion/ej2-vue-schedule';
-    import * as numberingSystems from './numberingSystems.json';
-    import * as gregorian from './ca-gregorian.json';
-    import * as numbers from './numbers.json';
-    import * as timeZoneNames from './timeZoneNames.json';
 
     Vue.use(SchedulePlugin);
-    loadCldr(numberingSystems, gregorian, numbers, timeZoneNames);
 
     export default {
         data () {
             return {
                height: '550px',
-               locale: 'fr-CH',
+               timeFormat: 'HH:mm',
                selectedDate: new Date(2018, 0, 15),
                eventSettings: { dataSource: scheduleData }
             }
@@ -438,6 +434,8 @@ The time mode of the Scheduler can be either 12 or 24 hours format which is comp
 ```
 
 {% endtab %}
+
+> Note: `timeFormat` property only accepts the valid time format's.
 
 ## Displaying Scheduler in RTL mode
 
