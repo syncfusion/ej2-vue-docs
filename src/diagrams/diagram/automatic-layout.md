@@ -1345,6 +1345,31 @@ export default {
 
 ```
 
+### Prevent connectors overlay
+
+The below constraints prevents the connector segments overlapping nodes with a complex hierarchical layout.
+
+```html
+
+export default {
+    name: 'app',
+    data() {
+        return {
+            width: "100%",
+            height: "590px",
+            layout: {
+                //this prevents connector segments overlapping
+                enableRouting: true
+            },
+        }
+    },
+    provide: {
+        diagram: [DataBinding, ComplexHierarchicalTree, LineDistribution]
+    },
+}
+
+```
+
 ## Customize layout
 
 Orientation, spacings, and position of the layout can be customized with a set of properties.

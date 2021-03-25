@@ -258,6 +258,64 @@ export default {
 
 >Note: HTML node cannot be exported to image format, like JPEG, PNG, and BMP. It is by design, while exporting the diagram is drawn in a canvas. Further, this canvas is exported into image formats. Currently, drawing in a canvas equivalent from all possible HTML is not feasible. Hence, this limitation.
 
+## HTML Node With Template
+
+Html elements can be embedded in the diagram through [`Html`](../api/diagram/node#shape-shapemodel) type node. The shape property of node allows you to set the type of node. The following code illustrates how an Html node is created with template.
+
+{% tab template="diagram/shapes/HTML", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+        <ejs-diagram id="diagram"  :width='width' :nodeTemplate='nodeTemplate' :height='height' :nodes='nodes' >
+        <input type="button" id="button" value= {{nodeId}}>
+        </ejs-diagram>
+    </div>
+</template>
+<script>
+    import Vue from 'vue';
+    import { DiagramPlugin,NodeModel } from '@syncfusion/ej2-vue-diagrams';
+    import NodeTemplate from "./complex-template.vue";
+    Vue.use(DiagramPlugin);
+
+    let nodeId;
+    let nodes = [{
+    //Id of the node
+    id: "Node",
+    //Position of the node
+    offsetX: 250,
+    offsetY: 250,
+    //Size of the node
+    width: 100,
+    height: 100,
+    //sets the type of the shape as HTML
+    shape: {
+        type: 'HTML'
+    }
+    as NodeModel
+}]
+export default {
+    name: 'app'
+    data() {
+        return {
+            nodeTemplate: function () {
+        return { template: NodeTemplate };
+            },
+            width: "100%",
+            height: "350px",
+            nodes: nodes,
+            nodeId: nodes[0].id,
+        }
+    }
+}
+</script>
+<style>
+    @import "../../node_modules/@syncfusion/ej2-vue-diagrams/styles/material.css";
+</style>
+```
+
+{% endtab %}
+
 ## Native
 
 Diagram provides support to embed SVG element into a node. The shape property of node allows you to set the type of node. To create a [`native`](../api/diagram/node#shape-shapemodel) node, it should be set as **native**. The following code illustrates how a native node is created.
