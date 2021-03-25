@@ -66,6 +66,10 @@ By default, the [showCloseButton](../api/toast/#showclosebutton) is not enabled.
 
 By default, the [showProgressBar](../api/toast/#showprogressbar) is not enabled. If it is enabled, it can visually indicate how long to get toast expires. Based on the [timeOut](../api/toast/#timeout) property, progress bar will appear.
 
+### Progress bar direction
+
+By default, the [progressDirection](../api/toast/#progressDirection) is set to "Rtl" and it will appear from right to left direction. You can change the progressDirection to "Ltr" to make it appear from left to right direction.
+
 ## Newest on top
 
 By default, the newly created toasts will append next with existing toasts. You can change the sequence like inserting before the toast by enabling the [newestOnTop](../api/toast/#newestontop).
@@ -78,7 +82,7 @@ Here, The following sample demonstrates the combination of the `target`, `showCl
 <template>
   <div id="app">
        <ejs-button ref='showButtonRef' class="e-btn" id="show_toast" v-on:click.native="showBtnClick">Show Toast</ejs-button>
-       <ejs-toast ref='defaultRef' title='File Downloading' content='<div class="progress"><span style="width: 80%"></span></div>' :position='position' showCloseButton=true target='#toast_target' newestOnTop=true showProgressBar=true></ejs-toast>
+       <ejs-toast ref='defaultRef' title='File Downloading' content='<div class="progress"><span style="width: 80%"></span></div>' :position='position' showCloseButton=true target='#toast_target' newestOnTop=true showProgressBar=true progressDirection="Ltr"></ejs-toast>
        <br/><br/>
        <div id='toast_target'></div>
   </div>

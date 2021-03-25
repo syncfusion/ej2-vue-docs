@@ -15,3 +15,4 @@
 * [Show multiple toasts in various positions](toast/how-to/show-multiple-toasts-in-various-positions.md)
 * [Close the toast with click/tap](toast/how-to/close-the-toast-with-click-tap.md)
 * [Add dynamic template](toast/how-to/add-dynamic-template.md)
+* [Prevent toast close with mobile swipe](toast/how-to/prevent-toast-close-with-mobile-swipe.md)
