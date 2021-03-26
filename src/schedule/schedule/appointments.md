@@ -748,6 +748,58 @@ export default {
 
 {% endtab %}
 
+### Drag and drop multiple appointments
+
+We can drag and drop multiple appointments by enabling the `allowMultiDrag` property. We can select multiple appointments by holding the CTRL key. Once the events are selected, we can leave the CTRL key and start dragging the event.
+
+We can also drag multiple events from one resource to another resource. In this case, if all the selected events are in the different resources, then all the events should be moved to the single resource that is related to the target event.
+
+{% tab template="schedule/event",  iframeHeight="588px" %}
+
+```html
+<template>
+  <div id='app'>
+    <div id='container'>
+        <ejs-schedule :height='height' :selectedDate='selectedDate' :allowMultiDrag='allowMultiDrag' :eventSettings='eventSettings'></ejs-schedule>
+    </div>
+  </div>
+</template>
+<script>
+import Vue from 'vue';
+import { SchedulePlugin, Day, Week, WorkWeek, Month, Agenda, DragAndDrop } from '@syncfusion/ej2-vue-schedule';
+import { scheduleData } from './datasource.js';
+
+Vue.use(SchedulePlugin);
+export default {
+  data (){
+    return {
+      height: '550px',
+      allowMultiDrag: true,
+      eventSettings: { dataSource: scheduleData },
+      selectedDate: new Date(2018, 1, 15),
+    }
+  },
+  provide: {
+    schedule: [Day, Week, WorkWeek, Month, Agenda, DragAndDrop]
+  }
+}
+
+</script>
+<style>
+  @import '../../node_modules/@syncfusion/ej2-base/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-buttons/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-dropdowns/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-inputs/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-navigations/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-popups/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css';
+</style>
+
+```
+
+{% endtab %}
+
 ### Disable the drag action
 
 By default, you can drag and drop the events within any of the applicable scheduler views, and to disable it, set `false` to the `allowDragAndDrop` property.
