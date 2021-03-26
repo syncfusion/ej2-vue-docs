@@ -182,6 +182,10 @@ export default {
 
 {% endtab %}
 
+## Limitation
+
+* Inserting multiple hyperlinks after selecting multiple ranges is not supported in Hyperlink.
+
 ## See Also
 
 * [Sorting](./sort)

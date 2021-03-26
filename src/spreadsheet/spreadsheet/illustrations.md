@@ -226,6 +226,13 @@ export default {
 
 {% endtab %}
 
+### Limitation of Image
+
+The following features have some limitations in Image:
+
+* Corner resizing option in the image element.
+* Copy and paste the external image.
+
 ## Chart
 
 A chart is a graphical representation of data, that organizes and represents a set of numerical or qualitative data. It mostly displays the selected range of data in terms of `x`-axis and `y`-axis. You can use the [`allowChart`](../api/spreadsheet/#allowChart) property to enable or disable the chart functionality.
@@ -355,6 +362,14 @@ export default {
 ```
 
 {% endtab %}
+
+### Limitation of Chart
+
+The following features have some limitations in the Chart:
+
+* Insert row/delete row between the chart data source will not reflect the chart.
+* Copy/paste into the chart data source will not reflect the chart.
+* Corner resizing option in chart element.
 
 ## See Also
 

@@ -120,3 +120,7 @@ export default {
 ```
 
 {% endtab %}
+
+## Limitation
+
+* Undo/redo for Replace All is not supported in this feature.
