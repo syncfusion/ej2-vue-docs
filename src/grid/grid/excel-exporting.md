@@ -397,6 +397,63 @@ export default {
 
 {% endtab %}
 
+### Export with filter options
+
+The excel export provides an option to export with filter option in excel by defining `enableFilter` as **true** .
+It requires the [`allowFiltering`](../api/grid/#allowfiltering) to be true.
+
+{% tab template="grid/excel/default" %}
+
+```html
+<template>
+    <div id="app">
+        <ejs-grid ref='grid' id='Grid' :dataSource='data' :allowFiltering='true' :toolbar='toolbarOptions' height='270px' :allowPaging='true' :allowExcelExport='true' :toolbarClick='toolbarClick'>
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width=150 :visible='false'></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Toolbar, ExcelExport, Filter } from "@syncfusion/ej2-vue-grids";
+import { data } from './datasource.js';
+
+Vue.use(GridPlugin);
+
+export default {
+  data() {
+    return {
+      data: data,
+      toolbarOptions: ['ExcelExport']
+    };
+  },
+  methods: {
+      toolbarClick: function(args) {
+         if (args.item.id === 'Grid_excelexport') { // 'Grid_excelexport' -> Grid component id + _ + toolbar item name
+            let excelExportProperties = {
+                enableFilter: true
+            };
+            this.$refs.grid.excelExport(excelExportProperties);
+        }
+    }
+  },
+  provide: {
+    grid: [Toolbar, ExcelExport, Filter]
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+
+```
+
+{% endtab %}
+
 ### Conditional Cell Formatting
 
 Grid cells in the exported Excel can be customized or formatted using [`excelQueryCellInfo`](../api/grid/#excelquerycellinfo) event. In this event, we can format the grid cells of exported PDF document based on the column cell value.

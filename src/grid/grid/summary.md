@@ -18,6 +18,7 @@
 * [Selection](grid/selection.md)
 * [Aggregates](grid/aggregates.md)
 * [Print](grid/print.md)
+* [Adaptive View](grid/adaptive.md)
 * [Hierarchical Binding](grid/hierarchy-grid.md)
 * [State persistence](grid/state-persistence.md)
 * [Toolbar](grid/tool-bar.md)
