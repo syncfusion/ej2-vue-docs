@@ -21,7 +21,7 @@ The following list of dependencies are required to use the RadioButton component
 
 ## Installation and configuration
 
-You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your vue applications.
+You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your Vue applications.
 To install Vue CLI use the following command.
 
 ```bash

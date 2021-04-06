@@ -21,7 +21,7 @@ The list of dependencies required to use the CheckBox component in your applicat
 
 ## Installation and configuration
 
-You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your vue applications.
+You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your Vue applications.
 To install Vue CLI use the following command.
 
 ```bash

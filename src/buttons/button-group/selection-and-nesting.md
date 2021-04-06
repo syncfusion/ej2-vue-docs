@@ -63,7 +63,7 @@ ButtonGroup supports checkbox type selection in which multiple button can be sel
 with its corresponding label. In this ButtonGroup, the type of the input element should be `checkbox` and `e-btn` is added to
 the `label` element.
 
-The following example illustrates the multiple selection behaviour in ButtonGroup,
+The following example illustrates the multiple selection behavior in ButtonGroup,
 
 {% tab template="button-group/getting-started" %}
 

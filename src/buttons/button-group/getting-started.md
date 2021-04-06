@@ -19,7 +19,7 @@ The list of dependencies required to use the Button component in your applicatio
 
 ## Installation and configuration
 
-* You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your vue applications. To install Vue CLI use the following command.
+* You can use [`Vue CLI`](https://github.com/vuejs/vue-cli) to setup your Vue applications. To install Vue CLI use the following command.
 
 ```bash
 npm install -g @vue/cli
@@ -129,7 +129,7 @@ ButtonGroup can be arranged in vertical and horizontal orientation. By default, 
 
 ### Vertical Orientation
 
-ButtonGroup can be aligned vertically using the build-in CSS class `e-vertical` to the target element.
+ButtonGroup can be aligned vertically using the built-in CSS class `e-vertical` to the target element.
 
 The following example illustrates how to achieve vertical orientation in ButtonGroup,
 

@@ -6,7 +6,7 @@ description: "Vue Checkbox component supports two-way binding."
 
 # Two-Way Binding
 
-It can be achieved by using the `v-model` directive in vue. In the following sample, when you check or uncheck a value in one CheckBox will automatically check or unchecks the value in the other CheckBox. It updates the other CheckBox using `value` property.
+It can be achieved by using the `v-model` directive in Vue. In the following sample, when you check or uncheck a value in one CheckBox will automatically check or unchecks the value in the other CheckBox. It updates the other CheckBox using `value` property.
 
 {% tab template="radio-button/default", isDefaultActive=true %}
 
