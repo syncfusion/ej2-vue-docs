@@ -271,7 +271,7 @@ export default {
 
 {% endtab %}
 
-## Limitation
+## Limitations
 
 The following features have some limitations in Insert/Delete:
 

@@ -118,7 +118,7 @@ export default {
 
 {% endtab %}
 
-## Limitation
+## Limitations
 
 * Text overflow in cells is not supported in Editing.
 

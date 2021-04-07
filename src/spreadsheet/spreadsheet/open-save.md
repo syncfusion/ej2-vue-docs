@@ -126,6 +126,87 @@ export default {
 > * Use `Ctrl + S` keyboard shortcut to save the Spreadsheet data as Excel file.
 > * The default value of [allowSave](../api/spreadsheet/#allowsave) property is `true`. For demonstration purpose, we have showcased the [allowSave](../api/spreadsheet/#allowsave) property in previous code snippet.
 
+### Methods
+
+To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [save](../api/spreadsheet/#save) method should be called with the `url`, `fileName` and `saveType` as parameters. The following code example shows to save the spreadsheet file as an `xlsx, xls, csv, or pdf` in the button click event.
+
+{% tab template="spreadsheet/undo-redo", iframeHeight="450px" %}
+
+```html
+<template>
+  <div>
+    <ejs-button id='xlsx' v-on:click.native="xlsx">Save As xlsx</ejs-button>
+    <ejs-button id='xls' v-on:click.native="xlsx">Save As xls</ejs-button>
+    <ejs-button id='csv' v-on:click.native="xlsx">Save As csv</ejs-button>
+    <ejs-button id='pdf' v-on:click.native="xlsx">Save As pdf</ejs-button>
+    <ejs-spreadsheet ref="spreadsheet">
+      <e-sheets>
+          <e-sheet>
+            <e-ranges>
+              <e-range :dataSource="dataSource"></e-range>
+            </e-ranges>
+             <e-columns>
+              <e-column :width="width1"></e-column>
+              <e-column :width="width2"></e-column>
+            </e-columns>
+          </e-sheet>
+        </e-sheets></ejs-spreadsheet>
+        <div>
+</template>
+
+<script>
+import Vue from "vue";
+import { SpreadsheetPlugin, getRangeIndexes } from "@syncfusion/ej2-vue-spreadsheet";
+import { addClass, removeClass } from '@syncfusion/ej2-base';
+import { ButtonPlugin } from "@syncfusion/ej2-vue-buttons";
+import { defaultData } from './data.js';
+Vue.use(SpreadsheetPlugin);
+Vue.use(ButtonPlugin);
+export default {
+   data: () => {
+    return {
+      dataSource: defaultData,
+      width1: 130,
+      width2: 96,
+    }
+  },
+  methods: {
+  xlsx: function(event) {
+      var spreadsheet = this.$refs.spreadsheet;
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
+    },
+    xls: function(event) {
+      var spreadsheet = this.$refs.spreadsheet;
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
+    },
+    csv: function(event) {
+      var spreadsheet = this.$refs.spreadsheet;
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Csv"});
+    },
+    pdf: function(event) {
+      var spreadsheet = this.$refs.spreadsheet;
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Pdf"});
+    }
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-spreadsheet/styles/material.css";
+ @import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-grids/styles/material.css';
+ @import "../node_modules/@syncfusion/ej2-spreadsheet/styles/material.css";
+
+</style>
+```
+
+{% endtab %}
+
 ## Server Configuration
 
 Import and export are processed in `server-side` using Spreadsheet server library. The following code snippets shows server configuration using `WebAPI` service,

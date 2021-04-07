@@ -182,7 +182,7 @@ export default {
 
 {% endtab %}
 
-## Limitation
+## Limitations
 
 * Inserting multiple hyperlinks after selecting multiple ranges is not supported in Hyperlink.
 
