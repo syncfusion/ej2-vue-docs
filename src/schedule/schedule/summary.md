@@ -17,6 +17,7 @@
 * [Timescale Customization](schedule/timescale.md)
 * [Working Days and Hours](schedule/working-days.md)
 * [Cell Customizations](schedule/cell-customization.md)
+* [State Persistence](schedule/state-persistence.md)
 * [Exporting](schedule/exporting.md)
 * [Context Menu](schedule/context-menu.md)
 * [Scheduler Dimensions](schedule/dimensions.md)
