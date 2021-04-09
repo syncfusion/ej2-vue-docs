@@ -32,7 +32,7 @@ The available `protectSettings` options in spreadsheet are,
 
 By default, the `Protect Sheet` module is injected internally into the Spreadsheet to perform sheet protection function.
 
-### User Interface
+**User Interface**:
 
 In the active Spreadsheet, the sheet protection can be done by any of the following ways:
 
@@ -116,7 +116,7 @@ export default {
 
 Unprotect sheet is used to enable all the functionalities that are already disabled in a protected spreadsheet.
 
-### User Interface
+**User Interface**:
 
 In the active Spreadsheet, the sheet Unprotection can be done by any of the following ways:
 
@@ -244,7 +244,7 @@ You can use the [`isProtected`](../api/spreadsheet/#isProtected) property to pro
 
 > The default value for `isProtected` property is `false`.
 
-### User Interface
+**User Interface**:
 
 In the active Spreadsheet, you can protect the worksheet by selecting the Data tab in the Ribbon toolbar and choosing the `Protect Workbook` item. Then, enter the password and confirm it and click on OK.
 
@@ -342,7 +342,7 @@ export default {
 
 Unprotect Workbook is used to enable the insert, delete, rename, move, copy, hide or unhide sheets feature  in the spreadsheet.
 
-### User Interface
+**User Interface**:
 
 In the active Spreadsheet, the workbook Unprotection can be done in any of the following ways:
 

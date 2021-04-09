@@ -12,7 +12,7 @@ The native data format for Spreadsheet is `JSON`. When you open an excel file, i
 
 The Spreadsheet control opens an Excel document with its data, style, format, and more. To enable this feature, set [`allowOpen`](../api/spreadsheet/#allowopen) as `true` and assign service url to the [`openUrl`](../api/spreadsheet/#openurl) property.
 
-### User Interface
+**User Interface**:
 
 In user interface you can open an Excel document by clicking `File > Open` menu item in ribbon.
 
@@ -62,7 +62,7 @@ export default {
 
 The Spreadsheet control saves its data, style, format, and more as Excel file document. To enable this feature, set [`allowSave`](../api/spreadsheet/#allowsave) as `true` and assign service url to the [`saveUrl`](../api/spreadsheet/#saveurl) property.
 
-### User Interface
+**User Interface**:
 
 In user interface, you can save Spreadsheet data as Excel document by clicking `File > Save As` menu item in ribbon.
 
