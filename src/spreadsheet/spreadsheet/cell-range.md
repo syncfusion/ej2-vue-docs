@@ -454,6 +454,116 @@ The following features have some limitations in Data Validation:
 * Copy/paste with data validation.
 * Delete cells between data validation applied range.
 
+## Clear
+
+Clear feature helps you to clear the cell contents (formulas and data), formats (including number formats, conditional formats, and borders) in a spreadsheet. The cleared cells will remain blank or unformatted or content on the worksheet.
+
+### Apply Clear Feature
+
+You can apply clear feature by using one of the following ways,
+
+* Select the clear icon in the Ribbon toolbar under the Home Tab.
+* Using the [`clear()`](../api/spreadsheet/#clear) method to clear the values.
+
+Clear has the following types in the spreadsheet,
+
+| Options | Uses |
+|-----|------|
+| `Clear All` | Used to clear all contents, formats, and hyperlinks.  |
+| `Clear Formats` | Used to clear the formats (including number formats, conditional formats, and borders) in a cell. |
+| `Clear Contents` | Used to clear the contents (formulas and data) in a cell. |
+| `Clear Hyperlinks` | Used to clear the hyperlink in a cell. |
+
+### Methods
+
+Clear the cell contents and formats in the Spreadsheet document by using the [clear](../api/spreadsheet/#clear) method. The [clear](../api/spreadsheet/#clear) method has `type` and `range` as parameters. The following code example shows how to clear the cell contents and formats in the button click event.
+
+{% tab template="spreadsheet/clear", iframeHeight="450px" %}
+
+```html
+<template> <div>
+<ejs-dropdownbutton :items='items' :select='itemSelect'>Clear</ejs-dropdownbutton>
+   <ejs-spreadsheet ref="spreadsheet" :created="created">
+   <e-sheets>
+          <e-sheet>
+           <e-columns>
+                      <e-column :width=88></e-column>
+                      <e-column :width=88></e-column>
+                      <e-column :width=160></e-column>
+                      <e-column :width=100></e-column>
+                      <e-column :width=150></e-column>
+                    </e-columns>
+            <e-ranges>
+              <e-range :dataSource="dataSource"></e-range>
+            </e-ranges>
+          </e-sheet>
+        </e-sheets></ejs-spreadsheet></div>
+</template>
+
+<script>
+import Vue from "vue";
+import { SpreadsheetPlugin } from "@syncfusion/ej2-vue-spreadsheet";
+import { DropDownButtonPlugin } from "@syncfusion/ej2-vue-splitbuttons";
+import { orderData } from './data.js';
+Vue.use(SpreadsheetPlugin);
+Vue.use(DropDownButtonPlugin);
+
+export default {
+   data: () => {
+    return {
+      dataSource: orderData,
+      items:[
+        {
+          text: "Clear All"
+        },
+        {
+          text: "Clear Formats"
+        },
+        {
+          text: "Clear Contents"
+        },
+        {
+          text: "Clear Hyperlinks"
+        }]
+    }
+  },
+   methods: {
+   created: function () {
+        var spreadsheet = this.$refs.spreadsheet;
+        spreadsheet.cellFormat({ fontWeight: 'bold', fontSize: '12pt'}, 'A1:E1');
+        spreadsheet.cellFormat({ color: '#10c469' }, 'B1:B10');
+      },
+
+     itemSelect: function(args) {
+      var spreadsheet = this.$refs.spreadsheet;
+      if (args.item.text === 'Clear All')
+        spreadsheet.clear({ type: 'Clear All', range: 'D1:D10' }); // Clear the content, formats and hyperlinks applied in the provided range.
+      if (args.item.text === 'Clear Formats')
+        spreadsheet.clear({ type: 'Clear Formats', range: 'B1:B10' }); // Clear the formats applied in the provided range
+      if (args.item.text === 'Clear Contents')
+        spreadsheet.clear({ type: 'Clear Contents', range: 'A1:A10' }); // Clear the content in the provided range
+      if (args.item.text === 'Clear Hyperlinks')
+        spreadsheet.clear({ type: 'Clear Hyperlinks', range: 'F2:F6' }); // Clear the hyperlinks applied in the provided range
+   }
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-spreadsheet/styles/material.css";
+ @import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-grids/styles/material.css';
+ @import "../node_modules/@syncfusion/ej2-spreadsheet/styles/material.css";
+</style>
+```
+
+{% endtab %}
+
 ## See Also
 
 * [Rows and columns](./rows-and-columns)

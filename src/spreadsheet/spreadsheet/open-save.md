@@ -130,15 +130,15 @@ export default {
 
 To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [save](../api/spreadsheet/#save) method should be called with the `url`, `fileName` and `saveType` as parameters. The following code example shows to save the spreadsheet file as an `xlsx, xls, csv, or pdf` in the button click event.
 
-{% tab template="spreadsheet/undo-redo", iframeHeight="450px" %}
+{% tab template="spreadsheet/save", iframeHeight="450px" %}
 
 ```html
 <template>
   <div>
     <ejs-button id='xlsx' v-on:click.native="xlsx">Save As xlsx</ejs-button>
-    <ejs-button id='xls' v-on:click.native="xlsx">Save As xls</ejs-button>
-    <ejs-button id='csv' v-on:click.native="xlsx">Save As csv</ejs-button>
-    <ejs-button id='pdf' v-on:click.native="xlsx">Save As pdf</ejs-button>
+    <ejs-button id='xls' v-on:click.native="xls">Save As xls</ejs-button>
+    <ejs-button id='csv' v-on:click.native="csv">Save As csv</ejs-button>
+    <ejs-button id='pdf' v-on:click.native="pdf">Save As pdf</ejs-button>
     <ejs-spreadsheet ref="spreadsheet">
       <e-sheets>
           <e-sheet>
@@ -175,15 +175,15 @@ export default {
       var spreadsheet = this.$refs.spreadsheet;
       spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
     },
-    xls: function(event) {
+  xls: function(event) {
       var spreadsheet = this.$refs.spreadsheet;
       spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
     },
-    csv: function(event) {
+  csv: function(event) {
       var spreadsheet = this.$refs.spreadsheet;
       spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Csv"});
     },
-    pdf: function(event) {
+  pdf: function(event) {
       var spreadsheet = this.$refs.spreadsheet;
       spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Pdf"});
     }
