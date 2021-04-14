@@ -19,7 +19,7 @@ You can render other components inside Accordion using Vue **template**. Through
     <div id="app">
    <ejs-accordion >
         <e-accordionitems>
-        <e-accordionitem expanded='true' header='Calender' :content='Template1'></e-accordionitem>
+        <e-accordionitem expanded='true' header='Calendar' :content='Template1'></e-accordionitem>
         <e-accordionitem header='DatePicker' :content='Template2'></e-accordionitem>
         <e-accordionitem header='Numeric Textbox' :content='Template3'></e-accordionitem>
       </e-accordionitems>
@@ -41,7 +41,7 @@ export default {
     return {
          Template1: function () {
           return {
-          template: Vue.component('CalenderComponent', {
+          template: Vue.component('CalendarComponent', {
             template: '<ejs-calendar ></ejs-calendar>',
             data() { return {  }; }
           })
