@@ -4,6 +4,7 @@
 * [Grouping](drop-down-list/grouping.md)
 * [Filtering](drop-down-list/filtering.md)
 * [Localization](drop-down-list/localization.md)
+* [Style and appearance](drop-down-list/style.md)
 * [Accessibility](drop-down-list/accessibility.md)
 * [Two-Way Binding](drop-down-list/two-way-binding.md)
 * [Add item in between in DropDownList](drop-down-list/how-to/add-item.md)
