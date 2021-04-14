@@ -6,17 +6,16 @@ description: "Learn how to Custom Tooltip for columns."
 
 # Custom Tooltip for columns
 
-To display custom ToolTip ([`EJ2 Tooltip`](../../../tooltip/getting-started)) you can render the Grid control inside the Tooltip component and set the target as `.e-rowcell`. The tooltip is displayed when hovering the grid cells.
+To display a custom ToolTip ([`EJ2 Tooltip`](../../../tooltip/getting-started)), you can render the Grid control inside the Tooltip component and set the target as `.e-rowcell`. The tooltip is displayed when hovering the grid cells.
 
-Change the tooltip content for the grid cells by using the following code in the mouseover event.
+Change the tooltip content for the grid cells by using the following code in the [`beforeRender`](../../../api/tooltip/#beforerender) event.
 
 ```typescript
-tooltipcontent(args) {
-  this.$refs.grid.$el.addEventListener("mouseover", args => {
-    if (args.target.closest("td")) {
-      this.$refs.tooltip.content = args.target.innerText; // changing the tooltip content with the cell value
-    }
-});
+beforeRender(args) {
+  if (args.target.closest("td")) {
+  // event triggered before render the tooltip on target element.
+    this.$refs.tooltip.content = args.target.innerText;
+  }
 }
 ```
 
@@ -25,8 +24,8 @@ tooltipcontent(args) {
 ```html
 <template>
     <div id="app">
-    <ejs-tooltip ref="tooltip" target=".e-rowcell">
-      <ejs-grid ref="grid" :dataSource="data" :load="tooltipcontent" height="315px">
+    <ejs-tooltip ref="tooltip" target=".e-rowcell" :beforeRender="beforeRender">
+      <ejs-grid ref="grid" :dataSource="data" height="315px">
         <e-columns>
           <e-column field="OrderID" headerText="Order ID" textAlign="Right" width="90"></e-column>
           <e-column field="CustomerID" headerText="Customer ID" width="120"></e-column>
@@ -53,12 +52,10 @@ Vue.use(GridPlugin);
       };
     },
     methods: {
-      tooltipcontent: function (args) {
-        this.$refs.grid.$el.addEventListener("mouseover", args => {
-          if (args.target.closest("td")) {
+      beforeRender: function (args) {
+        if (args.target.closest("td")) {
            this.$refs.tooltip.content = args.target.innerText;
-          }
-        });
+        }
       }
     }
   }
