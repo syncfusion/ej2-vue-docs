@@ -163,11 +163,10 @@ In the following example, Drag the card from one Kanban and drop it into another
 ```html
 <template>
   <div id="app">
-  <table>
-  <tbody>
-    <tr>
-      <td>
-        <h4>Kanban A</h4>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+      <h4>Kanban A</h4>
        <ejs-kanban id="kanbanA" ref="kanbanObjA" keyField="Status" :dataSource="kanbanData"
         :cardSettings="cardSettings" :externalDropId='externalKanbanADropId' :dragStop="kanbanDragStopA">
           <e-columns>
@@ -175,8 +174,8 @@ In the following example, Drag the card from one Kanban and drop it into another
             <e-column headerText="Done" keyField="Close"></e-column>
           </e-columns>
         </ejs-kanban>
-         </td>
-      <td>
+      </div>
+      <div class="col-sm-6">
         <h4>Kanban B</h4>
         <ejs-kanban id="kanbanB" ref="kanbanObjB" keyField="Status" :dataSource="kanbanData"
         :cardSettings="cardSettings" :externalDropId='externalKanbanBDropId' :dragStop="kanbanDragStopB">
@@ -185,11 +184,10 @@ In the following example, Drag the card from one Kanban and drop it into another
            <e-column headerText="Done" keyField="Close"></e-column>
           </e-columns>
         </ejs-kanban>
-        </td>
-    </tr>
-  </tbody>
-</table>
+      </div>
+    </div>
   </div>
+ </div>
 </template>
 
 <script>
@@ -206,8 +204,8 @@ export default {
         contentField: "Summary",
         headerField: "Id"
       },
-      externalKanbanADropId: ['#kanbanA'],
-      externalKanbanBDropId: ['#kanbanB']
+      externalKanbanADropId: ['#kanbanB'],
+      externalKanbanBDropId: ['#kanbanA']
     };
   },
    methods: {
@@ -259,6 +257,9 @@ export default {
 @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-vue-kanban/styles/material.css';
+.row {
+  display: flex;
+}
 </style>
 
 ```
@@ -276,26 +277,24 @@ In the following sample, remove the data from the Kanban board using the `delete
 ```html
 <template>
   <div id="app">
-  <table>
-  <tbody>
-    <tr>
-      <td>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
         <h4>Kanban</h4>
        <ejs-kanban id="kanban" ref="kanbanObj" keyField="Status" :dataSource="kanbanData"
-        :cardSettings="cardSettings" :externalDropId='externalKanbanADropId' :dragStop="kanbanDragStop">
+        :cardSettings="cardSettings" :externalDropId='externalKanbanDropId' :dragStop="kanbanDragStop">
           <e-columns>
             <e-column headerText="To Do" keyField="Open"></e-column>
             <e-column headerText="Done" keyField="Close"></e-column>
           </e-columns>
         </ejs-kanban>
-         </td>
-      <td>
+        </div>
+      <div class="col-sm-6">
         <h4>TreeView</h4>
-            <ejs-treeview id='treeView' ref="treeViewObj" :nodeTemplate="treeTemplate" :fields='treeViewFields' :allowDragAndDrop=true :nodeDragStop="onTreeDragStop"></ejs-treeview>
-        </td>
-    </tr>
-  </tbody>
-</table>
+            <ejs-treeview id='treeView' ref="treeViewObj" :nodeTemplate="treeTemplate" :fields='treeViewFields' :allowDragAndDrop=true :nodeDragStop="onItemDragStop"></ejs-treeview>
+        </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -309,7 +308,7 @@ import { TreeViewPlugin } from "@syncfusion/ej2-vue-navigations";
 Vue.use(TreeViewPlugin);
 
  var treeVue = Vue.component("tree-template", {
-        template: '<div id="treelist"><div id="treeviewlist">{{Id}} - {{Status}}</div></div>',
+        template: '<div id="treelist"><div id="treeviewlist">{{data.Id}} - {{data.Status}}</div></div>',
         data() {
             return {
                 data: {}
@@ -342,7 +341,7 @@ export default {
             args.cancel = true;
           }
       },
-      onItemDrag: function (args) {
+      onItemDragStop: function (args) {
         let kanbanElement = closest(args.event.target as Element, '#kanban');
         let kanbanObj = this.$refs.kanbanObj.ej2Instances;
         let treeObj = this.$refs.treeViewObj.ej2Instances;
@@ -368,6 +367,9 @@ export default {
 @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-vue-kanban/styles/material.css';
+.row {
+  display: flex;
+}
 </style>
 
 ```
@@ -385,20 +387,18 @@ In the following sample, remove the data from the Kanban board using the `delete
 ```html
 <template>
   <div id="app">
-  <table>
-  <tbody>
-    <tr>
-      <td>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6" style="width: 30%">
         <h4>Kanban</h4>
-       <ejs-kanban id="kanban" ref="kanbanObj" keyField="Status" :dataSource="kanbanData"
-        :cardSettings="cardSettings" :externalDropId='externalKanbanADropId' :dragStop="kanbanDragStop">
+       <ejs-kanban id="kanban" ref="kanbanObj" keyField="DepartmentName" :dataSource="kanbanData"
+        :cardSettings="cardSettings" :externalDropId='externalKanbanDropId' :dragStop="kanbanDragStop">
           <e-columns>
-            <e-column headerText="To Do" keyField="Open"></e-column>
-            <e-column headerText="Done" keyField="Close"></e-column>
+            <e-column headerText="GENERAL" keyField="GENERAL"></e-column>
           </e-columns>
         </ejs-kanban>
-         </td>
-      <td>
+      </div>
+      <div class="col-sm-6"  style="width: 70%">
         <h4>TreeView</h4>
           <ejs-schedule id='schedule' ref="scheduleObj" height="650px" :cssClass='cssClass' :selectedDate='selectedDate' :eventSettings='eventSettings'
                   :group='group' :currentView='currentView' :resourceHeaderTemplate='resourceHeaderTemplate' :dragStop="onItemDragStop">
@@ -415,10 +415,9 @@ In the following sample, remove the data from the Kanban board using the `delete
                       </e-resource>
                   </e-resources>
               </ejs-schedule>
-        </td>
-    </tr>
-  </tbody>
-</table>
+        </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -426,23 +425,18 @@ In the following sample, remove the data from the Kanban board using the `delete
 import Vue from "vue";
 import { KanbanPlugin } from '@syncfusion/ej2-vue-kanban';
 import { extend, closest } from '@syncfusion/ej2-base';
-import { kanbanData, treeViewData } from './datasource.js';
+import { kanbanData, scheduleData } from './datasource.js';
 Vue.use(KanbanPlugin);
 import { SchedulePlugin, TimelineViews, TimelineMonth, View, Resize, DragAndDrop } from "@syncfusion/ej2-vue-schedule";
 Vue.use(SchedulePlugin);
 
 var resourceHeaderVue = Vue.component("resource-headerTemplate", {
-      template: '<div className="template-wrap"><div class="specialist-category"><div v-if=getConsultantImageName(data)><img class="specialist-image" :src="getImage" :alt="getImage"/></div><div class="specialist-name">' +
+      template: '<div className="template-wrap"><div class="specialist-category"><div v-if=getConsultantImageName(data)></div><div class="specialist-name">' +
                 '{{getConsultantName(data)}}</div><div class="specialist-designation">{{getConsultantDesignation(data)}}</div></div></div>',
       data() {
           return {
               data: {}
           };
-      },
-      computed: {
-          getImage: function() {
-              return './source/schedule/images/' + this.getConsultantName(this.data).toLowerCase() + '.png';
-          }
       },
       methods: {
           getConsultantName: function (data) {
@@ -475,7 +469,7 @@ export default {
     return {
       kanbanData: extend([], kanbanData, null, true),
       cardSettings: {
-        contentField: "Summary",
+        contentField: "Name",
         headerField: "Id"
       },
       externalKanbanDropId: ['#schedule'],
@@ -509,7 +503,7 @@ export default {
       ],
       resourceHeaderTemplate: function (e) {
           return { template: resourceHeaderVue }
-      },
+      }
     };
   },
   methods: {
@@ -554,6 +548,9 @@ export default {
 @import '../node_modules/@syncfusion/ej2-schedule/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-compression/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-vue-kanban/styles/material.css';
+.row {
+  display: flex;
+}
 </style>
 
 ```
