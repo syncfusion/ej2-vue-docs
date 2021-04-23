@@ -1,10 +1,10 @@
 ---
-title: "How To"
+title: "Styles and Appearances"
 component: "ColorPicker"
-description: "Learn how to change default styling of the ColorPicker component"
+description: "This section explains the details of the styles and appearances of the Vue ColorPicker"
 ---
 
-# Styling
+# Styles and Appearances
 
 To modify the ColorPicker appearance, you need to override the default CSS of ColorPicker component. Please find the list of CSS classes and its corresponding section in ColorPicker component. Also, you have an option to create your own custom theme for the controls using our [`Theme Studio`](https://ej2.syncfusion.com/themestudio/?theme=material).
 
