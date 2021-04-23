@@ -1,6 +1,7 @@
 * [Getting Started](switch/getting-started.md)
 * [Accessibility](switch/accessibility.md)
 * [Two-Way Binding](switch/two-way-binding.md)
+* [Styles and Appearances](switch/style-and-appearance.md)
 * [Change Size](switch/how-to/change-size.md)
 * [Enable ripple for Switch label](switch/how-to/enable-ripple-for-switch-label.md)
 * [Enable RTL](switch/how-to/enable-rtl.md)
