@@ -1189,6 +1189,56 @@ export default {
 
 {% endtab %}
 
+### How to open QuickInfo popup on multiple cell selection
+
+By default the `QuickInfo` popup will open on single click of the cell. To open the quick info popup on multiple cell selection, you need to select the cells and press `enter` key. You can open this popup immediately after multiple cell selection by setting up `true` to `quickInfoOnSelectionEnd` property where as its default value is `false`.
+
+{% tab template="schedule/editor-window", iframeHeight="588px"  %}
+
+```html
+<template>
+  <div id='app'>
+    <div id='container'>
+        <ejs-schedule :height='height' :width='width' :views='views' :quickInfoOnSelectionEnd='quickInfoOnSelectionEnd'></ejs-schedule>
+    </div>
+  </div>
+</template>
+<script>
+import Vue from 'vue';
+import { SchedulePlugin, Day, Week, Month, TimelineViews, Agenda } from '@syncfusion/ej2-vue-schedule';
+
+Vue.use(SchedulePlugin);
+
+export default {
+  data (){
+    return {
+      height: '550px',
+      width: '100%',
+      views: ['TimelineDay', 'Day', 'Week', 'Month', 'Agenda'],
+      quickInfoOnSelectionEnd: true,
+    }
+  },
+  provide: {
+    schedule: [TimelineViews, Day, Week, Month, Agenda]
+  }
+}
+
+</script>
+<style>
+  @import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-buttons/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-dropdowns/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-inputs/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-navigations/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-popups/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css";
+</style>
+
+```
+
+{% endtab %}
+
 ### How to change the watermark text of quick popup subject
 
 By default, `Add Title` text is displayed on the subject field of quick popup. To change the default watermark text, change the value of the appropriate localized word collection used in the Scheduler.

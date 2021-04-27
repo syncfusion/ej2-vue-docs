@@ -355,6 +355,64 @@ You can customize cells such as work cells, month cells, all-day cells, header c
 | minorSlot | triggers on minor time slot cell rendering.|
 | weekNumberCell | triggers on cell displaying week number.|
 
+## Customizing cell header in month view
+
+The month header of each date cell in the month view can be customized using the `cellHeaderTemplate` option which accepts the string or HTMLElement. The corresponding date can be accessed with the template.
+
+{% tab template="schedule/cell-dimension", iframeHeight="588px"  %}
+
+```html
+<template>
+    <div id='app'>
+        <div id='container'>
+            <ejs-schedule ref='scheduleObj' width='100%' height='550px' :cellHeaderTemplate='cellHeaderTemplate' cssClass='schedule-cell-header-template'>
+                <e-views>
+                    <e-view option='Month'></e-view>
+                </e-views>
+            </ejs-schedule>
+        </div>
+    </div>
+</template>
+<script>
+    import Vue from 'vue';
+    import { Internationalization } from '@syncfusion/ej2-base';
+    import { SchedulePlugin, Month } from '@syncfusion/ej2-vue-schedule';
+    Vue.use(SchedulePlugin);
+
+    var instance = new Internationalization();
+    var cellHeaderTemplateVue = Vue.component("cellHeaderTemplate", {
+        template: `<div v-html=getDateHeaderText(data.date)></div>`,
+        data() {
+            return {
+                data: {}
+            };
+        },
+        methods: {
+            getDateHeaderText: function(date) {
+                return instance.formatDate(date, { skeleton: "Ed" });
+            }
+        }
+    });
+
+    export default {
+        data () {
+            return {
+                cellHeaderTemplate: function (e) {
+                    return {
+                        template: cellHeaderTemplateVue
+                    };
+                },
+            }
+        },
+        provide: {
+            schedule: [Month]
+        }
+    }
+</script>
+```
+
+{% endtab %}
+
 ## Customizing the minimum and maximum date values
 
 Providing the `minDate` and `maxDate` property with some date values, allows the Scheduler to set the minimum and maximum date range. The Scheduler date that lies beyond this minimum and maximum date range will be in a disabled state so that the date navigation will be blocked beyond the specified date range.
@@ -393,3 +451,7 @@ Providing the `minDate` and `maxDate` property with some date values, allows the
 {% endtab %}
 
 >By default, the `minDate` property value is set to new Date(1900, 0, 1) and `maxDate` property value is set to new Date(2099, 11, 31). The user can also set the customized `minDate` and `maxDate` property values.
+
+## How to disable multiple cell and row selection in Schedule
+
+By default, the `allowMultiCellSelection` and `allowMultiRowSelection` properties of the Schedule are set to `true`. So, the Schedule allows user to select multiple cells and rows. If the user want to disable this multiple cell and row selection. The user can disable this feature by setting up `false` to these properties.
