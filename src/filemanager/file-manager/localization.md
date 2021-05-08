@@ -89,6 +89,7 @@ The file manager can be localized to any culture by defining the texts and messa
 |Filter-Empty|No results found|
 |Filter-Key|Try with different filter|
 |Sub-Folder-Error|The destination folder is the subfolder of the source folder|
+|Same-Folder-Error|The destination folder is the same as the source folder.|
 |Access-Denied|Access Denied|
 |Access-Details|You don't have permission to access this folder|
 |Header-Retry|File Already Exists|
@@ -204,6 +205,7 @@ L10n.load({
             "Filter-Empty": "keine Ergebnisse gefunden",
             "Filter-Key" : "Versuchen Sie es mit einem anderen Filter",
             "Sub-Folder-Error": "Der Zielordner ist der Unterordner des Quellordners.",
+            "Same-Folder-Error": "Der Zielordner ist derselbe wie der Quellordner.",
             "Access-Denied": "Zugriff verweigert",
             "Access-Details": "Sie haben keine Berechtigung, auf diesen Ordner zuzugreifen.",
             "Header-Retry": "Die Datei existiert bereits",
