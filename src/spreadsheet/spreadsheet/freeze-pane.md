@@ -51,6 +51,13 @@ In this demo, the frozenColumns is set as ‘2’, and the frozenRows is set as 
             <e-ranges>
               <e-range :dataSource="dataSource"></e-range>
             </e-ranges>
+             <e-columns>
+                      <e-column :width=120></e-column>
+                      <e-column :width=180></e-column>
+                      <e-column :width=100></e-column>
+                      <e-column :width=120></e-column>
+                      <e-column :width=120></e-column>
+              </e-columns>
           </e-sheet>
         </e-sheets></ejs-spreadsheet>
 </template>

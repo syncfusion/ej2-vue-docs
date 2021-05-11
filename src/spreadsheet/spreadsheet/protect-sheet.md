@@ -299,7 +299,7 @@ The following code example shows `Protect Workbook` by using the [`password`](..
 
 ```html
 <template>
-   <ejs-spreadsheet ref="spreadsheet" :password='syncfusion'>
+   <ejs-spreadsheet ref="spreadsheet" password='syncfusion'>
    <e-sheets>
           <e-sheet>
             <e-ranges>
