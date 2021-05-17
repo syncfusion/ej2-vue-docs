@@ -43,7 +43,7 @@ export default {
                 duration: 'Duration',
                 progress: 'Progress',
                 dependency: 'Predecessor',
-                resourceInfo: 'resources'
+                resourceInfo: 'resources',
                 child: 'subtasks'
             },
             splitterSettings:{
@@ -63,7 +63,7 @@ export default {
     },
     provide: {
       gantt: [Edit, Selection]
-    }
+    },
     methods: {
         nodeDragStop: function (args) {
             var ganttChart = document.getElementById('GanttContainer').ej2_instances[0];
