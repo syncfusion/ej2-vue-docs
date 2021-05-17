@@ -1075,90 +1075,77 @@ The cell edit template is used to create a custom component for a particular col
 
 <template>
      <div>
-        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :taskFields = "taskFields" :height = "height" :columns = "columns"  :editSettings= "editSettings"></ejs-gantt>
+        <ejs-gantt ref='gantt' id="GanttContainer" :dataSource="data" :resources="resources" :resourceFields="resourceFields":taskFields = "taskFields" :height = "height" :editSettings= "editSettings">
+          <e-columns>
+            <e-column field="TaskID"></e-column>
+            <e-column
+              field="TaskName"
+              :editType="dropdownedit"
+              :edit="dpParams"
+            ></e-column>
+            <e-column field="StartDate"></e-column>
+            <e-column field="Duration"></e-column>
+            <e-column field="Progress"></e-column>
+      </e-columns></ejs-gantt>
     </div>
 </template>
 <script>
 import Vue from "vue";
-import { GanttPlugin, Edit } from "@syncfusion/ej2-vue-gantt";
+import { GanttPlugin, ContextMenu, Edit, Selection, Toolbar} from "@syncfusion/ej2-vue-gantt";
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { editingData  } from './data-source.js';
+import { editingData, editingResources} from './data-source.js';
 Vue.use(GanttPlugin);
 let elem;
 let dropdownlistObj;
-let dpParams;
 export default {
-  data: function() {
-      return{
-            data: [
-            {
-                TaskID: 1,
-                TaskName: 'Project Initiation',
-                StartDate: new Date('04/02/2019'),
-                EndDate: new Date('04/21/2019'),
-                subtasks: [
-                    {  TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50 },
-                    { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50  },
-                    { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50 },
-                ]
-            },
-            {
-                TaskID: 5,
-                TaskName: 'Project Estimation',
-                StartDate: new Date('04/02/2019'),
-                EndDate: new Date('04/21/2019'),
-                subtasks: [
-                    { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
-                    { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
-                    { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 }
-                ]
-            },
-        ],
-            taskFields: {
-             id: 'TaskID',
-            name: 'TaskName',
-            startDate: 'StartDate',
-            duration: 'Duration',
-            progress: 'Progress',
-            child: 'subtasks',
-            },
-            height:'450px',
-            columns: [
-                { field: 'TaskID' },
-                { field: 'TaskName', edit: 'dpParams' },
-                { field: 'StartDate' },
-                { field: 'Duration' },
-                { field: 'Progress' }
-            ],
-            editSettings:{
-                allowEditing: true
-            },
-            dpParams: {
-            create: function() {
-                elem = document.createElement('input');
-                return elem;
-            },
-            read: () => {
-                return dropdownlistObj.value;
-            },
-            destroy: () => {
-                dropdownlistObj.destroy();
-            },
-            write: (args) => {
-                var ganttChart = document.getElementById('GanttContainer').ej2_instances[0];
-                dropdownlistObj = new DropDownList({
-                dataSource: ganttChart.treeGrid.grid.dataSource,
-                fields: { value: 'TaskName' },
-                value: args.rowData[args.column.field],
-                floatLabelType: 'Auto',
-            });
-            dropdownlistObj.appendTo(elem);
-            }
-      }
-      };
+  data: function () {
+    return {
+      data: editingData,
+      resources: editingResources,
+      taskFields: {
+        id: "TaskID",
+        name: "TaskName",
+        startDate: "StartDate",
+        endDate: "EndDate",
+        duration: "Duration",
+        progress: "Progress",
+        resourceInfo: "resources",
+        work: "work",
+        child: "subtasks",
+      },
+      resourceFields: {
+        id: "resourceId",
+        name: "resourceName",
+      },
+      height: "450px",
+      editSettings: {
+        allowEditing: true,
+      },
+      dpParams: {
+        create: () => {
+          elem = document.createElement("input");
+          return elem;
+        },
+        read: () => {
+          return dropdownlistObj.text;
+        },
+        destroy: () => {
+          dropdownlistObj.destroy();
+        },
+        write: () => {
+          var ganttChart = document.getElementById("GanttContainer").ej2_instances[0];
+          dropdownlistObj = new DropDownList({
+            dataSource: ganttChart.treeGrid.grid.dataSource,
+            fields: { value: "TaskName" },
+            floatLabelType: "Auto",
+          });
+          dropdownlistObj.appendTo(elem);
+        },
+      },
+    };
   },
   provide: {
-      gantt: [ Edit ]
+    gantt: [ContextMenu, Edit, Selection, Toolbar]
   }
 };
 </script>
