@@ -27,6 +27,7 @@ In Kanban, total count and min or max count text alone will be localized based o
 | no | No |
 | close | Close |
 | noCard | No cards to display |
+| unassigned | Unassigned |
 
 ## Loading translations
 
@@ -73,7 +74,8 @@ L10n.load({
             'yes': 'Ja',
             'no': 'Nein',
             'close': 'Schließen',
-            'noCard': 'Keine Karten zum Anzeigen'
+            'noCard': 'Keine Karten zum Anzeigen',
+            'unassigned': 'nicht zugewiesen'
         }
     }
 });
@@ -150,7 +152,8 @@ L10n.load({
             'yes': 'نعم',
             'no': 'لا',
             'close': 'قريب',
-            'noCard': 'لا توجد بطاقات لعرضها'
+            'noCard': 'لا توجد بطاقات لعرضها',
+            'unassigned': 'غير معين'
         }
     }
 });
