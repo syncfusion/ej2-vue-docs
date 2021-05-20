@@ -450,61 +450,6 @@ The following screenshot represents a Grid touch selection in the device.
 
 ![Touch Interaction](images/touch-selection.jpg)
 
-## Multiple Selection based on condition
-
-You can select multiple grid rows based on condition by using the [`selectRows`](../api/grid/#selectrows) method.
-
-In the following code, the rows which contains `ShipCountry` value as `Brazil` are selected at initial rendering.
-
-{% tab template="grid/select/default" %}
-
-```html
-<template>
-    <div id="app">
-        <ejs-grid ref='grid' :dataSource='data' :selectionSettings='selectionOptions' :dataBound='dataBound'>
-            <e-columns>
-                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
-                <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
-                <e-column field='ShipCountry' headerText='Ship Country' width=150></e-column>
-                <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
-            </e-columns>
-        </ejs-grid>
-    </div>
-</template>
-<script>
-import Vue from "vue";
-import { GridPlugin } from "@syncfusion/ej2-vue-grids";
-import { sdata } from './datasource.js';
-
-Vue.use(GridPlugin);
-
-export default {
-  data() {
-    return {
-      data: sdata,
-      selectionOptions: { type: 'Multiple' }
-    };
-  },
-  methods: {
-      dataBound: function(args) {
-         let rowIndexes : number[]=[];
-         this.$refs.grid.dataSource.forEach((data,index)=>{
-            if(data.ShipCountry === "Brazil"){
-            rowIndexes.push(index);
-            }
-            });
-        this.$refs.grid.selectRows(rowIndexes);
-    }
-  }
-}
-</script>
-<style>
- @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
-</style>
-```
-
-{% endtab %}
-
 ## Simple Multiple Row selection
 
 You can select multiple rows by clicking on rows one by one. This will not deselect the previously selected rows. To deselect the previously selected row, you can click on the  selected row. You can enable this behavior by using [`selectionSettings.enableSimpleMultiRowSelection`](../api/grid/selectionSettings/#enablesimplemultirowselection) property.
