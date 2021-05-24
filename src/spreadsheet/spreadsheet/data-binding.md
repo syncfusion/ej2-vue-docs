@@ -67,7 +67,7 @@ To bind remote data to the Spreadsheet control, assign service data as an instan
 
 Refer to the following code example for remote data binding.
 
-{% tab template="spreadsheet/remote-data-binding", iframeHeight="450px" , isDefaultActive=true %}
+{% tab template="spreadsheet/remote-data-binding", iframeHeight="450px" %}
 
 ```html
 <template>
@@ -132,6 +132,126 @@ export default {
 
 > By default, `DataManager` uses **ODataAdaptor** for remote data-binding.
 
+### Binding with OData services
+
+`OData` is a standardized protocol for creating and consuming data. You can retrieve data from OData service using the DataManager. Refer to the following code example for remote Data binding using OData service.
+
+{% tab template="spreadsheet/remote-data-binding", iframeHeight="450px" %}
+
+```html
+<template>
+    <ejs-spreadsheet ref="spreadsheet">
+            <e-sheets>
+                <e-sheet name="Order Details" :columns="columns" :created="created">
+                    <e-ranges>
+                        <e-range :dataSource="dataSource"></e-range>
+                    </e-ranges>
+                </e-sheet>
+            </e-sheets>
+        </ejs-spreadsheet>
+</template>
+
+<script>
+import Vue from "vue";
+import { SpreadsheetPlugin } from "@syncfusion/ej2-vue-spreadsheet";
+import { DataManager, ODataAdaptor } from "@syncfusion/ej2-data";
+Vue.use(SpreadsheetPlugin);
+export default {
+   data: () => {
+    return {
+     dataSource: new DataManager({
+                    // Remote service url
+                    url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+                    adaptor: new ODataAdaptor(),
+                    crossDomain: true
+                }),
+        columns: [{ width: 80 }, { width: 80 }, { width: 80 }, { width: 80 }, { width: 80 }, { width: 80 }, { width: 280 }, { width: 180 }, { width: 80 }, { width: 180 }, { width: 180 }],
+    }
+  },
+  methods: {
+    created: function () {
+        //Applies cell and number formatting to specified range of the active sheet
+        this.$refs.spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' },'A1:K1');
+      }
+    }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-spreadsheet/styles/material.css";
+ @import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-grids/styles/material.css';
+ @import "../node_modules/@syncfusion/ej2-spreadsheet/styles/material.css";
+</style>
+```
+
+{% endtab %}
+
+### Web API
+
+You can use WebApiAdaptor to bind spreadsheet with Web API created using OData endpoint.
+
+{% tab template="spreadsheet/remote-data-binding", iframeHeight="450px" %}
+
+```html
+<template>
+    <ejs-spreadsheet ref="spreadsheet">
+            <e-sheets>
+                <e-sheet name="Order Details" :columns="columns" :created="created">
+                    <e-ranges>
+                        <e-range :dataSource="dataSource"></e-range>
+                    </e-ranges>
+                </e-sheet>
+            </e-sheets>
+        </ejs-spreadsheet>
+</template>
+
+<script>
+import Vue from "vue";
+import { SpreadsheetPlugin } from "@syncfusion/ej2-vue-spreadsheet";
+import { DataManager, WebApiAdaptor } from "@syncfusion/ej2-data";
+Vue.use(SpreadsheetPlugin);
+export default {
+   data: () => {
+    return {
+     dataSource: new DataManager({
+                    // Remote service url
+                    url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+                    adaptor: new WebApiAdaptor(),
+                    crossDomain: true
+                }),
+        columns: [{ width: 80 }, { width: 80 }, { width: 80 }, { width: 80 }, { width: 80 }, { width: 80 }, { width: 280 }, { width: 180 }, { width: 80 }, { width: 180 }, { width: 180 }],
+    }
+  },
+  methods: {
+    created: function () {
+        //Applies cell and number formatting to specified range of the active sheet
+        this.$refs.spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' },'A1:K1');
+      }
+    }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-spreadsheet/styles/material.css";
+ @import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-grids/styles/material.css';
+ @import "../node_modules/@syncfusion/ej2-spreadsheet/styles/material.css";
+</style>
+```
+
+{% endtab %}
+
 ## Cell data binding
 
 The Spreadsheet control can bind the data to individual cell in a sheet . To achive this you can use the
@@ -139,7 +259,7 @@ The Spreadsheet control can bind the data to individual cell in a sheet . To ach
 
 Refer to the following code example for cell data binding.
 
-{% tab template="spreadsheet/cell-data-binding", iframeHeight="450px" , isDefaultActive=true %}
+{% tab template="spreadsheet/cell-data-binding", iframeHeight="450px"  %}
 
 ```html
 <template>
@@ -239,6 +359,114 @@ export default {
 {% endtab %}
 
 > The cell data binding also supports formula, style, number format, and more.
+
+## Dynamic data binding and Datasource change event
+
+You can dynamically change the datasource of the spreadsheet by changing the `dataSource` property of the `range` object of the `sheet`. The `dataSourceChanged` event handler will be triggered when editing, inserting, and deleting a row in the datasource range. This event will be triggered with a parameter named `action` which indicates the `edit`, `add` and `delete` actions for the respective ones.
+
+The following table defines the arguments of the `dataSourceChanged` event.
+
+| Property | Type | Description |
+|-----|-----|-------|
+| action | string | Indicates the type of action such as `edit`, `add`, and `delete` performed in the datasource range. |
+| data | object[] | Modified data for `edit` action; New data for `add` action; Deleted data for `delete` action. |
+| rangeIndex | number | Specifies the range index of the datasource. |
+| sheetIndex | number | Specifies the sheet index of the datasource. |
+
+> For `add` action, the value for all the fields will be `null` in the data. In the case that you do not want the primary key field to be null which needs to be updated in the backend service, you can use `edit` action after updating the primary key field to update in the backend service. <br><br>
+> For inserting a row at the end of the datasource range, you should insert a row below at the end of the range to trigger the `dataSourceChanged` event with action `add`.
+
+{% tab template="spreadsheet/dynamic-data-binding", iframeHeight="750px" %}
+
+```html
+<template>
+    <div>
+    <div>
+      <ejs-button id="changeDataBtn" class="e-btn" v-on:click.native="dataSourceBtnClick" style="margin-bottom: 10px" >Change Datasource</ejs-button>
+      <ejs-spreadsheet ref="spreadsheet" :dataSourceChanged="dataSourceChanged">
+        <e-sheets>
+          <e-sheet name="Car Sales Report">
+            <e-ranges>
+              <e-range :dataSource="dataSource"></e-range>
+            </e-ranges>
+            <e-columns>
+              <e-column :width="width1"></e-column>
+              <e-column :width="width2"></e-column>
+              <e-column :width="width2"></e-column>
+              <e-column :width="width1"></e-column>
+              <e-column :width="width2"></e-column>
+              <e-column :width="width3"></e-column>
+            </e-columns>
+          </e-sheet>
+        </e-sheets>
+      </ejs-spreadsheet>
+    </div>
+     <div>
+                        <h4><b>Event Trace</b></h4>
+                        <div id="evt" style="border: 1px solid #dcdcdc;padding: 10px;">
+                                <div style="height:173px;overflow: auto;min-width: 250px;">
+                                        <span id="EventLog" style="word-break: normal;"></span>
+                                </div>
+                                <ejs-button id="clearBtn" class='e-btn'>Clear</ejs-button>
+                        </div>
+                </div>
+  </div>
+</template>
+
+<script>
+import Vue from "vue";
+import { SpreadsheetPlugin } from "@syncfusion/ej2-vue-spreadsheet";
+import { tradeData, defaultData } from './data.js';
+import { ButtonPlugin } from "@syncfusion/ej2-vue-buttons";
+Vue.use(ButtonPlugin);
+Vue.use(SpreadsheetPlugin);
+export default {
+   data: () => {
+    return {
+      width1: 110,
+      width2: 115,
+      width3: 100
+      dataSource: tradeData
+    }
+  },
+   methods: {
+    dataSourceChanged: function (args) {
+      this.appendElement("Data source changed with" + "<b>&nbsp;" + args.action + "</b> action<hr>"
+      );
+    },
+
+    dataSourceBtnClick: function () {
+         this.$refs.spreadsheet.ej2Instances.sheets[0].ranges[0].dataSource = defaultData;
+    },
+
+    clearBtnClick: function () {
+      document.getElementById("EventLog").innerHTML = "";
+    },
+
+    appendElement: function (html) {
+      var span = document.createElement("span");
+      span.innerHTML = html;
+      var log = document.getElementById("EventLog");
+      log.insertBefore(span, log.firstChild);
+    }
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-spreadsheet/styles/material.css";
+ @import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+ @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+ @import '../node_modules/@syncfusion/ej2-grids/styles/material.css';
+ @import "../node_modules/@syncfusion/ej2-spreadsheet/styles/material.css";
+</style>
+```
+
+{% endtab %}
 
 ## See Also
 
