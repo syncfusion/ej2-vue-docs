@@ -2413,6 +2413,66 @@ export default {
 
 {% endtab %}
 
+## Appointments occupying entire cell
+
+The Scheduler allows the event to occupies the full height of the cell without its header part by setting `true` for `enableMaxHeight` Property.
+
+We can show more indicator if more than one appointment is available in a same cell by setting `true` to `enableIndicator` property whereas its default value is false.
+
+{% tab template="schedule/event",  iframeHeight="588px" %}
+
+```html
+<template>
+  <div id='app'>
+    <div id='container'>
+        <ejs-schedule ref='scheduleObj' :height='height' :width='width' :selectedDate='selectedDate' :currentView="TimelineMonth" :views='views' :eventSettings='eventSettings'>
+        </ejs-schedule>
+    </div>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { SchedulePlugin, TimelineViews, TimelineMonth } from '@syncfusion/ej2-vue-schedule';
+import { scheduleData } from './datasource.js';
+
+Vue.use(SchedulePlugin);
+
+export default {
+  data (){
+    return {
+      height: '550px',
+      width: '100%',
+      views: ['TimelineDay', 'TimelineMonth'],
+      eventSettings: {
+        dataSource: scheduleData,
+        enableMaxHeight: true,
+        enableIndicator: false
+      },
+      selectedDate: new Date(2018, 1, 15),
+    }
+  },
+  provide: {
+    schedule: [TimelineViews, TimelineMonth]
+  }
+}
+
+</script>
+<style>
+  @import '../../node_modules/@syncfusion/ej2-base/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-buttons/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-dropdowns/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-inputs/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-navigations/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-popups/styles/material.css';
+  @import '../../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css';
+</style>
+
+```
+
+{% endtab %}
+
 ## Display tooltip for appointments
 
 The tooltip shows the Scheduler appointment's information in a formatted style by making use of the tooltip related options.
