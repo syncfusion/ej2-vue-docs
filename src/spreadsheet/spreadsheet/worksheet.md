@@ -97,6 +97,7 @@ export default {
 The Spreadsheet has support for removing an existing worksheet. You can dynamically delete the existing sheet by the following way,
 
 * Right-click on the sheet tab, and then select `Delete` option from context menu.
+* Using [`delete`](../api/spreadsheet/#delete ) method to delete the sheets.
 
 ## Rename sheet
 
