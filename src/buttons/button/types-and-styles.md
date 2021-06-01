@@ -334,7 +334,7 @@ In the following example, SVG image is added using the iconCss class `e-search-i
 <template>
     <div>
         <ejs-button iconCss='e-search-icon'></ejs-button>
-    </div
+    </div>
 </template>
 
 <script>
@@ -357,7 +357,7 @@ button {
 }
 
 .e-btn-icon.e-search-icon {
-   background: url('search_icon.svg');
+   background: url('../../../button/images/search_icon.svg');
    height: 25px;
    width: 25px;
 }
