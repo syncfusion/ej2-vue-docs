@@ -184,7 +184,7 @@ The following sample shows, how to remove the selection in the spreadsheet. Here
 
 ```html
 <template>
-  <ejs-spreadsheet ref="spreadsheet" :created="created" :cellEdit="cellEdit" :selectionSettings="selectionSettings" :allowEditing="false">
+  <ejs-spreadsheet ref="spreadsheet" :created="created" :cellEdit="cellEdit" :selectionSettings="selectionSettings">
                 <e-sheets>
                   <e-sheet name="Price Details">
                     <e-ranges>

@@ -53,11 +53,14 @@ The following code example shows the finite scrolling with defined rows and colu
 <template>
   <ejs-spreadsheet ref="spreadsheet" :created="created" :allowScrolling="true" :scrollSettings="scrollSettings">
                 <e-sheets>
-                  <e-sheet name="Price Details" rowCount="20" colCount="20">
+                  <e-sheet name="Price Details" rowCount="9" colCount="7">
                     <e-ranges>
                       <e-range :dataSource="dataSource1"></e-range>
                     </e-ranges>
                     <e-columns>
+                      <e-column :width=100></e-column>
+                      <e-column :width=100></e-column>
+                      <e-column :width=100></e-column>
                       <e-column :width=100></e-column>
                       <e-column :width=100></e-column>
                       <e-column :width=100></e-column>

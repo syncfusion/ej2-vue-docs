@@ -293,10 +293,7 @@ To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [
 ```html
 <template>
   <div>
-    <ejs-button id='xlsx' v-on:click.native="xlsx">Save As xlsx</ejs-button>
-    <ejs-button id='xls' v-on:click.native="xls">Save As xls</ejs-button>
-    <ejs-button id='csv' v-on:click.native="csv">Save As csv</ejs-button>
-    <ejs-button id='pdf' v-on:click.native="pdf">Save As pdf</ejs-button>
+    <ejs-dropdownbutton :items='items' :select='itemSelect'>Save</ejs-dropdownbutton>
     <ejs-spreadsheet ref="spreadsheet">
       <e-sheets>
           <e-sheet>
@@ -316,35 +313,44 @@ To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [
 import Vue from "vue";
 import { SpreadsheetPlugin, getRangeIndexes } from "@syncfusion/ej2-vue-spreadsheet";
 import { addClass, removeClass } from '@syncfusion/ej2-base';
-import { ButtonPlugin } from "@syncfusion/ej2-vue-buttons";
+import { DropDownButtonPlugin } from "@syncfusion/ej2-vue-splitbuttons";
 import { defaultData } from './data.js';
 Vue.use(SpreadsheetPlugin);
-Vue.use(ButtonPlugin);
+Vue.use(DropDownButtonPlugin);
 export default {
    data: () => {
     return {
       dataSource: defaultData,
       width1: 130,
       width2: 96,
+      items:[
+        {
+            text: "Save As xlsx"
+        },
+        {
+            text: "Save As xls"
+        },
+        {
+            text: "Save As csv"
+        },
+        {
+            text: "Save As pdf"
+        }
+]
     }
   },
   methods: {
-  xlsx: function(event) {
+    itemSelect: function(args) {
       var spreadsheet = this.$refs.spreadsheet;
+      if (args.item.text === 'Save As xlsx')
       spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
-    },
-  xls: function(event) {
-      var spreadsheet = this.$refs.spreadsheet;
+    if (args.item.text === 'Save As xls')
       spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
-    },
-  csv: function(event) {
-      var spreadsheet = this.$refs.spreadsheet;
-      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Csv"});
-    },
-  pdf: function(event) {
-      var spreadsheet = this.$refs.spreadsheet;
-      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Pdf"});
-    }
+    if (args.item.text === 'Save As csv')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
+    if (args.item.text === 'Save As pdf')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
+   }
   }
 }
 </script>
