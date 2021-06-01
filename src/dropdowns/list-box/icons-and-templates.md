@@ -214,20 +214,39 @@ export default {
     top: calc(50% - 33px);
 }
 
-.javascript, .typeScript {
-    background-image: url('images/javascript1.svg');
+.javascript {
+  background-image: url('jses5-1.svg');
+  width: 70px;
+  height: 60px;
+  background-repeat: no-repeat;
+}
+
+.typeScript {
+  background-image: url('javascript1.svg');
+  width: 70px;
+  height: 60px;
+  background-repeat: no-repeat;
 }
 
 .angular {
-    background-image: url('images/angular1.svg');
+  background-image: url('angular1.svg');
+  width: 70px;
+  height: 60px;
+  background-repeat: no-repeat;
 }
 
 .vue {
-  background-image: url('images/vue.svg');
+  background-image: url('vue.svg');
+  width: 70px;
+  height: 60px;
+  background-repeat: no-repeat;
 }
 
 .react {
-  background-image: url('images/react.svg');
+  background-image: url('react.svg');
+  width: 70px;
+  height: 60px;
+  background-repeat: no-repeat;
 }
 
 </style>
