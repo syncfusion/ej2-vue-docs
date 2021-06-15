@@ -80,7 +80,6 @@ Paste can be done in one of the following ways.
 <script>
 import Vue from "vue";
 import { SpreadsheetPlugin, getRangeIndexes } from "@syncfusion/ej2-vue-spreadsheet";
-import { addClass, removeClass } from '@syncfusion/ej2-base';
 import { DropDownButtonPlugin } from "@syncfusion/ej2-vue-splitbuttons";
 import { defaultData } from './data.js';
 Vue.use(SpreadsheetPlugin);
@@ -165,7 +164,6 @@ The following example shows, how to prevent the paste action in spreadsheet. In 
 <script>
 import Vue from "vue";
 import { SpreadsheetPlugin, getRangeIndexes } from "@syncfusion/ej2-vue-spreadsheet";
-import { addClass, removeClass } from '@syncfusion/ej2-base';
 import { DropDownButtonPlugin } from "@syncfusion/ej2-vue-splitbuttons";
 import { defaultData } from './data.js';
 Vue.use(SpreadsheetPlugin);

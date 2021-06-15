@@ -24,6 +24,8 @@
 * [Globalization](spreadsheet/global-local.md)
 * [Undo and Redo](spreadsheet/undo-redo.md)
 * [Sort a range by custom list](spreadsheet/how-to/sort-a-range-by-custom-list.md)
+* [Print the single/multiple sheets](spreadsheet/how-to/print.md)
+* [Create a JSON structure](spreadsheet/how-to/create-a-object-structure.md)
 * [Collaborative Editing](spreadsheet/use-cases/collaborative-editing.md)
 * [Mobile Responsiveness](spreadsheet/mobile-responsiveness.md)
 * [Features Availability](spreadsheet/feature-list.md)
