@@ -86,7 +86,7 @@ and the EJ2 Vue Component as its arguments.
 Refer the code snippet given below.
 
 ```typescript
-import { DiagramComponent, DiagramPlugin } from '@syncfusion/ej2-vue-calendars';
+import { DiagramComponent, DiagramPlugin } from '@syncfusion/ej2-vue-diagrams';
 
 Vue.component(DiagramPlugin.name, DiagramComponent);
 ```
