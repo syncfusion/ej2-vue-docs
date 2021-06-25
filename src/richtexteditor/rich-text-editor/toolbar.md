@@ -275,6 +275,8 @@ The following table lists the tools available in the toolbar.
 | ClearFormat | The clear format tool is used to remove all formatting styles (such as bold, italic, underline, color, superscript, subscript, and more) from currently selected text. As a result, all the formatting text will be cleared and return to its default formatting styles. | toolbarSettings: { <br /> items: ['ClearFormat'] <br /> } |
 | FullScreen | Stretches the editor to the maximum width and height of the browser window. | toolbarSettings: { <br /> items: ['FullScreen'] <br /> } |
 | SourceCode | The RichTextBox includes the ability for users to directly edit the HTML code via Source View. If you made any modification in source view directly, synchronize with design view. | toolbarSettings: { <br /> items: ['SourceCode'] <br /> } |
+| NumberFormatList | Allows to create list items with various list style types(numbered)|toolbarSettings: { <br /> items: ['NumberFormatList'] <br /> } |
+| BulletFormatList | Allows to create list items with various list style types(bulleted)|toolbarSettings: { <br /> items: ['BulletFormatList'] <br /> } |
 
 By default, tools will be arranged in following order.
 
