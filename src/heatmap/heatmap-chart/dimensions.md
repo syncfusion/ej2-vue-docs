@@ -24,7 +24,7 @@ You can  set the size of heat map directly by using the  [`width`](../api/heatma
 
 You can set the size for heat map in a pixel.
 
-{% tab template="heatmap-chart//dimensions"%}
+{% tab template="heatmap-chart/dimensions"%}
 
 ```html
 
