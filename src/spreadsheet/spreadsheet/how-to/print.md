@@ -83,7 +83,6 @@ export default {
       printElement.querySelector(".e-sheet-content").innerHTML = document.querySelector(
         ".e-sheet-content"
       ).outerHTML; //  To add the spreadsheet table
-      debugger;
       var usedRange = spreadsheet.getActiveSheet().usedRange;
       var tbody = printElement.querySelector('tbody');
       for (var i = tbody.getElementsByClassName('e-row').length; i >= 0; i--) {

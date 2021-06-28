@@ -30,6 +30,10 @@ The keyboard shortcuts supported in the spreadsheet are,
 | Ctrl + G | Opens `GoTo` dialog, which helps to navigate to cell. |
 | Ctrl + Shift + L | Applies filter to the first row of the selected range or used range. |
 
+## Note
+
+You can refer to our [Vue Spreadsheet](https://www.syncfusion.com/vue-ui-components/vue-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Spreadsheet example](https://ej2.syncfusion.com/vue/demos/#/material/spreadsheet/default.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [Formatting](./formatting)

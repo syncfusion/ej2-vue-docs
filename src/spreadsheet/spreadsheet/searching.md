@@ -131,3 +131,7 @@ export default {
 ## Limitations
 
 * Undo/redo for Replace All is not supported in this feature.
+
+## Note
+
+You can refer to our [Vue Spreadsheet](https://www.syncfusion.com/vue-ui-components/vue-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Spreadsheet example](https://ej2.syncfusion.com/vue/demos/#/material/spreadsheet/default.html) to knows how to present and manipulate data.

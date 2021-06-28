@@ -471,8 +471,6 @@ The Internationalization library is used to globalize number, date, and time val
 
 The following example demonstrates the Spreadsheet in French [ `fr-CH`] culture. In the below sample we have globalized the Date(Date column), Time(Time column), and Currency(Amount column) formats.
 
-{% tab template="spreadsheet/internationalization", iframeHeight="450px" , isDefaultActive=true %}
-
 ```html
 <template>
    <ejs-spreadsheet ref="spreadsheet" locale="fr-CH" :created="created">
@@ -580,7 +578,7 @@ export default {
 </style>
 ```
 
-{% endtab %}
+Internalization [`sample link`](https://codesandbox.io/s/vue-template-forked-cthq7?file=/src/App.vue)
 
 ## Right to left (RTL)
 
@@ -671,6 +669,10 @@ export default {
 ```
 
 {% endtab %}
+
+## Note
+
+You can refer to our [Vue Spreadsheet](https://www.syncfusion.com/vue-ui-components/vue-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Spreadsheet example](https://ej2.syncfusion.com/vue/demos/#/material/spreadsheet/default.html) to knows how to present and manipulate data.
 
 ## See Also
 

@@ -448,6 +448,10 @@ The following features have some limitations in Conditional Formatting:
 * Copy and paste the conditional formatting applied cells.
 * Custom rule support.
 
+## Note
+
+You can refer to our [Vue Spreadsheet](https://www.syncfusion.com/vue-ui-components/vue-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Spreadsheet example](https://ej2.syncfusion.com/vue/demos/#/material/spreadsheet/default.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [Rows and columns](./rows-and-columns)

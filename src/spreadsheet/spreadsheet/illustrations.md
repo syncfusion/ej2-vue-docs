@@ -371,6 +371,10 @@ The following features have some limitations in the Chart:
 * Copy/paste into the chart data source will not reflect the chart.
 * Corner resizing option in chart element.
 
+## Note
+
+You can refer to our [Vue Spreadsheet](https://www.syncfusion.com/vue-ui-components/vue-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Spreadsheet example](https://ej2.syncfusion.com/vue/demos/#/material/spreadsheet/default.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [Formatting](./formatting)

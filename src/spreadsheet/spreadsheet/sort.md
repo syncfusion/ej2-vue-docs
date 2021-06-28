@@ -245,6 +245,10 @@ The following errors have been handled for sorting,
 
 * Sorting is not supported with formula contained cells.
 
+## Note
+
+You can refer to our [Vue Spreadsheet](https://www.syncfusion.com/vue-ui-components/vue-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Spreadsheet example](https://ej2.syncfusion.com/vue/demos/#/material/spreadsheet/default.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [Sort a range by custom list](./how-to/sort-a-range-by-custom-list.md)
