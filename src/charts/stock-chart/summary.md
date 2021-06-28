@@ -6,6 +6,7 @@
 * [Series Types](stock-chart/series-types.md)
 * [Trendlines](stock-chart/trend-lines.md)
 * [Technical Indicators](stock-chart/technical-indicators.md)
+* [Legend](stock-chart/legend.md)
 * [Tooltip](stock-chart/tool-tip.md)
 * [Crosshair](stock-chart/cross-hair.md)
 * [Period Selector](stock-chart/period-selector.md)
