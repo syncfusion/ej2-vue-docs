@@ -1786,3 +1786,101 @@ With this compact view enabled on mobile, you can view only single resource at a
 Clicking on the menu icon before the resource text will show the resources available in the Scheduler as following.
 
 ![Resources menu option in compact mode](./images/resource-menu.png)
+
+## Adaptive UI in desktop
+
+By default, the Scheduler layout adapts automatically in the desktop and mobile devices with appropriate UI changes. In case, if the user wants to display the Adaptive scheduler in desktop mode with adaptive enhancements, then the property `enableAdaptiveUI` can be set to true. Enabling this option will display the exact mobile mode of Scheduler view on desktop devices.
+
+Some of the default changes made for compact Scheduler to render in desktop devices are as follows,
+* View options displayed in the Navigation drawer.
+* Plus icon is added to the header for new event creation.
+* Today icon is added to the header instead of the Today button.
+* With Multiple resources – only one resource has been shown to enhance the view experience of resource events details clearly. To switch to other resources, there is a TreeView on the left that lists all other available resources, clicking on which will display that particular resource and its related events.
+
+{% tab template="schedule/resource-grouping", iframeHeight="588px" %}
+
+```html
+<template>
+    <div id='app'>
+        <div id='container'>
+            <ejs-schedule id="schedule" ref="ScheduleObj" width='100%' height='650px'
+                    :selectedDate="selectedDate" :eventSettings="eventSettings" currentView="Month" :enableAdaptiveUI="enableAdaptiveUI" :group="group">
+                    <e-views>
+                        <e-view option="Day"></e-view>
+                        <e-view option="Week"></e-view>
+                        <e-view option="Month"></e-view>
+                    </e-views>
+                    <e-resources>
+                        <e-resource field='ProjectId' title='Choose Project' name='Projects' :dataSource='projectResourceDataSource' textField='text'
+                            idField='id' colorField='color'>
+                        </e-resource>
+                        <e-resource field='TaskId' title='Employee' name='Employees' :dataSource='employeeDataSource' :allowMultiple='allowMultiple'
+                            textField='text' idField='id' groupIDField='groupId' colorField='color'>
+                        </e-resource>
+                    </e-resources>
+                </ejs-schedule>
+        </div>
+    </div>
+</template>
+<script>
+    import Vue from 'vue';
+    import { resourceData, timelineResourceData } from './datasource.js';
+    import { SchedulePlugin, Day, Week, Month, DragAndDrop, Resize } from '@syncfusion/ej2-vue-schedule';
+
+    Vue.use(SchedulePlugin);
+    export default {
+        data () {
+            return {
+                eventSettings: {
+                    dataSource: this.generateData()
+                },
+                selectedDate: new Date(2018, 3, 4),
+                enableAdaptiveUI: true,
+                allowMultiple : true,
+                group: {
+                    resources: ['Projects', 'Employees']
+                },
+                projectResourceDataSource: [
+                    { text: 'PROJECT 1', id: 1, color: '#cb6bb2' },
+                    { text: 'PROJECT 2', id: 2, color: '#56ca85' },
+                    { text: 'PROJECT 3', id: 3, color: '#df5286' }
+                ],
+                employeeDataSource: [
+                    { text: 'Nancy', id: 1, groupId: 1, color: '#df5286' },
+                    { text: 'Steven', id: 2, groupId: 1, color: '#7fa900' },
+                    { text: 'Robert', id: 3, groupId: 2, color: '#ea7a57' },
+                    { text: 'Smith', id: 4, groupId: 2, color: '#5978ee' },
+                    { text: 'Micheal', id: 5, groupId: 3, color: '#df5286' },
+                    { text: 'Root', id: 6, groupId: 3, color: '#00bdae' }
+                ],
+            }
+        },
+        provide: {
+            schedule: [Day, Week, Month, DragAndDrop, Resize]
+        },
+        methods: {
+            generateData: function () {
+                var collections = [];
+                var dataCollections = [resourceData, timelineResourceData];
+                for (var i = 0; i < dataCollections.length; i++) {
+                    collections = collections.concat(dataCollections[i]);
+                }
+                return collections;
+            }
+        }
+    }
+</script>
+<style>
+  @import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-buttons/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-dropdowns/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-inputs/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-navigations/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-popups/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css";
+</style>
+
+```
+
+{% endtab %}

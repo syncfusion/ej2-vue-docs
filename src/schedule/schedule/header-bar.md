@@ -247,6 +247,58 @@ export default {
 
 {% endtab %}
 
+## How to display the view options within the header bar popup
+
+By default, the header bar holds the view navigation options, through which the user can switch between various views. You can move this view options to the header bar popup by setting `true` to the `enableAdaptiveUI` property.
+
+{% tab template="schedule/header-bar", iframeHeight="588px"  %}
+
+```html
+<template>
+  <div id='app'>
+    <div id='container'>
+        <ejs-schedule :height='height' :selectedDate='selectedData' :eventSettings='eventSettings' :enableAdaptiveUI='enableAdaptiveUI'></ejs-schedule>
+    </div>
+  </div>
+</template>
+<script>
+import Vue from 'vue';
+import { SchedulePlugin, Day, Week, WorkWeek, Month, Agenda } from '@syncfusion/ej2-vue-schedule';
+import { scheduleData } from './datasource.js';
+
+Vue.use(SchedulePlugin);
+export default {
+  data (){
+    return {
+      height: '550px',
+      width: '100%',
+      enableAdaptiveUI: true,
+      eventSettings: { dataSource: scheduleData  },
+      selectedData: new Date(2018, 1, 15),
+      views: ['Day', 'Week', 'WorkWeek', 'Month', 'Agenda,'],
+    }
+  },
+  provide: {
+    schedule: [Day, Week, WorkWeek, Month, Agenda]
+  }
+}
+</script>
+<style>
+  @import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-buttons/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-dropdowns/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-inputs/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-navigations/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-popups/styles/material.css";
+  @import "../../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css";
+</style>
+```
+
+{% endtab %}
+
+> Refer [here](./resources/#adaptive-ui-in-desktop) to know more about adaptive UI in resources scheduler.
+
 ## Date header customization
 
 The Scheduler UI that displays the date text on all views are considered as the date header cells. You can customize the date header cells of Scheduler either using `dateHeaderTemplate` or `renderCell` event.
