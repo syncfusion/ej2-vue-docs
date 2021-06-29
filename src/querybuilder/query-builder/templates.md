@@ -94,7 +94,6 @@ export default {
                         data(args) {
                             return {
                                 qryBldrObj: getComponent(document.getElementById('querybuilder'), 'query-builder'),
-                                data: Object.assign({}, args, true),
                                 ds:  [{'key': 'AND', 'value': 'and'},{'key': 'OR', 'value': 'or'}],
                                 fields: { text: 'key', value: 'value' },
                                 ddbitems:[
@@ -444,7 +443,7 @@ export default {
                                 this.qryBldrObj.notifyChange(event.value as string, elem, 'value');
                             }
                         }
-                    }
+                    })
                 }
             },
             transactionTemplate: () => {
@@ -466,7 +465,7 @@ export default {
                                this.qryBldrObj.notifyChange(event.checked === true ? 'Expense' : 'Income', elem, 'value');
                             }
                         }
-                    }
+                    })
                 }
             }
         };
@@ -569,7 +568,6 @@ export default {
                         data(args) {
                             return {
                                 qryBldrObj: getComponent(document.getElementById('querybuilder'), 'query-builder'),
-                                data: Object.assign({}, args, true),
                                 rangeticks: {
                                     placement: 'Before',
                                     largeStep: 5,
