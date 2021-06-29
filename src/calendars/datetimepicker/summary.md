@@ -4,6 +4,7 @@
 * [DateTime Range](datetimepicker/date-time-range.md)
 * [Customization](datetimepicker/customization.md)
 * [Accessibility](datetimepicker/accessibility.md)
+* [Mask Support](datetimepicker/date-time-masking.md)
 * [Two-Way Binding](datetimepicker/two-way-binding.md)
 * [Disable the DateTimePicker Component](datetimepicker/how-to/disable-the-datetimepicker-component.md)
 * [Set the Placeholder](datetimepicker/how-to/set-the-placeholder.md)
