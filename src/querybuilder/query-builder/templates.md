@@ -541,27 +541,13 @@ export default {
                             </div>
                             <div>
                                 <div class="e-slider-value">
-                                    <ejs-slider :min="min" :max="max" ref="slider" :ticks="rangeticks" :created="created" :change="valueChange" :value="value" :id="valueID">
+                                    <ejs-slider :min="min" :max="max" ref="slider" :ticks="rangeticks" :change="valueChange" :value="value" :id="valueID">
                                     </ejs-slider>
                                 </div>
                                 <div class="e-rule-btn">
-                                    <button :id='optionID' @click="myFunction(data.ruleID)" class="e-primary e-btn e-small">
-                                        View Details
-                                    </button>
                                     <button class="e-removerule e-rule-delete e-css e-btn e-small e-round">
                                         <span class="e-btn-icon e-icons e-delete-icon"/>
                                     </button>
-                                </div>
-                            </div>
-                            <div :id='sectionID' class="e-rule-value-group e-hide">
-                                <div>
-                                    <table id='datatable' class='e-rule-table e-hide'>
-                                    <thead>
-                                    <tr><th>EmployeeID</th><th>FirstName</th><th>Age</th></tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>`,
@@ -582,12 +568,6 @@ export default {
                             valueID: function() {
                                 return `${this.data.ruleID}_valuekey0`;
                             },
-                            optionID: function() {
-                                return `${this.data.ruleID}_option`;
-                            },
-                            sectionID: function() {
-                                return `${this.data.ruleID}_section`;
-                            },
                             value: function() {
                                 var num = 30;
                                 if (this.data.rule.value !== '') {
@@ -597,10 +577,6 @@ export default {
                             }
                         },
                         methods: {
-                            created: function() {
-                                var elem = document.getElementById(this.$refs.slider.$el.id.split('_valuekey0')[0]);
-                                this.refreshTable(this.qryBldrObj.getRule(elem), elem.id);
-                            },
                             fieldChange: function(args) {
                                 this.qryBldrObj.notifyChange(args.value, args.element, 'field');
                             },
@@ -608,35 +584,7 @@ export default {
                                 if (args.isInteracted) {
                                     var elem = this.$refs.slider.$el;
                                     this.qryBldrObj.notifyChange(args.value, elem, 'value');
-                                    this.refreshTable(this.qryBldrObj.getRule(elem), elem.id.split('_valuekey0')[0]);
                                 }
-                            },
-                            myFunction: function(ruleID) {
-                                var element = document.getElementById(ruleID + '_section');
-                                if (element.className.indexOf('e-hide') > -1) {
-                                    element.className = element.className.replace('e-hide', '');
-                                    document.getElementById(ruleID + '_option').textContent = 'Hide Details';
-                                } else {
-                                    element.className += ' e-hide';
-                                    document.getElementById(ruleID + '_option').textContent = 'View Details';
-                                }
-                            },
-                            refreshTable(rule, ruleID) {
-                                var template = '<tr><td>${EmployeeID}</td><td>${FirstName}</td><td>${Age}</td></tr>';
-                                var compiledFunction = compile(template);
-                                var predicate = this.qryBldrObj.getPredicate({condition: 'and', rules: [rule]});
-                                var dataManagerQuery = new Query().select(['EmployeeID', 'FirstName', 'Age']).where(predicate);
-                                var result = new DataManager(employeeData).executeLocal(dataManagerQuery);
-                                var table = document.querySelector('#' + ruleID + "_section #datatable");
-                                if (result.length) {
-                                    table.style.display = 'block';
-                                } else {
-                                    table.style.display = 'none';
-                                }
-                                table.querySelector('tbody').innerHTML = '';
-                                result.forEach((data) => {
-                                    table.querySelector('tbody').appendChild(compiledFunction(data)[0].querySelector('tr'));
-                                });
                             }
                         }
                     })
