@@ -952,11 +952,6 @@ To Export the Grid in server side, You need to call the
            return GridModel;
         }
 
-        public class GridColumnModel
-        {
-            public List<GridColumn> columns { get; set; }
-        }
-
 ```
 
 ```html
@@ -1005,6 +1000,76 @@ export default {
 ```
 
 > **Note:** Refer to the GitHub sample for quick implementation and testing from [here](https://github.com/SyncfusionExamples/Vue-EJ2-Grid-server-side-exporting).
+
+### CSV Export in server side
+
+You can export the Grid to CSV format by using the [`serverCsvExport`](../api/grid/#servercsvexport) method which will pass the Grid properties to server.
+
+In the below demo, we have invoked the above method inside the [`toolbarClick`](../api/grid/#toolbarclick) event. In server side, we have deserialized the Grid properties and passed to the `CsvExport` method which will export the properties to CSV format.
+
+```typescript
+
+        public ActionResult CsvGridExport([FromForm] string gridModel)
+        {
+            GridExcelExport exp = new GridExcelExport();
+            Grid gridProperty = ConvertGridObject(gridModel);
+            return exp.CsvExport<OrdersDetails>(gridProperty, OrdersDetails.GetAllRecords());
+        }
+
+        private Grid ConvertGridObject(string gridProperty)
+        {
+           Grid GridModel = (Grid)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(Grid));
+           GridColumnModel cols = (GridColumnModel)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(GridColumnModel));
+           GridModel.Columns = cols.columns;
+           return GridModel;
+        }
+
+```
+
+```html
+<template>
+    <div id="app">
+        <ejs-grid ref='grid' id='Grid' :dataSource='data' :toolbar='toolbarOptions' height='272px' :toolbarClick='toolbarClick'>
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Toolbar } from "@syncfusion/ej2-vue-grids";
+import { data } from './datasource.js';
+
+Vue.use(GridPlugin);
+
+export default {
+  data() {
+    return {
+      data: data,
+      toolbarOptions: ['CsvExport']
+    };
+  },
+  methods: {
+      toolbarClick: function(args) {
+        if (args.item.id === 'Grid_csvexport') { // 'Grid_csvexport' -> Grid component id + _ + toolbar item name
+            this.$refs.grid.serverCsvExport('Home/CsvGridExport');
+        }
+    }
+  },
+  provide: {
+    grid: [Toolbar]
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+
+```
 
 ## See Also
 
