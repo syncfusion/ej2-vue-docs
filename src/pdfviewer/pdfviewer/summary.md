@@ -6,6 +6,8 @@
 * [Text Search](pdfviewer/text-search.md)
 * [Text Markup Annotation](pdfviewer/text-markup-annotation.md)
 * [Interaction Mode](pdfviewer/interaction-mode.md)
+* [Programmatically work with form field](pdfviewer/formdesigner/programmatically-work-with-form-field.md)
+* [User interaction with form fields](pdfviewer/formdesigner/user-interaction-with-form-fields.md)
 * [Print](pdfviewer/print.md)
 * [Download](pdfviewer/download.md)
 * [Globalization](pdfviewer/globalization.md)
