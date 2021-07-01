@@ -4,10 +4,9 @@ Vue CLI 3 is a complete rewrite of the previous version of the Vue command line 
 
 ## Prerequisites
 
-To get started with Syncfusion Vue UI Components, ensure the compatible versions of Vue and Typescript.
+To get started with Syncfusion Vue UI Components, ensure the compatible versions of Vue and vue-class-component.
 
 * `vue` : 3+
-* `Typescript` : 2.6+
 * `node` : 10.15+
 * `vue-class-component` : 8.0.0-rc.1
 
