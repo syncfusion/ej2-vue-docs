@@ -6,9 +6,7 @@ description: "Miscellaneous aspects of customizing the date picker"
 
 # Enable the Masked Input
 
-The DatePicker has built-in support to masking the date value, when `enableMask` property set as `true`.
-
-To use mask support, inject the MaskedDateTime module in the DatePicker.
+DatePicker has `enableMask` property that provides the option to enable the built-in date masking support. Also, you must inject the MaskedDateTime module to enable the masking support.
 
 {% tab template="datepicker/mask-module", isDefaultActive = "true", sourceFiles="app/**/*.ts" %}
 
@@ -17,24 +15,24 @@ To use mask support, inject the MaskedDateTime module in the DatePicker.
 <template>
 <div id="app">
         <div class='wrapper'>
-         <ejs-datepicker id="datepicker" :enableMask="mask"></ejs-datepicker>
+         <ejs-datepicker id="datepicker" :enableMask="true"></ejs-datepicker>
      </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
-import { DatePickerPlugin, MaskedDateTime } from "@syncfusion/ej2-vue-calendars";
+import { DatePickerPlugin, DatePicker, MaskedDateTime } from "@syncfusion/ej2-vue-calendars";
 
+DatePicker.Inject(MaskedDateTime)
 Vue.use(DatePickerPlugin);
 export default Vue.extend({
   data: function() {
     return {
-      mask: true
     };
   },
   provide: {
       datepicker: [MaskedDateTime]
-  }  
+  }
 });
 </script>
 <style>
@@ -55,7 +53,10 @@ export default Vue.extend({
 
 The mask pattern is defined based on the provided date format to the component. If the format is not specified, the mask pattern is formed based on the default format of the current culture.
 
-The selected portions of date and time co-ordinates  can  be incremented and decremented using the Up/Down arrow keys. You can also use Right/Left arrow keys to navigate from one segment to another.
+| **Keys** | **Actions** |
+| --- | --- |
+| <kbd>Up / Down arrows</kbd> | To increment and decrement the selected portion of the date. |
+| <kbd>Left / Right arrows and Tab</kbd> | To navigate the selection from one portion to next portion |
 
 The following example demonstrates default and custom format of DatePicker component with mask module.
 
@@ -66,24 +67,24 @@ The following example demonstrates default and custom format of DatePicker compo
 <template>
 <div id="app">
         <div class='wrapper1'>
-         // Specifies the masked datepicker without format property.
-         <ejs-datepicker id="datepicker" :enableMask="mask" ></ejs-datepicker>
+         <!-- Specifies the masked datepicker without format property. -->
+         <ejs-datepicker id="datepicker" :enableMask='true' ></ejs-datepicker>
      </div>
      <div class='wrapper2'>
-          // Specifies the masked datepicker with format property.
-         <ejs-datepicker id="datepicker" :enableMask="mask" :format="dateFormat"></ejs-datepicker>
+          <!-- Specifies the masked datepicker with format property. -->
+         <ejs-datepicker id="format" :enableMask='true' :format='dateFormat'></ejs-datepicker>
      </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
-import { DatePickerPlugin, MaskedDateTime } from "@syncfusion/ej2-vue-calendars";
+import { DatePickerPlugin, DatePicker, MaskedDateTime } from "@syncfusion/ej2-vue-calendars";
 
+DatePicker.Inject(MaskedDateTime)
 Vue.use(DatePickerPlugin);
 export default Vue.extend({
   data: function() {
     return {
-      mask: true,
       dateFormat: 'M/d/yyyy'
     };
   },
@@ -93,9 +94,11 @@ export default Vue.extend({
 });
 </script>
 <style>
-  @import "../node_modules/@syncfusion/ej2-base/styles/material.css";
-  @import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
-  @import "../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import "../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
 #wrapper1{
   min-width: 250px;
     float: left;
@@ -115,6 +118,21 @@ export default Vue.extend({
 
 You can change mask placeholder value through property `maskPlaceholder`. By default , it takes the full name of date and time co-ordinates such as `day`, `month`, `year`, `hour` etc.
 
+While changing to a culture other than `English`, ensure that locale text for the concerned culture is loaded through load method of L10n class for mask placeholder values like below.
+
+```typescript
+//Load the L10n from ej2-base
+import { L10n } from '@syncfusion/ej2-base';
+
+//load the locale object to set the localized mask placeholder value
+L10n.load({
+'de': {
+    'datepicker': { day: 'Tag' , month: 'Monat', year: 'Jahr' }
+}
+});
+
+```
+
 The following example demonstrates default and customized mask placeholder value.
 
 {% tab template="datepicker/mask-module", isDefaultActive = "true", sourceFiles="app/**/*.ts,app/**/maskplaceholder.html,styles.css" %}
@@ -124,26 +142,26 @@ The following example demonstrates default and customized mask placeholder value
 <template>
 <div id="app">
         <div class='wrapper1'>
-         // Specifies the masked datepicker without mask placeholder.
-         <ejs-datepicker id="datepicker" :enableMask="mask" ></ejs-datepicker>
+          <!-- Specifies the masked datepicker without mask placeholder. -->
+         <ejs-datepicker id="datepicker"  :enableMask="true" ></ejs-datepicker>
      </div>
      <div class='wrapper2'>
-          //// Specifies the masked datepicker with mask placeholder.
-         <ejs-datepicker id="datepicker" :enableMask="mask" :maskPlaceholder="maskPlaceholderValue"></ejs-datepicker>
+          <!-- Specifies the masked datepicker with mask placeholder. -->
+          <ejs-datepicker id="placeholder"  :enableMask="true" :maskPlaceholder='maskPlaceholderValue'></ejs-datepicker>
      </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
-import { DatePickerPlugin, MaskedDateTime } from "@syncfusion/ej2-vue-calendars";
+import { DatePickerPlugin, MaskedDateTime, DatePicker } from "@syncfusion/ej2-vue-calendars";
 
+DatePicker.Inject(MaskedDateTime)
 Vue.use(DatePickerPlugin);
 export default Vue.extend({
   data: function() {
     return {
-      mask: true,
       maskPlaceholderValue: {day: 'd', month: 'M', year: 'y'}
-    };
+    }
   },
   provide: {
       datepicker: [MaskedDateTime]
@@ -151,9 +169,11 @@ export default Vue.extend({
 });
 </script>
 <style>
-  @import "../node_modules/@syncfusion/ej2-base/styles/material.css";
-  @import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
-  @import "../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import "../node_modules/@syncfusion/ej2-vue-calendars/styles/material.css";
 #wrapper1{
   min-width: 250px;
     float: left;
