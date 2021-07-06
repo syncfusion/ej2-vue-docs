@@ -95,14 +95,14 @@ The following code example shows how to add legend in the gauge.
 ```typescript
 <template>
     <div id="app">
-    <div class='wrapper'>
-   <ejs-circulargauge :legendSettings= 'legendSettings'>
-    <e-axes>
-    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+        <div class='wrapper'>
+            <ejs-circulargauge :legendSettings= 'legendSettings'>
+                <e-axes>
+                    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -156,10 +156,10 @@ export default {
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -174,14 +174,14 @@ The toggle option has been provided for legend. So, if you toggle the legend, th
 ```typescript
 <template>
     <div id="app">
-    <div class='wrapper'>
-   <ejs-circulargauge :legendSettings= 'legendSettings'>
-    <e-axes>
-    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+        <div class='wrapper'>
+            <ejs-circulargauge :legendSettings= 'legendSettings'>
+                <e-axes>
+                    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -192,7 +192,7 @@ export default {
     data: function () {
         return {
             majorTicks: {
-            useRangeColor: true
+                useRangeColor: true
             },
             minorTicks: {
                 useRangeColor: true
@@ -229,10 +229,10 @@ export default {
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -247,14 +247,14 @@ By default, paging will be enabled if the legend items exceed the legend bounds.
 ```typescript
 <template>
     <div id="app">
-    <div class='wrapper'>
-   <ejs-circulargauge :legendSettings= 'legendSettings'>
-    <e-axes>
-    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+        <div class='wrapper'>
+            <ejs-circulargauge :legendSettings= 'legendSettings'>
+                <e-axes>
+                    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -265,7 +265,7 @@ export default {
     data: function () {
         return {
             majorTicks: {
-            useRangeColor: true
+               useRangeColor: true
             },
             minorTicks: {
                 useRangeColor: true
@@ -302,10 +302,10 @@ export default {
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -320,13 +320,13 @@ You can customize the legend text using `legendText` property in `ranges`.
 ```typescript
 <template>
     <div id="app">
-    <div class='wrapper'>
-   <ejs-circulargauge :legendSettings= 'legendSettings'>
-    <e-axes>
-    <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
+        <div class='wrapper'>
+        <ejs-circulargauge :legendSettings= 'legendSettings'>
+            <e-axes>
+                <e-axis minimum=0 maximum=100 :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :labelStyle= 'labelStyle' :ranges='ranges'></e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+        </div>
   </div>
 </template>
 <script>
@@ -338,7 +338,7 @@ export default {
     data: function () {
         return {
             majorTicks: {
-            useRangeColor: true
+               useRangeColor: true
             },
             minorTicks: {
                 useRangeColor: true
@@ -378,9 +378,9 @@ export default {
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
   }
 </style>
 ```

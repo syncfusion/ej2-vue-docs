@@ -15,11 +15,12 @@ Circular gauge can render to its container size. You can set the size via inline
 ```typescript
 <template>
     <div id="app">
-      <div class='wrapper'>
-         <ejs-circulargauge ></ejs-circulargauge>
-      </div>
+        <div class='wrapper'>
+            <ejs-circulargauge ></ejs-circulargauge>
+        </div>
     </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from '@syncfusion/ej2-vue-circulargauge';
@@ -55,9 +56,9 @@ You can set the size of the gauge in pixel as demonstrated below.
 
 <template>
     <div id="app">
-      <div class='wrapper'>
-         <ejs-circulargauge width='650' height='350' ></ejs-circulargauge>
-      </div>
+        <div class='wrapper'>
+            <ejs-circulargauge width='650' height='350' ></ejs-circulargauge>
+        </div>
     </div>
 </template>
 <script>

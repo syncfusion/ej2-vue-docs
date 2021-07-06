@@ -21,8 +21,8 @@ You can place any custom element on the axis area by assigning the id of the ele
 
 <template>
     <div id="app">
-      <div class='wrapper'>
-             <ejs-circulargauge>
+        <div class='wrapper'>
+            <ejs-circulargauge>
                 <e-axes>
                     <e-axis :annotations='annotations'>  
                         <e-pointers>
@@ -30,24 +30,24 @@ You can place any custom element on the axis area by assigning the id of the ele
                         </e-pointers>
                     </e-axis>
                 </e-axes>
-             </ejs-circulargauge>
-         </div>
-</div>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from "vue";
 import { CircularGaugePlugin, Annotations } from "@syncfusion/ej2-vue-circulargauge";
 
 let contentVue = Vue.component("contentTemplate", {
-  template: '<div><span style="font-size:10px; color:#424242; font-family:Regular">pointer Value: 50</span></div>',
-  data() {
-    return {
-      data: {}
-    };
-  }
+    template: '<div><span style="font-size:10px; color:#424242; font-family:Regular">pointer Value: 50</span></div>',
+    data() {
+        return {
+            data: {}
+        };
+    }
 });
 let contentTemplate = function() {
-  return { template: contentVue };
+    return { template: contentVue };
 };
 Vue.use(CircularGaugePlugin);
 export default {
@@ -58,17 +58,17 @@ export default {
             zIndex: '1'
         }]
     }
-},
- provide: {
-    circulargauge: [Annotations]
-},
+    },
+    provide: {
+        circulargauge: [Annotations]
+    }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 
 ```
@@ -89,18 +89,18 @@ Radius of the annotation takes value either in pixel or percentage. By setting v
 
 <template>
    <div id="app">
-      <div class='wrapper'>
-             <ejs-circulargauge>
-                 <e-axes>
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
                     <e-axis :annotations='annotations'>  
                         <e-pointers>
                             <e-pointer value=50 ></e-pointer>
                         </e-pointers>
                     </e-axis>
                 </e-axes>
-             </ejs-circulargauge>
-         </div>
-</div>
+            </ejs-circulargauge>
+        </div>
+        </div>
 </template>
 <script>
 import Vue from "vue";
@@ -108,15 +108,15 @@ import { CircularGaugePlugin, Annotations } from "@syncfusion/ej2-vue-circularga
 Vue.use(CircularGaugePlugin);
 
 let contentVue = Vue.component("contentTemplate", {
-  template: '<div><span style="font-size:10px; color:#424242; font-family:Regular">pointer Value: 50</span></div>',
-  data() {
-    return {
-      data: {}
-    };
-  }
+    template: '<div><span style="font-size:10px; color:#424242; font-family:Regular">pointer Value: 50</span></div>',
+    data() {
+        return {
+            data: {}
+        };
+    }
 });
 let contentTemplate = function() {
-  return { template: contentVue };
+    return { template: contentVue };
 };
 export default {
     data:function(){
@@ -126,20 +126,19 @@ export default {
             angle: 90,
             radius: '150%',
             zIndex: '1'
-        }
-        ]
+        }]
     }
-},
- provide: {
-    circulargauge: [Annotations]
-},
+    },
+    provide: {
+        circulargauge: [Annotations]
+    }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 
 ```
@@ -157,12 +156,11 @@ be used to place that in another gauge.
 
 <template>
     <div id="app">
-      <div class='wrapper'>
-             <ejs-circulargauge :axes ='axes'>
-             </ejs-circulargauge>
-
-         </div>
-</div>
+        <div class='wrapper'>
+            <ejs-circulargauge :axes ='axes'>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from "vue";
@@ -171,110 +169,113 @@ Vue.use(CircularGaugePlugin);
 export default {
     data:function(){
     return {
-          axes: [{
-        minimum: 0,
-        maximum: 12,
-        startAngle: 0,
-        endAngle: 360,
-        lineStyle: { width: 0 },
-        ranges: [
-            {
+        axes: [{
+            minimum: 0,
+            maximum: 12,
+            startAngle: 0,
+            endAngle: 360,
+            lineStyle: { width: 0 },
+            ranges: [{
                 start: 0, end: 3,
                 color: 'rgba(29,29,29,0.7)'
             }, {
                 start: 3, end: 12,
                 color: 'rgba(168,145,102,0.1)'
-            }
-        ],
-        annotations: [{
-            angle: 270,
-            radius: '40%',
-            content: '<div id="subGauge" style="width:90px;height:90px;"></div>'
-        },{
-            angle: 90,
-            radius: '40%',
-            content: '<div id="time"><span>6:30 PM</span></div>',
-            zIndex: '1'
-        }],
-        labelStyle: {
-            hiddenLabel: 'First'
-        },
-        pointers: [{
-            pointerWidth: 5,
-            radius: '40%',
-            value: 6.5,
-            color: 'rgb(29,29,29)',
-            border: { width: 1, color: 'rgb(29,29,29)' },
-            cap: {
+            }],
+            annotations: [{
+                angle: 270,
+                radius: '40%',
+                content: '<div id="subGauge" style="width:90px;height:90px;"></div>'
+            },{
+                angle: 90,
+                radius: '40%',
+                content: '<div id="time"><span>6:30 PM</span></div>',
+                zIndex: '1'
+            }],
+            labelStyle: {
+                hiddenLabel: 'First'
+            },
+            pointers: [{
+                pointerWidth: 5,
+                radius: '40%',
+                value: 6.5,
                 color: 'rgb(29,29,29)',
-                radius: 0,
-                border: {
-                    width: 0.2,
-                    color: 'red'
+                border: { width: 1, color: 'rgb(29,29,29)' },
+                cap: {
+                    color: 'rgb(29,29,29)',
+                    radius: 0,
+                    border: {
+                        width: 0.2,
+                        color: 'red'
+                    }
+                },
+                needleTail: {
+                    length: '0%'
+                },
+                animation: {
+                    enable: false
                 }
             },
-            needleTail: {
-                length: '0%'
-            }, animation: {
-                enable: false
-            }
-        }, {
-            radius: '60%',
-            pointerWidth: 5,
-            color: 'rgb(29,29,29)',
-            border: {
-                width: 1,
-                color: 'rgb(29,29,29)'
-            },
-            value: 6,
-            cap: {
+            {
+                radius: '60%',
+                pointerWidth: 5,
                 color: 'rgb(29,29,29)',
-                radius: 0,
                 border: {
-                    width: 0.2,
-                    color: 'red'
+                    width: 1,
+                    color: 'rgb(29,29,29)'
+                },
+                value: 6,
+                cap: {
+                    color: 'rgb(29,29,29)',
+                    radius: 0,
+                    border: {
+                        width: 0.2,
+                        color: 'red'
+                    }
+                },
+                needleTail: {
+                    length: '0%'
+                },
+                animation: {
+                    enable: false
                 }
             },
-            needleTail: {
-                length: '0%'
-            }, animation: {
-                enable: false
-            }
-        }, {
-            radius: '70%',
-            pointerWidth: 4,
-            value: 9.8,
-            color: 'rgba(168,145,102,1)',
-            cap: {
+            {
+                radius: '70%',
+                pointerWidth: 4,
+                value: 9.8,
                 color: 'rgba(168,145,102,1)',
-                radius: 4,
-                border: {
-                    width: 0.2,
-                    color: 'rgba(168,145,102,1)'
+                cap: {
+                    color: 'rgba(168,145,102,1)',
+                    radius: 4,
+                    border: {
+                        width: 0.2,
+                        color: 'rgba(168,145,102,1)'
+                    }
+                },
+                needleTail: {
+                    color: 'rgba(168,145,102,1)',
+                    length: '20%'
+                },
+                animation: {
+                    enable: false,
+                    duration: 500
                 }
-            },
-            needleTail: {
-                color: 'rgba(168,145,102,1)',
-                length: '20%'
-            }, animation: {
-                enable: false,
-                duration: 500
-            }
+           }]
         }]
-    }]
     }
-},
- provide: {
-    circulargauge: [Annotations]
-},
+    },
+    provide: {
+        circulargauge: [Annotations]
+    }
 };
 
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 
 ```

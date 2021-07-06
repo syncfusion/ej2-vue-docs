@@ -16,12 +16,12 @@ Title can be customized by using [`titleStyle`](../api/circular-gauge/#titlestyl
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge title= 'Speedometer' :titleStyle= 'titleStyle' >
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge title= 'Speedometer' :titleStyle= 'titleStyle'>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -31,19 +31,20 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         return {
-         titleStyle: {
-        color: '#27d5ff'
-    }
+            titleStyle: {
+                color: '#27d5ff'
+            }
         }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
+
 ```
 
 {% endtab %}
@@ -68,16 +69,16 @@ You can set the mid point of the gauge in pixel as demonstrated below,
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis startAngle= 90 endAngle= 180 :lineStyle= 'lineStyle'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis startAngle= 90 endAngle= 180 :lineStyle= 'lineStyle'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -87,20 +88,20 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         return {
-         lineStyle: {
-            width: 2,
-            color: '#F8F8F8'
-        }
+            lineStyle: {
+                width: 2,
+                color: '#F8F8F8'
+            }
         }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 200px;
-    max-height: 100px;
-    margin: 0px;
-  }
+    .wrapper {
+        max-width: 200px;
+        max-height: 100px;
+        margin: 0px;
+    }
 </style>
 ```
 
@@ -118,16 +119,16 @@ value as '0%' and [`centerY`](../api/circular-gauge/#centery-string) value is â€
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis startAngle= 0 endAngle= 180 :lineStyle= 'lineStyle'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis startAngle= 0 endAngle= 180 :lineStyle= 'lineStyle'>
+                    </e-axis>
+            </e-axes>
+           </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -137,20 +138,20 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         return {
-        lineStyle: {
-            width: 2,
-            color: '#F8F8F8'
-        }
+            lineStyle: {
+                width: 2,
+                color: '#F8F8F8'
+            }
         }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    max-height: 100px;
-    margin: 0px;
-  }
+    .wrapper {
+        max-width: 300px;
+        max-height: 100px;
+        margin: 0px;
+    }
 </style>
 ```
 
@@ -169,16 +170,16 @@ Using [`background`](../api/circular-gauge/#background-string) and
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis startAngle= 230 endAngle= 130  maximum= 120 radius= '90%':pointers = 'pointers' :ranges='ranges' :lineStyle= 'lineStyle' :minorTicks= 'minorTicks' :majorTicks = 'majorTicks'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis startAngle= 230 endAngle= 130  maximum= 120 radius= '90%':pointers = 'pointers' :ranges='ranges' :lineStyle= 'lineStyle' :minorTicks= 'minorTicks' :majorTicks = 'majorTicks'>
+                </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -188,42 +189,42 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         return {
-        majorTicks: {
-            width: 1, color: '#8c8c8c'
-        },
-        lineStyle: { width: 2 },
-        minorTicks: {
-            width: 1, color: '#8c8c8c'
-        },
-         pointers: [{
-            value: 60,
-            radius: '60%'
-        }],
-        ranges: [{
-            start: 0,
-            end: 70,
-            radius: '110%',
-            strokeWidth: 10
-        }, {
-            start: 70,
-            end: 110,
-            radius: '110%',
-            strokeWidth: 10
-        }, {
-            start: 110,
-            end: 120,
-            radius: '110%',
-            strokeWidth: 10
-        }]
+            majorTicks: {
+                width: 1, color: '#8c8c8c'
+            },
+            lineStyle: { width: 2 },
+            minorTicks: {
+                width: 1, color: '#8c8c8c'
+            },
+            pointers: [{
+                value: 60,
+                radius: '60%'
+            }],
+            ranges: [{
+                start: 0,
+                end: 70,
+                radius: '110%',
+                strokeWidth: 10
+            }, {
+                start: 70,
+                end: 110,
+                radius: '110%',
+                strokeWidth: 10
+            }, {
+                start: 110,
+                end: 120,
+                radius: '110%',
+                strokeWidth: 10
+            }]
         }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -239,17 +240,18 @@ You can set margin for gauge from its container through
 ```typescript
 
 <template>
-  <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge background= 'skyblue' :border= 'border' :margin= 'margin' >
-    <e-axes>
-      <e-axis startAngle= 230 endAngle= 130  maximum= 120 radius= '90%':pointers = 'pointers' :ranges='ranges' :lineStyle= 'lineStyle' :minorTicks= 'minorTicks' :majorTicks = 'majorTicks'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge background= 'skyblue' :border= 'border' :margin= 'margin' >
+                <e-axes>
+                    <e-axis startAngle= 230 endAngle= 130  maximum= 120 radius= '90%':pointers = 'pointers' :ranges='ranges' :lineStyle= 'lineStyle' :minorTicks= 'minorTicks' :majorTicks = 'majorTicks'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -258,45 +260,45 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         return {
-           border: {color: "#FF0000", width: 2},
+            border: {color: "#FF0000", width: 2},
             margin: { left: 40, right: 40, top: 40, bottom: 40 },
-        majorTicks: {
-            width: 1, color: '#8c8c8c'
-        },
-        lineStyle: { width: 2 },
-        minorTicks: {
-            width: 1, color: '#8c8c8c'
-        },
-         pointers: [{
-            value: 60,
-            radius: '60%'
-        }],
-        ranges: [{
-            start: 0,
-            end: 70,
-            radius: '110%',
-            strokeWidth: 10
-        }, {
-            start: 70,
-            end: 110,
-            radius: '110%',
-            strokeWidth: 10
-        }, {
-            start: 110,
-            end: 120,
-            radius: '110%',
-            strokeWidth: 10
-        }]
+            majorTicks: {
+                width: 1, color: '#8c8c8c'
+            },
+            lineStyle: { width: 2 },
+            minorTicks: {
+                width: 1, color: '#8c8c8c'
+            },
+            pointers: [{
+                value: 60,
+                radius: '60%'
+            }],
+            ranges: [{
+                start: 0,
+                end: 70,
+                radius: '110%',
+                strokeWidth: 10
+            }, {
+                start: 70,
+                end: 110,
+                radius: '110%',
+                strokeWidth: 10
+            }, {
+                start: 110,
+                end: 120,
+                radius: '110%',
+                strokeWidth: 10
+            }]
         }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 400px;
-    max-height:100px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 400px;
+        max-height:100px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -311,39 +313,40 @@ Render semi or quarter circular gauges by modifying the start and end angles. By
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis startAngle= 270 endAngle= 90  radius= '80%' :lineStyle= 'lineStyle'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis startAngle= 270 endAngle= 90  radius= '80%' :lineStyle= 'lineStyle'>
+                </e-axis>
+            </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
-
 Vue.use(CircularGaugePlugin);
+
 export default {
     data: function () {
         return {
-        lineStyle: {
-            width: 2,
-            color: '#F8F8F8'
-        },
+            lineStyle: {
+                width: 2,
+                color: '#F8F8F8'
+            },
         }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    max-height: 100px;
-    margin: 0px;
-  }
+    .wrapper {
+        max-width: 300px;
+        max-height: 100px;
+        margin: 0px;
+    }
 </style>
 ```
 

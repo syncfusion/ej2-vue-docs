@@ -22,38 +22,38 @@ property.
 
 <template>
     <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis  :lineStyle= 'lineStyle' background= 'rgba(0, 128, 128, 0.3)'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-</div>
-</div>
-
+        <div class='wrapper'>
+           <ejs-circulargauge>
+              <e-axes>
+                  <e-axis  :lineStyle= 'lineStyle' background= 'rgba(0, 128, 128, 0.3)'>
+                  </e-axis>
+              </e-axes>
+           </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 
 Vue.use(CircularGaugePlugin);
 export default {
-    data: function (){
-return{
-  lineStyle: {
-    width: 2,
-    color: 'red'
-}
-}
+    data: function () {
+        return {
+            lineStyle: {
+            width: 2,
+            color: 'red'
+        }
+        }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -72,34 +72,35 @@ end angle is 160 degree and you can customize this option by using
 ```typescript
 
 <template>
-<div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge :axes = 'axes'>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge :axes = 'axes'>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 
 Vue.use(CircularGaugePlugin);
-export default {
-     data: function () {
-return{
-    axes: [{
-        startAngle: 270,
-        endAngle: 90
-    }]
-}
-    }
-};
+    export default {
+        data: function () {
+            return {
+                axes: [{
+                    startAngle: 270,
+                     endAngle: 90
+                }]
+            }
+        }
+    };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -118,16 +119,17 @@ The [`direction`](../api/circular-gauge/axis/#direction-string) property enable
 
 <template>
 <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis  direction= 'AntiClockWise'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
+    <div class='wrapper'>
+        <ejs-circulargauge >
+            <e-axes>
+                <e-axis  direction= 'AntiClockWise'>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
 </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -136,10 +138,10 @@ Vue.use(CircularGaugePlugin);
 export default { };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 
 ```
@@ -164,16 +166,17 @@ You can set the radius of the gauge in pixel as demonstrated below,
 
 <template>
 <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis   radius= '150'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
+    <div class='wrapper'>
+        <ejs-circulargauge >
+            <e-axes>
+                <e-axis radius= '150'>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
 </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -182,10 +185,10 @@ Vue.use(CircularGaugePlugin);
 export default { };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -204,16 +207,17 @@ For example, when the radius is ‘50%’, gauge renders to half of the availabl
 
 <template>
 <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis   radius= '50%'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
+    <div class='wrapper'>
+        <ejs-circulargauge>
+            <e-axes>
+                <e-axis radius= '50%'>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
 </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -222,10 +226,10 @@ Vue.use(CircularGaugePlugin);
 export default { };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -250,17 +254,18 @@ and also you can customize the interval for major and minor ticks using
 ```typescript
 
 <template>
-<div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis  :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge >
+                <e-axes>
+                    <e-axis  :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' >
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+         </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -268,28 +273,28 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-  majorTicks: {
-    interval: 10,
-    color:'red',
-    height: 10,
-    width: 3
-},
-minorTicks: {
-    interval: 5,
-    color:'green',
-    height: 5,
-    width: 2
-}
-}
+    return {
+        majorTicks: {
+            interval: 10,
+            color:'red',
+            height: 10,
+            width: 3
+        },
+        minorTicks: {
+            interval: 5,
+            color:'green',
+            height: 5,
+            width: 2
+        }
+    }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -306,17 +311,18 @@ By default, ticks will be placed `inside` the axis.
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis  :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis  :majorTicks= 'majorTicks' :minorTicks= 'minorTicks'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -324,32 +330,32 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
- majorTicks: {
-    interval: 10,
-    color:'red',
-    height: 10,
-    width: 3,
-    position: 'Inside',
-    offset: 5
-},
-minorTicks: {
-    interval: 5,
-    color:'green',
-    height: 5,
-    width: 2,
-    position: 'Inside',
-    offset: 5
-}
-}
+        return {
+            majorTicks: {
+                interval: 10,
+                color:'red',
+                height: 10,
+                width: 3,
+                position: 'Inside',
+                offset: 5
+            },
+            minorTicks: {
+                interval: 5,
+                color:'green',
+                height: 5,
+                width: 2,
+                position: 'Inside',
+                offset: 5
+            }
+        }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -364,17 +370,18 @@ Labels of an axis can be customized by using [`font`](../api/circular-gauge/labe
 ```typescript
 
 <template>
-<div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis :labelStyle ='labelStyle' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :labelStyle ='labelStyle' >
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -382,23 +389,23 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-labelStyle: {
-    font: {
-color: 'red',
-size: '20px',
-fontWeight: 'Bold'
-    }
-}
-}
+        return {
+            labelStyle: {
+                font: {
+                    color: 'red',
+                    size: '20px',
+                    fontWeight: 'Bold'
+                }
+            }
+        }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -418,16 +425,16 @@ By default, labels will be placed `inside` the axis.
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis :labelStyle ='labelStyle' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :labelStyle ='labelStyle'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -436,20 +443,20 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
- labelStyle: {
-    position: 'Outside',
-    offset: 5
-}
-}
+        return {
+            labelStyle: {
+                position: 'Outside',
+                offset: 5
+            }
+        }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -464,16 +471,16 @@ If the last label is not in the visible range, it will be hidden by default. If 
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis showLastLabel="true" minimum= 0 maximum= 170 startAngle= 210 endAngle= 150 >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis showLastLabel="true" minimum= 0 maximum= 170 startAngle= 210 endAngle= 150>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -482,15 +489,15 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {}
+        return {}
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -505,16 +512,16 @@ Labels can be swept along the axis angle by enabling [`autoAngle`](../api/circul
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis :labelStyle ='labelStyle' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+     <div id="app">
+         <div class='wrapper'>
+             <ejs-circulargauge>
+                 <e-axes>
+                     <e-axis :labelStyle ='labelStyle'>
+                     </e-axis>
+                 </e-axes>
+             </ejs-circulargauge>
+         </div>
+     </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -523,19 +530,19 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-labelStyle: {
-    autoAngle: true
-}
-}
+    return {
+        labelStyle: {
+            autoAngle: true
+        }
+    }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -555,17 +562,18 @@ then the last label will be hidden.
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis  minimum= 0 maximum= 12 startAngle= 0 endAngle= 360 :labelStyle ='labelStyle' :minorTicks= 'minorTicks' :majorTicks= 'majorTicks' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis  minimum= 0 maximum= 12 startAngle= 0 endAngle= 360 :labelStyle ='labelStyle' :minorTicks= 'minorTicks' :majorTicks= 'majorTicks' >
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -573,29 +581,30 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-majorTicks: {
-    interval: 1,
-    position: 'Inside',
-    height: 10
-},
-minorTicks: {
-    interval: 0.2,
-    position: 'Inside',
-    height: 5
-}, labelStyle: {
-    position: 'Inside',
-    hiddenLabel: 'First'
-}
-}
+        return {
+            majorTicks: {
+                interval: 1,
+                position: 'Inside',
+                height: 10
+            },
+            minorTicks: {
+                interval: 0.2,
+                position: 'Inside',
+                height: 5
+            },
+            labelStyle: {
+                position: 'Inside',
+                hiddenLabel: 'First'
+            }
+      }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -610,16 +619,16 @@ Axis labels can be formatted by using [`format`](../api/circular-gauge/labelMode
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis :labelStyle ='labelStyle' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :labelStyle ='labelStyle'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -628,19 +637,19 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-labelStyle: {
-    format: 'p1'
-}
-}
+    return {
+        labelStyle: {
+            format: 'p1'
+        }
+    }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -715,17 +724,18 @@ Axis labels support custom label format using placeholder like {value}°C, in 
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis :labelStyle ='labelStyle' >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :labelStyle ='labelStyle'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
+
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
@@ -733,19 +743,19 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-labelStyle: {
-    format: '{value}°C'
-}
-}
+        return {
+            labelStyle: {
+                format: '{value}°C'
+            }
+        }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -760,16 +770,16 @@ When the axis labels overlap with each other, you can hide the intersected lab
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis :startAngle='startAngle' :hideIntersectingLabel='hideIntersectingLabel' :endAngle='endAngle' :majorTicks='majorTicks' :minorTicks='minorTicks' minimum=0 maximum=200  >
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :startAngle='startAngle' :hideIntersectingLabel='hideIntersectingLabel' :endAngle='endAngle' :majorTicks='majorTicks' :minorTicks='minorTicks' minimum=0 maximum=200>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -778,7 +788,7 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
+        return {
             startAngle: 270,
             endAngle: 90,
             hideIntersectingLabel: true,
@@ -787,16 +797,16 @@ return {
             },
             minorTicks: {
                 interval: 2
-            },
-       }
+            }
+        }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -812,16 +822,16 @@ enables you to customize the start and end values of an axis.
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge  >
-    <e-axes>
-      <e-axis minimum= 50 maximum= 250>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis minimum= 50 maximum= 250>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -831,10 +841,10 @@ Vue.use(CircularGaugePlugin);
 export default { };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -850,12 +860,12 @@ Each axis will have its own ranges, pointers, annotations and customization opti
 ```typescript
 
 <template>
- <div id="app">
-  <div class='wrapper'>
-    <ejs-circulargauge :axes= 'axes' >
-    </ejs-circulargauge>
-  </div>
-</div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge :axes= 'axes'>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -864,43 +874,44 @@ import { CircularGaugePlugin } from "@syncfusion/ej2-vue-circulargauge";
 Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
-return {
-axes: [{
-majorTicks: {
-    interval: 10,
-    position: 'Inside',
-    height: 10,
-},
-pointers: [],
-minorTicks: {
-    interval: 5,
-    position: 'Inside',
-    height: 5,
-}
-    }, {
-pointers: [],
-majorTicks: {
-    interval: 10,
-    position: 'Inside',
-    height: 10,
-    color: '#27d5ff'
-},
-minorTicks: {
-    interval: 5,
-    position: 'Inside',
-    height: 5,
-    color: '#27d5ff'
-}
-    }]
-}
+    return {
+        axes: [{
+            majorTicks: {
+                interval: 10,
+                position: 'Inside',
+                height: 10,
+            },
+            pointers: [],
+            minorTicks: {
+                interval: 5,
+                position: 'Inside',
+                height: 5,
+            }
+        },
+        {
+            pointers: [],
+            majorTicks: {
+                interval: 10,
+                position: 'Inside',
+                height: 10,
+                color: '#27d5ff'
+            },
+            minorTicks: {
+                interval: 5,
+                position: 'Inside',
+                height: 5,
+                color: '#27d5ff'
+            }
+       }]
+    }
     }
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 

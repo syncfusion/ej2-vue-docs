@@ -15,13 +15,13 @@ The rendered circular gauge can be printed directly from the browser by calling 
 ```typescript
 
 <template>
-  <div id="app">
-    <div class='wrapper'>
-    <ejs-button id='print' isToggle="true" v-on:click.native='clickPrint'>
-    </ejs-button>
-    <ejs-circulargauge id="gauge" ref="gauge">
-    </ejs-circulargauge>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-button id='print' isToggle="true" v-on:click.native='clickPrint'>
+            </ejs-button>
+            <ejs-circulargauge id="gauge" ref="gauge">
+            </ejs-circulargauge>
+        </div>
   </div>
 </template>
 <script>
@@ -32,7 +32,6 @@ Vue.use(CircularGaugePlugin, ButtonPlugin);
 export default {
   data () {
     return {
-
     }
   },
 methods: {
@@ -70,13 +69,13 @@ The rendered circular gauge can be exported to the following formats using the [
 ```typescript
 
 <template>
-  <div id="app">
-    <div class='wrapper'>
-    <ejs-button id='export' isToggle="true" v-on:click.native='clickExport'></ejs-button>
-    <ejs-circulargauge id="gauge" ref="gauge">
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-button id='export' isToggle="true" v-on:click.native='clickExport'></ejs-button>
+            <ejs-circulargauge id="gauge" ref="gauge">
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';

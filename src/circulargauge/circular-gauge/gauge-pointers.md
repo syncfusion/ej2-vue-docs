@@ -16,17 +16,17 @@ Pointers are used to indicate values on the axis. Value of the pointer can be mo
 <template>
   <div id="app">
       <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=90 ></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+          <ejs-circulargauge>
+              <e-axes>
+                  <e-axis>
+                      <e-pointers>
+                          <e-pointer value=90 ></e-pointer>
+                     </e-pointers>
+                  </e-axis>
+              </e-axes>
+          </ejs-circulargauge>
+       </div>
+   </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -36,10 +36,10 @@ Vue.use(CircularGaugePlugin);
 export default { };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -57,19 +57,19 @@ length takes value either in `percentage` or `pixel`.
 ```typescript
 
 <template>
-  <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=90  radius= '50%' :needleTail= 'needleTail' :cap ='cap'></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                 <e-axes>
+                     <e-axis>
+                         <e-pointers>
+                             <e-pointer value=90  radius= '50%' :needleTail= 'needleTail' :cap ='cap'></e-pointer>
+                        </e-pointers>
+                     </e-axis>
+                  </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -90,10 +90,10 @@ export default {
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -112,19 +112,19 @@ Cap and tails can be customized by using [`cap`](../api/circular-gauge/pointer/#
 ```typescript
 
 <template>
-  <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=90 color= '#007DD1' pointerWidth= 25 radius= '50%' :needleTail= 'needleTail' :cap ='cap'></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis>
+                        <e-pointers>
+                            <e-pointer value=90 color= '#007DD1' pointerWidth= 25 radius= '50%' :needleTail= 'needleTail' :cap ='cap'></e-pointer>
+                        </e-pointers>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -151,10 +151,10 @@ export default {
 };
 </script>
 <style>
-  .wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 </style>
 ```
 
@@ -167,20 +167,20 @@ The appearance of the needle pointer can be customized by using [`needleStartWid
 ```typescript
 
 <template>
-      <div class='wrapper'>
- <div id="app">
-    <ejs-circulargauge>
-    <e-axes>
-      <e-axis  :radius='gauge3Radius' :startAngle='startAngle' :endAngle='endAngle' :lineStyle= 'lineStyle' :labelStyle ='labelStyle'
-      :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' minimum=0 maximum=100
-      :annotations='annotations'>
-        <e-pointers>
-           <e-pointer value=70  radius= '80%' color='green' :pointerWidth='pointerWidth' :needleStartWidth='needleStartWidth'
-           :needleEndWidth='needleEndWidth' :cap= 'cap' :needleTail= 'needleTail' :animation= 'animation'></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
+    <div class='wrapper'>
+    <div id="app">
+        <ejs-circulargauge>
+            <e-axes>
+                <e-axis  :radius='gauge3Radius' :startAngle='startAngle' :endAngle='endAngle' :lineStyle= 'lineStyle' :labelStyle ='labelStyle'
+                :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' minimum=0 maximum=100
+                :annotations='annotations'>
+                    <e-pointers>
+                        <e-pointer value=70  radius= '80%' color='green' :pointerWidth='pointerWidth' :needleStartWidth='needleStartWidth'
+                        :needleEndWidth='needleEndWidth' :cap= 'cap' :needleTail= 'needleTail' :animation= 'animation'></e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
   </div>
   </div>
 </template>
@@ -202,51 +202,51 @@ let contentTemplate = function() {
 
 Vue.use(CircularGaugePlugin);
 export default {
-  data: function (){
-return{
-  annotations:[{
-            content:contentTemplate,
-            zIndex: '1'
-        }],
-        gauge3Radius: '90%',
-        startAngle:270,
-        endAngle:90,
-  lineStyle: {
-    width: 3,
-    color: '#1E7145'
+    data: function () {
+        return {
+            annotations:[{
+                content:contentTemplate,
+                zIndex: '1'
+            }],
+            gauge3Radius: '90%',
+            startAngle:270,
+            endAngle:90,
+            lineStyle: {
+                width: 3,
+               color: '#1E7145'
+            },
+            labelStyle: {
+                position:'Outside',
+                font: {
+                    color: '#1E7145',
+                    size: '0px'
+                }
+            },
+            majorTicks: {
+                interval: 100,
+                height: 0,
+                width: 1
+            },
+            minorTicks: {
+                height: 0,
+                width: 0
+            },
+            cap: {
+               radius: 8,
+               color: 'green'
+            },
+            needleTail: {
+                length:'0%'
+            },
+            animation:{
+                enable:'true',
+               duration:1000
+            },
+            pointerWidth: 2,
+            needleStartWidth: 4,
+            needleEndWidth: 4
+        }
 },
-labelStyle: {
-  position:'Outside'
-    font: {
-      color: '#1E7145',
-      size: '0px'
-    }
-},
-majorTicks: {
-    interval: 100,
-    height: 0,
-    width: 1
-},
-minorTicks: {
-    height: 0,
-    width: 0
-},
-cap: {
-    radius: 8,
-    color: 'green'
-},
-needleTail: {
-    length:'0%'
-},
-animation:{
-  enable:'true',
-  duration:1000
-},
-pointerWidth: 2,
-needleStartWidth: 4,
-needleEndWidth: 4,
-}
-}
 provide: {
     circulargauge: [Annotations]
 },
@@ -272,19 +272,19 @@ RangeBar starts from the beginning of the gauge and ends at the pointer value.
 ```typescript
 
 <template>
- <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=50   type= 'RangeBar' radius= '60%'></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+     <div id="app">
+         <div class='wrapper'>
+             <ejs-circulargauge>
+                 <e-axes>
+                     <e-axis>
+                         <e-pointers>
+                             <e-pointer value=50   type= 'RangeBar' radius= '60%'></e-pointer>
+                         </e-pointers>
+                     </e-axis>
+                  </e-axes>
+              </ejs-circulargauge>
+          </div>
+      </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -313,17 +313,17 @@ The corners of the range bar pointer can be rounded by specifying desired values
 
 <template>
 <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=60   type= 'RangeBar' radius= '60%'  roundedCornerRadius= 10 :animation ='animation'></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
+    <div class='wrapper'>
+        <ejs-circulargauge>
+            <e-axes>
+                <e-axis>
+                    <e-pointers>
+                        <e-pointer value=60   type= 'RangeBar' radius= '60%'  roundedCornerRadius= 10 :animation ='animation'></e-pointer>
+                    </e-pointers>
+                </e-axis>
+           </e-axes>
+       </ejs-circulargauge>
+    </div>
   </div>
 </template>
 <script>
@@ -360,18 +360,18 @@ RangeBar can be customized in terms of color, border and thickness by using
 
 <template>
 <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=50   type= 'RangeBar' radius= '60%' color= '#007DD1' pointerWidth: 15 :border= 'border'></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div class='wrapper'>
+        <ejs-circulargauge>
+            <e-axes>
+                <e-axis>
+                    <e-pointers>
+                        <e-pointer value=50   type= 'RangeBar' radius= '60%' color= '#007DD1' pointerWidth: 15 :border= 'border'></e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+</div>
 </template>
 <script>
 import Vue from 'vue';
@@ -384,7 +384,7 @@ export default {
           border: {
                 color: 'grey',
                 width: 2
-            },
+            }
         }
     }
 };
@@ -415,16 +415,16 @@ We can use image instead of rendering marker shape to denote the pointer value. 
 ```typescript
 
 <template>
-  <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis :pointers ='pointers'>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :pointers ='pointers'>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -471,19 +471,19 @@ The marker can be customized in terms of color, border, width and height by usin
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=90  :border= 'border' type= 'Marker' markerWidth= 15 markerHeight= 15 markerShape= 'Triangle' radius= '100%' color= 'white' ></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis>
+                        <e-pointers>
+                            <e-pointer value=90  :border= 'border' type= 'Marker' markerWidth= 15 markerHeight= 15 markerShape= 'Triangle' radius= '100%' color= 'white' ></e-pointer>
+                        </e-pointers>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -496,7 +496,7 @@ export default {
           border: {
                 color: '#007DD1',
                 width: 2
-            },
+            }
         }
     }
 };
@@ -520,19 +520,19 @@ The pointers can be dragged over the axis line by clicking and dragging the same
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge enablePointerDrag='true' height='250px' width='250px'>
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=50></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+           <ejs-circulargauge enablePointerDrag='true' height='250px' width='250px'>
+              <e-axes>
+                  <e-axis>
+                      <e-pointers>
+                          <e-pointer value=50></e-pointer>
+                      </e-pointers>
+                  </e-axis>
+              </e-axes>
+           </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -565,21 +565,21 @@ In addition to the default pointer, you can add n number of pointer to an axis b
 ```typescript
 
 <template>
-  <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=90  type= 'Marker' markerWidth= 15 markerHeight= 15 markerShape= 'InvertedTriangle' radius= '100%'  ></e-pointer>
-           <e-pointer value=90 type= 'RangeBar' markerWidth= 10  radius= '60%'  ></e-pointer>
-           <e-pointer value=90 pointerWidth= 25 :cap= 'cap' :needleTail= 'needleTail' radius= '60%'  ></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis>
+                        <e-pointers>
+                            <e-pointer value=90  type= 'Marker' markerWidth= 15 markerHeight= 15 markerShape= 'InvertedTriangle' radius= '100%'  ></e-pointer>
+                             <e-pointer value=90 type= 'RangeBar' markerWidth= 10  radius= '60%'  ></e-pointer>
+                             <e-pointer value=90 pointerWidth= 25 :cap= 'cap' :needleTail= 'needleTail' radius= '60%'  ></e-pointer>
+                        </e-pointers>
+                   </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -597,7 +597,7 @@ export default {
             },
             needleTail: {
                 length: '22%',
-            },
+            }
         }
     }
 };
@@ -624,19 +624,19 @@ The [`duration`](../api/circular-gauge/animationModel/#duration-number) property
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=90  :animation= 'animation' ></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+         <div class='wrapper'>
+             <ejs-circulargauge>
+                 <e-axes>
+                     <e-axis>
+                         <e-pointers>
+                             <e-pointer value=90  :animation= 'animation' ></e-pointer>
+                         </e-pointers>
+                     </e-axis>
+                 </e-axes>
+             </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -682,16 +682,16 @@ The linear gradient can be applied to all pointer types like marker, range bar a
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge >
-    <e-axes>
-      <e-axis :startAngle = 270 :endAngle= 90 :lineStyle= 'lineStyle' :labelStyle= 'labelStyle' :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :radius= 'radius' :minimum= 0 :maximum= 100 :pointers='pointers' >
-      </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+         <div class='wrapper'>
+             <ejs-circulargauge>
+                 <e-axes>
+                     <e-axis :startAngle = 270 :endAngle= 90 :lineStyle= 'lineStyle' :labelStyle= 'labelStyle' :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :radius= 'radius' :minimum= 0 :maximum= 100 :pointers='pointers' >
+                     </e-axis>
+                 </e-axes>
+             </ejs-circulargauge>
+         </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -701,55 +701,55 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         var pointerLinearGradient = {
-          startValue: '0%',
-          endValue: '100%',
-          colorStop: [
-          { color: '#FEF3F9', offset: '0%', opacity: 0.9 },
-          { color: '#E63B86', offset: '70%', opacity: 0.9 }]
+            startValue: '0%',
+            endValue: '100%',
+            colorStop: [
+                { color: '#FEF3F9', offset: '0%', opacity: 0.9 },
+                { color: '#E63B86', offset: '70%', opacity: 0.9 }]
         }
         return {
-        lineStyle: { width: 3, color: '#E63B86' },
-        labelStyle: {
-            font: { size: '0px'}
-        }, majorTicks: {
-            height: 0
-        }, minorTicks: {
-            height: 0
-        },
-        radius: '90%',
-        pointers: [{
-            radius: '80%',
-            value: 80,
-            animation: { enable: true, duration: 1000 },
-            pointerWidth: 10,
-            linearGradient: pointerLinearGradient,
-            cap: {
-                radius: 8,
-                color: 'white',
-                border: {
-                    color: '#E63B86',
-                    width: 1
-                }
-                },
-            needleTail: {
-                length: '20%',
-                linearGradient: pointerLinearGradient
-            }
-        }, {
-            radius: '60%', value: 40,
-            animation: { duration: 1000 },
-            pointerWidth: 10,
-            linearGradient: pointerLinearGradient,
-            cap: {
-                radius: 8, color: 'white',
-                border: { color: '#E63B86', width: 1 }
+            lineStyle: { width: 3, color: '#E63B86' },
+            labelStyle: {
+                font: { size: '0px'}
+            }, majorTicks: {
+                height: 0
+            }, minorTicks: {
+                height: 0
             },
-            needleTail: {
-                length: '20%',
-                linearGradient: pointerLinearGradient
-            }
-        }]
-        }
+            radius: '90%',
+            pointers: [{
+                radius: '80%',
+                value: 80,
+                animation: { enable: true, duration: 1000 },
+                pointerWidth: 10,
+                linearGradient: pointerLinearGradient,
+                cap: {
+                    radius: 8,
+                    color: 'white',
+                    border: {
+                        color: '#E63B86',
+                        width: 1
+                    }
+                },
+                needleTail: {
+                    length: '20%',
+                    linearGradient: pointerLinearGradient
+                }
+                }, {
+                    radius: '60%', value: 40,
+                    animation: { duration: 1000 },
+                    pointerWidth: 10,
+                    linearGradient: pointerLinearGradient,
+                    cap: {
+                        radius: 8, color: 'white',
+                        border: { color: '#E63B86', width: 1 }
+                    },
+                    needleTail: {
+                         length: '20%',
+                         linearGradient: pointerLinearGradient
+                    }
+               }]
+      }
     },
     provide: {
         circulargauge: [Gradient]
@@ -777,16 +777,16 @@ The radial gradient can be applied to all pointer types like marker, range bar a
 ```typescript
 
 <template>
-   <div id="app">
-      <div class='wrapper'>
-    <ejs-circulargauge>
-    <e-axes>
-      <e-axis :pointers= 'pointers' :startAngle = 270 :endAngle= 90 :lineStyle= 'lineStyle' :labelStyle= 'labelStyle' :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :radius= 'radius' :minimum= 0 :maximum= 100>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-circulargauge>
+                <e-axes>
+                    <e-axis :pointers= 'pointers' :startAngle = 270 :endAngle= 90 :lineStyle= 'lineStyle' :labelStyle= 'labelStyle' :majorTicks= 'majorTicks' :minorTicks= 'minorTicks' :radius= 'radius' :minimum= 0 :maximum= 100>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -796,56 +796,56 @@ Vue.use(CircularGaugePlugin);
 export default {
     data: function () {
         var pointerRadialGradient = {
-          radius: '50%',
-          innerPosition: { x: '50%', y: '50%' },
-          outerPosition: { x: '50%', y: '50%' },
-          colorStop: [
-          { color: '#FEF3F9', offset: '0%', opacity: 0.9 },
-          { color: '#E63B86', offset: '60%', opacity: 0.9 }]  
+            radius: '50%',
+            innerPosition: { x: '50%', y: '50%' },
+            outerPosition: { x: '50%', y: '50%' },
+            colorStop: [
+                { color: '#FEF3F9', offset: '0%', opacity: 0.9 },
+                { color: '#E63B86', offset: '60%', opacity: 0.9 }]  
         }  
         return {
-        lineStyle: { width: 3, color: '#E63B86' },
-        labelStyle: {
-            font: { size: '0px'}
-        }, majorTicks: {
-            height: 0
-        }, minorTicks: {
-            height: 0
-        },
-        radius: '90%',
-        pointers: [{
-            radius: '80%',
-            value: 80,
-            animation: { enable: true, duration: 1000 },
-            pointerWidth: 10,
-            radialGradient: pointerRadialGradient,
-            cap: {
-                radius: 8,
-                color: 'white',
-                border: {
-                    color: '#E63B86',
-                    width: 1
-                }
-                },
-            needleTail: {
-                length: '20%',
-                radialGradient: pointerRadialGradient
-              }
-        }, {
-            radius: '60%', value: 40,
-            animation: { duration: 1000 },
-            pointerWidth: 10,
-            radialGradient: pointerRadialGradient,
-            cap: {
-                radius: 8, color: 'white',
-                border: { color: '#E63B86', width: 1 }
+            lineStyle: { width: 3, color: '#E63B86' },
+            labelStyle: {
+                font: { size: '0px'}
+            }, majorTicks: {
+                height: 0
+            }, minorTicks: {
+                height: 0
             },
-            needleTail: {
-                length: '20%',
-                radialGradient: pointerRadialGradient
-            }
-        }]
-        }
+            radius: '90%',
+            pointers: [{
+                radius: '80%',
+                value: 80,
+                animation: { enable: true, duration: 1000 },
+                pointerWidth: 10,
+                radialGradient: pointerRadialGradient,
+                cap: {
+                    radius: 8,
+                    color: 'white',
+                    border: {
+                        color: '#E63B86',
+                        width: 1
+                    }
+                },
+                needleTail: {
+                    length: '20%',
+                    radialGradient: pointerRadialGradient
+                }
+             }, {
+                radius: '60%', value: 40,
+                animation: { duration: 1000 },
+                pointerWidth: 10,
+                radialGradient: pointerRadialGradient,
+                cap: {
+                    radius: 8, color: 'white',
+                    border: { color: '#E63B86', width: 1 }
+                },
+                needleTail: {
+                    length: '20%',
+                    radialGradient: pointerRadialGradient
+                }
+             }]
+      }
     },
     provide: {
         circulargauge: [Gradient]

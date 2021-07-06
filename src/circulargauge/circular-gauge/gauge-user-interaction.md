@@ -164,7 +164,6 @@ export default {
     height: 30px;
     margin: 0 auto;
 }
-
 #templateWrap .des {
     float: right;
     padding-left: 10px;
@@ -187,48 +186,37 @@ Any HTML elements can be displayed in the tooltip by using the
 
 ```typescript
 <template>
-   <div id="app">
+    <div id="app">
       <div class='wrapper'>
-    <ejs-circulargauge   :tooltip='tooltip' >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=70 ></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
-  </div>
+          <ejs-circulargauge   :tooltip='tooltip' >
+              <e-axes>
+                  <e-axis >
+                      <e-pointers>
+                          <e-pointer value=70 ></e-pointer>
+                      </e-pointers>
+                  </e-axis>
+              </e-axes>
+          </ejs-circulargauge>
+      </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue';
 import { CircularGaugePlugin, GaugeTooltip } from "@syncfusion/ej2-vue-circulargauge";
 
-let contentVue = Vue.component("contentTemplate", {
-  template: '<div>Pointer: 70 </div>',
-  data() {
-    return {
-      data: {}
-    };
-  }
-});
-let contentTemplate = function() {
-  return { template: contentVue };
-};
 Vue.use(CircularGaugePlugin);
 export default {
-      data: function () {
-          return{
+    data: function () {
+        return {
             tooltip: {
                enable: true,
-               template: contentTemplate
+               template: '<div>Pointer: 70 </div>'
             }
-          }
+        }
     },
-     provide: {
-       circulargauge: [ GaugeTooltip]
-     },
+    provide: {
+        circulargauge: [GaugeTooltip]
+    },
 };
 </script>
 <style>
@@ -252,16 +240,16 @@ Pointers can be dragged over the axis value. This can be achieved by clicking an
 <template>
    <div id="app">
       <div class='wrapper'>
-    <ejs-circulargauge id='tooltip-container' enablePointerDrag= 'enablePointerDrag' :tooltipRender='tooltipRender' :tooltip='tooltip' >
-    <e-axes>
-      <e-axis >
-        <e-pointers>
-           <e-pointer value=70 ></e-pointer>
-    </e-pointers>
-    </e-axis>
-    </e-axes>
-    </ejs-circulargauge>
-  </div>
+          <ejs-circulargauge id='tooltip-container' enablePointerDrag= 'enablePointerDrag' :tooltipRender='tooltipRender' :tooltip='tooltip' >
+              <e-axes>
+                  <e-axis>
+                      <e-pointers>
+                          <e-pointer value=70 ></e-pointer>
+                      </e-pointers>
+                  </e-axis>
+              </e-axes>
+          </ejs-circulargauge>
+      </div>
   </div>
 </template>
 <script>
@@ -270,26 +258,26 @@ import { CircularGaugePlugin, GaugeTooltip } from "@syncfusion/ej2-vue-circularg
 
 Vue.use(CircularGaugePlugin);
 export default {
-      data: function () {
-          return{
-              enablePointerDrag: true
+    data: function () {
+        return {
+            enablePointerDrag: true
             tooltip: {
-               enable: true,
-               template: '<div id='templateWrap'><div class='des'>pointer <span>${Math.round(value)} </span></div></div>'
+                enable: true,
+                template: '<div id='templateWrap'><div class='des'>pointer <span>${Math.round(value)} </span></div></div>'
             }
           }
     },
-     provide: {
-       circulargauge: [ GaugeTooltip]
-     },
-        methods:{
-         tooltipRender: function (args) {
+    provide: {
+        circulargauge: [GaugeTooltip]
+    },
+    methods:{
+        tooltipRender: function (args) {
             let cotainerObj = document.getElementById('tooltip-container');
             let value = args.pointer.currentValue;
             debugger;
             cotainerObj.ej2_instances[0].setPointerValue(0, 0, value);
-            }
         }
+    }
 };
 </script>
 <style>
