@@ -2425,7 +2425,7 @@ We can show more indicator if more than one appointment is available in a same c
 <template>
   <div id='app'>
     <div id='container'>
-        <ejs-schedule ref='scheduleObj' :height='height' :width='width' :selectedDate='selectedDate' :currentView="TimelineMonth" :views='views' :eventSettings='eventSettings'>
+        <ejs-schedule ref='scheduleObj' :height='height' :width='width' :selectedDate='selectedDate' :currentView='currentView' :views='views' :eventSettings='eventSettings'>
         </ejs-schedule>
     </div>
   </div>
@@ -2444,6 +2444,7 @@ export default {
       height: '550px',
       width: '100%',
       views: ['TimelineDay', 'TimelineMonth'],
+      currentView: 'TimelineMonth',
       eventSettings: {
         dataSource: scheduleData,
         enableMaxHeight: true,
