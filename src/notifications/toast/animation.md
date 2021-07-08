@@ -40,7 +40,7 @@ The following sample demonstrates some types of animations that suit toast. You 
                 </div>
             </div>
         </div>
-         <ejs-toast ref='elementRef' id='element' :position='position' title='Matt sent you a friend request' content='You have a new friend request yet to accept'></ejs-toast>
+         <ejs-toast ref='elementRef' id='element' :position='position' :animation='animation' title='Matt sent you a friend request' content='You have a new friend request yet to accept'></ejs-toast>
     </div>
 </script>
 </div>
@@ -61,6 +61,10 @@ export default {
         return {
             position: { X: 'Right', Y: 'Bottom' },
             easeFields: { text: 'Text', value: 'Id' },
+            animation: {
+                show: { effect: "SlideRightIn" },
+                hide: { effect: "SlideLeftOut" },
+            },
             animationData: [
                 { Id: 'FadeIn', Text: 'Fade In' },
                 { Id: 'FadeZoomIn', Text: 'Fade Zoom In' },
