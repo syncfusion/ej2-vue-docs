@@ -9,3 +9,5 @@
 * [Appearance](linear-gauge/linear-gauge-appearance.md)
 * [Accessibility](linear-gauge/accessibility.md)
 * [Internationalization](linear-gauge/internationalization.md)
+* [Events](linear-gauge/events.md)
+* [Methods](linear-gauge/methods.md)
