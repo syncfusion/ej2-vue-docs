@@ -18,7 +18,11 @@ The Dialog footer can be enabled by adding built-in [buttons](../api/dialog/#but
 
 > The [buttons](../api/dialog/#buttons) and [footerTemplate](../api/dialog/#footertemplate) properties can't be used at the same time.
 
-The below example demonstrates the usage of header and footer template in the Dialog
+## Content
+
+The Dialog content can be updated by providing any HTML string through the [`content`](../api/dialog/#content).
+
+The below example demonstrates the usage of header, footer and content template in the Dialog.
 
 {% tab template="dialog/template", isDefaultActive=true %}
 
