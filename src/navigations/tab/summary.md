@@ -18,4 +18,5 @@
 * [Load Tab items dynamically](tab/how-to/load-tab-items-dynamically.md)
 * [Create collapsible Tabs](tab/how-to/create-collapsible-tabs.md)
 * [Render other components in Tab using template](tab/how-to/render-other-components-in-tab-using-template.md)
+* [Adding dynamic items with content reuse](tab/how-to/adding-dynamic-items-with-content-reuse.md)
 * [Customize tab content height](tab/how-to/customize-tab-content-height.md)
