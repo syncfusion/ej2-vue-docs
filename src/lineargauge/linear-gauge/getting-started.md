@@ -296,7 +296,7 @@ export default {
         }]
         }
     }
-});
+};
 </script>
 <style>
 #content-wrapper {

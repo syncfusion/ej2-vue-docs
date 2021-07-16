@@ -598,7 +598,7 @@ Multiple axes can be added to the Linear Gauge by adding multiple [`e-axis`](../
         <e-axes>
           <e-axis :labelStyle='labelStyle'></e-axis>
           <e-axis :opposedPosition='opposedPosition' :labelStyle='labelStyle1'></e-axis>
-        </e-xes>
+        </e-axes>
       </ejs-lineargauge>
     </div>
   </div>

@@ -26,7 +26,7 @@ To change the pointer value dynamically, use the [`setPointerValue`](../api/line
   <div class="content-wrapper">
     <div align='center'>
       <button v-on:click="clicked">Click</button>
-      <ejs-lineargauge>
+      <ejs-lineargauge ref='gauge'>
         <e-axes>
           <e-axis>
             <e-pointers>
@@ -76,7 +76,7 @@ To change the annotation content dynamically, use the [`setAnnotationValue`](../
   <div class="content-wrapper">
     <div align='center'>
       <button v-on:click="clicked">Click</button>
-      <ejs-lineargauge>
+      <ejs-lineargauge ref='gauge'>
         <e-annotations>
             <e-annotation :content='contentTemplate' :zIndex='zindex' :axisValue='axisValue'>
             </e-annotation>
@@ -134,7 +134,7 @@ The [`refresh`](../api/linear-gauge#refresh) method can be used to change the st
   <div class="content-wrapper">
     <div align='center'>
       <button v-on:click="clicked">Click</button>
-      <ejs-lineargauge>
+      <ejs-lineargauge ref='gauge'>
         <e-axes>
           <e-axis>
             <e-pointers>
