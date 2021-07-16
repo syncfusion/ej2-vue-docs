@@ -6,7 +6,7 @@ description: "This article demonstrates how to create a simple Scheduler and con
 
 # Getting Started
 
-This section briefly explains how to create **Scheduler** component and configure its available functionalities in VueJS Environment.
+This section briefly explains how to create [**Vue Scheduler**](https://www.syncfusion.com/vue-ui-components/vue-scheduler) component and configure its available functionalities in VueJS Environment.
 
 ## Installation and Configuration
 
@@ -337,3 +337,5 @@ The output will display the Scheduler with the specified view configuration.
 ```
 
 {% endtab %}
+
+> You can refer to our [Vue Scheduler](https://www.syncfusion.com/vue-ui-components/vue-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Scheduler example](https://ej2.syncfusion.com/vue/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

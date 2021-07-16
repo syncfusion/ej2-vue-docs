@@ -494,6 +494,8 @@ The Scheduler layout and its behavior can be changed as per the common RTL (Righ
 
 {% endtab %}
 
+> You can refer to our [Vue Scheduler](https://www.syncfusion.com/vue-ui-components/vue-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Scheduler example](https://ej2.syncfusion.com/vue/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [How to change first day of the week in the Scheduler](./working-days/#setting-start-day-of-the-week)

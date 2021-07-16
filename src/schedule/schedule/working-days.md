@@ -573,6 +573,8 @@ There are scenarios where you may need to load the Scheduler displaying the syst
 
 {% endtab %}
 
+> You can refer to our [Vue Scheduler](https://www.syncfusion.com/vue-ui-components/vue-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Scheduler example](https://ej2.syncfusion.com/vue/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [To display the current time indicator](./timescale/#highlighting-current-date-and-time)

@@ -432,3 +432,5 @@ Returns `Date`
     let convertedDate = timezone.removeLocalOffset(date);
     console.log(convertedDate); //2018-12-05T15:25:11.000Z
 ```
+
+> You can refer to our [Vue Scheduler](https://www.syncfusion.com/vue-ui-components/vue-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Scheduler example](https://ej2.syncfusion.com/vue/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

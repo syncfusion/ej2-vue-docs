@@ -98,3 +98,5 @@ To achieve better performance in the Scheduler when loading a large number of re
 ## See Also
 
 * [Virtual scrolling in Agenda view](./views/#agenda-view)
+
+> You can refer to our [Vue Scheduler](https://www.syncfusion.com/vue-ui-components/vue-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Scheduler example](https://ej2.syncfusion.com/vue/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.
