@@ -1,4 +1,5 @@
 * [Getting Started](circular-gauge/getting-started.md)
+* [Getting Started with Vue 3](circular-gauge/getting-started-vue-3.md)
 * [Circular Gauge Dimension](circular-gauge/gauge-dimensions.md)
 * [Axes](circular-gauge/gauge-axes.md)
 * [Ranges](circular-gauge/gauge-ranges.md)
