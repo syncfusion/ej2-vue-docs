@@ -1,4 +1,5 @@
 * [Getting Started](linear-gauge/getting-started.md)
+* [Getting Started with Vue 3](linear-gauge/getting-started-vue-3.md)
 * [linear Gauge Dimensions](linear-gauge/linear-gauge-dimensions.md)
 * [Axis](linear-gauge/axis.md)
 * [Ranges](linear-gauge/ranges.md)
