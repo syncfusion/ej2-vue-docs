@@ -1,71 +1,28 @@
 ---
-title: "Legend"
+title: " Legend in Vue Maps control | Syncfusion "
+
 component: "Maps"
-description: "Legend support in maps"
+
+description: "Learn here all about Legend feature of Syncfusion Vue Maps control and more."
 ---
 
-# Legend
+# Legend in Vue Maps control
 
-A legend is a key used on a map that contains swatches of symbols with descriptions. It provides valuable information for interpreting what the map is displaying and can be represented in various colors, shapes or other identifiers based on the data. It gives a breakdown of what each symbol represents throughout the map.
+A Legend is a visual representation of the symbols used on the map. It can be represented in various colors, shapes or other identifiers based on the data and provides valuable information for interpreting what the Maps are displaying. It explains what each symbol in the Maps represents. Legends are enabled by setting the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel/) property to "**true**".
 
-## Visibility
+## Modes of legend
 
-The Legends can be made visible by setting the visible property of legendSettings to true.
+Legend had two types of mode.
+1. **Default** mode
+2. **Interactive** mode
 
-## Positioning of the Legend
+### Default mode
 
-The legend can be positioned in two ways.
+Default mode legends having symbols with legend labels, used to identify the shape or bubble or marker color. To enable this option by setting the [`mode`](../api/maps/legendSettingsModel/#mode) property of [`legendSettings`](../api/maps/legendSettingsModel/) as "**Default**".
 
-* Absolute Position.
+### Interactive mode
 
-* Dock Position.
-
-### Absolute Position
-
-Based on the margin values of X and Y-axes, the Map legends can be positioned with the support of `location.x` and `location.y` properties available in legendSettings. For positioning the legend based on margins corresponding to a map, position value is set as ‘Float’.
-
-### Dock Position
-
-The map legends can be positioned in following locations within the container.
-You can set this option by using `position` property in legendSettings.
-
-    1 Top
-
-    2 Left
-
-    3 Bottom
-
-    4 Right
-
-above four positions can be aligned combination of 'Near', 'Center' and 'Far' using `alignment` in `legendSettings`. So legend can be aligned 12 positions.
-
-## Legend Mode
-
-Legend had two type of mode. `Default` mode and `Interactive` mode.
-
-### Default Mode
-
-Default mode legends having symbols with legend labels, used to identify the shape or bubble or marker color.
-
-### Interactive Mode
-
-The legends can be made interactive with an arrow mark indicating the exact range color in the legend when the mouse hovers over the corresponding shapes. You can enable this option by setting `mode` property in legendSettings value as “Interactive” and default value of `mode` property is “Default” to enable the normal legend.
-
-## Legend Size
-
-The map legend size can be modified by using the `height` and `width` properties in `legendSettings`.
-
-## Legend for Shapes
-
-The Layer shape type legends can be generated for each color mappings in shape settings.
-**Note:** Below code snippet demonstrate the equal color mapping legends for the shapes.
-
-Provide the `shapePropertyPath` value as 'name' and `shapeDataPath` value as 'Country'.
-
-To enable the equal color mapping refer the `shapeSettings.colorMapping` code snippet.
-
-Finally set `legendSettings.visible` as true and Inject the Legend Module into Maps using
-`provide` option.
+The legends can be made interactive with an arrow mark indicating the exact range color in the legend when the mouse hovers over the corresponding shapes. To enable this type of mode by setting the [`mode`](../api/maps/legendSettingsModel/#mode) property of [`legendSettings`](../api/maps/legendSettingsModel/) as "**Interactive**". The [`invertedPointer`](../api/maps/legendSettingsModel/#invertedpointer) property is used to enable or disable the visibility of the inverted pointer in interactive legend in Maps.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -89,29 +46,34 @@ import { world_map } from './world-map.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
+    return {
         legendSettings: {
-            visible: true
+            visible: true,
+            mode: 'Interactive',
+            invertedPointer: true
         },
         shapeData: world_map,
-            dataSource: [{  "Country": "China", "Membership": "Permanent"},
-            {"Country": "France","Membership": "Permanent" },
-            { "Country": "Russia","Membership": "Permanent"},
-            {"Country": "Kazakhstan","Membership": "Non-Permanent"},
-            { "Country": "Poland","Membership": "Non-Permanent"},
-            {"Country": "Sweden","Membership": "Non-Permanent"}],
-            shapePropertyPath: 'name',
-            shapeDataPath: 'Country'
-            shapeSettings: {
-                colorValuePath: 'Membership',
-                colorMapping: [
+        dataSource: [
+            { "Country": "China", "Membership": "Permanent" },
+            { "Country": "France", "Membership": "Permanent" },
+            { "Country": "Russia", "Membership": "Permanent" },
+            { "Country": "Kazakhstan", "Membership": "Non-Permanent" },
+            { "Country": "Poland", "Membership": "Non-Permanent" },
+            { "Country": "Sweden", "Membership": "Non-Permanent" }
+        ],
+        shapePropertyPath: 'name',
+        shapeDataPath: 'Country',
+        shapeSettings: {
+            colorValuePath: 'Membership',
+            colorMapping: [
                 {
                     value: 'Permanent', color: '#D84444'
                 },
                 {
                     value: 'Non-Permanent', color: '#316DB5'
-                }]
-            }
+                }
+            ]
+        }
     }
 },
 provide: {
@@ -129,15 +91,27 @@ provide: {
 
 {% endtab %}
 
-## Legend Shape
+## Positioning of the legend
 
-To get the legend shape value for `legendSettings` by using `shape` property. You can customize the shape by using the `shapeWidth` and `shapeHeight` property.
+The legend can be positioned in the following two ways:
 
-## Legend for items excluded from color mapping
+* Absolute position
+* Dock position
 
-Based on the ranges in data source, get the excluded ranges from color mapping, and then show the legend with excluded range values are bound to the specific legend.
+<b>Absolute position</b>
 
-The following code example shows legends for the items excluded from color mapping.
+The legend of the Maps can be positioned using the [`location`](../api/maps/legendSettingsModel/#location) property in the [`legendSettings`](../api/maps/legendSettingsModel/) property. For positioning the legend based on co-ordinates corresponding to a Maps, the [`position`](../api/maps/legendSettingsModel/#position) property is set as "**Float**".
+
+<b>Dock position</b>
+
+Legends are positioned in the following locations within the container. The [`position`](../api/maps/legendSettingsModel/#position) property in [`legendSettings`](../api/maps/legendSettingsModel) property is used to set these options in Maps.
+
+* Top
+* Left
+* Bottom
+* Right
+
+The above four positions can be aligned with combination of "**Near**", "**Center**" and "**Far**" using [`alignment`](../api/maps/legendSettingsModel/#alignment) property in [`legendSettings`](../api/maps/legendSettingsModel/) property. So, the legend can be aligned to 12 positions.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -145,6 +119,295 @@ The following code example shows legends for the items excluded from color mappi
 <template>
     <div id="app">
           <div class='wrapper'>
+            <ejs-maps :legendSettings='legendSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Legend } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        legendSettings: {
+            visible: true,
+            position: 'Top',
+            alignment: 'Near'
+        },
+        shapeData: world_map,
+        dataSource: [
+            { "Country": "China", "Membership": "Permanent" },
+            { "Country": "France", "Membership": "Permanent" },
+            { "Country": "Russia", "Membership": "Permanent" },
+            { "Country": "Kazakhstan", "Membership": "Non-Permanent" },
+            { "Country": "Poland", "Membership": "Non-Permanent" },
+            { "Country": "Sweden", "Membership": "Non-Permanent" }
+        ],
+        shapePropertyPath: 'name',
+        shapeDataPath: 'Country',
+        shapeSettings: {
+            colorValuePath: 'Membership',
+            colorMapping: [
+                {
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+                }
+            ]
+        }
+    }
+},
+provide: {
+    maps: [Legend]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+## Legend for shapes
+
+Legend for shapes can be generated from color mapping types such as equal color mapping, range color mapping and desaturation color mapping.
+
+The below code snippet demonstrate the equal color mapping legends for the shapes. To bind the given data source to the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property of [`layerSettings`](../api/maps/layerSettingsModel/) property. Set the value of [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) to **"name"** and [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) to **"Country"**. To enable equal color mapping, set the [`colorMapping`](../api/maps/colorMappingSettingsModel/) as an array in [`shapeSettings`](../api/maps/shapeSettingsModel/) property. Finally, set the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel/) as "**true**". The [`label`](../api/maps/colorMappingSettingsModel/#label) property in [`colorMapping`](../api/maps/colorMappingSettingsModel/) property is used to set the text name for legend in Maps.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :legendSettings='legendSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings'>
+                    </e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Legend } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        legendSettings: {
+            visible: true
+        },
+        shapeData: world_map,
+        dataSource: [
+            {  "Country": "China", "Membership": "Permanent" },
+            { "Country": "France","Membership": "Permanent" },
+            { "Country": "Russia","Membership": "Permanent" },
+            { "Country": "Kazakhstan","Membership": "Non-Permanent" },
+            { "Country": "Poland","Membership": "Non-Permanent" },
+            { "Country": "Sweden","Membership": "Non-Permanent" }
+        ],
+        shapePropertyPath: 'name',
+        shapeDataPath: 'Country',
+        shapeSettings: {
+            colorValuePath: 'Membership',
+            colorMapping: [
+                { value: 'Permanent', color: '#D84444' },
+                { value: 'Non-Permanent', color: '#316DB5' }
+            ]
+        }
+    }
+},
+provide: {
+    maps: [Legend]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Legend shape
+
+Maps supports the following types of legend shapes. The [`shape`](../api/maps/legendSettingsModel/#shape) property in the [`legendSettings`](../api/maps/legendSettingsModel/) property can be used to change the type of legend shapes.
+
+* Circle
+* Rectangle
+* Triangle
+* Diamond
+* Cross
+* Star
+* HorizontalLine
+* VerticalLine
+* Pentagon
+* InvertedTriangle
+
+The shape of legends can be customized by using the [`shapeWidth`](../api/maps/legendSettingsModel/#shapewidth), [`shapeHeight`](../api/maps/legendSettingsModel/#shapeheight), [`shapeBorder`](../api/maps/legendSettingsModel/#shapeborder) and [`shapePadding`](../api/maps/legendSettingsModel/#shapepadding) properties.
+
+### Customization
+
+The following properties are available in legend to customize the legend shape and legend text in Maps.
+
+* [`background`](../api/maps/legendSettingsModel/#background) - To customize the background color of the Legend.
+* [`border`](../api/maps/legendSettingsModel/#border) - To customize the color, width and opacity of the border for the Legend.
+* [`fill`](../api/maps/legendSettingsModel/#fill) - To apply the color for the Legend in Maps.
+* [`labelDisplayMode`](../api/maps/legendSettingsModel/#labeldisplaymode) - To customize the display mode for the Legend text in Maps.
+* [`labelPosition`](../api/maps/legendSettingsModel/#labelposition) - To customize the position of the Legend text in Maps.
+* [`orientation`](../api/maps/legendSettingsModel/#orientation) - To customize the orientation of the Legend in Maps.
+* [`textStyle`](../api/maps/legendSettingsModel/#textstyle) - To customize the text style for Legend in Maps.
+* [`title`](../api/maps/legendSettingsModel/#title) - To apply the title for the Legend in Maps.
+* [`titleStyle`](../api/maps/legendSettingsModel/#titlestyle) - To customize the style of the title for the Legend in Maps.
+* [`height`](../api/maps/legendSettingsModel/#height) - To customize the height of the Legend in Maps.
+* [`width`](../api/maps/legendSettingsModel/#width) - To customize the width of the Legend in Maps.
+* [`opacity`](../api/maps/legendSettingsModel/#opacity) - To apply the opacity to the Legend in Maps.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :legendSettings='legendSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Legend } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        legendSettings: {
+            visible: true,
+            background: 'green',
+            border: {
+                color: 'blue',
+                width: 2
+            },
+            fill: 'orange',
+            labelPosition: 'Before',
+            orientation: 'Vertical',
+            textStyle: {
+                size: '12px',
+                color: 'red',
+                fontStyle: 'italic'
+            },
+            title: {
+                description: 'Legend title',
+                text: 'Legend'
+            },
+            titleStyle: {
+                size: '12px',
+                color: '#d6e341',
+                fontStyle: 'italic'
+            }
+        },
+        shapeData: world_map,
+        dataSource: [
+            { "Country": "China", "Membership": "Permanent" },
+            { "Country": "France", "Membership": "Permanent" },
+            { "Country": "Russia", "Membership": "Permanent" },
+            { "Country": "Kazakhstan", "Membership": "Non-Permanent" },
+            { "Country": "Poland", "Membership": "Non-Permanent" },
+            { "Country": "Sweden", "Membership": "Non-Permanent" }
+        ],
+        shapePropertyPath: 'name',
+        shapeDataPath: 'Country',
+        shapeSettings: {
+            colorValuePath: 'Membership',
+            colorMapping: [
+                {
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+            }]
+        }
+    }
+},
+provide: {
+    maps: [Legend]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Legend for items excluded from color mapping
+
+The legend can be enabled for items excluded from the color mapping using the [`color`](../api/maps/colorMappingSettingsModel/#color) property in [`colorMapping`](../api/maps/colorMappingSettingsModel/) property. Refer to the "**population_density**" data which demonstrates the population density of some countries.
+
+```typescript
+export let population_density = [
+    ...
+    {
+        'code': 'AE',
+        'value': 90,
+        'name': 'United Arab Emirates',
+        'population': 8264070,
+        'density': 99
+    },
+    {
+        'code': 'GB',
+        'value': 257,
+        'name': 'United Kingdom',
+        'population': 62041708,
+        'density': 255
+    },
+    {
+        'code': 'US',
+        'value': 34,
+        'name': 'United States',
+        'population': 325020000,
+        'density': 33
+    }
+    ...
+    ];
+```
+
+The following example shows how to enable legend for items excluded from the color mapping. In the following example, color mapping is added for the ranges from "**0**" to "**200**". If there are any records in the data source that are outside of this range, the color mapping will not be applied. To apply the color for these excluded items, set the [`color`](../api/maps/colorMappingSettingsModel/#color) property alone in the [`colorMapping`](../api/maps/colorMappingSettingsModel/) property. To enable legend for these items, set the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel/) property to "**true**".
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+        <div class='wrapper'>
             <ejs-maps :legendSettings='legendSettings'>
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
@@ -162,7 +425,7 @@ import { population_density } from './population-density.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
+    return {
         shapeData: world_map,
         legendSettings: {
             visible: true
@@ -201,16 +464,16 @@ provide: {
 
 {% endtab %}
 
-## Hide desired legend items
+### Hide desired legend items
 
-To enable or disable the desired legend for each color mapping, set the `showLegend` property to `true` in `colorMapping`.
+Use the [`showLegend`](../api/maps/colorMappingSettingsModel/#showlegend) property in the [`colorMapping`](../api/maps/colorMappingSettingsModel/) property to show or hide the desired legend items in Maps. If the [`showLegend`](../api/maps/colorMappingSettingsModel/#showlegend) property is set to "**false**", the legend item will be hidden. otherwise, it will be visible.
 
-{% tab template= "maps/color-mapping", isDefaultActive=true %}
+{% tab template= "maps/getting-started", isDefaultActive=true %}
 
 ```html
 <template>
     <div id="app">
-          <div class='wrapper'>
+        <div class='wrapper'>
             <ejs-maps :legendSettings='legendSettings'>
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
@@ -223,21 +486,32 @@ To enable or disable the desired legend for each color mapping, set the `showLeg
 <script>
 import Vue from 'vue';
 import { MapsPlugin, Legend } from '@syncfusion/ej2-vue-maps';
-import { World_Map } from './worldmap.js';
-import { default_data } from './legenddata.js';
+import { world_map } from './world-map.js';
+import { population_density } from './population-density.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
-        shapeData: World_Map,
+    return {
+        shapeData: world_map,
         legendSettings: {
             visible: true
         },
-        shapeDataPath: 'continent',
-        shapePropertyPath: 'continent',
-        dataSource: default_data,
+        shapeDataPath: 'name',
+        shapePropertyPath: 'name',
+        dataSource: population_density,
         shapeSettings: {
-            colorValuePath: 'color',
+            colorValuePath: 'density',
+            colorMapping: [
+                {
+                    from: 0, to: 100, color: 'rgb(153,174,214)', showLegend: true
+                },
+                {
+                    from: 101, to: 200, color: 'rgb(115,143,199)', showLegend: false
+                },
+                {
+                    color: 'rgb(77,112,184)', showLegend: false
+                }
+            ]
         }
     }
 },
@@ -256,18 +530,16 @@ provide: {
 
 {% endtab %}
 
-## Hide legend items based data source value
+### Hide legend items based on data source value
 
-To enable or disable the legend visibility for each item, bind the field name in the data source to the `showLegendPath` property in `legendSettings`.
-
-The following code example shows how to hide the legend items based data source value.
+Depending on the boolean values provided in the data source, the legend items will be hidden or visible. Bind the field name that contains the visibility state in the data source to the [`showLegendPath`](../api/maps/legendSettingsModel/#showlegendpath) property of the [`legendSettings`](../api/maps/legendSettingsModel/) property to achieve this.
 
 {% tab template= "maps/color-mapping", isDefaultActive=true %}
 
 ```html
 <template>
     <div id="app">
-          <div class='wrapper'>
+        <div class='wrapper'>
             <ejs-maps :legendSettings='legendSettings'>
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
@@ -285,7 +557,7 @@ import { default_data } from './legenddata.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
+    return {
         shapeData: World_Map,
         legendSettings: {
             visible: true,
@@ -314,16 +586,16 @@ provide: {
 
 {% endtab %}
 
-## Bind legend item text from data source
+### Binding legend item text from data source
 
-To show the legend text based on binding, the field name in the datasource should be set to the `valuePath` property in `legendSettings`.
+To show the legend text based on values provided in the data source, use the [`valuePath`](../api/maps/legendSettingsModel/#valuepath) property in the [`legendSettings`](../api/maps/legendSettingsModel/) property.
 
 {% tab template= "maps/color-mapping", isDefaultActive=true %}
 
 ```html
 <template>
     <div id="app">
-          <div class='wrapper'>
+        <div class='wrapper'>
             <ejs-maps :legendSettings='legendSettings'>
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
@@ -341,7 +613,7 @@ import { default_data } from './legenddata.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
+    return {
         shapeData: World_Map,
         legendSettings: {
             visible: true,
@@ -370,16 +642,16 @@ provide: {
 
 {% endtab %}
 
-## Hide duplicate legend items
+### Hide duplicate legend items
 
-To enable or disable the duplicate legend items, set the property `removeDuplicateLegend` property to `true` in `legendSettings`.
+To hide the duplicate legend items in Maps, set the [`removeDuplicateLegend`](../api/maps/legendSettingsModel/#removeduplicatelegend) property to "**true**" in the [`legendSettings`](../api/maps/legendSettingsModel/) property.
 
 {% tab template= "maps/color-mapping", isDefaultActive=true %}
 
 ```html
 <template>
     <div id="app">
-          <div class='wrapper'>
+        <div class='wrapper'>
             <ejs-maps :legendSettings='legendSettings'>
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
@@ -397,11 +669,11 @@ import { default_data } from './legenddata.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
+    return {
         shapeData: World_Map,
         legendSettings: {
             visible: true,
-            valuePath:'continent',
+            valuePath: 'continent',
             removeDuplicateLegend: true
         },
         shapeDataPath: 'continent',
@@ -427,26 +699,25 @@ provide: {
 
 {% endtab %}
 
-## Toggle option in legend
+### Toggle option in legend
 
-The toggle option has been provided for legend. So, if you toggle a legend, the given color will be changed to the corresponding maps shape item. You can enable the toggle options using the `toggleLegendSettings` property.
+The toggle option has been provided for legend. If the legend can be toggled, the given color will be changed to the corresponding map shape item. To enable the toggle options in Legend, set the [`enable`](../api/maps/toggleLegendSettingsModel/#enable) property of the [`toggleLegendSettings`](../api/maps/toggleLegendSettingsModel) property to "**true**".
 
-The following options are available to customize the shape of the map:
+The following properties are available to customize the toggle option in legend.
 
-* applyShapeSettings – Applies the fill property value in `shapeSettings` to a shape of the maps if it                         is true and a legend item is clicked.
+* [`applyShapeSettings`](../api/maps/toggleLegendSettingsModel/#applyshapesettings) – To apply the [`fill`](../api/maps/shapeSettingsModel/#fill) property value to the shape of the Maps when toggling the legend items.
+* [`fill`](../api/maps/toggleLegendSettingsModel/#fill) - To apply the color to the shape of the Maps for which legend item is toggled.
+* [`opacity`](../api/maps/toggleLegendSettingsModel/#opacity) – To customize the transparency for the shapes for which legend item is toggled.
+* [`border`](../api/maps/toggleLegendSettingsModel/#border) – To customize the color, width and opacity of the border of the shapes in Maps.
 
-* fill- Specifies the color to the shape of the maps.
-
-* opacity – Specifies the transparency of the legend.
-
-* border – Specifies the border color and width.
+The following example demonstrates how to enable the toggle option to legend.
 
 {% tab template= "maps/color-mapping", isDefaultActive=true %}
 
 ```html
 <template>
     <div id="app">
-          <div class='wrapper'>
+        <div class='wrapper'>
             <ejs-maps :legendSettings='legendSettings'>
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
@@ -464,7 +735,7 @@ import { Population_Density } from './populationdensity.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
+    return {
         shapeData: World_Map,
         legendSettings: {
             visible: true,
@@ -511,4 +782,126 @@ provide: {
 
 {% endtab %}
 
-Refer the [`API`](../api/maps/legendSettingsModel/) for Legend feature.
+## Enable legend for bubbles
+
+To enable the legend for the bubble by setting the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel/) property as "**true**" and [`type`](../api/maps/legendSettingsModel/#type) property of [`legendSettings`](../api/maps/legendSettingsModel/) property as "**Bubbles**". Refer to the below code snippet to enable the legend for bubbles with each bubble different colors rendering.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-maps :legendSettings='legendSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :bubbleSettings='bubbleSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Bubble, Legend } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        legendSettings: {
+            visible: true,
+            type: 'Bubbles'
+        },
+        shapeData: world_map,
+        shapeDataPath: 'name',
+        shapePropertyPath: 'name',
+        bubbleSettings: [{
+            visible: true,
+            minRadius: 20,
+            dataSource: [
+                { color: 'green', name: 'India', population: '38332521' },
+                { color: 'purple', name: 'New Zealand', population: '19651127' },
+                { color: 'blue', name: 'Pakistan', population: '3090416' }
+            ],
+            maxRadius: 40,
+            colorValuePath: 'color',
+            valuePath: 'population'
+        }]
+    }
+},
+provide: {
+    maps: [Bubble, Legend]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+## Enable legend for markers
+
+To enable legend for marker by setting the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel/) as "**true**" and [`type`](../api/maps/legendSettingsModel/#type) property of [`legendSettings`](../api/maps/legendSettingsModel/) property as "**Markers**". The [`legendText`](../api/maps/markerSettingsModel/#legendtext) property in the [`markerSettings`](../api/maps/markerSettingsModel/) property can be used to show the legend text based on values provided in the data source. Refer to the below example to enable the legend for the markers.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+        <div class='wrapper'>
+            <ejs-maps :legendSettings='legendSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :markerSettings='markerSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Marker, Legend } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        legendSettings: {
+            visible: true,
+            type: 'Markers'
+        },
+        shapeData: world_map,
+        markerSettings: [
+            {
+                visible: true,
+                legendText: 'name',
+                dataSource: [
+                    { latitude: 37.6276571, longitude: -122.4276688, name: 'San Bruno' },
+                    { latitude: 33.5302186, longitude: -117.7418381, name: 'Laguna Niguel' },
+                    { latitude: 40.7424509, longitude: -74.0081468, name: 'New York' }
+                ],
+                shape: 'Circle'
+            }
+        ]
+    }
+},
+provide: {
+    maps: [Legend, Marker]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}

@@ -1,14 +1,32 @@
 ---
-title: "Print"
+title: " Print And Export in Vue Maps control | Syncfusion "
+
 component: "Maps"
-description: "Print support in maps"
+
+description: "Learn here all about Print And Export feature of Syncfusion Vue Maps control and more."
 ---
 
-# Print and Export
+# Print and Export in Vue Maps control
 
 ## Print
 
-To use the print functionality, we should inject the `Print` module using the `provide` section and set the [`allowPrint`](../api/maps/#allowprint) property to **true**. The rendered map can be printed directly from the browser by calling the method [`print`](../api/maps/#print).
+The rendered Maps can be printed directly from the browser by calling the [`print`](../api/maps#print) method. To use the print functionality, **Print** module must be injected into the Maps using **provide** section and set the [`allowPrint`](../api/maps/mapsModel/#allowprint) property to "**true**". The following code snippet demonstrates injecting the Print module into the Maps component.
+
+```html
+<template>
+    <ejs-maps id='maps'></ejs-maps>
+</template>
+<script>
+export default ({
+    data() {
+        return{ };
+    },
+provide: {
+    maps: [Print]
+}
+</script>
+});
+```
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -32,7 +50,7 @@ import { ButtonPlugin } from '@syncfusion/ej2-vue-buttons';
 Vue.use(MapsPlugin,ButtonPlugin);
 export default {
 data () {
-    return{
+    return {
         dataLabelSettings: {
             visible: true,
             labelPath: 'name',
@@ -57,7 +75,6 @@ methods: {
         let map=document.getElementById('container');
         map.ej2_instances[0].print();
     }
-
 }
 }
 </script>
@@ -69,7 +86,25 @@ methods: {
 
 ### Image Export
 
-To use the image export functionality, we should inject the `ImageExport` module using the `provide` section and set the [`allowImageExport`](../api/maps/#allowimageexport) property to **true**. The rendered map can be exported as an image using the [`export`](../api/maps/#export) method. The method requires two parameters: image type and file name. The map can be exported as an image in the following formats.
+To use the image export functionality in Maps, **ImageExport** module must be injected into the Maps using **provide** section and set the [`allowImageExport`](../api/maps/#allowimageexport) property to **true**. The following code snippet demonstrates injecting the ImageExport module into the Maps component.
+
+```html
+<template>
+    <ejs-maps id='maps'></ejs-maps>
+</template>
+<script>
+export default ({
+    data() {
+        return{ };
+    },
+provide: {
+    maps: [ImageExport]
+}
+</script>
+});
+```
+
+The rendered Maps can be exported as an image using the [`export`](../api/maps#export) method. The method requires two parameters: image type and file name. The Maps can be exported as an image in the following formats.
 
 * JPEG
 * PNG
@@ -96,9 +131,10 @@ import { world_map } from './world-map.js';
 Vue.use( MapsPlugin );
 export default {
 data () {
-    return{
+    return {
         shapeData: world_map,
         shapeSettings: { fill: 'lightgrey', border: { color: 'black', width: 0.1 } },
+        allowImageExport: true,
         markerSettings: [
             {
                 animationDuration: 0,
@@ -110,7 +146,7 @@ data () {
                     { longitude: 12.4922309, latitude: 41.8902102, name: 'The Roman Colosseum, Rome, Italy' },
                     { longitude: -88.5677826, latitude: 20.6842849, name: 'The Chichen Itza, Mexico' },
                     { longitude: -72.5449629, latitude: -13.1631412, name: 'Machu Picchu, Peru' },
-                    { longitude: -43.2104872, latitude: -22.951916, name: 'Christ Redeemer, Rio de janeiro, Brazil' },
+                    { longitude: -43.2104872, latitude: -22.951916, name: 'Christ Redeemer, Rio de janeiro, Brazil'}
                 ],
                 shape: 'Balloon',
                 fill: '#E13E40',
@@ -119,10 +155,9 @@ data () {
                 tooltipSettings: {
                     visible: true,
                     valuePath: 'name'
-                },
-                allowImageExport: true
+                }
             }
-        ],
+        ]
     }
 },
 provide: {
@@ -130,7 +165,7 @@ provide: {
 },
 methods: {
      clickExport: function(args) {
-        let map=document.getElementById('container');
+        let map = document.getElementById('container');
         map.ej2_instances[0].export("PNG", "Maps");
     }
 }
@@ -140,7 +175,9 @@ methods: {
 
 {% endtab %}
 
-We can get the image file as base64 string for the JPEG and PNG formats. The rendered map can be exported to image as a base64 string using the [`export`](../api/maps/#export) method. There are four parameters required: image type, file name, orientation of the exported PDF document which must be set as **null** for image export and finally **allowDownload** which should be set as **false** to return base64 string.
+### Exporting Maps as base 64 string of the file
+
+The image can be exported as base64 string for the JPEG and PNG formats. The rendered Maps can be exported to image as a base64 string using the [`export`](../api/maps/#export) method. There are four parameters required: image type, file name, orientation of the exported PDF document which must be set as **null** for image export and finally **allowDownload** which should be set as **false** to return base64 string.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -163,9 +200,10 @@ import { world_map } from './world-map.js';
 Vue.use( MapsPlugin );
 export default {
 data () {
-    return{
+    return {
         shapeData: world_map,
         shapeSettings: { fill: 'lightgrey', border: { color: 'black', width: 0.1 } },
+        allowImageExport: true,
         markerSettings: [
             {
                 animationDuration: 0,
@@ -177,7 +215,7 @@ data () {
                     { longitude: 12.4922309, latitude: 41.8902102, name: 'The Roman Colosseum, Rome, Italy' },
                     { longitude: -88.5677826, latitude: 20.6842849, name: 'The Chichen Itza, Mexico' },
                     { longitude: -72.5449629, latitude: -13.1631412, name: 'Machu Picchu, Peru' },
-                    { longitude: -43.2104872, latitude: -22.951916, name: 'Christ Redeemer, Rio de janeiro, Brazil' },
+                    { longitude: -43.2104872, latitude: -22.951916, name: 'Christ Redeemer, Rio de janeiro, Brazil'}
                 ],
                 shape: 'Balloon',
                 fill: '#E13E40',
@@ -186,10 +224,9 @@ data () {
                 tooltipSettings: {
                     visible: true,
                     valuePath: 'name'
-                },
-                allowImageExport: true
+                }
             }
-        ],
+        ]
     }
 },
 provide: {
@@ -198,8 +235,7 @@ provide: {
 methods: {
      clickExport: function(args) {
         let map=document.getElementById('container');
-        map.ej2_instances[0].export("PNG","Maps",null,false
-      ).then((data) => {
+        map.ej2_instances[0].export("PNG","Maps",null,false).then((data) => {
             var base64 = data;
             document.writeln(base64);
         });
@@ -213,7 +249,25 @@ methods: {
 
 ### PDF Export
 
-To use the PDF export functionality, we should inject the `PdfExport` module using the `provide` section and set the [`allowPdfExport`](../api/maps/#allowpdfexport) property to **true**. The rendered map can be exported as PDF using the [`export`](../api/maps/#export) method. The [`export`](../api/maps/#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and "0" indicates portrait and "1" indicates landscape.
+To use the PDF export functionality in Maps, **PdfExport** module must be injected into the Maps using **provide** section and set the [`allowPdfExport`](../api/maps/mapsModel/#allowpdfexport) property to **true**. The following code snippet demonstrates injecting the PdfExport module into the Maps component.
+
+```html
+<template>
+    <ejs-maps id='maps'></ejs-maps>
+</template>
+<script>
+export default ({
+    data() {
+        return{ };
+    },
+provide: {
+    maps: [PdfExport]
+}
+</script>
+});
+```
+
+The rendered Maps can be exported as PDF using the [`export`](../api/maps#export) method. The [`export`](../api/maps#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and "0" indicates portrait and "1" indicates landscape.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -236,9 +290,10 @@ import { world_map } from './world-map.js';
 Vue.use( MapsPlugin );
 export default {
 data () {
-    return{
+    return {
         shapeData: world_map,
         shapeSettings: { fill: 'lightgrey', border: { color: 'black', width: 0.1 } },
+        allowPdfExport: true,
         markerSettings: [
             {
                 animationDuration: 0,
@@ -250,7 +305,7 @@ data () {
                     { longitude: 12.4922309, latitude: 41.8902102, name: 'The Roman Colosseum, Rome, Italy' },
                     { longitude: -88.5677826, latitude: 20.6842849, name: 'The Chichen Itza, Mexico' },
                     { longitude: -72.5449629, latitude: -13.1631412, name: 'Machu Picchu, Peru' },
-                    { longitude: -43.2104872, latitude: -22.951916, name: 'Christ Redeemer, Rio de janeiro, Brazil' },
+                    { longitude: -43.2104872, latitude: -22.951916, name: 'Christ Redeemer, Rio de janeiro, Brazil'}
                 ],
                 shape: 'Balloon',
                 fill: '#E13E40',
@@ -259,10 +314,9 @@ data () {
                 tooltipSettings: {
                     visible: true,
                     valuePath: 'name'
-                },
-                allowPdfExport: true
+                }
             }
-        ],
+        ]
     }
 },
 provide: {
@@ -280,11 +334,11 @@ methods: {
 
 {% endtab %}
 
->Note: The exporting of the map as base64 string is not supported in the PDF export.
+> Note: The exporting of the Maps as base64 string is not supported for the PDF export.
 
-### Export the tile maps
+### Export the tile Maps
 
-The rendered map with providers such as OSM, Bing and Google static maps can be exported using the [`export`](../api/maps/#export) method. It supports the following export formats.
+The rendered Maps with providers such as OSM, Bing and Google static Maps can be exported using the [`export`](../api/maps/#export) method. It supports the following export formats.
 
 * JPEG
 * PNG
@@ -311,11 +365,11 @@ import Vue from 'vue';
 import { MapsPlugin, ImageExport, PdfExport, Print } from '@syncfusion/ej2-vue-maps';
 import { ButtonPlugin } from '@syncfusion/ej2-vue-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
-Vue.use( MapsPlugin , ButtonPlugin);
+Vue.use( MapsPlugin, ButtonPlugin);
 enableRipple(true);
 export default {
 data () {
-    return{
+    return {
         titleSettings: {
             text: 'OSM'
         },
@@ -329,7 +383,7 @@ provide: {
 },
 methods: {
     clickExport: function(args) {
-      this.$refs.gauge.ej2Instances.export("PNG","GAUGE");
+      this.$refs.maps.ej2Instances.export("PNG","GAUGE");
     },
     clickPrint:function(args){
         this.$refs.maps.ej2Instances.print();

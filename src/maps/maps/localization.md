@@ -1,12 +1,14 @@
 ---
-title: "Localization"
+title: " Localization in Vue Maps control | Syncfusion "
+
 component: "Maps"
-description: "Localization support in maps"
+
+description: "Learn here all about Localization of Syncfusion Vue Maps control and more."
 ---
 
-# Localization
+# Localization in Vue Maps
 
-Localization library allows to localize the default text content of Maps. In Maps component, it has the static text on some features(like zooming toolbars) and this can be changed to any other culture(Arabic, Deutsch, French, etc) by defining the locale value and translation object.
+The localization library allows localizing the default text content of the Maps control. The Maps control has the static text of some features such as tooltip of zoom toolbar, and that can be changed to any other culture(Arabic, Deutsch, French, etc) by defining the locale value and translation object.
 
 <!-- markdownlint-disable MD033 -->
 
@@ -21,11 +23,11 @@ Localization library allows to localize the default text content of Maps. In Map
 </tr>
 <tr>
 <td>ZoomIn</td>
-<td>ZoomIn</td>
+<td>Zoom In</td>
 </tr>
 <tr>
 <td>ZoomOut</td>
-<td>ZoomOut</td>
+<td>Zoom Out</td>
 </tr>
 <tr>
 <td>Reset</td>
@@ -34,27 +36,21 @@ Localization library allows to localize the default text content of Maps. In Map
 <tr>
 <td>Pan</td>
 <td>Pan</td>
-</tr>
-<tr>
-<td>ResetZoom</td>
-<td>Reset Zoom</td>
 </tr>
 </table>
 
-To load translation object in an application use load function of L10n class.
-
-For more information about localization, refer this
-[`localization`](http://ej2.syncfusion.com/documentation/base/localization.html)
+To load translation object in the application, use `load` function of **L10n** class. For more information about localization, refer [here](http://ej2.syncfusion.com/documentation/base/localization.html).
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
 ```html
 <template>
     <div id="app">
-          <div class='wrapper'>
+        <div class='wrapper'>
             <ejs-maps :zoomSettings='zoomSettings' :locale='locale' >
                 <e-layers>
-                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' ></e-layer>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings' >
+                    </e-layer>
                 </e-layers>
             </ejs-maps>
         </div>
@@ -82,7 +78,7 @@ L10n.load({
 });
 export default {
 data () {
-    return{
+    return {
         zoomSettings: {
             enable: true
         },

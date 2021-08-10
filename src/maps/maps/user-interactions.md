@@ -1,24 +1,26 @@
 ---
-title: "User Interactions"
+title: " User interactions in Vue Maps control | Syncfusion "
+
 component: "Maps"
-description: "Explains the user interactions in maps component"
+
+description: "Learn here all about User interactions of Syncfusion Vue Maps control and more."
 ---
 
-# User Interactions
+# User Interactions in Vue Maps control
 
-Options like zooming, panning, single click and double click, highlight and map selection enables the effective interaction on Map elements.
+Zooming, panning, single and double click, highlight and selection are all options that allow for effective interaction with Map elements.
 
 ## Zooming
 
-The zooming feature enables you to zoom in and out the Map to show in-depth information. It is controlled by the `zoomFactor` property of the `zoomSettings` of the map. When the zoomFactor is increased, the Map is zoomed in. When the zoomFactor is decreased, then the Map is zoomed out.
+The zooming feature is used to zoom in and out the Map to show in-depth information. It is controlled by the [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) property of the [`zoomSettings`](../api/maps/zoomSettingsModel) of the Maps. The Map is zoomed in when the zoomFactor is increased. The Map will be zoomed out as the zoomFactor is reduced.
 
-### Enable Zooming
+<b>Enable zooming</b>
 
-To enable the zooming feature, set the `zoomSettings.enable` as true in maps. Zooming feature needs the `Zoom` module injection to perform zooming actions, use module injection to inject zoom into Maps by using `provide` option.
+Zooming of the Maps is enabled by setting the [`enable`](../api/maps/zoomSettingsModel/#enable) property of [`zoomSettings`](../api/maps/zoomSettingsModel/) property to "**true**".
 
-### Enable Panning
+<b>Enable panning</b>
 
-To enable the panning feature, set the [`enablePanning`](../api/maps/zoomSettings/#enablepanning) property of [`zoomSettings`](../api/maps/zoomSettings) to **true**.
+To enable the panning feature, set the [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property of [`zoomSettings`](../api/maps/zoomSettingsModel) to "**true**".
 
 ```html
 <template>
@@ -65,23 +67,76 @@ provide: {
 
 Zooming can be performed in following types:
 
-<b>Zooming toolbar</b>
+#### Zooming toolbar
 
-By default, the toolbar is rendered with `zoom-in`, `zoom-out`, and `reset` options when it is set to 'true' in the `enable` property of `zoomSettings`. You can also customize the toolbar items using the `toolBArs` property in `zoomSettings`.
+By default, the toolbar is rendered with **zoom-in**, **zoom-out**, and **reset** options when it is set to **true** in the [`enable`](../api/maps/zoomSettingsModel/#enable) property of [`zoomSettings`](../api/maps/zoomSettingsModel/).
 
-The following options are available in toolbar, and you can use the options as needed:
+The following options are available in toolbar.
 
 1. Zoom - Provides rectangular zoom support.
-2. ZoomIn - Zooms in the maps.
-3. ZoomOut - Zooms out the maps.
+2. ZoomIn - Zoom in the Maps.
+3. ZoomOut - Zoom out the Maps.
 4. Pan - Switches to panning if rectangular zoom is activated.
-5. Reset - Restores the maps to the default view.
+5. Reset - Restores the Maps to the default view.
 
-Refer the [`API`](../api/maps/zoomSettingsModel) links for Zooming.
+The following properties are available in toolbars to customize the zooming toolbars.
 
-<b>Pinch Zooming</b>
+* [`color`](../api/maps/zoomSettingsModel/#color) - Applies the color for toolbars in Maps.
+* [`highlightColor`](../api/maps/zoomSettingsModel/#highlightcolor) - Applies the color for the zooming toolbar when the mouse has hovered on the toolbar element in Maps.
+* [`horizontalAlignment`](../api/maps/zoomSettingsModel/#horizontalalignment) - To customize the position type of toolbar when it is placed horizontally.
+* [`selectionColor`](../api/maps/zoomSettingsModel/#selectioncolor) - Applies the color for the zooming toolbar when clicking the zooming toolbar in Maps.
+* [`toolBarOrientation`](../api/maps/zoomSettingsModel/#toolbarorientation) - To customize the orientation of the zooming toolbar.
+* [`toolbars`](../api/maps/zoomSettingsModel/#toolbars) - To customize the items that are to be shown in the zooming toolbar in Maps.
+* [`verticalAlignment`](../api/maps/zoomSettingsModel/#verticalalignment) - To customize the position type of toolbar when it is placed vertically.
 
-Use the `pinchZooming` property in `zoomSettings` to enable or disable the pinch zooming.
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :zoomSettings='zoomSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Zoom } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return{
+        zoomSettings: {
+            enable: true,
+            color: 'green',
+            highlightColor: 'blue',
+            selectionColor: 'orange',
+            horizontalAlignment: 'Center',
+            toolbars: ['ZoomIn', 'ZoomOut', 'Pan', 'Reset']
+        },
+        shapeData: world_map,
+    }
+},
+provide: {
+    maps: [Zoom]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+#### Pinch zooming
+
+To enable or disable the pinch zooming, use the [`pinchZooming`](../api/maps/zoomSettingsModel/#pinchzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel) property.
 
 ```html
 <template>
@@ -124,9 +179,9 @@ provide: {
 </style>
 ```
 
-<b>Single-click zooming</b>
+#### Single-click zooming
 
-Use the `zoomOnClick` property in `zoomSettings` to enable or disable the single-click zooming
+To enable or disable the single-click zooming, use the [`zoomOnClick`](../api/maps/zoomSettingsModel/#zoomonclick) property in [`zoomSettings`](../api/maps/zoomSettingsModel) property.
 
 ```html
 <template>
@@ -169,9 +224,9 @@ provide: {
 </style>
 ```
 
-<b>Double-click zooming</b>
+#### Double-click zooming
 
-Use the `doubleClickZoom` property in `zoomSettings` to enable or disable the double-click zooming.
+To enable or disable the double-click zooming, use the [`doubleClickZoom`](../api/maps/zoomSettingsModel/#doubleclickzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property.
 
 ```html
 <template>
@@ -214,9 +269,9 @@ provide: {
 </style>
 ```
 
-<b>Mouse wheel zooming</b>
+#### Mouse wheel zooming
 
-Use the `mouseWheelZoom` property in `zoomSettings` to enable or disable mouse wheel zooming.
+To enable or disable mouse wheel zooming, use the [`mouseWheelZoom`](../api/maps/zoomSettingsModel/#mousewheelzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property.
 
 ```html
 <template>
@@ -259,9 +314,101 @@ provide: {
 </style>
 ```
 
+#### Selection zooming
+
+To enable or disable selection zooming, use the [`enableSelectionZooming`](../api/maps/zoomSettingsModel/#enableselectionzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property. The [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property must be set to **false** to enable the selection zooming in Maps.
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :zoomSettings='zoomSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Zoom } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return{
+        zoomSettings: {
+            enable: true,
+            enableSelectionZooming: true,
+            enablePanning: false
+        },
+        shapeData: world_map,
+    }
+},
+provide: {
+    maps: [Zoom]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+### Setting minimum and maximum values for zoom factor
+
+The zooming range can be adjusted using the [`minZoom`](../api/maps/zoomSettingsModel/#minzoom) and [`maxZoom`](../api/maps/zoomSettingsModel/#maxzoom) properties in [`zoomSettings`](../api/maps/zoomSettingsModel/) property. The minZoom value is set to 1 by default, and the maxZoom value is set to 10.
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :zoomSettings='zoomSettings' >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Zoom } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return{
+        zoomSettings: {
+            enable: true,
+            minZoom: 2,
+            maxZoom: 12
+        },
+        shapeData: world_map,
+    }
+},
+provide: {
+    maps: [Zoom]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
 ### Zooming with animation
 
-You can use the `animationDuration` property in  `layers` property to zoom in or zoom out the maps with animation.
+To zoom in or zoom out the Maps with animation, use the [`animationDuration`](../api/maps/layerSettingsModel/#animationduration) property in [`layers`](../api/maps/layerSettingsModel) property.
 
 ```html
 <template>
@@ -351,17 +498,16 @@ provide: {
 
 ## Selection
 
-Each shape in the Map can be selected and deselected during interaction with the shapes.
+Each shape in the Maps can be selected and deselected during interaction with the shapes. Selection is enabled by setting the [`enable`](../api/maps/selectionSettingsModel/#enable) property of [`selectionSettings`](../api/maps/selectionSettingsModel) to **true**.
 
-By tapping on the specific legend, the map items which are bounded to the selected legend is also selected and vice versa.
+The following properties are available to customize the selection of Map elements such as shapes, bubbles, markers and legends.
 
-The layer `selectionSettings.fill` property is used to change the selected layer shape color. The `selectionSettings.border.color` and `selectionSettings.border.width` properties are used to customize the selected shape border.
+* [`border`](../api/maps/selectionSettingsModel/#border) - To customize the color, width and opacity of the border of which element is selected in Maps.
+* [`fill`](../api/maps/selectionSettingsModel/#fill) - Applies the color for the element that is selected.
+* [`opacity`](../api/maps/selectionSettingsModel/#opacity) - To customize the transparency for the element that is selected.
+* [`enableMultiSelect`](../api/maps/selectionSettingsModel/#enablemultiselect) - To enable or disable the selection for multiple shapes or markers or bubbles in the Maps.
 
-You can select the shape by tapping the shape. The Single selection is enabled by the `selectionSettings.enable` property of shape layer. When `selectionSettings.enable` is set to false, the shapes cannot be selected.
-
-Refer the [`API`](../api/maps/selectionSettingsModel/) and code snippet for Selection.
-
-**Note:** Selection is separate module, need to inject to work on Selection.
+By tapping on the specific legend, the shapes which are bounded to the selected legend is also selected and vice versa.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -369,10 +515,7 @@ Refer the [`API`](../api/maps/selectionSettingsModel/) and code snippet for Sele
 <template>
     <div id="app">
           <div class='wrapper'>
-            <ejs-maps >
-                <e-layers>
-                    <e-layer :shapeData='shapeData' :selectionSettings='selectionSettings' ></e-layer>
-                </e-layers>
+            <ejs-maps :layers='layers' :legendSettings='legendSettings'>
             </ejs-maps>
         </div>
     </div>
@@ -380,22 +523,45 @@ Refer the [`API`](../api/maps/selectionSettingsModel/) and code snippet for Sele
 
 <script>
 import Vue from 'vue';
-import { MapsPlugin, Selection } from '@syncfusion/ej2-vue-maps';
+import { MapsPlugin, Selection, Legend } from '@syncfusion/ej2-vue-maps';
 import { world_map } from './world-map.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
-        shapeData: world_map,
-        selectionSettings: {
-            enable: true,
-            fill: 'green',
-            border: { color: 'white', width: 2}
-        }
+    return {
+         layers: [{
+            shapeData: world_map,
+            dataSource: [{  "Country": "China", "Membership": "Permanent"},
+            {"Country": "France","Membership": "Permanent" },
+            { "Country": "Russia","Membership": "Permanent"},
+            {"Country": "Kazakhstan","Membership": "Non-Permanent"},
+            { "Country": "Poland","Membership": "Non-Permanent"},
+            {"Country": "Sweden","Membership": "Non-Permanent"}],
+            shapePropertyPath: 'name',
+            shapeDataPath: 'Country',
+            selectionSettings: {
+               enable: true,
+               fill: 'blue',
+               border: { color: 'white', width: 2}
+            },
+            shapeSettings: {
+                colorValuePath: 'Membership',
+                colorMapping: [
+                {
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+                }]
+            }
+        }],
+    legendSettings: {
+        visible: true
+    }
     }
 },
 provide: {
-    maps: [Selection]
+    maps: [Selection, Legend]
 }
 }
 </script>
@@ -409,9 +575,131 @@ provide: {
 
 {% endtab %}
 
-## Public method for the shape selection
+### Enable selection for bubbles
 
-Each shape in the map can be selected by calling the `shapeSelection` method. Input parameters for this method are layerIndex, propertyName, country name and selected value as in boolean state(true / false).
+To enable the selection for bubbles in Maps, set the [`selectionSettings`](../api/maps/selectionSettingsModel) property in [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property and set the [`enable`](../api/maps/selectionSettingsModel/#enable) property of [`selectionSettings`](../api/maps/selectionSettingsModel) property as **true**.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :layers='layers'>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Selection, Bubble } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        layers: [{
+            shapeData: world_map,
+            shapeDataPath: 'name',
+            shapePropertyPath: 'name',
+            bubbleSettings: [{
+                visible: true,
+                dataSource: [
+                    { name: 'India', population: '38332521' },
+                    { name: 'South Africa', population: '19651127' },
+                    { name: 'Pakistan', population: '3090416' }
+                ],
+            selectionSettings: {
+                enable: true,
+                fill: 'green',
+                border: { color: 'white', width: 2}
+            },
+            valuePath: 'population'
+        }]
+    }]
+    }
+},
+provide: {
+    maps: [Selection, Bubble]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Enable selection for markers
+
+To enable the selection for markers in Maps, set the [`selectionSettings`](../api/maps/selectionSettingsModel) property in the [`markerSettings`](../api/maps/markerSettingsModel) property and set the [`enable`](../api/maps/selectionSettingsModel/#enable) property of the [`selectionSettings`](../api/maps/selectionSettingsModel) property as **true**.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :layers='layers'>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Selection, Marker } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        layers: [{
+            shapeData: world_map,
+            markerSettings: [{
+                visible: true,
+                height: 20,
+                width: 20,
+                fill: 'green',
+                shape:'Balloon',
+                selectionSettings: {
+                    enable: true,
+                    fill: 'blue',
+                    border: { color: 'white', width: 2}
+                },
+                dataSource: [
+                    { latitude: 49.95121990866204, longitude: 18.468749999999998, name:'Europe' },
+                    { latitude: 59.88893689676585, longitude: -109.3359375, name:'North America'},
+                    { latitude: -6.64607562172573, longitude: -55.54687499999999, name:'South America'}
+                ]
+           }],
+        }]
+    }
+},
+provide: {
+    maps: [Selection, Marker]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Public method for the shape selection
+
+The [`shapeSelection`](../api/maps/#shapeselection) method can be used to select each shape in the Maps.
+LayerIndex, propertyName, country name, and selected value as a boolean state(true / false) are the input parameters for this method.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -472,9 +760,9 @@ methods:{
 
 {% endtab %}
 
-## Initial shape selection
+### Initial shape selection
 
-Initially, the shape can be selected by using the property `initialShapeSelection` and the values are mapped to the `shapePath` and `shapeValue`.
+The shape is initially selected using the [`initialShapeSelection`](../api/maps/initialShapeSelectionSettingsModel) property, and the values are mapped to the [`shapePath`](../api/maps/initialShapeSelectionSettingsModel/#shapepath) and [`shapeValue`](../api/maps/initialShapeSelectionSettingsModel/#shapevalue).
 
 **Note:** initialShapeSelection is an Array property.
 
@@ -528,9 +816,11 @@ provide: {
 
 {% endtab %}
 
-## State Persistence
+### Initial marker selection
 
-State persistence allows the Maps to retain the current modal value in the browser cookies for state maintenance. This action is handled through the `enablePersistence` property which is set to false by default. When it is set to true, some of the Maps component model values will be retained even after refreshing the page.
+Using the [`initialMarkerSelection`](../api/maps/initialMarkerSelectionSettingsModel) property, the marker shape can be selected initially. Markers render based on the [`latitude`](../api/maps/initialMarkerSelectionSettingsModel/#latitude) and [`longitude`](../api/maps/initialMarkerSelectionSettingsModel/#longitude) values.
+
+**Note:** initialMarkerSelection is an Array property.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -538,9 +828,9 @@ State persistence allows the Maps to retain the current modal value in the brows
 <template>
     <div id="app">
           <div class='wrapper'>
-            <ejs-maps :enablePersistence='enablePersistence' :zoomSettings='zoomSettings'>
+            <ejs-maps  >
                 <e-layers>
-                    <e-layer :shapeData='shapeData'></e-layer>
+                    <e-layer :shapeData='shapeData' :markerSettings= 'markerSettings'></e-layer>
                 </e-layers>
             </ejs-maps>
         </div>
@@ -549,21 +839,37 @@ State persistence allows the Maps to retain the current modal value in the brows
 
 <script>
 import Vue from 'vue';
-import { MapsPlugin, Zoom } from '@syncfusion/ej2-vue-maps';
+import { MapsPlugin, Marker, Selection } from '@syncfusion/ej2-vue-maps';
 import { world_map } from './world-map.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
-        zoomSettings: {
-          enable: true
-        },
-        enablePersistence:true,
-        shapeData: world_map
+    return {
+        shapeData: world_map,
+        markerSettings: [{
+            visible: true,
+            height: 20,
+            width: 20,
+            fill: 'green',
+            shape:'Balloon',
+            initialMarkerSelection: [{
+               latitude: -6.64607562172573, longitude: -55.54687499999999
+            }],
+            selectionSettings: {
+                enable: true,
+                fill: 'blue',
+                border: { color: 'white', width: 2}
+            },
+            dataSource: [
+                { latitude: 49.95121990866204, longitude: 18.468749999999998, name:'Europe' },
+                { latitude: 59.88893689676585, longitude: -109.3359375, name:'North America'},
+                { latitude: -6.64607562172573, longitude: -55.54687499999999, name:'South America'}
+            ]
+        }]
     }
 },
 provide: {
-    maps: [Zoom]
+    maps: [Selection, Marker]
 }
 }
 </script>
@@ -579,17 +885,7 @@ provide: {
 
 ## Highlight
 
-Each shape in the Map can be highlighted during mouse over on the shapes.
-
-Hovering on the specific legend, the map items which are bounded to the selected legend is also highlighted and vice versa.
-
-The layer `highlightSettings.fill` property is used to change the highlighted layer shape color. The `highlightSettings.border.color` and `highlightSettings.border.width` properties are used to customize the highlighted shape border.
-
-You can highlight the shape by mouse over on the shape. The highlight is enabled by the `highlightSettings.enable` property of shape layer. When `highlightSettings.enable` is set to false, the shapes cannot be highlighted.
-
-**Note:** Highlight is separate module, need to inject to work on Highlight.
-
-Refer the [`API`](../api/maps/highlightSettingsModel/) and code snippet for Highlight.
+Each shape in the Map can be highlighted during mouse hover on the Map elements such as shapes, bubbles, markers and legends. Highlight is enabled by setting the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) to "**true**".
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -597,10 +893,7 @@ Refer the [`API`](../api/maps/highlightSettingsModel/) and code snippet for High
 <template>
     <div id="app">
           <div class='wrapper'>
-            <ejs-maps >
-                <e-layers>
-                    <e-layer :shapeData='shapeData' :highlightSettings='highlightSettings' ></e-layer>
-                </e-layers>
+            <ejs-maps :layers='layers' :legendSettings='legendSettings'>
             </ejs-maps>
         </div>
     </div>
@@ -608,22 +901,170 @@ Refer the [`API`](../api/maps/highlightSettingsModel/) and code snippet for High
 
 <script>
 import Vue from 'vue';
-import { MapsPlugin, Highlight } from '@syncfusion/ej2-vue-maps';
+import { MapsPlugin, Highlight, Legend } from '@syncfusion/ej2-vue-maps';
 import { world_map } from './world-map.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
-        shapeData: world_map,
-        highlightSettings: {
-            enable: true,
-            fill: 'green',
-            border: { color: 'white', width: 2}
+    return {
+        layers: [
+        {
+            shapeData: world_map,
+            dataSource: [
+                { "Country": "China", "Membership": "Permanent"},
+                { "Country": "France", "Membership": "Permanent" },
+                { "Country": "Russia", "Membership": "Permanent"},
+                { "Country": "Kazakhstan", "Membership": "Non-Permanent"},
+                { "Country": "Poland", "Membership": "Non-Permanent"},
+                { "Country": "Sweden", "Membership": "Non-Permanent"}
+            ],
+            shapePropertyPath: 'name',
+            shapeDataPath: 'Country',
+            highlightSettings: {
+               enable: true,
+               fill: 'blue',
+               border: { color: 'white', width: 2}
+            },
+            shapeSettings: {
+                colorValuePath: 'Membership',
+                colorMapping: [
+                {
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+                }]
+            }
         }
+    ],
+    legendSettings: {
+        visible: true
+    }
     }
 },
 provide: {
-    maps: [Highlight]
+    maps: [Highlight, Legend]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Enable highlight for bubbles
+
+To enable the highlight for bubbles in Maps, set the [`highlightSettings`](../api/maps/highlightSettingsModel) property in [`bubbleSettings`](../api/maps/bubbleSettingsModel) property and set the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) property as **true**.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :layers='layers'>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Highlight, Bubble } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        layers: [{
+            shapeData: world_map,
+            shapeDataPath: 'name',
+            shapePropertyPath: 'name',
+            bubbleSettings: [{
+                visible: true,
+                dataSource: [
+                    { name: 'India', population: '38332521' },
+                    { name: 'South Africa', population: '19651127' },
+                    { name: 'Pakistan', population: '3090416' }
+                ],
+            highlightSettings: {
+                enable: true,
+                fill: 'green',
+                border: { color: 'white', width: 2}
+            },
+            valuePath: 'population'
+        }]
+    }]
+    }
+},
+provide: {
+    maps: [Highlight, Bubble]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Enable highlight for markers
+
+To enable the highlight for markers in Maps, set the [`highlightSettings`](../api/maps/highlightSettingsModel) property in [`markerSettings`](../api/maps/markerSettingsModel) property and set the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) property as **true**.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :layers='layers'>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Highlight, Marker } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        layers: [{
+            shapeData: world_map,
+            markerSettings: [{
+                visible: true,
+                height: 20,
+                width: 20,
+                fill: 'green',
+                shape:'Balloon',
+                highlightSettings: {
+                    enable: true,
+                    fill: 'blue',
+                    border: { color: 'white', width: 2}
+                },
+            dataSource: [
+                { latitude: 49.95121990866204, longitude: 18.468749999999998, name:'Europe' },
+                { latitude: 59.88893689676585, longitude: -109.3359375, name:'North America'},
+                { latitude: -6.64607562172573, longitude: -55.54687499999999, name:'South America'}
+            ]
+        }],
+    }]
+    }
+},
+provide: {
+    maps: [Highlight, Marker]
 }
 }
 </script>
@@ -639,18 +1080,11 @@ provide: {
 
 ## Tooltip
 
-Tooltip used to get more information about layer or bubble or marker on mouse over or touch end event performing on that. Tooltip is a separate module, So it needs module injection to work maps tooltip. Using `provide` option you can inject maps tooltip module into maps.
+On mouse over or touch end event, the tooltip is used to get more information about the layer, bubble, or marker. It can be enabled separately for layer or bubble or marker by using the [`visible`](../api/maps/tooltipSettingsModel/#visible) property of [`tooltipSettings`](../api/maps/tooltipSettingsModel/) as **true**. The [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the tooltip takes the field name that presents in dataSource and displays that value as tooltip text. The [`tooltipDisplayMode`](../api/maps/mapsModel/#tooltipdisplaymode) property is used to change the display mode of the tooltip in Maps. Following display modes of tooltip are available in the Maps component. By default,  [`tooltipDisplayMode`](../api/maps/mapsModel/#tooltipdisplaymode) is set to **"MouseMove"**.
 
-Tooltip can be enabled separately for layer or bubble or marker by using `tooltipSettings.visible` as **true**. Tooltip `valuePath` value need to set to display dataSource which field as tooltip text.
-Below code snippet illustrate the tooltip enabled for layer to show shape data name field.
-
-Refer the [`API`](../api/maps/tooltipSettingsModel/) for Tooltip feature.
-
-**Step: 1** Import the world map geo json data from already created world-map.ts file and assign to `shapeData`.
-
-**Step: 2** Import MapsTooltip module from `ej2-maps` package and Inject to Maps.
-
-**Step: 3** Enable tooltip for layer using `tooltipSettings.visible` as true and bind `valuePath` value as 'name'.
+* MouseMove
+* Click
+* DoubleClick
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -697,11 +1131,14 @@ provide: {
 
 {% endtab %}
 
-## Tooltip template
+### Customization
 
-Any HTML element can be displayed in tooltip using the ‘template’ property.
+The following properties are available in the tooltipSettings property to customize the tooltip of the Maps component.
 
-The following example shows tooltip template.
+* [`border`](../api/maps/tooltipSettingsModel/#border) - To customize the color, width and opacity of the border of the tooltip in layers, markers, and bubbles of Maps.
+* [`fill`](../api/maps/tooltipSettingsModel/#fill) - Applies the color of the tooltip in layers, markers, and bubbles of Maps.
+* [`format`](../api/maps/tooltipSettingsModel/#format) - To customize the format of the tooltip in layers, markers, and bubbles of Maps
+* [`textStyle`](../api/maps/tooltipSettingsModel/#textstyle) - To customize the style of the text in the tooltip for layers, markers, and bubbles of Maps.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -709,9 +1146,9 @@ The following example shows tooltip template.
 <template>
     <div id="app">
           <div class='wrapper'>
-            <ejs-maps >
+            <ejs-maps :tooltipRender='tooltipRender'>
                 <e-layers>
-                    <e-layer :shapeData='shapeData' :tooltipSettings='tooltipSettings' ></e-layer>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :shapeSettings='shapeSettings' :dataSource='dataSource' :tooltipSettings='tooltipSettings' ></e-layer>
                 </e-layers>
             </ejs-maps>
         </div>
@@ -722,32 +1159,181 @@ The following example shows tooltip template.
 import Vue from 'vue';
 import { MapsPlugin, MapsTooltip } from '@syncfusion/ej2-vue-maps';
 import { world_map } from './world-map.js';
-
-let contentVue = Vue.component("contentTemplate", {
-  template: '<div>Maps Tooltip Tempalte</div>',
-  data() {
-    return {
-      data: {}
-    };
-  }
-});
-let contentTemplate = function() {
-  return { template: contentVue };
-};
 Vue.use(MapsPlugin);
 export default {
 data () {
     return{
         shapeData: world_map,
+        shapePropertyPath: 'name',
+        shapeDataPath: 'name',
+        shapeSettings: {
+            fill: '#E5E5E5',
+            colorMapping: [
+                { color: '#b3daff', value: '1' },
+                { color: '#80c1ff', value: '2' },
+                { color: '#1a90ff', value: '3' },
+                { color: '#005cb3', value: '7' }
+            ],
+            colorValuePath: 'value1'
+        },
+        dataSource: [
+            { "name": "India", "value1": "3", "value2": "2", "country": "India" },
+            { "name": "Dominican Rep.", "value1": "3", "value2": "2", "country": "West Indies" },
+            { "name": "Cuba", "value1": "3", "value2": "2", "country": "West Indies" },
+            { "name": "Jamaica", "value1": "3", "value2": "2", "country": "West Indies" },
+            { "name": "Haiti", "value1": "3", "value2": "2", "country": "West Indies" },
+            { "name": "Guyana", "value1": "3", "value2": "2", "country": "West Indies" },
+            { "name": "Suriname", "value1": "3", "value2": "2", "country": "West Indies"},
+            { "name": "Trinidad and Tobago", "value1": "3", "value2": "2", "country": "West Indies" },
+            { "name": "Sri Lanka", "value1": "3", "value2": "1", "country": "Sri Lanka" },
+            { "name": "United Kingdom", "value1": "3", "value2": "0", "country": "England" },
+            { "name": "Pakistan", "value1": "2", "value2": "1", "country": "Pakistan" },
+            { "name": "New Zealand", "value1": "1", "value2": "0", "country": "New Zealand" },
+            { "name": "Australia", "value1": "7", "value2": "5", "country": "Australia" }
+        ],
         tooltipSettings: {
             visible: true,
             valuePath: 'name',
-            template: contentTemplate
+            format: '${name}: ${value1}',
+            fill: '#D0D0D0',
+            textStyle: {
+                color: 'green',
+                fontFamily: 'Times New Roman',
+                fontStyle: 'Sans-serif'
+            }
         }
     }
 },
 provide: {
     maps: [MapsTooltip]
+},
+methods:{
+    tooltipRender:function(args){
+        if (!args.options.data) {
+            args.cancel = true;
+        }
+    }
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+### Tooltip template
+
+The HTML element can be rendered in the tooltip of the Maps using the [`template`](../api/maps/tooltipSettingsModel/#template) property of the [`tooltipSettings`](../api/maps/tooltipSettingsModel/) property. In the following example, ${value1} and ${value2} are the place holders in the HTML element to display the value1 and value2 values of the corresponding shape.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps :legendSettings='legendSettings' :tooltipRender='tooltipRender'>
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :tooltipSettings='tooltipSettings' :shapeSettings='shapeSettings'></e-layer>
+                </e-layers>
+            </ejs-maps>
+            <div id="template" style="display:none">
+         <div class="toolback">
+            <div class="listing2">
+                <center>
+                    ${country}
+                </center>
+            </div>
+            <hr style="margin-top: 2px;margin-bottom:5px;border:0.5px solid #DDDDDD">
+            <div>
+                <span class="listing1">Finalist : </span><span class="listing2">${value1}</span>
+            </div>
+            <div>
+                <span class="listing1">Win : </span><span class="listing2">${value2}</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</template>
+
+<style scoped>
+   #control-container {
+       padding: 0px !important;
+   }
+   .toolback {
+       width: 100px;
+       border-radius: 4px;
+       border: 1px #abb9c6;
+       background: rgba(53, 63, 76, 0.90);
+       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.40);
+       padding-bottom: 5px;
+       padding-top: 10px;
+       padding-left: 10px;
+       padding-right: 10px
+   }
+   .listing1 {
+        font-size:13px;
+        color:#cccccc
+   }
+   .listing2 {
+        font-size:13px;
+        color:#ffffff;
+        font-weight: 500;
+   }
+</style>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, MapsTooltip, Legend } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+import { tooltipData } from './tooltip-data.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return {
+        shapeData: world_map,
+        shapePropertyPath: 'name',
+        shapeDataPath: 'name',
+        dataSource: tooltipData,
+        tooltipSettings: {
+            visible: true,
+            valuePath: 'name',
+            template: '#template'
+        },
+        shapeSettings: {
+            fill: '#E5E5E5',
+            colorMapping: [
+                { color: '#b3daff', value: '1' },
+                { color: '#80c1ff', value: '2' },
+                { color: '#1a90ff', value: '3' },
+                { color: '#005cb3', value: '7' }
+            ],
+            colorValuePath: 'value1'
+        },
+        legendSettings: {
+            visible: true,
+            mode: 'Interactive',
+            position: 'Left',
+            orientation: 'Vertical',
+            height: '70%',
+            width: '10'
+        },
+    }
+},
+provide: {
+    maps: [MapsTooltip, Legend]
+},
+methods:{
+    tooltipRender:function(args){
+        if (!args.options.data) {
+            args.cancel = true;
+        }
+    }
 }
 }
 </script>

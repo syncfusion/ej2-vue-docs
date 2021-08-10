@@ -1,68 +1,107 @@
 ---
-title: "Populate Data"
+title: " Populating data in Vue Maps control | Syncfusion "
+
 component: "Maps"
-description: "Explains how to populate data in maps component"
+
+description: "Learn here all about Populating data in Syncfusion Vue Maps control and more."
 ---
 
-# Populate Data
+# Populate data in Vue Maps control
 
-In this section you can learn how to populate shape data for providing Data input to Map control and usage of DataSource property.
+This section explains how to populate data inputs and provide it to the Maps component.
 
-## Shape Data
+## Shape data
 
-The Shape Data collection describing geographical shape information can be obtained from
-[GEOJSON format shapes](http://files2.syncfusion.com/dtsupport/uploads/user/uploads/Maps_GeoJSON.zip).
-
-.\ Maps_GeoJSON\All Countries with States
-
-You can assign the complete contents in `“WorldMap.json”` file to new JSON object. For better understanding, a TS file `“world-map.js”` is already created to store JSON data in JSON object “worldMap”.
-
-`[world-map.ts]`
+The shape data collection describes geographical shape information that is available in GeoJSON format. The Map shapes are rendered with this data. The custom shapes such as seat selection in bus, seat selection in a cricket stadium and more useful information can be also added as [`shapeData`](../api/maps/layerSettingsModel/#shapedata) in the layer of the Maps.
 
 ```typescript
-export let worldMap = //Paste all the content copied from the JSON file//
+export let worldMap = // Paste all the content copied from the JSON file.
 ```
 
-## Data Binding
+## Data source
 
-The Maps control supports data binding with the `dataSource` property in the shape layers.
+The [`dataSource`](../api/maps/layerSettingsModel/#datasource) property is used to represent statistical data in the Maps component, and it accepts a collection of values as input. For example, a list of objects as input can be provided to the data source. This data source will be used to color the map, display data labels, and display tooltip, among other things.
 
-### Properties
-
-The following properties in shape layers is be used for binding data in Maps control,
-
-    * dataSource
-    * shapeDataPath
-    * shapePropertyPath
-
-## Data Source
-
-The dataSource property accepts the collection values as input. For example, you can provide the list of objects as input.
-
-## Shape Data Path
-
-The `shapeDataPath` property is used to refer the data ID in DataSource. For example, population MapData contains data ids ‘Name’ and ‘Population’. The `shapeDataPath` and the `shapePropertyPath` properties are related to each other (refer to `shapePropertyPath` for more details).
-
-## Shape Property Path
-
-The `shapePropertyPath` property is similar to the `shapeDataPath` that refers to the column name in the `data` property of shape layers to identify the shape. When the values of the `shapeDataPath` property in the `dataSource` property and the value of `shapePropertyPath` in the data property match, then the associated object from the `dataSource` is bound to the corresponding shape.
-
-The datasource is populated with JSON data relative to shape data and stored in JSON object. The world countries population as datasource is used for better understanding.
-
-The “populationData.ts” file is used to store JSON data in JSON object “populationData”.
-
-Refer both shape data and datasource as illustrated in the following code example.
-
-`[populationData.ts]`
+The data source is populated with JSON data relative to shape data and stored as JSON object. In the below example, **populationData** can be used as data source in Maps.
 
 ```typescript
-export let populationData: object[] = [{  "Country": "China", "Membership": "Permanent"},
-            {"Country": "France","Membership": "Permanent" },
-            { "Country": "Russia","Membership": "Permanent"},
-            {"Country": "Kazakhstan","Membership": "Non-Permanent"},
-            { "Country": "Poland","Membership": "Non-Permanent"},
-            {"Country": "Sweden","Membership": "Non-Permanent"}],
+export let populationData: object[] = [
+    {
+        'code': 'AF',
+        'value': 53,
+        'name': 'Afghanistan',
+        'population': 29863010,
+        'density': 119
+    },
+    {
+        'code': 'AL',
+        'value': 117,
+        'name': 'Albania',
+        'population': 3195000,
+        'density': 111
+    },
+    {
+        'code': 'DZ',
+        'value': 15,
+        'name': 'Algeria',
+        'population': 34895000,
+        'density': 15
+    },
+    {
+        'code': 'AO',
+        'value': 15,
+        'name': 'Angola',
+        'population': 18498000,
+        'density': 15
+    },
+    {
+        'code': 'AR',
+        'value': 15,
+        'name': 'Argentina',
+        'population': 40091359,
+        'density': 14
+    },
+    {
+        'code': 'AM',
+        'value': 109,
+        'name': 'Armenia',
+        'population': 3230100,
+        'density': 108
+    }
+];
 ```
+
+## Data binding
+
+The following properties in the [`layers`](../api/maps/layerSettingsModel/) are used for binding data in the Maps control. Both the properties are related to each other.
+
+* shapePropertyPath
+* shapeDataPath
+
+### shapePropertyPath
+
+The [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property is used to refer the field name in the [`shapeData`](../api/maps/layerSettingsModel/#shapedata) property of shape layers to identify the shape. When the values of [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) property from the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property and [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property from the [`shapeData`](../api/maps/layerSettingsModel/#shapedata) property match, then the associated object from the data source is bound to the corresponding shape.
+
+> `world-map.js` file contains following data and its field **"name"** value is used to map the corresponding shape with the provided data source.
+
+```javascript
+export var world_map = {
+    "type": "Feature",
+    "properties": {
+        "admin": "Afghanistan",
+        "name": "Afghanistan",
+        "continent": "Asia"
+    },
+    "geometry": { "type": "Polygon", "coordinates": [[[61.21081709172573, ... },
+...
+
+```
+
+### shapeDataPath
+
+The [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) property is similar to the [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property, but it refers to the field name in the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property. For example, [populationData](#data-source) contains the **code**, **value**, **name**, **population** and **density** fields. Here, the **name** field is set to the shapeDataPath to map the corresponding value of field name in shape data.
+
+In the below example, both "**name**" fields contain the same value as "**Afghanistan**", this value is matched in both shape data and data source, so that the details associated with "**Afghanistan**" will be mapped to the corresponding shape and used to color the corresponding shape, display data labels, display tooltips, and more.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -70,9 +109,9 @@ export let populationData: object[] = [{  "Country": "China", "Membership": "Per
 <template>
     <div id="app">
           <div class='wrapper'>
-            <ejs-maps :legendSettings='legendSettings'>
+            <ejs-maps>
                 <e-layers>
-                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' ></e-layer>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :dataSource='dataSource' :shapeSettings='shapeSettings'></e-layer>
                 </e-layers>
             </ejs-maps>
         </div>
@@ -81,38 +120,70 @@ export let populationData: object[] = [{  "Country": "China", "Membership": "Per
 
 <script>
 import Vue from 'vue';
-import { MapsPlugin, Legend } from '@syncfusion/ej2-vue-maps';
+import { MapsPlugin } from '@syncfusion/ej2-vue-maps';
 import { world_map} from './world-map.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
     return{
         shapeData: world_map,
-        dataSource: [{  "Country": "China", "Membership": "Permanent"},
-            {"Country": "France","Membership": "Permanent" },
-            { "Country": "Russia","Membership": "Permanent"},
-            {"Country": "Kazakhstan","Membership": "Non-Permanent"},
-            { "Country": "Poland","Membership": "Non-Permanent"},
-            {"Country": "Sweden","Membership": "Non-Permanent"}],
         shapePropertyPath: 'name',
-        shapeDataPath: 'Country',
+        shapeDataPath: 'name',
+        dataSource: [
+            {
+                'code': 'AF',
+                'value': 53,
+                'name': 'Afghanistan',
+                'population': 29863010,
+                'density': 119,
+                'color': '#DEEBAE'
+            },
+            {
+                'code': 'AL',
+                'value': 117,
+                'name': 'Albania',
+                'population': 3195000,
+                'density': 111,
+                'color': '#A4D6AD'
+            },
+            {
+                'code': 'DZ',
+                'value': 15,
+                'name': 'Algeria',
+                'population': 34895000,
+                'density': 15,
+                'color': '#37AFAB'
+            },
+            {
+                'code': 'AO',
+                'value': 15,
+                'name': 'Angola',
+                'population': 18498000,
+                'density': 15,
+                'color': '#547C84'
+            },
+            {
+                'code': 'AR',
+                'value': 15,
+                'name': 'Argentina',
+                'population': 40091359,
+                'density': 14,
+                'color': '#CEBF93'
+            },
+            {
+                'code': 'AM',
+                'value': 109,
+                'name': 'Armenia',
+                'population': 3230100,
+                'density': 108,
+                'color': '#a69d70'
+            }
+        ],
         shapeSettings: {
-            colorValuePath: 'Membership',
-                colorMapping: [
-                {
-                    value: 'Permanent', color: '#D84444'
-                },
-                {
-                    value: 'Non-Permanent', color: '#316DB5'
-                }]
-        },
-        legendSettings: {
-            visible: true
+            colorValuePath: 'color',
+            fill: '#E5E5E5'
         }
     }
-},
-provide: {
-    maps: [Legend]
 }
 }
 </script>
@@ -128,15 +199,15 @@ provide: {
 
 ## Binding complex data source
 
-You can bind the data field from data source to the maps in two different ways.
+Data from data source can be bind to the Maps in two different ways.
 
-1. Bind the field name directly to the properties as [`shapeDataPath`](../api/maps/layerSettings/#shapedatapath), [`colorValuePath`](../api/maps/markerSettings/#colorvaluepath),
-[`valuePath`](../api/maps/tooltipSettings/#valuepath) and [`shapeValuePath`](../api/maps/markerSettings/#shapevaluepath).
+1. Bind the field name directly to the properties as [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath), [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath),
+[`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) and [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath).
 
-2. Bind the field name as `data.field` to the properties as [`shapeDataPath`](../api/maps/layerSettings/#shapedatapath), [`colorValuePath`](../api/maps/markerSettings/#colorvaluepath),
-[`valuePath`](../api/maps/tooltipSettings/#valuepath) and [`shapeValuePath`](../api/maps/markerSettings/#shapevaluepath).
+2. Bind the field name as `data.field` to the properties as [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath), [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath),
+[`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) and [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath).
 
-The complex data source binding can be done as illustrated in the following code example.
+Refer complex support for data source as illustrated in the following example.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -208,8 +279,8 @@ data () {
                     visible: true,
                     valuePath: 'data.population',
                     template:"<div>${data.population}</div>"
-                },
-            },
+                }
+            }
         ],
         markerSettings: [
             {
@@ -240,7 +311,7 @@ data () {
                     format: "${data.name}: ${data.x} : ${data.y}"
                 },
                 animationDuration: 0
-            },
+            }
         ]
     }
 },

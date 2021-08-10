@@ -1,20 +1,17 @@
 ---
-title: "Bubble"
+title: " Bubbles in Vue Maps control | Syncfusion "
+
 component: "Maps"
-description: "Bubble support in maps"
+
+description: "Learn here all about Bubbles feature of Syncfusion Vue Maps control and more."
 ---
 
-# Bubble
+# Bubbles in Vue Maps
 
-Bubbles in the Maps control represent the underlying data values of the map. Bubbles are scattered throughout the map shapes that contains bound values.
-
-Bubbles are included when data binding and the `bubbleSettings` is set to the shape layers.
-
-To add bubbles to the map, bind data source to the layer `bubbleSettings` and set the `valuePath` as population. Following example illustrates bubble enable for the World map with **datasource**.
-To render bubble in maps need to import `Bubble` module.
+Bubbles in the Maps control represent the underlying data values of the Maps. It can be scattered throughout the Maps shapes that contain values in the data source. Bubbles are enabled by setting the [`visible`](../api/maps/bubbleSettingsModel/#visible) property of [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property to "**true**". To add bubbles to the Maps, bind the data source to the [`dataSource`](../api/maps/bubbleSettingsModel/#datasource) property of [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property and set the field name, that contains the numerical data, in the data source to the [`valuePath`](../api/maps/bubbleSettingsModel/#valuepath) property. The following example demonstrates how to enable bubbles for the World map with the data source.
 
 ```typescript
-export let world_map = // paste the world map from worldMap.json Geo json file.
+export let world_map = // paste the world map from worldMap.json GeoJSON file.
 ```
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
@@ -71,9 +68,199 @@ provide: {
 
 {% endtab %}
 
-## Bubble Sizing
+## Bubble shapes
 
-Using the `minRadius` and `maxRadius` properties in `bubbleSettings`, you can render the bubbles in different sizes based on the `valuePath` and `dataSource` values
+The following types of shapes are available to render the bubbles in Maps.
+
+* Circle
+* Square
+
+By default, bubbles are rendered in the **"Circle"** type. To change the type of the bubble, set the [`bubbleType`](../api/maps/bubbleSettingsModel/#bubbletype) property of [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property as **"Square"** to render the square shape bubbles.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :bubbleSettings='bubbleSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Bubble } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return{
+        shapeData: world_map,
+        shapeDataPath: 'name',
+        shapePropertyPath: 'name',
+        bubbleSettings: [{
+            visible: true,
+            bubbleType: 'Square',
+            dataSource: [
+                { name: 'India', population: '38332521' },
+                { name: 'Pakistan', population: '3090416' }
+            ],
+            valuePath: 'population'
+        }]
+    }
+},
+provide: {
+    maps: [Bubble]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+## Customization
+
+The following properties are available in [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property to customize the bubbles of the Maps component.
+
+* [`border`](../api/maps/bubbleSettingsModel/#border) - To customize the color, width and opacity of the border of the bubbles in Maps.
+* [`fill`](../api/maps/bubbleSettingsModel/#fill) - To apply the color for bubbles in Maps.
+* [`opacity`](../api/maps/bubbleSettingsModel/#opacity) - To apply opacity to the bubbles in Maps.
+* [`animationDelay`](../api/maps/bubbleSettingsModel/#animationdelay) - To change the time delay in the transition for bubbles.
+* [`animationDuration`](../api/maps/bubbleSettingsModel/#animationduration) - To change the time duration of animation for bubbles.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :bubbleSettings='bubbleSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Bubble } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return{
+        shapeData: world_map,
+        shapeDataPath: 'name',
+        shapePropertyPath: 'name',
+        bubbleSettings: [{
+            visible: true,
+            minRadius: 5,
+            dataSource: [
+                { name: 'India', population: '38332521' },
+                { name: 'New Zealand', population: '19651127' },
+                { name: 'Pakistan', population: '3090416' }
+            ],
+            fill: 'green',
+            animationDelay: 100,
+            animationDuration: 1000,
+            maxRadius: 20,
+            border: {
+                color: 'blue',
+                width: 2
+            },
+            opacity: 1,
+            valuePath: 'population'
+        }]
+    }
+},
+provide: {
+    maps: [Bubble]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+{% endtab %}
+
+## Setting colors to the bubbles from the data source
+
+The color for each bubble in the Maps can be set using the [`colorValuePath`](../api/maps/bubbleSettingsModel/#colorvaluepath) property of [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property. The value for the [`colorValuePath`](../api/maps/bubbleSettingsModel/#colorvaluepath) property is the field name from the data source of the [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property which contains the color values.
+
+{% tab template= "maps/getting-started", isDefaultActive=true %}
+
+```html
+<template>
+    <div id="app">
+          <div class='wrapper'>
+            <ejs-maps >
+                <e-layers>
+                    <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :bubbleSettings='bubbleSettings' ></e-layer>
+                </e-layers>
+            </ejs-maps>
+        </div>
+    </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { MapsPlugin, Bubble } from '@syncfusion/ej2-vue-maps';
+import { world_map } from './world-map.js';
+Vue.use(MapsPlugin);
+export default {
+data () {
+    return{
+        shapeData: world_map,
+        shapeDataPath: 'name',
+        shapePropertyPath: 'name',
+        bubbleSettings: [{
+            visible: true,
+            minRadius: 20,
+            colorValuePath: 'color',
+            dataSource: [
+                { name: 'India', population: '38332521', color: 'blue' },
+                { name: 'New Zealand', population: '19651127', color: '#c2d2d6'  },
+                { name: 'Pakistan', population: '3090416', color: '#09156d'  }
+            ],
+            maxRadius: 40,
+            valuePath: 'population'
+        }]
+    }
+},
+provide: {
+    maps: [Bubble]
+}
+}
+</script>
+<style>
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>
+```
+
+## Setting the range of the bubble size
+
+The size of the bubbles is calculated from the values got from the [`valuePath`](../api/maps/bubbleSettingsModel/#valuepath) property. The range for the radius of the bubbles can be modified using [`minRadius`](../api/maps/bubbleSettingsModel/#minradius) and [`maxRadius`](../api/maps/bubbleSettingsModel/#maxradius) properties.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -131,9 +318,7 @@ provide: {
 
 ## Multiple bubble groups
 
-You can specify multiple types of bubble groups using the `bubbleSettings` property and customize it according to your requirement.
-
-In the following code example, the gender-wise population ratio is demonstrated with two different bubble groups.
+Multiple groups of bubbles can be added to the Maps using the [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property in which the properties of bubbles are added as an array. The customization for the bubbles can be done with the [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property. In the following example, the gender-wise population ratio is demonstrated with two different bubble groups.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -222,10 +407,9 @@ provide: {
 
 {% endtab %}
 
-## Enable Legend for Bubble
+## Enable tooltip for bubble
 
-To enable the legend for the bubble, need to set `legendSettings.visible` as true and `legendSettings.type` as 'Bubbles'. To render the legend in maps need to Inject Legend module using `provide` option.
-Refer the below code snippet to enable the legend for bubbles with each bubble different colors rendering.
+The tooltip for the bubbles can be enabled by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property of the [`tooltipSettings`](../api/maps/tooltipSettingsModel/) property as "**true**". The content for the tooltip can be set using the [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the [`tooltipSettings`](../api/maps/tooltipSettingsModel/) of the [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property where the value for the [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property is the field name from the data source of the [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property. Also added any HTML element as the template in tooltip using the [`template`](../api/maps/tooltipSettingsModel/#template) property.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -233,7 +417,7 @@ Refer the below code snippet to enable the legend for bubbles with each bubble d
 <template>
     <div id="app">
           <div class='wrapper'>
-            <ejs-maps :legendSettings='legendSettings' >
+            <ejs-maps >
                 <e-layers>
                     <e-layer :shapeData='shapeData' :shapePropertyPath='shapePropertyPath' :shapeDataPath='shapeDataPath' :bubbleSettings='bubbleSettings' ></e-layer>
                 </e-layers>
@@ -244,35 +428,35 @@ Refer the below code snippet to enable the legend for bubbles with each bubble d
 
 <script>
 import Vue from 'vue';
-import { MapsPlugin, Bubble, Legend } from '@syncfusion/ej2-vue-maps';
+import { MapsPlugin, Bubble, MapsTooltip } from '@syncfusion/ej2-vue-maps';
 import { world_map } from './world-map.js';
 Vue.use(MapsPlugin);
 export default {
 data () {
-    return{
-        legendSettings: {
-            visible: true,
-            type: 'Bubbles'
-        },
-         shapeData: world_map,
+    return {
+        shapeData: world_map,
         shapeDataPath: 'name',
         shapePropertyPath: 'name',
         bubbleSettings: [{
             visible: true,
-            minRadius: 20,
+            minRadius: 5,
             dataSource: [
-                {color: 'green', name: 'India', population: '38332521' },
-                {color: 'purple', name: 'New Zealand', population: '19651127' },
-                {color: 'blue', name: 'Pakistan', population: '3090416' }
+                { name: 'India', population: '38332521' },
+                { name: 'New Zealand', population: '19651127' },
+                { name: 'Pakistan', population: '3090416' }
             ],
-            maxRadius: 40,
-            colorValuePath: 'color',
-            valuePath: 'population'
+            maxRadius: 20,
+            valuePath: 'population',
+            tooltipSettings: {
+                visible: true,
+                valuePath: 'population',
+            }
+
         }]
     }
 },
 provide: {
-    maps: [Bubble, Legend]
+    maps: [Bubble, MapsTooltip]
 }
 }
 </script>
