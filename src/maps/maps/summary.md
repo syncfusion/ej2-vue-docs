@@ -1,4 +1,5 @@
 * [Getting Started](maps/getting-started.md)
+* [Getting Started with Vue 3](maps/getting-started-vue-3.md)
 * [Populate Data](maps/populate-data.md)
 * [Layers](maps/layers.md)
 * [Open Street Maps](maps/providers/map-provider.md)
