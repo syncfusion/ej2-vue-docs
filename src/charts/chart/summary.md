@@ -1,4 +1,5 @@
 * [Getting Started](chart/getting-started.md)
+* [Getting Started with Vue 3](chart/getting-started-vue-3.md)
 * [Working with Data](chart/working-with-data.md)
 * [Chart Dimensions](chart/chart-dimensions.md)
 * [Category Axis](chart/category-axis.md)

@@ -1,4 +1,5 @@
 * [Getting Started](stock-chart/getting-started.md)
+* [Getting Started with Vue 3](stock-chart/getting-started-vue-3.md)
 * [Working with Data](stock-chart/working-with-data.md)
 * [Chart Dimensions](stock-chart/chart-dimensions.md)
 * [Axis Types](stock-chart/axis-types.md)
