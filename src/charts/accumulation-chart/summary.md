@@ -1,4 +1,5 @@
 * [Getting Started](accumulation-chart/getting-started.md)
+* [Getting Started with Vue 3](accumulation-chart/getting-started-vue-3.md)
 * [Pie & Doughnut](accumulation-chart/pie-dough-nut.md)
 * [Pyramid](accumulation-chart/pyramid.md)
 * [Funnel](accumulation-chart/funnel.md)

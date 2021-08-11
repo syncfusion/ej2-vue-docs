@@ -1,4 +1,5 @@
 * [Getting Started](range-navigator/getting-started.md)
+* [Getting Started with Vue 3](range-navigator/getting-started-vue-3.md)
 * [Range](range-navigator/selecting-range.md)
 * [LightWeight RangeNavigator](range-navigator/lightweight.md)
 * [Series Types](range-navigator/series-types.md)
