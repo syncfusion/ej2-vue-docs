@@ -1,4 +1,5 @@
 * [Getting Started](barcode/getting-started.md)
+* [Getting Started with Vue 3](barcode/getting-started-vue-3.md)
 * [Barcode Generator](barcode/barcodeGenerator.md)
 * [QR Code generator](barcode/qrcodegenerator.md)
 * [Data Matrix generator](barcode/datamatrixgenerator.md)
