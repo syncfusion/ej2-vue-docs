@@ -1,4 +1,5 @@
 * [Getting Started](diagram/getting-started.md)
+* [Getting Started with Vue 3](diagram/getting-started-vue-3.md)
 * [Node](diagram/nodes.md)
 * [Shapes](diagram/shapes.md)
 * [BPMN Shapes](diagram/bpmn-shapes.md)
