@@ -1,4 +1,5 @@
 * [Getting Started](grid/getting-started.md)
+* [Getting Started with Vue 3](grid/getting-started-vue.md)
 * [Feature Modules](grid/module.md)
 * [Data Binding](grid/data-binding.md)
 * [Immutable Mode](grid/immutable-mode.md)

@@ -609,6 +609,125 @@ export default {
 
 {% endtab %}
 
+### Automatically update the column based on another column edited value in Batch mode
+
+You can update the column value based on another column edited value in Batch mode by using the Cell Edit Template feature.
+
+In the below demo, we have update the `TotalCost` column value based on the `UnitPrice` and `UnitInStock` column value while editing.
+
+{% tab template="grid/edit/default" %}
+
+```html
+
+<template>
+  <div id="app">
+    <ejs-grid id="Grid1" :dataSource="data" :editSettings="editSettings" :toolbar="toolbar" height="273px" :cellEdit="cellEdit">
+      <e-columns>
+        <e-column field="ProductID" headerText="Product ID" textAlign="Right" :isPrimaryKey="true" width="100"></e-column>
+        <e-column field="ProductName" headerText="Product Name" width="120"></e-column>
+        <e-column field="UnitPrice" headerText="Unit Price" editType="numericedit" :edit="priceParams"
+          width="150" format="C2" textAlign="Right" ></e-column>
+        <e-column field="UnitsInStock" headerText="Units In Stock" editType="numericedit"
+          :edit="stockParams" width="150" textAlign="Right"></e-column>
+        <e-column field="TotalCost" headerText="Total Cost" width="150" format="C2" textAlign="Right" ></e-column>
+      </e-columns>
+    </ejs-grid>
+  </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Toolbar, Edit } from "@syncfusion/ej2-vue-grids";
+import { NumericTextBox } from "@syncfusion/ej2-inputs";
+import { productData } from "./datasource.js";
+import { getComponent } from "@syncfusion/ej2-base";
+
+let priceElem, stockElem, priceObj, stockObj;
+var grid;
+Vue.use(GridPlugin);
+export default {
+  data: () => {
+    return {
+      data: productData,
+      toolbar: ["Add", "Delete", "Update", "Cancel"],
+      editSettings: {
+        allowEditing: true,
+        allowAdding: true,
+        allowDeleting: true,
+        mode: "Batch",
+      },
+      priceParams: {
+        create: () => {
+          priceElem = document.createElement("input");
+          return priceElem;
+        },
+        read: () => {
+          return priceObj.value;
+        },
+        destroy: () => {
+          priceObj.destroy();
+        },
+        write: (args) => {
+         grid = new getComponent("Grid1", "grid");
+          var rowData = args.rowData;
+          var rowIndex = grid.getRowInfo(args.row).rowIndex;
+          priceObj = new NumericTextBox({
+            value: args.rowData[args.column.field],
+            change: function (args) {
+              var totalCostValue = args.value * rowData["UnitsInStock"];
+              grid.updateCell(rowIndex, "TotalCost", totalCostValue);
+            },
+          });
+          priceObj.appendTo(priceElem);
+        },
+      },
+      stockParams: {
+        create: () => {
+          stockElem = document.createElement("input");
+          return stockElem;
+        },
+        read: () => {
+          return stockObj.value;
+        },
+        destroy: () => {
+          stockObj.destroy();
+        },
+        write: (args) => {
+          grid = new getComponent("Grid1", "grid");
+          var rowData = args.rowData;
+          var rowIndex = grid.getRowInfo(args.row).rowIndex;
+          stockObj = new NumericTextBox({
+            value: args.rowData[args.column.field],
+            change: function (args) {
+              var totalCostValue = args.value * rowData["UnitPrice"];
+              grid.updateCell(rowIndex, "TotalCost", totalCostValue);
+            },
+          });
+          stockObj.appendTo(stockElem);
+        },
+      },
+    };
+  },
+  methods: {
+    cellEdit: function (args) {
+      if (args.columnName === "TotalCost") {
+        args.cancel = true;
+      }
+    },
+  },
+  provide: {
+    grid: [Edit, Toolbar],
+  },
+};
+</script>
+
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+
+```
+
+{% endtab %}
+
 ## Dialog/Inline template
 
 The dialog/inline template editing provides an option to customize the default behavior of dialog editing. Using the dialog template, you can render your own editors by defining the [`editSettings.mode`](../api/grid/editSettings/#mode) as **Dialog/Normal** and [`editSetting.template`](../api/grid/editSettings/#template) as Vue component.
