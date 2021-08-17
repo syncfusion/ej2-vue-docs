@@ -413,6 +413,8 @@ Open and save helper functions are shipped in the Syncfusion.EJ2.Spreadsheet pac
 * Syncfusion.Compression.Base
 * Syncfusion.XlsIO.Base
 
+And also refer [this](https://ej2.syncfusion.com/aspnetcore/documentation/spreadsheet/open-save/#server-dependencies) for more information.
+
 ## Supported File Formats
 
 The following list of Excel file formats are supported in Spreadsheet:
