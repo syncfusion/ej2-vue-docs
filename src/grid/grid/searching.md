@@ -272,3 +272,55 @@ export default {
 ```
 
 {% endtab %}
+
+## Search on each key stroke
+
+You can search the Grid data on each key stroke by binding the `keyup` event for the search input element inside the [`created`](../api/grid/#created) event. Inside the `keyup` handler you can search the Grid by invoking the [`search`](../api/grid/#search) method of the Grid component.
+
+{% tab template="grid/search/default" %}
+
+```html
+<template>
+    <div id="app">
+        <ejs-grid ref='grid' :dataSource='data' :toolbar='toolbarOptions' height='262px' :created='created'>
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=100></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width=100></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width=100></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Toolbar, Search } from "@syncfusion/ej2-vue-grids";
+import { data } from './datasource.js'
+
+Vue.use(GridPlugin);
+
+export default {
+  data() {
+    return {
+      data: data,
+      toolbarOptions: ['Search'],
+    };
+  },
+  methods: {
+    created: function() {
+        document.getElementById(this.$refs.grid.element.id + "_searchbar").addEventListener('keyup', () => {
+          this.$refs.grid.search((event.target as HTMLInputElement).value)
+        });
+    }
+  },
+  provide: {
+    grid: [Search,Toolbar]
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+```
+
+{% endtab %}

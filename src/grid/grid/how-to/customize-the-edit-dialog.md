@@ -8,7 +8,11 @@ description: "Learn how to customize the Edit Dialog."
 
 You can customize the appearance of the edit dialog in the [`actionComplete`](../../api/grid/#actioncomplete) event based on `requestType` as `beginEdit` or `add`.
 
-In the below example, we have changed the dialog's header text for editing and adding records.
+In the following example, the dialog's properties like header text, showCloseIcon, height have been changed while editing and adding the records.
+
+Also the locale text for the `Save` and `Cancel` buttons has been changed by overriding the default locale strings.
+
+You can refer the Grid [`Default text`](../global-local/) list for more localization.
 
 {% tab template="grid/edit/default" %}
 
@@ -28,10 +32,20 @@ In the below example, we have changed the dialog's header text for editing and a
 </template>
 <script>
 import Vue from "vue";
+import { L10n } from '@syncfusion/ej2-base';
 import { GridPlugin, Page, Toolbar, Edit } from "@syncfusion/ej2-vue-grids";
 import { data } from './datasource.js';
 
 Vue.use(GridPlugin);
+
+L10n.load({
+    'en-US': {
+        'grid': {
+            'SaveButton': 'Submit',
+            'CancelButton': 'Discard'
+        }
+    }
+});
 
 export default {
   data() {
@@ -45,9 +59,10 @@ export default {
     actionComplete(args) {
         if ((args.requestType === 'beginEdit' || args.requestType === 'add')) {
             let dialog = args.dialog;
+            dialog.showCloseIcon = false;
             dialog.height = 400;
             // change the header of the dialog
-            dialog.header = args.requestType === 'beginEdit' ? 'Record of ' + args.rowData['CustomerID'] : 'New Customer';
+            dialog.header = args.requestType === 'beginEdit' ? 'Edit Record of ' + args.rowData['CustomerID'] : 'New Customer';
         }
     }
   },
