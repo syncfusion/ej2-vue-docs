@@ -173,4 +173,4 @@ The web server will be initiated and open the **quickstart** app in the browser 
 
 ![Output](./images/vue3-chart-demo.png)
 
-Refer the following sample, [vue3-charts-getting-started](https://github.com/SyncfusionExamples/vue3-charts-getting-started).
+Refer the following sample, [vue3-charts-getting-started](https://github.com/SyncfusionExamples/vue3-chart-getting-started).

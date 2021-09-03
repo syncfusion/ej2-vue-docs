@@ -425,3 +425,5 @@ export default {
 ```
 
 {% endtab %}
+
+> You can refer to our [Vue Stock Chart](https://www.syncfusion.com/vue-ui-components/vue-stock-chart) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Stock Chart example](https://ej2.syncfusion.com/vue/demos/#/material/stock-chart) that shows you how to present and manipulate data.

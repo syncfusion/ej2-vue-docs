@@ -1,4 +1,5 @@
 * [Getting Started](bullet-chart/getting-started.md)
+* [Getting Started with Vue 3](bullet-chart/getting-started-vue-3.md)
 * [Bullet Chart Dimensions](bullet-chart/bullet-chart-dimensions.md)
 * [Axis Customization](bullet-chart/axis-customization.md)
 * [Working with Data](bullet-chart/data-binding.md)

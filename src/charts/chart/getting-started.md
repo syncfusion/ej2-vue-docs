@@ -522,3 +522,5 @@ export default {
 ```
 
 {% endtab %}
+
+> You can refer to our [Vue Charts](https://www.syncfusion.com/vue-ui-components/vue-charts) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Charts example](https://ej2.syncfusion.com/vue/demos/#/material/chart/line.html) that shows various chart types and how to represent time-dependent data, showing trends in data at equal intervals.

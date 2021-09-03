@@ -81,7 +81,7 @@ export default {
 
 ```
 
-In the above code snippet, you have registered Stock Chart and the directives for series. Series directives are used to visualize the data with different Stock Chart types like `Line`, `Column`, `Bar` etc.
+In the above code snippet, you have registered Stock Chart and the directives for series. Series directives are used to visualize the data with different Stock Chart types like `Line`, `Hilo`, `Candle` etc.
   
 **3.** Add the component definition in template section.
 
@@ -234,4 +234,4 @@ The web server will be initiated and open the **quickstart** app in the browser 
 
 ![Output](./images/vue3-stockchart-demo.png)
 
-Refer the following sample, [vue3-stockchart-getting-started](https://github.com/SyncfusionExamples/vue3-stockchart-getting-started).
+Refer the following sample, [vue3-stock-chart-getting-started](https://github.com/SyncfusionExamples/vue3-stock-chart-getting-started).
