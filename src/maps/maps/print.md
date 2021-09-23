@@ -10,7 +10,7 @@ description: "Learn here all about Print And Export feature of Syncfusion Vue Ma
 
 ## Print
 
-The rendered Maps can be printed directly from the browser by calling the [`print`](../api/maps#print) method. To use the print functionality, **Print** module must be injected into the Maps using **provide** section and set the [`allowPrint`](../api/maps/mapsModel/#allowprint) property to "**true**". The following code snippet demonstrates injecting the Print module into the Maps component.
+The rendered Maps can be printed directly from the browser by calling the [`print`](../api/maps#print) method. To use the print functionality, **Print** module must be injected into the Maps using **provide** section and set the [`allowPrint`](../api/maps/mapsModel/#allowprint) property to **true**. The following code snippet demonstrates injecting the Print module into the Maps component.
 
 ```html
 <template>
@@ -86,7 +86,7 @@ methods: {
 
 ### Image Export
 
-To use the image export functionality in Maps, **ImageExport** module must be injected into the Maps using **provide** section and set the [`allowImageExport`](../api/maps/#allowimageexport) property to **true**. The following code snippet demonstrates injecting the ImageExport module into the Maps component.
+To use the image export functionality in Maps, **ImageExport** module must be injected into the Maps using **provide** section and set the [`allowImageExport`](../api/maps/#allowimageexport) property to **true**.
 
 ```html
 <template>
@@ -190,6 +190,7 @@ The image can be exported as base64 string for the JPEG and PNG formats. The ren
                 <e-layer :shapeData='shapeData' :markerSettings='markerSettings' :shapeSettings='shapeSettings'></e-layer>
             </e-layers>
         </ejs-maps>
+        <div id="data"></data>
     </div>
 </template>
 
@@ -236,8 +237,7 @@ methods: {
      clickExport: function(args) {
         let map=document.getElementById('container');
         map.ej2_instances[0].export("PNG","Maps",null,false).then((data) => {
-            var base64 = data;
-            document.writeln(base64);
+            document.getElementById('data').innerHTML = data;
         });
     }
 }
@@ -249,7 +249,7 @@ methods: {
 
 ### PDF Export
 
-To use the PDF export functionality in Maps, **PdfExport** module must be injected into the Maps using **provide** section and set the [`allowPdfExport`](../api/maps/mapsModel/#allowpdfexport) property to **true**. The following code snippet demonstrates injecting the PdfExport module into the Maps component.
+To use the PDF export functionality in Maps, **PdfExport** module must be injected into the Maps using **provide** section and set the [`allowPdfExport`](../api/maps/mapsModel/#allowpdfexport) property to **true**.
 
 ```html
 <template>
@@ -267,7 +267,7 @@ provide: {
 });
 ```
 
-The rendered Maps can be exported as PDF using the [`export`](../api/maps#export) method. The [`export`](../api/maps#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and "0" indicates portrait and "1" indicates landscape.
+The rendered Maps can be exported as PDF using the [`export`](../api/maps#export) method. The [`export`](../api/maps#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and **0** indicates portrait and **1** indicates landscape.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -334,7 +334,7 @@ methods: {
 
 {% endtab %}
 
-> Note: The exporting of the Maps as base64 string is not supported for the PDF export.
+>The exporting of the Maps as base64 string is not supported for the PDF export.
 
 ### Export the tile Maps
 

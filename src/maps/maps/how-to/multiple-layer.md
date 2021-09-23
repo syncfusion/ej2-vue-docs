@@ -25,7 +25,7 @@ export default {
 data () {
     return {
        layers: [{
-            shapeData: usa,
+            shapeData: usMap,
             shapeSettings: {
                 fill: '#E5E5E5',
                 border: {

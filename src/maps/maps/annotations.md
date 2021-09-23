@@ -75,7 +75,7 @@ provide: {
 
 ### Changing the z-index
 
-The stack order of an annotation element can be changed using the [`zIndex`](../api/maps/annotationModel/#zindex) property in the [`e-maps-annotation`](../api/maps/annotationModel/) property.
+The stack order of an annotation element can be changed using the [`zIndex`](../api/maps/annotationModel/#zindex) property in the [`e-maps-annotation`](../api/maps/annotationModel/).
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -136,7 +136,7 @@ provide: {
 
 ### Positioning an annotation
 
-Annotations can be placed anywhere in the Maps by specifying pixel or percentage values to the [`x`](../api/maps/annotationModel/#x) and [`y`](../api/maps/annotationModel/#y) properties in the [`e-maps-annotation`](../api/maps/annotationModel/) property.
+Annotations can be placed anywhere in the Maps by specifying pixel or percentage values to the [`x`](../api/maps/annotationModel/#x) and [`y`](../api/maps/annotationModel/#y) properties in the [`e-maps-annotation`](../api/maps/annotationModel/).
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 
@@ -197,7 +197,7 @@ provide: {
 
 ### Alignment of an annotation
 
-Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotationModel/#horizontalalignment) and [`verticalAlignment`](../api/maps/annotationModel/#verticalalignment) properties in the [`e-maps-annotation`](../api/maps/annotationModel/) property. The possible values can be "**Center**", "**Far**", "**Near**" and "**None**".
+Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotationModel/#horizontalalignment) and [`verticalAlignment`](../api/maps/annotationModel/#verticalalignment) properties in the [`e-maps-annotation`](../api/maps/annotationModel/). The possible values can be **Center**, **Far**, **Near** and **None**.
 
 {% tab template= "maps/getting-started", isDefaultActive=true %}
 

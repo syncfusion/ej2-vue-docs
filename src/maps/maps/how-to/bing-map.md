@@ -6,8 +6,6 @@ Usually bing map displays the Maps in satellite view in which you can't make cha
 
 To render the Maps control as bing map, set the [`layerType`](../api/maps/layerSettingsModel/#layertype) as **Bing** and also provide the key for the bing map.
 
-{% tab template= "maps/getting-started", isDefaultActive=true %}
-
 ```html
 <template>
     <div id="app">
@@ -30,7 +28,7 @@ data () {
         {
             layerType: 'Bing',
             // Provide your bing map key here
-            key: 'AuQazZ3PUo3p2_c2KPhqMku-iKvee5fKcRREIg46MENqVTM9dp2ZyTbrHJpR9esZ'
+            key: '// ...bingMapKey'
         }
     ]
     }
@@ -45,13 +43,9 @@ data () {
 </style>
 ```
 
-{% endtab %}
-
 **Step 2**:
 
 The geometry shape can be added in the bing map using sublayer concept. In the below example, Africa continent can be set as the sublayer in bing map using the [`type`](../api/maps/layerSettingsModel/#type) property.
-
-{% tab template= "maps/getting-started", isDefaultActive=true %}
 
 ```html
 <template>
@@ -74,7 +68,7 @@ data () {
     return {
         layers: [{
             layerType: 'Bing',
-            key: 'AuQazZ3PUo3p2_c2KPhqMku-iKvee5fKcRREIg46MENqVTM9dp2ZyTbrHJpR9esZ'
+            key: '// ...bingMapKey'
         },
         {
             layerType: 'Geometry',
