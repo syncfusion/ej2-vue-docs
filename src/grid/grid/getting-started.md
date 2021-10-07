@@ -37,7 +37,7 @@ npm install
 
 All the available Essential JS 2 packages are published in [`npmjs.com`](https://www.npmjs.com/~syncfusionorg) registry.
 
-To install Grid component, use the following command
+To install Vue Grid component, use the following command
 
 ```bash
 npm install @syncfusion/ej2-vue-grids --save
@@ -180,7 +180,7 @@ Here, we have defined it for the conversion of numeric values to currency.
 
 ## Module injection
 
-To create Grid with additional features, inject the required modules. The following modules are used to extend Grid's basic functionality.
+To create Vue Grid with additional features, inject the required modules. The following modules are used to extend Grid's basic functionality.
 
 * **Page** - Inject this module to use paging feature.
 * **Sort** - Inject this module to use sorting feature.
@@ -587,3 +587,5 @@ export default {
 {% endraw %}
 
 {% endtab %}
+
+> You can refer to our [Vue Grid]( https://www.syncfusion.com/vue-ui-components/vue-grid) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Grid example]( https://ej2.syncfusion.com/vue/demos/#/material/grid/grid-overview.html) that shows how to render the Grid in Vue.
