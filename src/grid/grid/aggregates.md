@@ -335,8 +335,8 @@ export default {
     };
   },
   methods: {
-      customAggregateFn : function (data) {
-           return data.result.filter((item) => item.ShipCountry === 'Brazil').length;
+      customAggregateFn : function (data, aggColumn) {
+           return data.result.filter((item) => item[aggColumn.columnName] === 'Brazil').length;
       }
   },
   provide: {

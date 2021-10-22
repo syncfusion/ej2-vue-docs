@@ -83,3 +83,59 @@ let model = JSON.parse(model);
 window.localStorage.setItem('gridGrid', JSON.stringify(model)); //"gridGrid" is component name + component id.
 
 ```
+
+## Restore initial Grid state
+
+When the [`enablePersistence`](../api/grid/#enablepersistence) property is set to **true**, the Grid will keep its state even if the page is reloaded. In some cases, you may be required to retain the Grid in its initial state. The Grid will not retain its initial state now since the [`enablePersistence`](../api/grid/#enablepersistence) property has been enabled.
+
+You can achieve this by destroying the grid after disabling the [`enablePersistence`](../api/grid/#enablepersistence) property and clearing the local storage data, as shown in the sample below.
+
+{% tab template="grid/sort/default" %}
+
+```html
+<template>
+    <div id="app">
+       <button id="restore"  @click="clickRestore">Restore to initial state</button>
+      <br /><br />
+        <ejs-grid ref="grid" :dataSource='data' :enablePersistence='true' :allowPaging='true' :allowFiltering='true' height='230px' id="Grid">
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Page, Filter } from "@syncfusion/ej2-vue-grids";
+import { data } from './datasource.js';
+
+Vue.use(GridPlugin);
+
+export default {
+  data() {
+    return {
+      data: data
+    };
+  },
+  methods: {
+    clickRestore: function () {
+        this.$refs.grid.ej2Instances.enablePersistence = false;
+        window.localStorage.setItem("gridGrid", "");
+        this.$refs.grid.ej2Instances.destroy();
+        location.reload();
+    }
+  },
+  provide: {
+    grid: [Page, Filter]
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+```
+
+{% endtab %}
