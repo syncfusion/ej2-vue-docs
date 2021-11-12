@@ -976,8 +976,8 @@ You can provide the alternative display name for such customized views on the Sc
         <div id='container'>
             <ejs-schedule id='Schedule' height='550px' width='100%' :selectedDate='selectedDate' :eventSettings='eventSettings' :currentView='currentView'>
                 <e-views>
-                    <e-view option='Day' interval=3 displayName='3 Days'></e-view>
-                    <e-view option='Week' interval=2 displayName='2 Weeks'></e-view>
+                    <e-view option='Day' :interval='3' displayName='3 Days'></e-view>
+                    <e-view option='Week' :interval='2' displayName='2 Weeks'></e-view>
                 </e-views>
             </ejs-schedule>
         </div>

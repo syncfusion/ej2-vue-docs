@@ -1,4 +1,5 @@
 * [Getting Started](schedule/getting-started.md)
+* [Getting Started with Vue 3](schedule/getting-started-vue-3.md)
 * [Module Injection](schedule/module-injection.md)
 * [Scheduler Interactions](schedule/scheduler-interactions.md)
 * [Appointments](schedule/appointments.md)
@@ -24,6 +25,7 @@
 * [Globalization](schedule/localization.md)
 * [Accessibility](schedule/accessibility.md)
 * [Styling And Appearance](schedule/scheduler-styling.md)
+* [FAQ](schedule/frequently-asked-questions.md)
 * [Perform CRUD Actions Dynamically](schedule/how-to/add-edit-and-remove-events.md)
 * [Set Default Value for Event Fields](schedule/how-to/set-default-value-for-event-fields.md)
 * [Open Editor Window Manually](schedule/how-to/open-event-editor-manually.md)
@@ -32,3 +34,4 @@
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Show quick info template](schedule/how-to/show-quick-info-template.md)
 * [Enable scroll option on all-day section](schedule/how-to/enable-scroll-option-on-all-day-section.md)
+* [Two-Way Binding](schedule/how-to/two-way-binding.md)
