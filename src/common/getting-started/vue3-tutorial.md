@@ -10,7 +10,7 @@ This section explains how to use Syncfusion Vue components in Vue 3 application.
 
 ## Creating Vue application using Vue CLI
 
-The easiest way to create a Vue application is to use the [`Vue CLI`](https://github.com/vuejs/vue-cli).Vue CLI versions above [`4.5.0`](https://v3.vuejs.org/guide/migration/introduction.html#vue-cli) is mandatory for creating applications using Vue 3.We can use the following command to uninstall older versions of the Vue CLI if we already have them.
+The easiest way to create a Vue application is to use the [`Vue CLI`](https://github.com/vuejs/vue-cli). Vue CLI versions above [`4.5.0`](https://v3.vuejs.org/guide/migration/introduction.html#vue-cli) are mandatory for creating applications using Vue 3. Use the following command to uninstall older versions of the Vue CLI.
 
 ```bash
 npm uninstall vue-cli -g
@@ -29,14 +29,14 @@ Create a new project using the command below.
 vue create quickstart
 ```
 
-Initiating a new project prompts us to choose the type of project we want to use for the application. Select the option `Default (Vue 3 Preview)` from the menu.
+Initiating a new project prompts us to choose the type of project to be used for the current application. Select the option `Default (Vue 3 Preview)` from the menu.
 
 ![Reference](../appearance/images/vue3-terminal.png)
 
 ## Adding Syncfusion packages in the application
 
  Syncfusion Vue packages are maintained in the [`npmjs.com`](https://www.npmjs.com/~syncfusionorg) registry.
-We'll use the Grid component for this example. To install it use the following command.
+The Grid component will be used in this example. To install it, use the following command.
 
 ```bash
 npm install @syncfusion/ej2-vue-grids --save
@@ -44,7 +44,7 @@ npm install @syncfusion/ej2-vue-grids --save
 
 ## Adding CSS reference for Syncfusion Vue components
 
-Import the needed css styles for the  Grid component along with dependency styles in the `<script>` section of the `src/App.vue` file as follows.
+Import the needed css styles for the Grid component along with dependency styles in the `<script>` section of the `src/App.vue` file as follows.
 
 ```js
 <script>
@@ -60,11 +60,11 @@ import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
 </script>
 ```
 
-Note: Grid components uses other Syncfusion components too, so we need to add other component's css references to use all the Grid functionalities.
+Note: Grid components use other Syncfusion components too, so the dependent component's css references need to be added for using all the Grid functionalities.
 
 ## Adding Syncfusion Vue component in the application.
 
-We have completed all the necessary configurations needed  for rendering the Syncfusion Vue component. Now, we are going to add the Grid component using following steps.
+You have completed all the necessary configurations needed for rendering the Syncfusion Vue component. Now, you are going to add the Grid component using the following steps.
 
   1. Import the Grid component in the `<script>` section of the `src/App.vue` file.
 
@@ -78,7 +78,7 @@ We have completed all the necessary configurations needed  for rendering the Syn
 
 ```js
 import { GridComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/ej2-vue-grids';
-  //Component registeration
+  //Component registration
 export default {
     name: "App",
     components: {
@@ -89,9 +89,9 @@ export default {
 }
 ``` 
 
-  In the above code snippet, we have registered Grid and the column directives. Column directives are used to define the column definition for the Grid component.
+  In the above code snippet, you have registered the Grid and column directives. Column directives are used to define the column definition for the Grid component.
 
-  3. Add the component definition in template section.
+  3. Add the component definition in the template section.
   
    ```html
  <template>
@@ -127,7 +127,7 @@ data() {
 }
 ```
 
-  5. Summarizing the above steps, update the `src/App.vue` file with following code.
+  5. Summarizing the above steps, update the `src/App.vue` file with the following code.
 
 ```html
 <template>
@@ -189,23 +189,24 @@ Run the application using the following command.
 npm run serve
 ```
 
-Web server will be intiated, Open the quick start app in the browser at port [`localhost:8080`](http://localhost:8080/).
+Web server will be initiated. Open the quick start app in the browser at port [`localhost:8080`](http://localhost:8080/).
 
-![Output](../appearance/images/Vue3-getstarted.PNG)
+![Output](../appearance/images/Vue3-grid-demo.PNG)
 
+Refer the following sample, [vue3-grid-gettingstarted](https://github.com/SyncfusionExamples/EJ2-Vue3-gettingstarted).
 
 ## Migration from Vue 2 to Vue 3
 
 ### Registering Vue component
 
-It is required to register the component and any child directives used within the component separately in Vue 3.The differnce in registering components in Vue 2 and Vue 3 can be found below.
+It is required to register the component and any child directives used within the component separately in Vue 3. The difference in registering components in Vue 2 and Vue 3 can be found below.
 
 * Component registration in Vue 2
 
 ```html
 import * as Vue from 'vue';
 import { GridPlugin } from '@syncfuion/ej2-vue-grids';
-// Registering of component and directives as single plugin.
+// Registering component and directives as a single plugin.
 Vue.use(ButtonPlugin);
 ```
 
@@ -223,13 +224,13 @@ export default {
     }
 ```
 
-In the above code `ejs-grid` denotes the Grid component tag.`e-columns` and `e-column` denotes the child column directives tag which is used for Column definition declaration.
+In the above code, `ejs-grid` denotes the Grid component tag.`e-columns` and `e-column` denotes the child column directives tag which is used for Column definition declaration.
 
-Note: Registering the child directives is not needed if we don't use them.
+Note: Registering the child directives is not needed if they are not used.
 
 ### Template Usage:
 
-Before using the template in the Vue application, we need to enable the [runtime compiler](https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only). Create the `Vue.config.js` file in the root folder if it doens  not exists and add the following code
+Before using the template in the Vue application, enable the [runtime compiler](https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only). Create the `Vue.config.js` file in the root folder if it does  not exist and add the following code
 
 ```js
 module.exports = {
@@ -241,10 +242,10 @@ Due to changes in the [Vue 3 API](https://v3.vuejs.org/guide/migration/global-ap
 
 |    Vue 2                                             |    Vue 3      |
 |:--------------------------------------------------------:|:-------------------:|
-|    declare templates using `Vue.component` module. |    Use  the `createapp` method from Vue to declare templates.|
+|    declare templates using `Vue.component` module. |    Use the `createApp` method from Vue to declare templates.|
 
 
-In template declaration, the component name must match the property binding name.In the following example, the Grid column `template` property is assigned with the name `colTemplate`.
+In template declaration, the component name must match the property binding name. In the following example, the Grid column `template` property is assigned with the name `colTemplate`.
 
 ```html
 <template>
@@ -301,9 +302,9 @@ export default {
 
 ### Using Syncfusion Vue components inside template properties
 
-To use other Syncfusion Vue components inside the templates, we need to register the components in the template declaration also.
+To use other Syncfusion Vue components inside the templates, register the components in the template declaration also.
 
-In the following sample, we are using the Button component inside the grid component's template property. To use the Button component within the template we need to register button component in template declaration.
+The following sample uses the Button component within the grid's template property. To use the Button component within the template, register the Button component in the template declaration.
 
 ```html
 <template>

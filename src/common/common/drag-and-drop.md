@@ -24,7 +24,6 @@ You can make any element draggable by passing the element to Draggable construct
 
             var dragElement = document.getElementById('element1');
             var draggable = new Draggable(dragElement, { clone: false });
-
         }
     }
 </script>
@@ -56,7 +55,17 @@ You can make any element draggable by passing the element to Draggable construct
 </style>
 
 ```
+    .helper {
+        opacity: 0.6;
+    }
 
+    .select {
+        border: 1px solid #cccccc;
+        background: #ededed;
+    }
+</style>
+
+```
  {% endtab %}
 
 ## Creating Droppable zone
