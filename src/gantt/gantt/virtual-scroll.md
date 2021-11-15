@@ -268,4 +268,6 @@ data: virtualData,
 * Due to the element height limitation in browsers, the maximum number of records loaded is limited by the browser capacity.
 * Cell selection will not be persisted.
 * The number of records rendered will be determined by the `height` property.
-* If the height property is not specified, the default number of task rendered is ten.
+* It is necessary to mention the height of the Gantt in pixels when enabling Virtual Scrolling.
+* Currently, we do not have support for Row Drag and Drop when virtualization is enabled.
+* Virtual Scroll does not support Multi Taskbar support in Resource View.

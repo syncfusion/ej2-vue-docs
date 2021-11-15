@@ -1,4 +1,5 @@
 * [Getting Started](gantt/getting-started.md)
+* [Getting Started with Vue 3](gantt/getting-started-vue.md)
 * [Feature Modules](gantt/module.md)
 * [Data Binding](gantt/data-binding.md)
 * [Virtual Scrolling](gantt/virtual-scroll.md)
