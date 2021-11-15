@@ -1,4 +1,5 @@
 * [Getting Started](splitter/getting-started.md)
+* [Getting Started With Vue3](splitter/getting-started-vue-three.md)
 * [Pane Sizing](splitter/pane-sizing.md)
 * [Pane Content](splitter/pane-content.md)
 * [Split Panes](splitter/split-panes.md)
@@ -7,3 +8,4 @@
 * [Different Layouts](splitter/different-layouts.md)
 * [Style and appearance](splitter/style.md)
 * [Globalization](splitter/globalization.md)
+* [Accessibility](splitter/accessibility.md)

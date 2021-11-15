@@ -15,3 +15,5 @@ The Dashboard Layout component has been designed with keeping the `WAI-ARIA` spe
  | **Property** | **Functionalities** |
 | --- | --- |
 | aria-grabbed | Indicates whether the attribute is set to true. It has been selected for dragging. If this attribute is set to false, the element can be grabbed for a drag-and-drop operation, but will not be currently grabbed.|
+
+> You can refer to our [Vue Dashboard Layout](https://www.syncfusion.com/vue-ui-components/vue-dashboard-layout) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Dashboard Layout example](https://ej2.syncfusion.com/vue/demos/#/material/dashboard-layout/default.html) to knows how to present and manipulate data.

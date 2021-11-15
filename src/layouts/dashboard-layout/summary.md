@@ -1,4 +1,5 @@
 * [Getting Started](dashboard-layout/getting-started.md)
+* [Getting Started with Vue 3](dashboard-layout/getting-started-vue-3.md)
 * [Configuring the Layout](dashboard-layout/setting-size-of-cells.md)
 * [Size and Position](dashboard-layout/panels/position-sizing-of-panels)
 * [Header and Content](dashboard-layout/panels/setting-header-of-panels)
