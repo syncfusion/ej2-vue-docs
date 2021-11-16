@@ -1,16 +1,16 @@
 ---
 title: "Getting Started"
 component: "DocumentEditor"
-description: "Learn how to get started using JavaScript document editor component through simple steps."
+description: "Learn how to get started using Vue document editor component through simple steps."
 ---
 
 # Getting Started
 
-This section explains the steps to create a Word document editor within your application and demonstrates the basic usage of the DocumentEditor component.
+This section explains the steps to create a Word document editor within your application and demonstrates the basic usage of the Document Editor component.
 
 ## Dependencies
 
-The list of dependencies required to use the DocumentEditor component in your application is given below:
+The list of dependencies required to use the Document Editor component in your application is given below:
 
 ```javascript
 |-- @syncfusion/ej2-vue-documenteditor
@@ -29,6 +29,20 @@ The list of dependencies required to use the DocumentEditor component in your ap
     |-- @syncfusion/ej2-splitbuttons
     |-- @syncfusion/ej2-charts
 ```
+
+### Server side dependencies
+
+The Document Editor component requires server-side interactions for the following operations:
+
+* [Open file formats other than SFDT](../document-editor/import#convert-word-documents-into-sfdt)
+* [Paste with formatting](../document-editor/clipboard#paste-with-formatting)
+* [Restrict editing](../document-editor/document-management)
+* [Spellcheck](../document-editor/spell-check)
+* [Save as file formats other than SFDT and DOCX](../document-editor/server-side-export)
+
+> Note: If you don't require the above functionalities then you can deploy as pure client-side component without any server-side interactions.
+
+To know about server-side dependencies, please refer this [page](../document-editor/web-services).
 
 ## Get Started with Vue CLI
 
@@ -52,9 +66,9 @@ npm install
 ## Adding Syncfusion packages
 
 All the available Essential JS 2 packages are published in [`npmjs.com`](https://www.npmjs.com/~syncfusionorg/) registry.
-You can choose the component that you want to install. For this application, we are going to use DocumentEditor component.
+You can choose the component that you want to install. For this application, we are going to use Document Editor component.
 
-To install DocumentEditor component, use the following command
+To install Document Editor component, use the following command
 
 ```bash
 npm install @syncfusion/ej2-vue-documenteditor
@@ -62,38 +76,29 @@ npm install @syncfusion/ej2-vue-documenteditor
 
 ## Adding CSS Reference
 
-The DocumentEditor has different themes. They are:
-* Material
-* Fabric
-* Bootstrap
-* High Contrast
+Combined CSS files are available in the Essential JS 2 package root folder.
+This can be referenced in your `[src/styles/styles.css]` using the following code.
 
-import DocumentEditor component CSS as given below in `<style>` section of the `App.vue` file.
-
-```html
-<style>
-<!-- Material theme used for this sample -->
-@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
-@import "../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
-</style>
+```css
+@import '../../node_modules/@syncfusion/ej2/material.css';
 ```
+
+> To know about individual component CSS, please refer to
+[Individual Component theme files](../appearance/theme#referring-individual-control-theme/) section.
 
 ## Adding Component
 
-## DocumentEditor Component
+You can add `DocumentEditorContainer` component with predefined toolbar and properties pane options or `DocumentEditor` component with customize options.
 
-DocumentEditor Component is used to create , view and edit word documents. In this , you can customize the UI options based on your requirements to modify the document.
+> Starting from `v19.3.0.x`, we have optimized the accuracy of text size measurements such as to match Microsoft Word pagination for most Word documents. This improvement is included as default behavior along with an optional API [to disable it and retain the document pagination behavior of older versions](../document-editor/how-to/disable-optimized-text-measuring).
 
-### Registering DocumentEditor Component
+### DocumentEditor Component
 
-You can register the DocumentEditor component in your application by using the `Vue.use()`.
+Document Editor Component is used to create,  view and edit word documents. In this, you can customize the UI options based on your requirements to modify the document.
+
+#### Registering DocumentEditor Component
+
+You can register the Document Editor component in your application by using the `Vue.use()`.
 
 Refer to the code example given below.
 
@@ -103,41 +108,42 @@ import { DocumentEditorPlugin } from '@syncfusion/ej2-vue-documenteditor';
 Vue.use(DocumentEditorPlugin);
 ```
 
-> Registering `DocumentEditorPlugin` in vue, will register the DocumentEditor component along with its required child directives globally.
+> Registering `DocumentEditorPlugin` in vue, will register the Document Editor component along with its required child directives globally.
 
-### Adding DocumentEditor Component
+#### Adding DocumentEditor Component
 
-Add the Vue DocumentEditor by using `<ejs-documenteditor>` selector in `<template>` section of the `App.vue` file.
+Add the Vue Document Editor by using `<ejs-documenteditor>` selector in `<template>` section of the `App.vue` file.
 
 {% raw %}
 
 ```html
 <template>
-  <div id="app">
-      <ejs-documenteditor :serviceUrl='serviceUrl' :isReadOnly='false' :enablePrint='true' :enableSfdtExport='true' :enableSelection='true' :enableContextMenu='true' :enableSearch='true' :enableOptionsPane='true' :enableWordExport='true' :enableTextExport='true' :enableEditor='true' :enableImageResizer='true' :enableEditorHistory='true' :enableHyperlinkDialog='true' :enableTableDialog='true' :enableBookmarkDialog='true' :enableTableOfContentsDialog='true' :enablePageSetupDialog='true' :enableStyleDialog='true' :enableListDialog='true' :enableParagraphDialog='true' :enableFontDialog='true' :enableTablePropertiesDialog='true' :enableBordersAndShadingDialog='true' :enableTableOptionsDialog='true'> </ejs-documenteditor>
-  </div>
+    <div id="app">
+          <ejs-documenteditor :serviceUrl='serviceUrl' :isReadOnly='false' :enablePrint='true' :enableSfdtExport='true' :enableSelection='true' :enableContextMenu='true' :enableSearch='true' :enableOptionsPane='true' :enableWordExport='true' :enableTextExport='true' :enableEditor='true' :enableImageResizer='true' :enableEditorHistory='true' :enableHyperlinkDialog='true' :enableTableDialog='true' :enableBookmarkDialog='true' :enableTableOfContentsDialog='true' :enablePageSetupDialog='true' :enableStyleDialog='true' :enableListDialog='true' :enableParagraphDialog='true' :enableFontDialog='true' :enableTablePropertiesDialog='true' :enableBordersAndShadingDialog='true' :enableTableOptionsDialog='true' height="370px"> </ejs-documenteditor>
+    </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import { DocumentEditorPlugin, DocumentEditorComponent, Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog } from '@syncfusion/ej2-vue-documenteditor';
-Vue.use(DocumentEditorPlugin);
-export default {
-  data () {
-    return {
-      serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/'
-    },
-    provide: {
-      DocumentEditor: [Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog]
+  import Vue from 'vue';
+  import { DocumentEditorPlugin, DocumentEditorComponent, Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog } from '@syncfusion/ej2-vue-documenteditor';
+  Vue.use(DocumentEditorPlugin);
+  export default {
+    data () {
+      return {
+        serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/'
+      },
+      provide: {
+        //Inject require modules.
+        DocumentEditor: [Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog]
+      }
     }
   }
-}
 </script>
 ```
 
 {% endraw %}
 
-> The DocumentEditor requires server-side interactions for the following operations:
+> The Document Editor requires server-side interactions for the following operations:
 >
 > * Paste with formatting
 > * Restrict editing
@@ -145,9 +151,9 @@ export default {
 >
 > Refer to this [link](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) to configure the web service and set the [serviceUrl](../api/document-editor#serviceurl).
 
-### Run the DocumentEditor application
+#### Run the DocumentEditor application
 
-The Vue DocumentEditor application is configured to compile and run the application in a browser. Use the following command to run the application.
+The Vue Document Editor application is configured to compile and run the application in a browser. Use the following command to run the application.
 
 ```bash
 npm run dev
@@ -161,26 +167,27 @@ Output will be displayed as follows.
 
 ```html
 <template>
-  <div id="app">
-    <ejs-documenteditor id="container6"  style="width: 100%;height: 100%;" :serviceUrl='serviceUrl' :isReadOnly='false' :enablePrint='true' :enableSfdtExport='true' :enableSelection='true' :enableContextMenu='true' :enableSearch='true' :enableOptionsPane='true' :enableWordExport='true' :enableTextExport='true' :enableEditor='true' :enableImageResizer='true' :enableEditorHistory='true' :enableHyperlinkDialog='true' :enableTableDialog='true' :enableBookmarkDialog='true' :enableTableOfContentsDialog='true' :enablePageSetupDialog='true' :enableStyleDialog='true' :enableListDialog='true' :enableParagraphDialog='true' :enableFontDialog='true' :enableTablePropertiesDialog='true' :enableBordersAndShadingDialog='true' :enableTableOptionsDialog='true'></ejs-documenteditor>
-  </div>
+    <div id="app">
+      <ejs-documenteditor id="container6" height="370px"  style="width: 100%" :serviceUrl='serviceUrl' :isReadOnly='false' :enablePrint='true' :enableSfdtExport='true' :enableSelection='true' :enableContextMenu='true' :enableSearch='true' :enableOptionsPane='true' :enableWordExport='true' :enableTextExport='true' :enableEditor='true' :enableImageResizer='true' :enableEditorHistory='true' :enableHyperlinkDialog='true' :enableTableDialog='true' :enableBookmarkDialog='true' :enableTableOfContentsDialog='true' :enablePageSetupDialog='true' :enableStyleDialog='true' :enableListDialog='true' :enableParagraphDialog='true' :enableFontDialog='true' :enableTablePropertiesDialog='true' :enableBordersAndShadingDialog='true' :enableTableOptionsDialog='true'></ejs-documenteditor>
+    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, DocumentEditorComponent, Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog } from '@syncfusion/ej2-vue-documenteditor';
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, DocumentEditorComponent, Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+    Vue.use(DocumentEditorPlugin);
 
-export default {
-  data() {
-    return {
-      serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/'
-    };
-  },
-  provide: {
-    DocumentEditor: [Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog]
-  }
-}
+    export default {
+      data() {
+        return {
+          serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/'
+        };
+      },
+      provide: {
+        //Inject require modules.
+        DocumentEditor: [Print, SfdtExport, WordExport, TextExport, Selection, Search, Editor, ImageResizer, EditorHistory, ContextMenu, OptionsPane, HyperlinkDialog, TableDialog, BookmarkDialog, TableOfContentsDialog, PageSetupDialog, StyleDialog, ListDialog, ParagraphDialog, BulletsAndNumberingDialog, FontDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, StylesDialog]
+      }
+    }
 </script>
 <style>
  @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
@@ -191,11 +198,11 @@ export default {
 
 {% endtab %}
 
-## DocumentEditorContainer Component
+### DocumentEditorContainer Component
 
 DocumentEditorContainer Component is also used to create, view and edit word document. But here, you can use predefined toolbar and properties pane to view and modify word document.
 
-### Registering DocumentEditorContainer Component
+#### Registering DocumentEditorContainer Component
 
 You can register the DocumentEditorContainer component in your application by using the `Vue.use()`.
 
@@ -209,7 +216,7 @@ Vue.use(DocumentEditorContainerPlugin);
 
 > Registering `DocumentEditorContainerPlugin` in vue, will register the DocumentEditorContainer component along with its required child directives globally.
 
-### Adding DocumentEditorContainer Component
+#### Adding DocumentEditorContainer Component
 
 Add the Vue DocumentEditorContainer by using `<ejs-documenteditorcontainer>` selector in `<template>` section of the `App.vue` file.
 
@@ -217,39 +224,31 @@ Add the Vue DocumentEditorContainer by using `<ejs-documenteditorcontainer>` sel
 
 ```html
 <template>
-  <div id="app">
-      <ejs-documenteditorcontainer :serviceUrl='serviceUrl' :enableToolbar='true'> </ejs-documenteditorcontainer>
-  </div>
+    <div id="app">
+        <ejs-documenteditorcontainer height="590px" :serviceUrl='serviceUrl' :enableToolbar='true'> </ejs-documenteditorcontainer>
+    </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import { DocumentEditorContainerPlugin, DocumentEditorContainerComponent,Toolbar } from '@syncfusion/ej2-vue-documenteditor';
+  import Vue from 'vue';
+  import { DocumentEditorContainerPlugin, DocumentEditorContainerComponent,Toolbar } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorContainerPlugin);
-export default {
-  data(){
-    return { serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/' }
-  },
-  provide: {
-    DocumentEditorContainer: [Toolbar]
+  Vue.use(DocumentEditorContainerPlugin);
+  export default {
+    data(){
+      return { serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/' }
+    },
+    provide: {
+      //Inject require modules.
+      DocumentEditorContainer: [Toolbar]
+    }
   }
-}
 </script>
 ```
 
 {% endraw %}
 
-> The DocumentEditorContainer requires server-side interactions for the following operations:
->
-> * Opening word documents
-> * Paste with formatting
-> * Restrict editing
-> * Spell check
->
-> Refer to this [link](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) to configure the web service and set the [serviceUrl](../api/document-editor-container#serviceurl).
-
-### Run the DocumentEditorContainer application
+#### Run the DocumentEditorContainer application
 
 The Vue DocumentEditorContainer application is configured to compile and run the application in a browser. Use the following command to run the application.
 
@@ -265,24 +264,25 @@ DocumentEditorContainer output will be displayed as follows.
 
 ```html
 <template>
-  <div id="app">
-    <ejs-documenteditorcontainer ref='documenteditor' :serviceUrl='serviceUrl' style='height:600px;' id='container' :enableToolbar='true'></ejs-documenteditorcontainer>
-  </div>
+    <div id="app">
+      <ejs-documenteditorcontainer ref='documenteditor' :serviceUrl='serviceUrl' height="590px" id='container' :enableToolbar='true'></ejs-documenteditorcontainer>
+    </div>
 </template>
 <script>
-import Vue from 'vue';
-import { DocumentEditorContainerPlugin, DocumentEditorContainerComponent,Toolbar} from '@syncfusion/ej2-vue-documenteditor';
+  import Vue from 'vue';
+  import { DocumentEditorContainerPlugin, DocumentEditorContainerComponent,Toolbar} from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorContainerPlugin);
+  Vue.use(DocumentEditorContainerPlugin);
 
-export default {
-  data() {
-    return { serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/' };
-  },
-  provide: {
-    DocumentEditorContainer: [Toolbar]
+  export default {
+    data() {
+      return { serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/' };
+    },
+    provide: {
+      //Inject require modules.
+      DocumentEditorContainer: [Toolbar]
+    }
   }
-}
 </script>
 <style>
  @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
@@ -292,3 +292,9 @@ export default {
 {% endraw %}
 
 {% endtab %}
+
+## Frequently Asked Questions
+
+* [How to localize the Documenteditor container](../document-editor/global-local).
+* [How to load the document by default](../document-editor/how-to/open-default-document).
+* [How to customize tool bar](../document-editor/how-to/customize-tool-bar).

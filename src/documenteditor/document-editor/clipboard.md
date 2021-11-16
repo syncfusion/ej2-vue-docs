@@ -6,11 +6,11 @@ description: "Learn how cut, copy, or paste can be done in JavaScript document e
 
 # Clipboard support
 
-Document editor takes advantage of system clipboard and allows you to copy or move a portion of the document into it in HTML format, so that it can be pasted in any application that supports clipboard.
+Document Editor takes advantage of system clipboard and allows you to copy or move a portion of the document into it in HTML format, so that it can be pasted in any application that supports clipboard.
 
 ## Copy
 
-Copy a portion of document to system clipboard using built-in context menu of document editor. You can also do it programmatically using the following sample code.
+Copy a portion of document to system clipboard using built-in context menu of Document Editor. You can also do it programmatically using the following sample code.
 
 ```javascript
  this.$refs.documenteditor.ej2Instances.selection.copy();
@@ -18,7 +18,7 @@ Copy a portion of document to system clipboard using built-in context menu of do
 
 ## Cut
 
-Cut a portion of document to system clipboard using built-in context menu of document editor. You can also do it programmatically using the following sample code.
+Cut a portion of document to system clipboard using built-in context menu of Document Editor. You can also do it programmatically using the following sample code.
 
 ```javascript
  this.$refs.documenteditor.ej2Instances.editor.cut();
@@ -26,11 +26,11 @@ Cut a portion of document to system clipboard using built-in context menu of doc
 
 ## Paste
 
-Due to limitations, you can paste contents from system clipboard as plain text in document editor only using the ‘CTRL + V’ keyboard shortcut.
+Due to limitations, you can paste contents from system clipboard as plain text in Document Editor only using the ‘CTRL + V’ keyboard shortcut.
 
 ## Local paste
 
-Document editor expose API to enable local paste within the control. On enabling this, the following is performed:
+Document Editor expose API to enable local paste within the control. On enabling this, the following is performed:
 * Selected contents will be stored to an internal clipboard in addition to system clipboard.
 * Clipboard paste will be overridden, and internally stored data that has formatted text will be pasted.
 Refer to the following sample code.
@@ -40,7 +40,7 @@ Refer to the following sample code.
 ```
 
 By default, **enableLocalPaste** is false.
-When local paste is enabled for a document editor instance, you can paste contents programmatically if the internal clipboard has stored data during last copy operation. Refer to the following sample code.
+When local paste is enabled for a Document Editor instance, you can paste contents programmatically if the internal clipboard has stored data during last copy operation. Refer to the following sample code.
 
 ```javascript
  this.$refs.documenteditor.ej2Instances.editor.pasteLocal();
@@ -50,12 +50,12 @@ When local paste is enabled for a document editor instance, you can paste conten
 
 |**EnableLocalPaste** |**Paste behavior details**|
 |--------------------------|----------------------|
-|True |Allows to paste content that is copied from the same Document editor component alone and prevents pasting content from system clipboard. Hence the content copied from outside Document editor component can’t be pasted.<br>Browser limitation of pasting from system clipboard using API and context menu options, will be resolved. So, you can copy and paste content within the Document editor component using API and context menu options too.|
-|False|Allows to paste content from system clipboard. Hence the content copied from both the Document editor component and outside can be pasted.<br>Browser limitation of pasting from system clipboard using API and context menu options, will remain as a limitation.|
+|True |Allows to paste content that is copied from the same Document Editor component alone and prevents pasting content from system clipboard. Hence the content copied from outside Document Editor component can’t be pasted.<br>Browser limitation of pasting from system clipboard using API and context menu options, will be resolved. So, you can copy and paste content within the Document Editor component using API and context menu options too.|
+|False|Allows to paste content from system clipboard. Hence the content copied from both the Document Editor component and outside can be pasted.<br>Browser limitation of pasting from system clipboard using API and context menu options, will remain as a limitation.|
 
 Note:
 * Keyboard shortcut for pasting will work properly in both cases.
-* Copying content from Document editor component and pasting outside will work properly in both cases.
+* Copying content from Document Editor component and pasting outside will work properly in both cases.
 
 ## Paste with formatting
 

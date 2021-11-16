@@ -10,27 +10,28 @@ Document editor supports performing spell checking for any input text. You can p
 
 ```html
 <template>
-  <div id="app">
-     <ejs-documenteditor ref="documenteditor" id="container_1" style='height:600px;' :enableSpellCheck='true'></ejs-documenteditor>
-  </div>
+    <div id="app">
+        <ejs-documenteditor ref="documenteditor" id="container_1" height="370px" style="width: 100%;" :enableSpellCheck='true'></ejs-documenteditor>
+    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin } from '@syncfusion/ej2-vue-documenteditor';
+    import Vue from 'vue'
+    import { DocumentEditorPlugin } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+    Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    mounted: function() {
-        this.$refs.documenteditor.ej2Instances.spellChecker.languageID = 1033; //LCID of "en-us"
-        this.$refs.documenteditor.ej2Instances.spellChecker.removeUnderline = false;
-        this.$refs.documenteditor.ej2Instances.spellChecker.allowSpellCheckAndSuggestion = true;
+    export default {
+        data: function() {
+            return {
+            };
+        },
+        mounted: function() {
+            //Set language id to map dictionary.
+            this.$refs.documenteditor.ej2Instances.spellChecker.languageID = 1033;
+            this.$refs.documenteditor.ej2Instances.spellChecker.removeUnderline = false;
+            this.$refs.documenteditor.ej2Instances.spellChecker.allowSpellCheckAndSuggestion = true;
+        }
     }
-}
 </script>
 <style>
  @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
@@ -44,11 +45,11 @@ export default {
 
 ## Enable SpellCheck
 
-To enable spell check in DocumentEditor, set `enableSpellCheck` property as `true` and then configure SpellCheckSettings.
+To enable spell check in Document Editor, set `enableSpellCheck` property as `true` and then configure SpellCheckSettings.
 
 ## Disable SpellCheck
 
-To disable spell check in DocumentEditor, set `enableSpellCheck` property as `false` or remove `enableSpellCheck` property initialization code. The default value of this property is false.
+To disable spell check in Document Editor, set `enableSpellCheck` property as `false` or remove `enableSpellCheck` property initialization code. The default value of this property is false.
 
 ## Spell check settings
 

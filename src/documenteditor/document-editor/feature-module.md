@@ -6,7 +6,7 @@ description: "Learn the feature-wise modules in JavaScript document editor and h
 
 # Feature modules
 
-Document editor features are segregated into individual feature-wise modules to enable selective referencing. By default, the document editor displays the document in read-only mode. The required modules should be injected to extend its functionality. The following are the selective modules of document editor that can be included as required:
+Document Editor features are segregated into individual feature-wise modules to enable selective referencing. By default, the Document Editor displays the document in read-only mode. The required modules should be injected to extend its functionality. The following are the selective modules of Document Editor that can be included as required:
 * **Print** - Prints the document.
 * **SfdtExport** - Exports the document as Syncfusion Document Text (.SFDT) file.
 * **Selection** - Selects a portion of the document and copy it to the clipboard.
@@ -17,10 +17,10 @@ Document editor features are segregated into individual feature-wise modules to 
 * **EditorHistory** - Maintains the history of editing operations so that you can perform undo and redo at any time.
 * User interface options such as context menu, options pane, image resizer, and dialog are available as individual modules.
 
->In addition to injecting the required modules in your application, enable corresponding properties to extend the functionality for a document editor instance.
+>In addition to injecting the required modules in your application, enable corresponding properties to extend the functionality for a Document Editor instance.
 Refer to the following table.
 
-| Module | Dependent modules to be injected for extending the functionality of document editor in your application | Property to enable the functionality for a document editor instance |
+| Module | Dependent modules to be injected for extending the functionality of Document Editor in your application | Property to enable the functionality for a Document Editor instance |
 |---|---|---|
 |Print|`Print`|`<ejs-documenteditor :enablePrint='true'></ejs-documenteditor>`|
 |SfdtExport|`SfdtExport`|`<ejs-documenteditor :enableSfdtExport='true'></ejs-documenteditor>`|

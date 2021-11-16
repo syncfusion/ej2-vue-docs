@@ -6,7 +6,7 @@ description: "Learn how to insert, select, or delete table, row(s), and column(s
 
 # Tables
 
-Tables are an efficient way to present information. Document editor can display and edit the tables. You can select and edit tables through keyboard, mouse, or touch interactions. Document editor exposes a rich set of APIs to perform these operations programmatically.
+Tables are an efficient way to present information. Document Editor can display and edit the tables. You can select and edit tables through keyboard, mouse, or touch interactions. Document Editor exposes a rich set of APIs to perform these operations programmatically.
 
 ## Create a table
 
@@ -98,7 +98,7 @@ this.$refs.documenteditor.ej2Instances.selection.selectCell();
 
 ## Delete table
 
-Document editor allows you to delete the entire table. You can use the `deleteTable()` method of editor instance, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the entire table. You can use the `deleteTable()` method of editor instance, if selection is in table. Refer to the following sample code.
 
 ```typescript
 this.$refs.documenteditor.ej2Instances.editor.deleteTable();
@@ -106,7 +106,7 @@ this.$refs.documenteditor.ej2Instances.editor.deleteTable();
 
 ## Delete row
 
-Document editor allows you to delete the selected number of rows. You can use the `deleteRow()` method of editor instance to delete the selected number of rows, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the selected number of rows. You can use the `deleteRow()` method of editor instance to delete the selected number of rows, if selection is in table. Refer to the following sample code.
 
 ```typescript
 this.$refs.documenteditor.ej2Instances.editor.deleteRow();
@@ -114,7 +114,7 @@ this.$refs.documenteditor.ej2Instances.editor.deleteRow();
 
 ## Delete column
 
-Document editor allows you to delete the selected number of columns. You can use the `deleteColumn ()` method of editor instance to delete the selected number of columns, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the selected number of columns. You can use the `deleteColumn ()` method of editor instance to delete the selected number of columns, if selection is in table. Refer to the following sample code.
 
 ```typescript
 this.$refs.documenteditor.ej2Instances.editor.deleteColumn();
@@ -129,106 +129,110 @@ Refer to the following sample code.
 this.$refs.documenteditor.ej2Instances.editor.mergeCells()
 ```
 
+## Positioning the table
+
+Document Editor preserves the position properties of the table and displays the table based on position properties. It does not support modifying the position properties. Whereas the table will be automatically moved along with text edited if it is positioned relative to the paragraph.
+
 ## How to work with tables
 
 The following sample demonstrates how to delete the table row or columns, merge cells and how to bind the API with button.
 
 ```html
 <template>
-    <div id="app" style="height:330px">
-    <div>
-        <ejs-toolbar v-bind:clicked='toolbarClickHandler'>
-            <e-items>
-                <e-item prefixIcon="e-de-icon-Table" tooltipText="Insert Table" id="table"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertAbove" tooltipText="Insert new row above" id="insert_above"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertBelow" tooltipText="Insert new row below" id="insert_below"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertLeft" tooltipText="Insert new column to the left" id="insert_left"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertRight" tooltipText="Insert new column to the right" id="insert_right"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-DeleteTable" tooltipText="Delete Entire table" id="delete_table"></e-item>
-                <e-item prefixIcon="e-de-icon-DeleteRows" tooltipText="Delete the selected row" id="delete_row"></e-item>
-                <e-item prefixIcon="e-de-icon-DeleteColumns" tooltipText="Delete the selected column" id="delete_column"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-Cell" tooltipText="Merge the selected cells" id="merge_cell"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item text="Dialog" tooltipText="Open insert table dialog" id="table_dialog"></e-item>
-            </e-items>
-        </ejs-toolbar>
-    </div>
-    <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enableEditor='true' :enableEditorHistory='true' :enableTableDialog='true' :enableSfdtExport='true' :enableContextMenu='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+      <div id="app">
+      <div>
+          <ejs-toolbar v-bind:clicked='toolbarClickHandler'>
+              <e-items>
+                  <e-item prefixIcon="e-de-icon-Table" tooltipText="Insert Table" id="table"></e-item>
+                  <e-item type="Separator"></e-item>
+                  <e-item prefixIcon="e-de-icon-InsertAbove" tooltipText="Insert new row above" id="insert_above"></e-item>
+                  <e-item prefixIcon="e-de-icon-InsertBelow" tooltipText="Insert new row below" id="insert_below"></e-item>
+                  <e-item type="Separator"></e-item>
+                  <e-item prefixIcon="e-de-icon-InsertLeft" tooltipText="Insert new column to the left" id="insert_left"></e-item>
+                  <e-item prefixIcon="e-de-icon-InsertRight" tooltipText="Insert new column to the right" id="insert_right"></e-item>
+                  <e-item type="Separator"></e-item>
+                  <e-item prefixIcon="e-de-icon-DeleteTable" tooltipText="Delete Entire table" id="delete_table"></e-item>
+                  <e-item prefixIcon="e-de-icon-DeleteRows" tooltipText="Delete the selected row" id="delete_row"></e-item>
+                  <e-item prefixIcon="e-de-icon-DeleteColumns" tooltipText="Delete the selected column" id="delete_column"></e-item>
+                  <e-item type="Separator"></e-item>
+                  <e-item prefixIcon="e-de-icon-Cell" tooltipText="Merge the selected cells" id="merge_cell"></e-item>
+                  <e-item type="Separator"></e-item>
+                  <e-item text="Dialog" tooltipText="Open insert table dialog" id="table_dialog"></e-item>
+              </e-items>
+          </ejs-toolbar>
+      </div>
+      <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enableEditor='true' :enableEditorHistory='true' :enableTableDialog='true' :enableSfdtExport='true' :enableContextMenu='true' height="370px" style="width: 100%;"></ejs-documenteditor>
+      </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin,  Editor, Selection, EditorHistory, TableDialog, ContextMenu, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
-import { ToolbarPlugin } from "@syncfusion/ej2-vue-navigations";
+    import Vue from 'vue'
+    import { DocumentEditorPlugin,  Editor, Selection, EditorHistory, TableDialog, ContextMenu, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+    import { ToolbarPlugin } from "@syncfusion/ej2-vue-navigations";
 
-Vue.use(DocumentEditorPlugin);
-Vue.use(ToolbarPlugin);
+    Vue.use(DocumentEditorPlugin);
+    Vue.use(ToolbarPlugin);
 
-export default {
-    data: function () {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor: [Editor, Selection, EditorHistory, TableDialog, ContextMenu, SfdtExport]
-    },
-    methods: {
-        toolbarClickHandler :function(args){
-          switch (arg.item.id) {
-            case 'table':
-              //Insert table API to add table
-              this.$refs.documenteditor.ej2Instances.editor.insertTable(3, 2);
-              break;
-            case 'insert_above':
-              //Insert the specified number of rows to the table above to the row at cursor position
-              this.$refs.documenteditor.ej2Instances.editor.insertRow(true, 2);
-              break;
-            case 'insert_below':
-              //Insert the specified number of rows to the table below to the row at cursor position
-              this.$refs.documenteditor.ej2Instances.editor.insertRow();
-              break;
-            case 'insert_left':
-              //Insert the specified number of columns to the table left to the column at cursor position
-              this.$refs.documenteditor.ej2Instances.editor.insertColumn(true, 2);
-              break;
-            case 'insert_right':
-              //Insert the specified number of columns to the table right to the column at cursor position
-              this.$refs.documenteditor.ej2Instances.editor.insertColumn();
-              break;
-            case 'delete_table':
-              //Delete the entire table
-              this.$refs.documenteditor.ej2Instances.editor.deleteTable();
-              break;
-            case 'delete_row':
-              //Delete the selected number of rows
-              this.$refs.documenteditor.ej2Instances.editor.deleteRow();
-              break;
-            case 'delete_column':
-              //Delete the selected number of columns
-              this.$refs.documenteditor.ej2Instances.editor.deleteColumn();
-              break;
-            case 'merge_cell':
-              //Merge the selected cells into one (both vertically and horizontally)
-              this.$refs.documenteditor.ej2Instances.editor.mergeCells();
-              break;
-            case 'table_dialog':
-              //Opens insert table dialog
-              this.$refs.documenteditor.showDialog('Table');
-              break;
+    export default {
+        data: function () {
+            return {
+            };
+        },
+        provide: {
+            DocumentEditor: [Editor, Selection, EditorHistory, TableDialog, ContextMenu, SfdtExport]
+        },
+        methods: {
+            toolbarClickHandler :function(args){
+              switch (arg.item.id) {
+                case 'table':
+                  //Insert table API to add table
+                  this.$refs.documenteditor.ej2Instances.editor.insertTable(3, 2);
+                  break;
+                case 'insert_above':
+                  //Insert the specified number of rows to the table above to the row at cursor position
+                  this.$refs.documenteditor.ej2Instances.editor.insertRow(true, 2);
+                  break;
+                case 'insert_below':
+                  //Insert the specified number of rows to the table below to the row at cursor position
+                  this.$refs.documenteditor.ej2Instances.editor.insertRow();
+                  break;
+                case 'insert_left':
+                  //Insert the specified number of columns to the table left to the column at cursor position
+                  this.$refs.documenteditor.ej2Instances.editor.insertColumn(true, 2);
+                  break;
+                case 'insert_right':
+                  //Insert the specified number of columns to the table right to the column at cursor position
+                  this.$refs.documenteditor.ej2Instances.editor.insertColumn();
+                  break;
+                case 'delete_table':
+                  //Delete the entire table
+                  this.$refs.documenteditor.ej2Instances.editor.deleteTable();
+                  break;
+                case 'delete_row':
+                  //Delete the selected number of rows
+                  this.$refs.documenteditor.ej2Instances.editor.deleteRow();
+                  break;
+                case 'delete_column':
+                  //Delete the selected number of columns
+                  this.$refs.documenteditor.ej2Instances.editor.deleteColumn();
+                  break;
+                case 'merge_cell':
+                  //Merge the selected cells into one (both vertically and horizontally)
+                  this.$refs.documenteditor.ej2Instances.editor.mergeCells();
+                  break;
+                case 'table_dialog':
+                  //Opens insert table dialog
+                  this.$refs.documenteditor.showDialog('Table');
+                  break;
+              }
           }
-      }
-    },
-    mounted() {
-      this.$refs.documenteditor.ej2Instances.editor.insertTable(2, 2);
+        },
+        mounted() {
+          this.$refs.documenteditor.ej2Instances.editor.insertTable(2, 2);
+        }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 

@@ -6,7 +6,7 @@ description: "Learn paragraph formatting supported in JavaScript document editor
 
 # Working with Paragraph formatting
 
-Document editor supports various paragraph formatting options such as text alignment, indentation, paragraph spacing, and more.
+Document Editor supports various paragraph formatting options such as text alignment, indentation, paragraph spacing, and more.
 
 ## Indentation
 
@@ -60,7 +60,10 @@ this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Center' | 'Le
 You can define the line spacing and its type for selected paragraphs using the following sample code.
 
 ```javascript
+//Set line spacing type.
 this.$refs.documenteditor.ej2Instances.selection.paragraphFormat.lineSpacingType='AtLeast';
+
+//Set line spacing.
 this.$refs.documenteditor.ej2Instances.selection.paragraphFormat.lineSpacing= 6;
 ```
 
@@ -69,8 +72,27 @@ this.$refs.documenteditor.ej2Instances.selection.paragraphFormat.lineSpacing= 6;
 You can define the spacing before or after the paragraph by using the following sample code.
 
 ```javascript
+//Set before spacing.
 this.$refs.documenteditor.ej2Instances.selection.paragraphFormat.beforeSpacing= 24;
+
+//Set after spacing.
 this.$refs.documenteditor.ej2Instances.selection.paragraphFormat.afterSpacing= 24;
+```
+
+## Pagination properties
+
+You can enable or disable the following pagination properties for the paragraphs in a Word document.
+
+* Widow/Orphan control - whether the first and last lines of the paragraph are to remain on the same page as the rest of the paragraph when paginating the document.
+* Keep with next - whether the specified paragraph remains on the same page as the paragraph that follows it while paginating the document.
+* Keep lines together - whether all lines in the specified paragraphs remain on the same page while paginating the document.
+
+The following example code illustrates how to enable or disable these pagination properties for the selected paragraphs.
+
+```javascript
+this.$refs.documenteditor.selection.paragraphFormat.widowControl = false;
+this.$refs.documenteditor.selection.paragraphFormat.keepWithNext = true;
+this.$refs.documenteditor.selection.paragraphFormat.keepLinesTogether = true;
 ```
 
 ## Toolbar with paragraph formatting options
@@ -94,85 +116,83 @@ The following sample demonstrates the paragraph formatting options using a toolb
             </e-items>
         </ejs-toolbar>
     </div>
-    <ejs-documenteditor ref="documenteditor" v-bind:selectionChange='onSelectionChange' :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableEditorHistory='true' :enableSfdtExport='true' :enableContextMenu='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
+    <ejs-documenteditor ref="documenteditor" v-bind:selectionChange='onSelectionChange' :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableEditorHistory='true' :enableSfdtExport='true' :enableContextMenu='true' height="370px" style="width: 100%;"></ejs-documenteditor>
     </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Editor, Selection, EditorHistory, SfdtExport, ContextMenu } from '@syncfusion/ej2-vue-documenteditor';
-import { ToolbarPlugin } from "@syncfusion/ej2-vue-navigations";
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, Editor, Selection, EditorHistory, SfdtExport, ContextMenu } from '@syncfusion/ej2-vue-documenteditor';
+    import { ToolbarPlugin } from "@syncfusion/ej2-vue-navigations";
 
-Vue.use(DocumentEditorPlugin);
-Vue.use(ToolbarPlugin);
+    Vue.use(DocumentEditorPlugin);
+    Vue.use(ToolbarPlugin);
 
-export default {
-    data: function () {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor: [Editor, Selection, EditorHistory, SfdtExport, ContextMenu]
-    },
-    methods: {
-        toolbarButtonClick: function (arg) {
-            switch (arg.item.id) {
-                case 'AlignLeft':
-                    //Toggle the Left alignment for selected or current paragraph
-                    this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Left');
-                    break;
-                case 'AlignRight':
-                    //Toggle the Right alignment for selected or current paragraph
-                    this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Right');
-                    break;
-                case 'AlignCenter':
-                    //Toggle the Center alignment for selected or current paragraph
-                    this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Center');
-                    break;
-                case 'Justify':
-                    //Toggle the Justify alignment for selected or current paragraph
-                    this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Justify');
-                    break;
-                case 'IncreaseIndent':
-                    //Increase the left indent of selected or current paragraph
-                    this.$refs.documenteditor.ej2Instances.editor.increaseIndent();
-                    break;
-                case 'DecreaseIndent':
-                    //Decrease the left indent of selected or current paragraph
-                    this.$refs.documenteditor.ej2Instances.editor.decreaseIndent();
-                    break;
-                case 'ClearFormat':
-                    this.$refs.documenteditor.ej2Instances.editor.clearFormatting();
-                    break;
-            }
+    export default {
+        data: function () {
+            return {
+            };
         },
-        onSelectionChange: function () {
-            if (this.$refs.documenteditor.ej2Instances.selection) {
-                var paragraphFormat = this.$refs.documenteditor.ej2Instances.selection.paragraphFormat;
-                var toggleBtnId = ['AlignLeft', 'AlignCenter', 'AlignRight', 'Justify'];
-                for (var i = 0; i < toggleBtnId.length; i++) {
-                    let toggleBtn: HTMLElement = document.getElementById(
-                        toggleBtnId[i]
-                    );
-                    toggleBtn.classList.remove('e-btn-toggle');
+        provide: {
+            DocumentEditor: [Editor, Selection, EditorHistory, SfdtExport, ContextMenu]
+        },
+        methods: {
+            toolbarButtonClick: function (arg) {
+                switch (arg.item.id) {
+                    case 'AlignLeft':
+                        //Toggle the Left alignment for selected or current paragraph
+                        this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Left');
+                        break;
+                    case 'AlignRight':
+                        //Toggle the Right alignment for selected or current paragraph
+                        this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Right');
+                        break;
+                    case 'AlignCenter':
+                        //Toggle the Center alignment for selected or current paragraph
+                        this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Center');
+                        break;
+                    case 'Justify':
+                        //Toggle the Justify alignment for selected or current paragraph
+                        this.$refs.documenteditor.ej2Instances.editor.toggleTextAlignment('Justify');
+                        break;
+                    case 'IncreaseIndent':
+                        //Increase the left indent of selected or current paragraph
+                        this.$refs.documenteditor.ej2Instances.editor.increaseIndent();
+                        break;
+                    case 'DecreaseIndent':
+                        //Decrease the left indent of selected or current paragraph
+                        this.$refs.documenteditor.ej2Instances.editor.decreaseIndent();
+                        break;
+                    case 'ClearFormat':
+                        this.$refs.documenteditor.ej2Instances.editor.clearFormatting();
+                        break;
                 }
-                if (paragraphFormat.textAlignment === 'Left') {
-                    document.getElementById('AlignLeft').classList.add('e-btn-toggle');
-                } else if (paragraphFormat.textAlignment === 'Right') {
-                    document.getElementById('AlignRight').classList.add('e-btn-toggle');
-                } else if (paragraphFormat.textAlignment === 'Center') {
-                    document
-                        .getElementById('AlignCenter')
-                        .classList.add('e-btn-toggle');
-                } else {
-                    document.getElementById('Justify').classList.add('e-btn-toggle');
+            },
+            onSelectionChange: function () {
+                if (this.$refs.documenteditor.ej2Instances.selection) {
+                    var paragraphFormat = this.$refs.documenteditor.ej2Instances.selection.paragraphFormat;
+                    var toggleBtnId = ['AlignLeft', 'AlignCenter', 'AlignRight', 'Justify'];
+                    for (var i = 0; i < toggleBtnId.length; i++) {
+                        let toggleBtn: HTMLElement = document.getElementById(toggleBtnId[i]);
+                        //Remove toggle state.
+                        toggleBtn.classList.remove('e-btn-toggle');
+                    }
+                    //Add toggle state based on selection paragraph format.
+                    if (paragraphFormat.textAlignment === 'Left') {
+                        document.getElementById('AlignLeft').classList.add('e-btn-toggle');
+                    } else if (paragraphFormat.textAlignment === 'Right') {
+                        document.getElementById('AlignRight').classList.add('e-btn-toggle');
+                    } else if (paragraphFormat.textAlignment === 'Center') {
+                        document.getElementById('AlignCenter').classList.add('e-btn-toggle');
+                    } else {
+                        document.getElementById('Justify').classList.add('e-btn-toggle');
+                    }
                 }
             }
         }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 

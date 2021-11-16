@@ -6,7 +6,7 @@ description: "Learn the built-in dialog support in JavaScript document editor an
 
 # Dialog
 
-Document editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
+Document Editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
 
 ## Font Dialog
 
@@ -20,36 +20,38 @@ Refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showFontDialog' >Open dialog</button>
+        <div id="app">
+            <div>
+                  <button v-on:click='showFontDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableFontDialog='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableFontDialog='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor,  FontDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+      import Vue from 'vue'
+      import { DocumentEditorPlugin, Selection, Editor,  FontDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+      Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, FontDialog, SfdtExport]
-    }
-    methods: {
-        showFontDialog: function() {
-            this.$refs.documenteditor.showDialog('Font');
-        }
-    }
-}
+      export default {
+          data: function() {
+              return {
+              };
+          },
+          provide: {
+              //Inject require modules.
+              DocumentEditor : [Selection, Editor, FontDialog, SfdtExport]
+          }
+          methods: {
+              showFontDialog: function() {
+                  //Open the font dialog.
+                  this.$refs.documenteditor.showDialog('Font');
+              }
+          }
+      }
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -69,36 +71,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showParagraphDialog' >Open dialog</button>
-        </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableParagraphDialog='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+      <div id="app">
+          <div>
+              <button v-on:click='showParagraphDialog' >Open dialog</button>
+          </div>
+           <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableParagraphDialog='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
+      </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor,  ParagraphDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+      import Vue from 'vue'
+      import { DocumentEditorPlugin, Selection, Editor,  ParagraphDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+      Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, ParagraphDialog, SfdtExport]
-    }
-    methods: {
-        showParagraphDialog: function() {
-            this.$refs.documenteditor.showDialog('Paragraph');
-        }
-    }
-}
+      export default {
+          data: function() {
+              return {
+              };
+          },
+          provide: {
+              //Inject require modules.
+              DocumentEditor : [Selection, Editor, ParagraphDialog, SfdtExport]
+          }
+          methods: {
+              showParagraphDialog: function() {
+                  //Open the paragraph dialog.
+                  this.$refs.documenteditor.showDialog('Paragraph');
+              }
+          }
+      }
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -118,36 +122,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showTableDialog' >Open dialog</button>
-        </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableTableDialog='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+      <div id="app" style="height:400px">
+          <div>
+              <button v-on:click='showTableDialog' >Open dialog</button>
+          </div>
+          <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableTableDialog='true' :enableSfdtExport='true' style="width: 100%;" height="370px" ></ejs-documenteditor>
+      </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor,  TableDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+      import Vue from 'vue'
+      import { DocumentEditorPlugin, Selection, Editor,  TableDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+      Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, TableDialog, SfdtExport]
-    }
-    methods: {
-        showTableDialog: function() {
-            this.$refs.documenteditor.showDialog('Table');
-        }
-    }
-}
+      export default {
+          data: function() {
+              return {
+              };
+          },
+          provide: {
+              //Inject require modules
+              DocumentEditor : [Selection, Editor, TableDialog, SfdtExport]
+          }
+          methods: {
+              showTableDialog: function() {
+                  //Open the table dialog.
+                  this.$refs.documenteditor.showDialog('Table');
+              }
+          }
+      }
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -171,36 +177,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showBookmarkDialog' >Open dialog</button>
-        </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableBookmarkDialog='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+      <div id="app" style="height:400px">
+          <div>
+                <button v-on:click='showBookmarkDialog' >Open dialog</button>
+          </div>
+          <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableBookmarkDialog='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
+      </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor,  BookmarkDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+      import Vue from 'vue'
+      import { DocumentEditorPlugin, Selection, Editor,  BookmarkDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+      Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, BookmarkDialog, SfdtExport]
-    }
-    methods: {
-        showBookmarkDialog: function() {
-            this.$refs.documenteditor.showDialog('Bookmark');
-        }
-    }
-}
+      export default {
+          data: function() {
+              return {
+              };
+          },
+          provide: {
+              //Inject require modules
+              DocumentEditor : [Selection, Editor, BookmarkDialog, SfdtExport]
+          }
+          methods: {
+              showBookmarkDialog: function() {
+                  //Open the bookmark dialog.
+                  this.$refs.documenteditor.showDialog('Bookmark');
+              }
+          }
+      }
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -220,36 +228,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showHyperlinkDialog' >Open dialog</button>
-        </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableHyperlinkDialog='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+      <div id="app" style="height:400px">
+          <div>
+                <button v-on:click='showHyperlinkDialog' >Open dialog</button>
+          </div>
+          <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableHyperlinkDialog='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
+      </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, HyperlinkDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+      import Vue from 'vue'
+      import { DocumentEditorPlugin, Selection, Editor, HyperlinkDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+      Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, HyperlinkDialog, SfdtExport]
-    }
-    methods: {
-        showHyperlinkDialog: function() {
-            this.$refs.documenteditor.showDialog('Hyperlink');
-        }
-    }
-}
+      export default {
+          data: function() {
+              return {
+              };
+          },
+          provide: {
+              //Inject require modules
+              DocumentEditor : [Selection, Editor, HyperlinkDialog, SfdtExport]
+          }
+          methods: {
+              showHyperlinkDialog: function() {
+                  //Opens hyperlink dialog.
+                  this.$refs.documenteditor.showDialog('Hyperlink');
+              }
+          }
+      }
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -265,36 +275,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showTableOfContentsDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                <button v-on:click='showTableOfContentsDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableTableOfContentsDialog='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableTableOfContentsDialog='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, TableOfContentsDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, TableOfContentsDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, TableOfContentsDialog, SfdtExport]
-    }
-    methods: {
-        showTableOfContentsDialog: function() {
-            this.$refs.documenteditor.showDialog('TableOfContents');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, TableOfContentsDialog, SfdtExport]
+            }
+            methods: {
+                showTableOfContentsDialog: function() {
+                    //Open the table of contents dialog.
+                    this.$refs.documenteditor.showDialog('TableOfContents');
+                }
+            }
         }
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -304,36 +316,38 @@ This dialog allows managing the styles in a document. It will display all the st
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showStylesDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                 <button v-on:click='showStylesDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableStylesDialog='true' :enableSfdtExport='true' :enableStyleDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableStylesDialog='true' :enableSfdtExport='true' :enableStyleDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, StylesDialog, StyleDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, StylesDialog, StyleDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, StylesDialog, StyleDialog, SfdtExport]
-    }
-    methods: {
-        showStylesDialog: function() {
-            this.$refs.documenteditor.showDialog('Styles');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, StylesDialog, StyleDialog, SfdtExport]
+            }
+            methods: {
+                showStylesDialog: function() {
+                    //Open the styles dialog.
+                    this.$refs.documenteditor.showDialog('Styles');
+                }
+            }
         }
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -345,36 +359,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showStyleDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                  <button v-on:click='showStyleDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableStyleDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableStyleDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, StyleDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, StyleDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, StyleDialog, SfdtExport]
-    }
-    methods: {
-        showStylesDialog: function() {
-            this.$refs.documenteditor.showDialog('Style');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, StyleDialog, SfdtExport]
+            }
+            methods: {
+                showStylesDialog: function() {
+                    //Open styles dialog.
+                    this.$refs.documenteditor.showDialog('Style');
+                }
+            }
         }
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -386,36 +402,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showListDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                   <button v-on:click='showListDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableListDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableListDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, ListDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, ListDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, ListDialog, SfdtExport]
-    }
-    methods: {
-        showListDialog: function() {
-            this.$refs.documenteditor.showDialog('List');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, ListDialog, SfdtExport]
+            }
+            methods: {
+                showListDialog: function() {
+                    //Open list dialog.
+                    this.$refs.documenteditor.showDialog('List');
+                }
+            }
         }
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -427,36 +445,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showBordersAndShadingDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                  <button v-on:click='showBordersAndShadingDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableBordersAndShadingDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableBordersAndShadingDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, BordersAndShadingDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, BordersAndShadingDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, BordersAndShadingDialog, SfdtExport]
-    }
-    methods: {
-        showBordersAndShadingDialog: function() {
-            this.$refs.documenteditor.showDialog('BordersAndShading');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, BordersAndShadingDialog, SfdtExport]
+            }
+            methods: {
+                showBordersAndShadingDialog: function() {
+                    //Open borders and shading dialog.
+                    this.$refs.documenteditor.showDialog('BordersAndShading');
+                }
+            }
         }
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -468,39 +488,41 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showTableOptionsDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                    <button v-on:click='showTableOptionsDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableTableOptionsDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableTableOptionsDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, TableOptionsDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, TableOptionsDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, TableOptionsDialog, SfdtExport]
-    }
-    methods: {
-        showTableOptionsDialog: function() {
-            this.$refs.documenteditor.showDialog('TableOptions');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, TableOptionsDialog, SfdtExport]
+            }
+            methods: {
+                showTableOptionsDialog: function() {
+                    //Open table options dialog.
+                    this.$refs.documenteditor.showDialog('TableOptions');
+                }
+            },
+            mounted() {
+                this.$refs.documenteditor.ej2Instances.editor.insertTable(2,2);
+            }
         }
-    },
-    mounted() {
-        this.$refs.documenteditor.ej2Instances.editor.insertTable(2,2);
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -512,39 +534,41 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showTablePropertiesDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                    <button v-on:click='showTablePropertiesDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableTablePropertiesDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enableTablePropertiesDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, TablePropertiesDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+        import Vue from 'vue'
+        import { DocumentEditorPlugin, Selection, Editor, TablePropertiesDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+        Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, TablePropertiesDialog, SfdtExport]
-    }
-    methods: {
-        showTablePropertiesDialog: function() {
-            this.$refs.documenteditor.showDialog('TableProperties');
+        export default {
+            data: function() {
+                return {
+                };
+            },
+            provide: {
+                //Inject require modules
+                DocumentEditor : [Selection, Editor, TablePropertiesDialog, SfdtExport]
+            }
+            methods: {
+                showTablePropertiesDialog: function() {
+                    //Open table properties dialog.
+                    this.$refs.documenteditor.showDialog('TableProperties');
+                }
+            },
+            mounted() {
+                this.$refs.documenteditor.ej2Instances.editor.insertTable(2,2);
+            }
         }
-    },
-    mounted() {
-        this.$refs.documenteditor.ej2Instances.editor.insertTable(2,2);
-    }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+        @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -560,36 +584,38 @@ To open this dialog, refer to the following example.
 
 ```html
 <template>
-    <div id="app" style="height:400px">
-        <div>
-         <button v-on:click='showPageSetupDialog' >Open dialog</button>
+        <div id="app" style="height:400px">
+            <div>
+                 <button v-on:click='showPageSetupDialog' >Open dialog</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enablePageSetupDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableSfdtExport='true' :enablePageSetupDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, PageSetupDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+      import Vue from 'vue'
+      import { DocumentEditorPlugin, Selection, Editor, PageSetupDialog, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+      Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Selection, Editor, PageSetupDialog, SfdtExport]
-    }
-    methods: {
-        showPageSetupDialog: function() {
-            this.$refs.documenteditor.showDialog('PageSetup');
-        }
-    }
-}
+      export default {
+          data: function() {
+              return {
+              };
+          },
+          provide: {
+              //Inject require modules.
+              DocumentEditor : [Selection, Editor, PageSetupDialog, SfdtExport]
+          }
+          methods: {
+              showPageSetupDialog: function() {
+                  //Open page setup dialog.
+                  this.$refs.documenteditor.showDialog('PageSetup');
+              }
+          }
+      }
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 

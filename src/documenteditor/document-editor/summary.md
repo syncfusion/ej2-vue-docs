@@ -1,4 +1,5 @@
 * [Getting Started](document-editor/getting-started.md)
+* [Getting Started with Vue 3](document-editor/getting-started-vue-3.md)
 * [Feature modules](document-editor/feature-module.md)
 * [Import](document-editor/import.md)
 * [Export](document-editor/export.md)
@@ -43,3 +44,5 @@
 * [Change document view](document-editor/how-to/change-document-view.md)
 * [Open default document](document-editor/how-to/open-default-document.md)
 * [Open document in read only by default](document-editor/how-to/read-only-by-default.md)
+* [Deploy Document Editor component for Mobile](document-editor/how-to/deploy-document-editor-component-for-mobile.md)
+* [Disable Optimized Text Measuring](document-editor/how-to/disable-optimized-text-measuring.md)

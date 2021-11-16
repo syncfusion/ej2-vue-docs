@@ -8,20 +8,20 @@ description: "Learn how to change the document view to web layout and print view
 
 ## How to change the document view in DocumentEditor component
 
-DocumentEditor allows you to change the view to web layout and print using the [`layoutType`](../../api/document-editor#layouttype) property with the supported [`LayoutType`](../../api/document-editor/layouttype/).
+Document Editor allows you to change the view to web layout and print using the [`layoutType`](../../api/document-editor#layouttype) property with the supported [`LayoutType`](../../api/document-editor/layouttype/).
 
-```typescript
+```html
 <ejs-documenteditor :layoutType='Continuous' id='container'></ejs-documenteditor>
 ```
 
->Note: Default value of `layoutType` in DocumentEditor component is `Pages`.
+>Note: Default value of `layoutType` in Document Editor component is `Pages`.
 
 ## How to change the document view in DocumentEditorContainer component
 
-DocumentEditorContainer component allows you to change the view to web layout and print using the [`layoutType`](../../api/document-editor-container#layouttype) property with the supported [`LayoutType`](../../api/document-editor/layouttype/).
+Document Editor Container component allows you to change the view to web layout and print using the [`layoutType`](../../api/document-editor-container#layouttype) property with the supported [`LayoutType`](../../api/document-editor/layouttype/).
 
-```typescript
+```html
 <ejs-documenteditorcontainer :layoutType='Continuous' id='container'></ejs-documenteditorcontainer>
 ```
 
->Note: Default value of `layoutType` in DocumentEditorContainer component is `Pages`.
+>Note: Default value of `layoutType` in Document Editor Container component is `Pages`.

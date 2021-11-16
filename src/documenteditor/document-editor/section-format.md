@@ -6,7 +6,7 @@ description: "Learn section formatting supported in JavaScript document editor l
 
 # Working with Section Formatting
 
-Document editor supports various section formatting such as page size, page margins, and more.
+Document Editor supports various section formatting such as page size, page margins, and more.
 
 ## Page size
 

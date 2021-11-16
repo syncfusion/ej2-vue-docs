@@ -6,7 +6,7 @@ description: "Learn how to use form fields in Vue document editor"
 
 # Form Fields
 
-DocumentEditorContainer component provide support for inserting Text, CheckBox, DropDown form fields through in-built toolbar.
+Document Editor Container component provide support for inserting Text, CheckBox, DropDown form fields through in-built toolbar.
 
 ![Form Fields](images/toolbar-form-fields.png)
 

@@ -6,7 +6,7 @@ description: "Learn how to print the document in JavaScript document editor and 
 
 # Print
 
-To print the document, use the `print` method from document editor instance.
+To print the document, use the `print` method from Document Editor instance.
 
 Refer to the following example for showing a document and print it.
 
@@ -16,60 +16,62 @@ Refer to the following example for showing a document and print it.
 
 ```html
 <template>
-    <div id="app">
-        <div>
-         <button v-on:click='print' >Print</button>
+        <div id="app">
+            <div>
+                  <button v-on:click='print' >Print</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :enablePrint='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :enablePrint='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Print } from '@syncfusion/ej2-vue-documenteditor';
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, Print } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+    Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Print]
-    }
-    methods: {
-        print: function() {
-             this.$refs.documenteditor.print();
+    export default {
+        data: function() {
+            return {
+            };
+        },
+        provide: {
+            DocumentEditor : [Print]
         }
-    },
-    mounted: function() {
-        let sfdt: string =`{
-            "sections": [
-                {
-                    "blocks": [
-                        {
-                            "inlines": [
-                                {
-                                    "characterFormat": {
-                                        "bold": true,
-                                        "italic": true
-                                    },
-                                    "text": "Hello World"
-                                }
-                            ]
+        methods: {
+            print: function() {
+                //Print the content of the Document Editor.
+                this.$refs.documenteditor.print();
+            }
+        },
+        mounted: function() {
+            let sfdt: string =`{
+                "sections": [
+                    {
+                        "blocks": [
+                            {
+                                "inlines": [
+                                    {
+                                        "characterFormat": {
+                                            "bold": true,
+                                            "italic": true
+                                        },
+                                        "text": "Hello World"
+                                    }
+                                ]
+                            }
+                        ],
+                        "headersFooters": {
                         }
-                    ],
-                    "headersFooters": {
                     }
-                }
-            ]
-        }`;
-        this.$refs.documenteditor.open(sfdt);
+                ]
+            }`;
+            //Open default document in Document Editor.
+            this.$refs.documenteditor.open(sfdt);
+        }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -85,36 +87,38 @@ Refer to the following example for creating a document and print it.
 
 ```html
 <template>
-    <div id="app">
-        <div>
-         <button v-on:click='print' >Print</button>
+        <div id="app">
+            <div>
+                  <button v-on:click='print' >Print</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' height="370px" style="width: 100%;"></ejs-documenteditor>
         </div>
-        <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Print, Editor, Selection, EditorHistory } from '@syncfusion/ej2-vue-documenteditor';
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, Print, Editor, Selection, EditorHistory } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+    Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Print, Editor, Selection, EditorHistory]
-    }
-    methods: {
-        print: function() {
-             this.$refs.documenteditor.print();
+    export default {
+        data: function() {
+            return {
+            };
+        },
+        provide: {
+            //Inject require modules.
+            DocumentEditor : [Print, Editor, Selection, EditorHistory]
+        }
+        methods: {
+            print: function() {
+                //Print the content of the Document Editor.
+                this.$refs.documenteditor.print();
+            }
         }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
@@ -124,7 +128,7 @@ export default {
 
 ## Print using window object
 
-You can print the document in document editor by passing the window instance. This is useful to implement print in third party frameworks such as electron, where the window instance will not be available. Refer to the following example.
+You can print the document in Document Editor by passing the window instance. This is useful to implement print in third party frameworks such as electron, where the window instance will not be available. Refer to the following example.
 
 > `this.$refs.documenteditor.print(window)`;
 
@@ -139,35 +143,35 @@ However, you can customize margins, paper, and layout options by modifying the s
 
 ```html
 <template>
-    <div id="app">
-        <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' :enablePageSetupDialog='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+        <div id="app">
+            <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' :enablePageSetupDialog='true' height="370px" style="width: 100%;"></ejs-documenteditor>
+        </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Print, Editor, Selection, EditorHistory, PageSetupDialog } from '@syncfusion/ej2-vue-documenteditor';
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, Print, Editor, Selection, EditorHistory, PageSetupDialog } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+    Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Print, Editor, Selection, EditorHistory, PageSetupDialog]
-    },
-    mounted: function() {
-        this.$refs.documenteditor.showPageSetupDialog();
+    export default {
+        data: function() {
+            return {
+            };
+        },
+        provide: {
+            DocumentEditor : [Print, Editor, Selection, EditorHistory, PageSetupDialog]
+        },
+        mounted: function() {
+            this.$refs.documenteditor.showPageSetupDialog();
+        }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
-By customizing margins, papers, and layouts, the layout of the document will be changed in document editor. To modify these options during print operation, serialize the document as SFDT using the `serialize` method in document editor instance and open the SFDT data in another instance of document editor in separate window.
+By customizing margins, papers, and layouts, the layout of the document will be changed in Document Editor. To modify these options during print operation, serialize the document as SFDT using the `serialize` method in Document Editor instance and open the SFDT data in another instance of Document Editor in separate window.
 
 The following example shows how to customize layout options only for printing.
 
@@ -177,43 +181,43 @@ The following example shows how to customize layout options only for printing.
 
 ```html
 <template>
-    <div id="app">
-        <div>
-         <button v-on:click='print' >Print</button>
-        </div>
-        <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
+        <div id="app">
+            <div>
+                  <button v-on:click='print' >Print</button>
+            </div>
+            <ejs-documenteditor ref="documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' :enableSfdtExport='true' height="370px" style="width: 100%;""></ejs-documenteditor>
 
-         <ejs-documenteditor ref="pagesetup_documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' :enableSfdtExport='true' style="width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>
+            <ejs-documenteditor ref="pagesetup_documenteditor" :isReadOnly='false' :enablePrint='true'  :enableEditor='true' :enableSelection='true' :enableEditorHistory='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
+        </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Print, Editor, Selection, EditorHistory, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, Print, Editor, Selection, EditorHistory, SfdtExport } from '@syncfusion/ej2-vue-documenteditor';
 
-Vue.use(DocumentEditorPlugin);
+    Vue.use(DocumentEditorPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [Print, Editor, Selection, EditorHistory, SfdtExport]
-    }
-    methods: {
-        print: function() {
-            let sfdtData =  this.$refs.documenteditor.serialize();
-            this.$refs.pagesetup_documenteditor.open(sfdtData);
-            //Set A5 paper size
-            this.$refs.pagesetup_documenteditor.ej2Instances.selection.sectionFormat.pageWidth = 419.55;
-            this.$refs.pagesetup_documenteditor.ej2Instances.selection.sectionFormat.pageHeight = 595.30;
-            this.$refs.pagesetup_documenteditor.print();
+    export default {
+        data: function() {
+            return {
+            };
+        },
+        provide: {
+            DocumentEditor : [Print, Editor, Selection, EditorHistory, SfdtExport]
+        }
+        methods: {
+            print: function() {
+                let sfdtData =  this.$refs.documenteditor.serialize();
+                this.$refs.pagesetup_documenteditor.open(sfdtData);
+                //Set A5 paper size
+                this.$refs.pagesetup_documenteditor.ej2Instances.selection.sectionFormat.pageWidth = 419.55;
+                this.$refs.pagesetup_documenteditor.ej2Instances.selection.sectionFormat.pageHeight = 595.30;
+                this.$refs.pagesetup_documenteditor.print();
+            }
         }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 

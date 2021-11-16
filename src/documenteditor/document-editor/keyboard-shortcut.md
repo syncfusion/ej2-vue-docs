@@ -8,7 +8,7 @@ description: "Learn the keyboard shortcuts supported in JavaScript document edit
 
 ## Text formatting
 
-The following table lists the default keyboard shortcuts in document editor for formatting text:
+The following table lists the default keyboard shortcuts in Document Editor for formatting text:
 
 | Key combination | Description |
 |-----------------|-------------|

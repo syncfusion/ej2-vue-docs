@@ -8,7 +8,7 @@ description: "Default text content of the DocumentEditor can be localized."
 
 ## Localization
 
-The Localization library allows you to localize default text content of the DocumentEditor. The document editor component has static text on some features (like find & replace, context-menu, dialogs) that can be changed to other cultures (Arabic, Deutsch, French, etc.) by defining the locale value and translation object. Please refer the sample link [RTL](https://ej2.syncfusion.com/vue/demos/document-editor/right-to-left/)
+The Localization library allows you to localize default text content of the Document Editor. The document editor component has static text on some features (like find & replace, context-menu, dialogs) that can be changed to other cultures (Arabic, Deutsch, French, etc.) by defining the locale value and translation object. Please refer the sample link [RTL](https://ej2.syncfusion.com/vue/demos/document-editor/right-to-left/)
 
 Note: Please refer the [Locale](https://github.com/syncfusion/ej2-locale/tree/master/src).
 

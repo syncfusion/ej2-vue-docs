@@ -6,7 +6,7 @@ description: "Learn the types of lists supported in JavaScript document editor a
 
 # Working with Lists
 
-Document editor supports both the single-level and multilevel lists. Lists are used to organize data as step-by-step instructions in documents for easy understanding of key points. You can apply list to the paragraph either using supported APIs.
+Document Editor supports both the single-level and multilevel lists. Lists are used to organize data as step-by-step instructions in documents for easy understanding of key points. You can apply list to the paragraph either using supported APIs.
 
 ## Create bullet list
 
@@ -52,67 +52,67 @@ this.$refs.documenteditor.ej2Instances.editor.clearList();
 
 ## Working with lists
 
-The following sample demonstrates how to create bullet and numbering lists in document editor.
+The following sample demonstrates how to create bullet and numbering lists in Document Editor.
 
 ```html
 <template>
-   <div style="width:100%;height:330px">
-    <div>
-        <ejs-toolbar v-bind:clicked='toolbarButtonClick'>
-            <e-items>
-                <e-item prefixIcon="e-de-icon-Bullets" tooltipText="Bullets" id="Bullets"></e-item>
-                <e-item prefixIcon="e-de-icon-Numbering" tooltipText="Numbering" id="Numbering"></e-item>
-                <e-item text="Clear" id="clearlist" tooltipText="Clear List"></e-item>
-            </e-items>
-        </ejs-toolbar>
-      </div>
-  <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableEditorHistory='true' :enableSfdtExport='true' style="display:block;width: 100%;height: 100%;"></ejs-documenteditor>
+    <div style="width:100%;height:330px">
+        <div>
+            <ejs-toolbar v-bind:clicked='toolbarButtonClick'>
+                <e-items>
+                    <e-item prefixIcon="e-de-ctnr-bullets e-icons" tooltipText="Bullets" id="Bullets"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-numbering e-icons" tooltipText="Numbering" id="Numbering"></e-item>
+                    <e-item text="Clear" id="clearlist" tooltipText="Clear List"></e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+        <ejs-documenteditor ref="documenteditor" :enableSelection='true' :isReadOnly='false' :enableEditor='true' :enableEditorHistory='true' :enableSfdtExport='true' height="370px" style="width: 100%;"></ejs-documenteditor>
     </div>
 </template>
 <script>
-import Vue from 'vue'
-import { DocumentEditorPlugin, Selection, Editor, SfdtExport, EditorHistory } from '@syncfusion/ej2-vue-documenteditor';
-import { ToolbarPlugin } from "@syncfusion/ej2-vue-navigations";
+    import Vue from 'vue'
+    import { DocumentEditorPlugin, Selection, Editor, SfdtExport, EditorHistory } from '@syncfusion/ej2-vue-documenteditor';
+    import { ToolbarPlugin } from "@syncfusion/ej2-vue-navigations";
 
-Vue.use(DocumentEditorPlugin);
-Vue.use(ToolbarPlugin);
+    Vue.use(DocumentEditorPlugin);
+    Vue.use(ToolbarPlugin);
 
-export default {
-    data: function() {
-        return {
-        };
-    },
-    provide: {
-        DocumentEditor : [SfdtExport, EditorHistory, Selection, Editor]
-    }
-    methods: {
-        toolbarButtonClick: function(args) {
-            switch (args.item.id) {
-                case 'Bullets':
-                //To create bullet list
-                this.$refs.documenteditor.ej2Instances.editor.applyBullet('\uf0b7', 'Symbol');
-                break;
-                case 'Numbering':
-                //To create numbering list
-                this.$refs.documenteditor.ej2Instances.editor.applyNumbering('%1)', 'UpRoman');
-                break;
-                case 'clearlist':
-                //To clear list
-                this.$refs.documenteditor.ej2Instances.editor.clearList();
-                break;
+    export default {
+        data: function() {
+            return {
+            };
+        },
+        provide: {
+            DocumentEditor : [SfdtExport, EditorHistory, Selection, Editor]
+        }
+        methods: {
+            toolbarButtonClick: function(args) {
+                switch (args.item.id) {
+                    case 'Bullets':
+                    //To create bullet list
+                    this.$refs.documenteditor.ej2Instances.editor.applyBullet('\uf0b7', 'Symbol');
+                    break;
+                    case 'Numbering':
+                    //To create numbering list
+                    this.$refs.documenteditor.ej2Instances.editor.applyNumbering('%1)', 'UpRoman');
+                    break;
+                    case 'clearlist':
+                    //To clear list
+                    this.$refs.documenteditor.ej2Instances.editor.clearList();
+                    break;
+                }
             }
         }
     }
-}
 </script>
 <style>
- @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
+      @import "../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css";
 </style>
 ```
 
 ## Editing numbered list
 
-Document editor restarts the numbering or continue numbering for a numbered list. These options are found in the built-in context menu, if the list value is selected. Refer to the following screenshot.
+Document Editor restarts the numbering or continue numbering for a numbered list. These options are found in the built-in context menu, if the list value is selected. Refer to the following screenshot.
 
 ![Image](images/list.png)
 
