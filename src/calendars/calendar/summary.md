@@ -1,4 +1,5 @@
 * [Getting Started](calendar/getting-started.md)
+* [Getting Started with Vue 3](calendar/getting-started-vue3.md)
 * [Date Range](calendar/date-range.md)
 * [Globalization](calendar/globalization.md)
 * [Customization](calendar/customization.md)

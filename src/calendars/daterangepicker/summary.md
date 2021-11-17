@@ -1,4 +1,5 @@
 * [Getting Started](daterangepicker/getting-started.md)
+* [Getting Started with Vue 3](daterangepicker/getting-started-vue3.md)
 * [Range Restriction](daterangepicker/range-restriction.md)
 * [Globalization](daterangepicker/globalization.md)
 * [Customization](daterangepicker/customization.md)

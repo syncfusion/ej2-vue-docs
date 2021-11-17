@@ -10,7 +10,7 @@ This section explains how to create a simple TimePicker and how to configure the
 
 ## Dependencies
 
-The list of dependencies required to use the TimePicker component in your application is given below:
+The list of dependencies required to use the Vue TimePicker component in your application is given below:
 
 ```javascript
 |-- @syncfusion/ej2-vue-calendars
@@ -120,7 +120,7 @@ export default {
 
 ## Adding CSS Reference
 
-To render the TimePicker component, need to import TimePicker and its dependent component's styles as given below in `<style>` section of the `App.vue` file.
+To render the Vue TimePicker component, need to import TimePicker and its dependent component's styles as given below in `<style>` section of the `App.vue` file.
 
 ```html
 <style>
@@ -179,7 +179,7 @@ export default {
 ## Setting the value, min, and max time
 
 The following example demonstrates how to set the value, min, and max time on initializing
- the TimePicker. The TimePicker allows you to select the time value within a range from `7:00 AM` to `4:00 PM`.
+ the TimePicker. The Vue TimePicker allows you to select the time value within a range from `7:00 AM` to `4:00 PM`.
 
 {% tab template="timepicker/min-max", isDefaultActive=true %}
 

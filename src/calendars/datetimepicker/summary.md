@@ -1,10 +1,12 @@
 * [Getting Started](datetimepicker/getting-started.md)
+* [Getting Started with Vue 3](datetimepicker/getting-started-vue3.md)
 * [Globalization](datetimepicker/globalization.md)
 * [Strict Mode](datetimepicker/strict-mode.md)
 * [DateTime Range](datetimepicker/date-time-range.md)
+* [Mask Support](datetimepicker/date-time-masking.md)
 * [Customization](datetimepicker/customization.md)
 * [Accessibility](datetimepicker/accessibility.md)
-* [Mask Support](datetimepicker/date-time-masking.md)
+
 * [Two-Way Binding](datetimepicker/two-way-binding.md)
 * [Disable the DateTimePicker Component](datetimepicker/how-to/disable-the-datetimepicker-component.md)
 * [Set the Placeholder](datetimepicker/how-to/set-the-placeholder.md)

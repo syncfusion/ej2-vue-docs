@@ -221,6 +221,8 @@ export default {
 
 {% endtab %}
 
+N> You can refer to our [Vue DatePicker](https://www.syncfusion.com/vue-ui-components/vue-datepicker) feature tour page for its groundbreaking feature representations. You can also explore our [Vue DatePicker example](https://ej2.syncfusion.com/vue/demos/#/material/datepicker/default.html) to know how to render and configure the datepicker.
+
 ## See Also
 
 * [Change the format of selected date](./date-format)
