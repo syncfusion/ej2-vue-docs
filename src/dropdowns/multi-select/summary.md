@@ -1,4 +1,5 @@
 * [Getting Started](multi-select/getting-started.md)
+* [Getting Started with Vue 3](multi-select/getting-started-vue3.md)
 * [Data Binding](multi-select/data-binding.md)
 * [Templates](multi-select/templates.md)
 * [Grouping](multi-select/grouping.md)

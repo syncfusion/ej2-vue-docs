@@ -26,7 +26,7 @@ You can choose the component that you want to install. For this application, we 
 To install Button component, use the following command
 
 ```bash
-npm install @syncfusion/ej2-vue-buttons –save
+npm install @syncfusion/ej2-vue-buttons --save
 ```
 
 ## Registering Vue Component

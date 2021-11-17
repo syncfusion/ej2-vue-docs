@@ -1,4 +1,5 @@
 * [Getting Started](list-box/getting-started.md)
+* [Getting Started with Vue 3](list-box/getting-started-vue-3.md)
 * [Accessibility](list-box/accessibility.md)
 * [Data Binding](list-box/data-binding.md)
 * [Drag and Drop](list-box/drag-and-drop.md)

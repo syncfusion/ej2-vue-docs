@@ -58,7 +58,7 @@ to use AutoComplete component.
 To install AutoComplete component, use the following command
 
 ```bash
-npm install @syncfusion/ej2-vue-dropdowns –save
+npm install @syncfusion/ej2-vue-dropdowns --save
 ```
 
 ## Registering Vue Component
@@ -295,6 +295,8 @@ export default {
 ```
 
 {% endtab %}
+
+N> You can refer to our [Vue AutoComplete](https://www.syncfusion.com/vue-ui-components/vue-autocomplete) feature tour page for its groundbreaking feature representations. You can also explore our [Vue AutoComplete example](https://ej2.syncfusion.com/vue/demos/#/material/auto-complete/default.html) to know how to render and configure the autocomplete.
 
 ## See Also
 

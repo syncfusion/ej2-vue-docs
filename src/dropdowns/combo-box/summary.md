@@ -1,5 +1,6 @@
 
 * [Getting Started](combo-box/getting-started.md)
+* [Getting Started with Vue 3](combo-box/getting-started-vue3.md)
 * [Data Binding](combo-box/data-binding.md)
 * [Templates](combo-box/templates.md)
 * [Grouping](combo-box/grouping.md)

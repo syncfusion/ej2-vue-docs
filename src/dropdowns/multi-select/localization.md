@@ -43,7 +43,7 @@ Vue.use(MultiSelectPlugin);
 import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
 L10n.load({
             'fr-BE': {
-                'dropdowns': {
+                'multi-select': {
                     'noRecordsTemplate': "Aucun enregistrement trouvé",
                     'actionFailureTemplate': "Modèle d'échec d'action"
                 }

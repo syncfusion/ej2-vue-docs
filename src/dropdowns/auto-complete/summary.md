@@ -1,6 +1,7 @@
 # Summary
 
 * [Getting Started](auto-complete/getting-started.md)
+* [Getting Started with Vue 3](auto-complete/getting-started-vue3.md)
 * [Data Binding](auto-complete/data-binding.md)
 * [Templates](auto-complete/templates.md)
 * [Grouping](auto-complete/grouping.md)

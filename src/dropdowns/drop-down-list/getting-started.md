@@ -39,7 +39,7 @@ You can choose the component that you want to install. For this application, we 
 To install DropDownList component, use the following command
 
 ```bash
-npm install @syncfusion/ej2-vue-dropdowns –save
+npm install @syncfusion/ej2-vue-dropdowns --save
 ```
 
 ## Registering Vue Component
@@ -231,6 +231,8 @@ export default {
 ```
 
 {% endtab %}
+
+> You can refer to our [Vue Dropdown List](https://www.syncfusion.com/vue-ui-components/vue-dropdown-list) feature tour page for its groundbreaking feature representations. You can also explore our [Vue Dropdown list example]( https://ej2.syncfusion.com/vue/demos/#/material/drop-down-list/default.html) that shows how to render the Dropdown List in Vue.
 
 ## See Also
 
