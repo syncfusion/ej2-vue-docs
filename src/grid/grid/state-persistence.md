@@ -140,6 +140,59 @@ export default {
 
 {% endtab %}
 
+## How to add a new column while using enablePersistence
+
+The Grid columns can be persisted when the [enablePersistence](../api/grid/#enablepersistence) property is set to true. If you want to add the new columns with the existing persist state, you can use the Grid inbuilt method such as `column.push` and call the [refreshColumns()](../api/grid/#refreshcolumns) method for UI changes. Please refer to the following sample for more information.
+
+{% tab template="grid/sort/default" %}
+
+```html
+<template>
+    <div id="app">
+       <button id="add"  @click="clickAdd">Add Columns</button>
+      <br /><br />
+        <ejs-grid ref="grid" :dataSource='data' :enablePersistence='true' :allowPaging='true' height='230px' id="Grid">
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</template>
+<script>
+import Vue from "vue";
+import { GridPlugin, Page } from "@syncfusion/ej2-vue-grids";
+import { data } from './datasource.js';
+
+Vue.use(GridPlugin);
+
+export default {
+  data() {
+    return {
+      data: data
+    };
+  },
+  methods: {
+     clickAdd: function () {
+        let obj = { field: "Freight", headerText: 'Freight', width: 120 }
+        this.$refs.grid.ej2Instances.columns.push(obj as any); //you can add the columns by using the Grid columns method
+        this.$refs.grid.ej2Instances.refreshColumns();
+    }
+  },
+  provide: {
+    grid: [Page]
+  }
+}
+</script>
+<style>
+ @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
+</style>
+```
+
+{% endtab %}
+
 ## How to prevent columns from persisting
 
 When the [enablePersistence](../api/grid/#enablepersistence) property is set to true, the Grid properties such as [Grouping](../api/grid/groupSettingsModel/), [Paging](../api/grid/pageSettingsModel/), [Filtering](../api/grid/pageSettingsModel/), [Sorting](../api/grid/sortSettingsModel/), and [Columns](../api/grid/columnModel/) will persist. You can use the `addOnPersist` method to prevent these Grid properties from persisting.
