@@ -2148,3 +2148,5 @@ export default {
 * [How to Perform aggregation in Foreign Key Column](./how-to/perform-aggregation-in-foreign-key-column)
 * [How to set complex column as Foreignkey column](./how-to/complex-column-as-foreign-key-column)
 * [Complex Data Binding with list of Array Of Objects](./how-to/list-of-array-of-objects)
+* [Custom tooltip for the header in Vue Grid](https://www.syncfusion.com/forums/144654/custom-tooltip-for-the-header-in-vue-grid)
+* [Display only multiple field name in one column in Vue Grid](https://www.syncfusion.com/forums/162397/display-only-multiple-field-name-in-one-column-in-vue-grid)

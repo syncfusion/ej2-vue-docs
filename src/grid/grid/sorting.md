@@ -388,3 +388,7 @@ To sort multiple columns, tap the popup![Multi Sorting](images/msorting.jpg) and
 The following screenshot represents a Grid touch sorting in the device.
 
 ![Touch Interaction](images/touch-sorting.jpg)
+
+## See Also
+
+* [Switching the column sort order between ascending and descending order in Vue Grid](https://www.syncfusion.com/forums/162157/switching-the-column-sort-order-between-ascending-and-descending-order-in-vue-grid)

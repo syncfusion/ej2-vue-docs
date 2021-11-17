@@ -548,3 +548,4 @@ return dm.RequiresCounts ? Json(new { result = groupedData == null ? DataSource 
 ## See Also
 
 * [Exporting grouped records](./excel-exporting#Exporting-grouped-records)
+* [How to customize the group caption row text in Vue Grid](https://www.syncfusion.com/forums/154055/how-to-customize-the-group-caption-row-text-in-vue-grid)

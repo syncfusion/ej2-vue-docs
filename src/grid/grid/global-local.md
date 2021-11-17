@@ -338,3 +338,9 @@ export default {
 ```
 
 {% endtab %}
+
+## See Also
+
+* [How to apply CHF currency format in a column in Vue Grid](https://www.syncfusion.com/forums/147456/how-to-apply-chf-currency-format-in-a-column-in-vue-grid)
+* [Filter the value with locale and custom format the Vue Grid](https://www.syncfusion.com/forums/165960/filter-the-value-with-locale-and-custom-format-the-vue-grid)
+* [How to customize edit dialog button in Vue Grid](https://www.syncfusion.com/forums/166131/how-to-customize-edit-dialog-button-in-vue-grid)

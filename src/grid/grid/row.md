@@ -760,3 +760,7 @@ export default {
 {% endraw %}
 
 {% endtab %}
+
+## See Also
+
+* [How to pass data to DetailTemplate in Vue Grid](https://www.syncfusion.com/forums/153907/how-to-pass-data-to-detailtemplate-in-vue-grid)
