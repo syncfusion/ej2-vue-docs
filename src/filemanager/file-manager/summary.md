@@ -1,4 +1,5 @@
 * [Getting Started](file-manager/getting-started.md)
+* [Getting Started with Vue 3](file-manager/getting-started-vue-3.md)
 * [User Interface](file-manager/user-interface.md)
 * [File Operations](file-manager/file-operations.md)
 * [Views](file-manager/views.md)

@@ -592,3 +592,5 @@ export default {
 @import "../node_modules/@syncfusion/ej2-vue-filemanager/styles/material.css";
 </style>
 ```
+
+> You can refer to our [Vue File Manager](https://www.syncfusion.com/vue-ui-components/vue-file-manager) feature tour page for its groundbreaking feature representations. You can also explore our [Vue File Manager example](https://ej2.syncfusion.com/vue/demos/#/material/file-manager/overview.html) that shows how to render the File Manager in Vue.
