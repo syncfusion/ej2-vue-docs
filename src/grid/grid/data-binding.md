@@ -899,3 +899,7 @@ export default Vue.extend({
  @import "../node_modules/@syncfusion/ej2-vue-grids/styles/material.css";
 </style>
 ```
+
+## See Also
+
+* [How to bind SQL Server data in Vue DataGrid using SqlClient data provider](https://www.syncfusion.com/kb/11454/how-to-bind-sql-server-data-in-vue-datagrid-using-sqlclient-data-provider)
