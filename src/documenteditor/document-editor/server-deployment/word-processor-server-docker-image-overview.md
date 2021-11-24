@@ -21,7 +21,7 @@ Have [`Docker`](https://www.docker.com/products/container-runtime#/download) ins
 
 * On macOS, install [`Docker for Mac`](https://hub.docker.com/editions/community/docker-ce-desktop-windows).
 
-## How to use this Word Processor Docker image
+## How to deploy Word Processor Docker image
 
 **Step 1:** Pull the word-processor-server image from Docker Hub.
 
