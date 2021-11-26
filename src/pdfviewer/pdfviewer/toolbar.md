@@ -22,6 +22,7 @@ The following table shows built-in toolbar items and its actions:-
 | DownloadOption |This Download option provides an action to download the PDF document that has been loaded in the PDF Viewer.|
 | UndoRedoTool | This tool provides options to undo and redo the annotation actions performed in the PDF Viewer.|
 | AnnotationEditTool | This tool provides options to enable or disable the edit mode of annotation in the PDF Viewer.|
+| FormDesignerEditTool | This tool provides options to enable or disable the edit mode of form fields in the PDF Viewer.|
 
 ## Show/Hide the default toolbar
 
@@ -41,7 +42,7 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 
 <script>
 import Vue from 'vue';
-import { PdfViewerPlugin, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, Annotation, ThumbnailView, Print, TextSelection, TextSearch } from '@syncfusion/ej2-vue-pdfviewer';
+import { PdfViewerPlugin, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, Annotation, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner } from '@syncfusion/ej2-vue-pdfviewer';
 Vue.use(PdfViewerPlugin);
 export default {
   name: 'app',
@@ -52,7 +53,7 @@ export default {
       };
       },
   provide: {
-    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, Annotation, ThumbnailView, Print, TextSelection, TextSearch]
+    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, Annotation, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner]
   }
 }
 </script>
@@ -90,7 +91,7 @@ export default {
 
 <script>
 import Vue from 'vue';
-import { PdfViewerPlugin, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch } from '@syncfusion/ej2-vue-pdfviewer';
+import { PdfViewerPlugin, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner } from '@syncfusion/ej2-vue-pdfviewer';
 import { ButtonPlugin } from "@syncfusion/ej2-vue-buttons";
 Vue.use(ButtonPlugin);
 Vue.use(PdfViewerPlugin);
@@ -104,7 +105,7 @@ export default {
       };
       },
   provide: {
-    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch]
+    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner]
   },  
   methods: {
             showToolbarClicked: function (args) {
@@ -153,7 +154,7 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 
 <script>
 import Vue from 'vue';
-import { PdfViewerPlugin, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch } from '@syncfusion/ej2-vue-pdfviewer';
+import { PdfViewerPlugin, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner } from '@syncfusion/ej2-vue-pdfviewer';
 Vue.use(PdfViewerPlugin);
 export default {
   name: 'app',
@@ -161,11 +162,11 @@ export default {
     return {
       serviceUrl:"https://ej2services.syncfusion.com/production/web-services/api/pdfviewer"
       documentPath:"PDF_Succinctly.pdf",
-      toolbarSettings:{ showTooltip : true, toolbarItem: ['OpenOption']}
+      toolbarSettings:{ showTooltip : true, toolbarItems: ['OpenOption', 'UndoRedoTool', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'CommentTool', 'SubmitForm', 'AnnotationEditTool', 'FormDesignerEditTool', 'FreeTextAnnotationOption', 'InkAnnotationOption', 'ShapeAnnotationOption', 'StampAnnotation', 'SignatureOption', 'SearchOption', 'PrintOption', 'DownloadOption'], annotationToolbarItems: ['HighlightTool', 'UnderlineTool', 'StrikethroughTool', 'ColorEditTool', 'OpacityEditTool', 'AnnotationDeleteTool', 'StampAnnotationTool', 'HandWrittenSignatureTool', 'InkAnnotationTool', 'ShapeTool', 'CalibrateTool', 'StrokeColorEditTool', 'ThicknessEditTool', 'FreeTextAnnotationTool', 'FontFamilyAnnotationTool', 'FontSizeAnnotationTool', 'FontStylesAnnotationTool', 'FontAlignAnnotationTool', 'FontColorAnnotationTool', 'CommentPanelTool'], formDesignerToolbarItems: ['TextboxTool', 'PasswordTool', 'CheckBoxTool', 'RadioButtonTool', 'DropdownTool', 'ListboxTool', 'DrawSignatureTool', 'DeleteTool']}
       };
       },
   provide: {
-    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch]
+    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner]
   }
 }
 </script>
@@ -203,7 +204,7 @@ export default {
 
 <script>
 import Vue from 'vue';
-import { PdfViewerPlugin, Toolbar, Magnification, Annotation, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch } from '@syncfusion/ej2-vue-pdfviewer';
+import { PdfViewerPlugin, Toolbar, Magnification, Annotation, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner } from '@syncfusion/ej2-vue-pdfviewer';
 import { ButtonPlugin } from "@syncfusion/ej2-vue-buttons";
 Vue.use(ButtonPlugin);
 Vue.use(PdfViewerPlugin);
@@ -217,7 +218,7 @@ export default {
       };
       },
   provide: {
-    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch]
+    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner]
   },  
   methods: {
             showToolbarClicked: function (args) {
@@ -250,5 +251,5 @@ export default {
 
 ## See also
 
-* [Toolbar customization](./how-to/customization)
-* [Feature Modules](/feature-module)
+* [Toolbar customization](./how-to/toolbar-customization)
+* [Feature Modules](./feature-module)

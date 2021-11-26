@@ -43,7 +43,7 @@ npm install @syncfusion/ej2-vue-pdfviewer --save
 
 ## Registering PDF Viewer component
 
-You can register the PDF Viewer component in your application by using the `Vue.use()`.
+You can register the Vue PDF Viewer component in your application by using the `Vue.use()`.
 
 Refer to the following code example.
 
@@ -57,7 +57,7 @@ Vue.use(PdfViewerPlugin);
 
 ## Adding CSS reference
 
-The PDF Viewer has different themes. They are:
+The Vue PDF Viewer has different themes. They are:
 * Material
 * Fabric
 * Bootstrap
@@ -164,3 +164,5 @@ export default {
 ```
 
 {% endtab %}
+
+> You can refer to our [Vue PDF Viewer](https://www.syncfusion.com/vue-ui-components/vue-pdf-viewer) feature tour page for its groundbreaking feature representations. You can also explore our [Vue PDF Viewer example](https://ej2.syncfusion.com/vue/demos/#/material/pdfviewer/default.html) to understand how to explains core features of PDF Viewer.
