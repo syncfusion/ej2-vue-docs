@@ -80,7 +80,7 @@ Refer the following code snippet:
 
 ```typescript
 
-import { GanttPlugin } from '@syncfuion/ej2-vue-gantt';
+import { GanttPlugin } from '@syncfusion/ej2-vue-gantt';
 
 Vue.use(GanttPlugin);
 
