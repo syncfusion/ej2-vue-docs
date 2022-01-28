@@ -70,7 +70,7 @@ Import the Component Plugin from the EJ2 Vue Package and register the same using
 Refer the code snippet given below.
 
 ```typescript
-import { DiagramPlugin } from '@syncfuion/ej2-vue-diagrams';
+import { DiagramPlugin } from '@syncfusion/ej2-vue-diagrams';
 
 Vue.use(DiagramPlugin);
 ```
