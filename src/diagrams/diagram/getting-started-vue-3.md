@@ -41,6 +41,7 @@ In this example, the Diagram component will be used. Use the following command t
 
 ```bash
 npm install @syncfusion/ej2-vue-diagrams --save
+npm install @syncfusion/ej2-vue-dropdowns --save
 ```
 
 ## Adding CSS reference for Syncfusion Vue Diagram component
