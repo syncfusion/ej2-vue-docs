@@ -1,6 +1,6 @@
 # Syncfusion Vue Documentation
 
-This is the GitHub repository for the technical product documentation for [Syncfusion Vue UI Components](https://ej2.syncfusion.com/home/vue.html).This documentation is published to https://ej2.syncfusion.com/vue/documentation/
+This is the GitHub repository for the technical product documentation for [Syncfusion Vue UI Components](https://ej2.syncfusion.com/home/vue.html). This documentation is published to https://ej2.syncfusion.com/vue/documentation/
 
 ## Contributions Welcome!
 
